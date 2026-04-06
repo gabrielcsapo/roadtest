@@ -105,8 +105,13 @@ export function AxePanel({ containerRef, active, onResults }: AxePanelProps): Re
 
     setState({ phase: 'running' });
 
+    // Use ownerDocument.body rather than the element itself to avoid React's
+    // __reactContainer$ circular reference when axe serializes the context
+    // for cross-frame postMessage communication.
+    const axeContext = el.ownerDocument?.body ?? el
+
     axe
-      .run(el)
+      .run(axeContext)
       .then((results) => {
         setState({ phase: 'done', violations: results.violations, passes: results.passes });
         onResults?.(results.violations.length);

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useEffect, useCallback, useLayoutEffect } from 'react'
 import type { TestCase, Snapshot } from '../../framework/types'
 import { StatusIcon } from './StatusIcon'
 import { GridToggle, gridStyle } from './toolbar/GridToggle'
@@ -153,6 +153,11 @@ const VIEWPORT_ICONS: Record<Viewport, () => React.ReactElement> = {
   desktop: IconDesktop,
 }
 
+interface DisplayApi {
+  showTest: (suiteName: string, testName: string) => Promise<boolean>
+  displayRoot: HTMLElement
+}
+
 export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const [grid, setGrid] = useState(false)
   const [outline, setOutline] = useState(false)
@@ -163,13 +168,51 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>('assertions')
   const [axeViolationCount, setAxeViolationCount] = useState<number | undefined>(undefined)
   const [canvasPaneHeight, setCanvasPaneHeight] = useState<number | null>(null)
-  const canvasRef = useRef<HTMLDivElement>(null)
-  const measureInfo = useMeasure(canvasRef, measure)
+  const [displayReady, setDisplayReady] = useState(false)
+  const [displayHasContent, setDisplayHasContent] = useState(false)
+
+  // canvasRef points into the display iframe's document after rendering,
+  // so tools (axe, measure, trace) operate on the live interactive component.
+  const canvasRef = useRef<HTMLElement | null>(null)
+  const displayIframeRef = useRef<HTMLIFrameElement>(null)
+  const displayApiRef = useRef<DisplayApi | null>(null)
+
+  const measureInfo = useMeasure(canvasRef as React.RefObject<HTMLElement | null>, measure)
   const dragging = useRef(false)
   const dragStartY = useRef(0)
   const dragStartH = useRef(0)
-
   const canvasPaneRef = useRef<HTMLDivElement>(null)
+
+  // Derived values needed before hooks (safe when test is null)
+  const snapshotsEarly = test?.snapshots ?? []
+  const safeFrameEarly = Math.min(activeFrame, Math.max(0, snapshotsEarly.length - 1))
+  const showingSnapshotEarly = !!(snapshotsEarly[safeFrameEarly]) && activeFrame > 0
+  const showLive = !!test && displayHasContent && !showingSnapshotEarly
+
+  // Subscribe to display iframe ready signal
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (e.data?.type !== '__vt_display_ready') return
+      const win = displayIframeRef.current?.contentWindow as Record<string, unknown> | null | undefined
+      const api = win?.['__vtDisplay'] as DisplayApi | undefined
+      if (!api) return
+      displayApiRef.current = api
+      setDisplayReady(true)
+    }
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
+  }, [])
+
+  // Re-render in display iframe whenever the selected test changes
+  useEffect(() => {
+    if (!displayReady || !test || !displayApiRef.current) return
+    setDisplayHasContent(false)
+    canvasRef.current = null
+    displayApiRef.current.showTest(test.suiteName, test.name).then(rendered => {
+      setDisplayHasContent(rendered)
+      if (rendered) canvasRef.current = displayApiRef.current?.displayRoot ?? null
+    })
+  }, [test?.id, displayReady])
 
   const onDragStart = useCallback((e: React.MouseEvent) => {
     dragging.current = true
@@ -190,7 +233,6 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp) }
   }, [])
 
-  // M key to toggle measure
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
@@ -199,6 +241,55 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+
+  // Position the display iframe as a CSS overlay on the canvas pane when showing live content
+  useLayoutEffect(() => {
+    const iframe = displayIframeRef.current
+    if (!iframe) return
+
+    if (!showLive) {
+      iframe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:0;border:none;pointer-events:none;overflow:hidden'
+      return
+    }
+
+    const canvas = canvasPaneRef.current
+    if (!canvas) return
+
+    const vw = VIEWPORT_WIDTHS[viewport]
+    const visionCss = vision !== 'none'
+      ? (vision === 'blurred' ? 'filter:blur(2px)' : 'filter:url(#viewtest-vision-filter)')
+      : ''
+
+    const update = () => {
+      const rect = canvas.getBoundingClientRect()
+      const frameW = vw !== null ? Math.min(vw, rect.width) : rect.width
+      const frameLeft = rect.left + (rect.width - frameW) / 2
+      const parts: string[] = [
+        'position:fixed',
+        `top:${rect.top}px`,
+        `left:${frameLeft}px`,
+        `width:${frameW}px`,
+        `height:${rect.height}px`,
+        'border:none',
+        'pointer-events:auto',
+        'overflow:auto',
+        'background:transparent',
+        'z-index:10',
+      ]
+      if (visionCss) parts.push(visionCss)
+      if (vw !== null) parts.push('outline:1px solid rgba(99,102,241,0.4)', 'box-shadow:0 0 0 4px rgba(99,102,241,0.06)')
+      iframe.style.cssText = parts.join(';')
+    }
+
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(canvas)
+    window.addEventListener('resize', update)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', update)
+    }
+  }, [showLive, canvasPaneHeight, viewport, vision])
 
   const prevTestId = useRef<string | null>(null)
   if (test?.id !== prevTestId.current) {
@@ -209,20 +300,26 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
 
   if (!test) {
     return (
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60' }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: 48, marginBottom: 12 }}>◌</div>
-          <div style={{ fontSize: 14 }}>Select a test to preview</div>
+      <>
+        {/* Keep display iframe alive in the background */}
+        <iframe ref={displayIframeRef} name="__vt_display" src="/" title="ViewTest Display"
+          style={{ position: 'fixed', width: 0, height: 0, border: 'none', pointerEvents: 'none' }} />
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60' }}>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 48, marginBottom: 12 }}>◌</div>
+            <div style={{ fontSize: 14 }}>Select a test to preview</div>
+          </div>
         </div>
-      </div>
+      </>
     )
   }
 
   const snapshots = test.snapshots
-  const hasSnapshots = snapshots.length > 0
-  const hasTimeline = snapshots.length > 1
   const safeFrame = Math.min(activeFrame, Math.max(0, snapshots.length - 1))
   const activeSnap = snapshots[safeFrame] ?? null
+  // Show the timeline snapshot HTML when the user has selected a history frame
+  const showingSnapshot = activeSnap && activeFrame > 0
+  const displayDoc = displayIframeRef.current?.contentDocument
 
   const tabs: { id: Tab; label: string; count?: number }[] = [
     { id: 'assertions', label: 'Assertions', count: test.assertions.length },
@@ -233,170 +330,135 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
     ...(test.consoleLogs.length > 0 ? [{ id: 'console' as Tab, label: 'Console', count: test.consoleLogs.length }] : [{ id: 'console' as Tab, label: 'Console' }]),
   ]
 
+  const viewportW = VIEWPORT_WIDTHS[viewport]
+  const constraintStyle = viewportW !== null ? {
+    width: viewportW,
+    overflow: 'hidden' as const,
+    outline: '1px solid rgba(99,102,241,0.4)',
+    boxShadow: '0 0 0 4px rgba(99,102,241,0.06)',
+  } : {}
+
   return (
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-      {/* Header */}
-      <div style={{
-        padding: '10px 20px', borderBottom: '1px solid #2a2a36',
-        display: 'flex', alignItems: 'center', gap: 10, background: '#16161d',
-        flexShrink: 0,
-      }}>
-        <StatusIcon status={test.status} />
-        <span style={{ fontSize: 12, color: '#6b7280' }}>{test.suiteName}</span>
-        <span style={{ color: '#3a3a4e' }}>/</span>
-        <span style={{ fontSize: 13, fontWeight: 600, color: '#c4c4d4' }}>{test.name}</span>
-      </div>
+    <>
+      {/* Display iframe — always mounted, hidden until used */}
+      <iframe
+        ref={displayIframeRef}
+        name="__vt_display"
+        src="/"
+        title="ViewTest Display"
+        style={{ position: 'fixed', width: 0, height: 0, border: 'none', pointerEvents: 'none' }}
+      />
 
-      {/* Top pane — canvas */}
-      <div ref={canvasPaneRef} style={{ ...(canvasPaneHeight !== null ? { height: canvasPaneHeight, flexShrink: 0 } : { flex: 1 }), overflow: 'auto', background: '#0f0f13' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        {/* Header */}
+        <div style={{
+          padding: '10px 20px', borderBottom: '1px solid #2a2a36',
+          display: 'flex', alignItems: 'center', gap: 10, background: '#16161d', flexShrink: 0,
+        }}>
+          <StatusIcon status={test.status} />
+          <span style={{ fontSize: 12, color: '#6b7280' }}>{test.suiteName}</span>
+          <span style={{ color: '#3a3a4e' }}>/</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: '#c4c4d4' }}>{test.name}</span>
+        </div>
 
-        {/* Canvas with floating toolbar */}
-        {hasSnapshots && (
-          <div style={{
-            position: 'relative',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            minHeight: '100%', padding: 24,
-            ...gridStyle(grid),
-          }}>
-            <div
-              ref={canvasRef}
-              data-viewtest-canvas
-              style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                ...(VIEWPORT_WIDTHS[viewport] !== null ? {
-                  width: VIEWPORT_WIDTHS[viewport]!,
-                  overflow: 'hidden',
-                  outline: '1px solid rgba(99,102,241,0.4)',
-                  boxShadow: '0 0 0 4px rgba(99,102,241,0.06)',
-                } : {}),
-                cursor: measure ? 'crosshair' : 'default',
-                ...visionFilterStyle(vision),
-              }}
-              {...(hasTimeline
-                ? { dangerouslySetInnerHTML: { __html: activeSnap.html } }
-                : { children: activeSnap.element }
-              )}
-            />
-
-            {/* Floating toolbar */}
+        {/* Top pane — canvas */}
+        <div ref={canvasPaneRef} style={{
+          ...(canvasPaneHeight !== null ? { height: canvasPaneHeight, flexShrink: 0 } : { flex: 1 }),
+          overflow: 'auto', background: '#0f0f13',
+        }}>
+          {(displayHasContent || showingSnapshot) ? (
             <div style={{
-              position: 'fixed', top: 56, right: 16, zIndex: 50,
-              display: 'flex', alignItems: 'center', gap: 6,
-              background: 'rgba(22,22,29,0.85)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              border: '1px solid #2a2a36',
-              borderRadius: 10,
-              padding: '6px 10px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
+              position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              minHeight: '100%', padding: 24, ...gridStyle(grid),
             }}>
-              {/* Viewport presets */}
-              {(['mobile', 'tablet', 'desktop'] as Viewport[]).map(vp => {
-                const Icon = VIEWPORT_ICONS[vp]
-                const isActive = viewport === vp
-                return (
-                  <button
-                    key={vp}
-                    title={VIEWPORT_TITLES[vp]}
-                    onClick={() => setViewport(vp)}
-                    style={{
+              {/* Timeline snapshot view (static HTML) */}
+              {showingSnapshot && (
+                <div
+                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', ...constraintStyle, ...visionFilterStyle(vision) }}
+                  dangerouslySetInnerHTML={{ __html: activeSnap.html }}
+                />
+              )}
+
+              {/* Live interactive component is shown in the display iframe overlay (positioned by useLayoutEffect) */}
+              {showLive && <div style={{ width: '100%', minHeight: 200 }} />}
+
+              {/* Floating toolbar */}
+              <div style={{
+                position: 'fixed', top: 56, right: 16, zIndex: 50,
+                display: 'flex', alignItems: 'center', gap: 6,
+                background: 'rgba(22,22,29,0.85)',
+                backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+                border: '1px solid #2a2a36', borderRadius: 10,
+                padding: '6px 10px', boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
+              }}>
+                {(['mobile', 'tablet', 'desktop'] as Viewport[]).map(vp => {
+                  const Icon = VIEWPORT_ICONS[vp]
+                  const isActive = viewport === vp
+                  return (
+                    <button key={vp} title={VIEWPORT_TITLES[vp]} onClick={() => setViewport(vp)} style={{
                       width: 26, height: 26, borderRadius: 5, border: '1px solid',
                       borderColor: isActive ? 'rgba(99,102,241,0.6)' : '#2a2a36',
                       background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
                       color: isActive ? '#a5b4fc' : '#4b4b60',
-                      cursor: 'pointer',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}
-                  >
-                    <Icon />
-                  </button>
-                )
-              })}
-              <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
-              <MeasureToggle value={measure} onChange={setMeasure} />
-              <OutlineToggle value={outline} onChange={setOutline} />
-              <GridToggle value={grid} onChange={setGrid} />
-              <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
-              <VisionFilter value={vision} onChange={setVision} />
-            </div>
-
-            <MeasureOverlay info={measureInfo} />
-          </div>
-        )}
-
-        {/* Status placeholder for tests with no snapshots or assertions */}
-        {!hasSnapshots && test.assertions.length === 0 && (
-          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 40, marginBottom: 10, color: test.status === 'pass' ? '#22c55e' : '#4b4b60' }}>
-                {test.status === 'pass' ? '✓' : test.status === 'pending' ? '○' : '◌'}
+                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}><Icon /></button>
+                  )
+                })}
+                <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
+                <MeasureToggle value={measure} onChange={setMeasure} />
+                <OutlineToggle value={outline} onChange={setOutline} targetDocument={displayDoc} />
+                <GridToggle value={grid} onChange={setGrid} />
+                <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
+                <VisionFilter value={vision} onChange={setVision} />
               </div>
-              <div style={{ fontSize: 13 }}>
-                {test.status === 'pass' ? 'Passed — no visual output' : 'Run tests to see results'}
+
+              <MeasureOverlay info={measureInfo} />
+            </div>
+          ) : (
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60', height: '100%' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: 40, marginBottom: 10, color: test.status === 'pass' ? '#22c55e' : '#4b4b60' }}>
+                  {test.status === 'pass' ? '✓' : test.status === 'pending' ? '○' : '◌'}
+                </div>
+                <div style={{ fontSize: 13 }}>
+                  {test.status === 'pass' ? 'Passed — no visual output' : test.status === 'pending' ? 'Run tests to see results' : '◌'}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Error bubble */}
-        {test.error && test.assertions.every(a => a.status === 'pass') && (
-          <div style={{ margin: '16px 20px', padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#ef4444', marginBottom: 6 }}>Error</div>
-            <pre style={{ fontSize: 12, color: '#fca5a5', margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>
-              {test.error}
-            </pre>
-          </div>
-        )}
-      </div>
+          {test.error && test.assertions.every(a => a.status === 'pass') && (
+            <div style={{ margin: '16px 20px', padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#ef4444', marginBottom: 6 }}>Error</div>
+              <pre style={{ fontSize: 12, color: '#fca5a5', margin: 0, whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>{test.error}</pre>
+            </div>
+          )}
+        </div>
 
-      {/* Drag handle */}
-      <div
-        onMouseDown={onDragStart}
-        style={{
+        {/* Drag handle */}
+        <div onMouseDown={onDragStart} style={{
           height: 6, flexShrink: 0, cursor: 'row-resize',
           background: '#16161d', borderTop: '1px solid #2a2a36', borderBottom: '1px solid #2a2a36',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          userSelect: 'none',
-        }}
-      >
-        <div style={{ width: 32, height: 2, borderRadius: 2, background: '#3a3a4e' }} />
-      </div>
-
-      {/* Bottom pane — tabs */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', background: '#0f0f13' }}>
-        {/* Tab bar */}
-        <div style={{ borderBottom: '1px solid #2a2a36', flexShrink: 0 }}>
-          <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
+          display: 'flex', alignItems: 'center', justifyContent: 'center', userSelect: 'none',
+        }}>
+          <div style={{ width: 32, height: 2, borderRadius: 2, background: '#3a3a4e' }} />
         </div>
 
-        {/* Tab content */}
-        <div style={{ flex: 1, overflow: 'auto' }}>
-          {activeTab === 'assertions' && (
-            <AssertionsTab assertions={test.assertions} />
-          )}
-          {activeTab === 'timeline' && (
-            <Timeline snapshots={snapshots} active={safeFrame} onSelect={setActiveFrame} />
-          )}
-          {activeTab === 'accessibility' && (
-            <AxePanel containerRef={canvasRef} active={true} onResults={setAxeViolationCount} />
-          )}
-          {activeTab === 'trace' && (
-            <TraceTab containerRef={canvasRef} />
-          )}
-          {activeTab === 'code' && (
-            <CodeTab
-              suiteName={test.suiteName}
-              coverage={coverage}
-              testCoverage={test.testCoverage}
-              suites={suites}
-              onSelectTest={onSelectTest}
-            />
-          )}
-          {activeTab === 'console' && (
-            <ConsoleTab consoleLogs={test.consoleLogs} />
-          )}
+        {/* Bottom pane — tabs */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', background: '#0f0f13' }}>
+          <div style={{ borderBottom: '1px solid #2a2a36', flexShrink: 0 }}>
+            <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
+          </div>
+          <div style={{ flex: 1, overflow: 'auto' }}>
+            {activeTab === 'assertions' && <AssertionsTab assertions={test.assertions} />}
+            {activeTab === 'timeline' && <Timeline snapshots={snapshots} active={safeFrame} onSelect={setActiveFrame} />}
+            {activeTab === 'accessibility' && <AxePanel containerRef={canvasRef as React.RefObject<HTMLElement | null>} active={true} onResults={setAxeViolationCount} />}
+            {activeTab === 'trace' && <TraceTab containerRef={canvasRef as React.RefObject<HTMLElement | null>} />}
+            {activeTab === 'code' && <CodeTab suiteName={test.suiteName} coverage={coverage} testCoverage={test.testCoverage} suites={suites} onSelectTest={onSelectTest} />}
+            {activeTab === 'console' && <ConsoleTab consoleLogs={test.consoleLogs} />}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

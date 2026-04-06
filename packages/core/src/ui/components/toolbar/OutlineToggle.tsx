@@ -2,26 +2,26 @@ import React, { useEffect } from 'react'
 
 const STYLE_ID = 'viewtest-outline-style'
 
-export function OutlineToggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
+export function OutlineToggle({ value, onChange, targetDocument }: {
+  value: boolean
+  onChange: (v: boolean) => void
+  targetDocument?: Document | null
+}) {
   useEffect(() => {
-    let el = document.getElementById(STYLE_ID) as HTMLStyleElement | null
+    const doc = targetDocument ?? document
+    let el = doc.getElementById(STYLE_ID) as HTMLStyleElement | null
     if (value) {
       if (!el) {
-        el = document.createElement('style')
+        el = doc.createElement('style')
         el.id = STYLE_ID
-        document.head.appendChild(el)
+        doc.head.appendChild(el)
       }
-      el.textContent = `
-        [data-viewtest-canvas] * {
-          outline: 1px solid rgba(99,102,241,0.55) !important;
-          outline-offset: 0 !important;
-        }
-      `
+      el.textContent = `* { outline: 1px solid rgba(99,102,241,0.55) !important; outline-offset: 0 !important; }`
     } else {
       el?.remove()
     }
-    return () => { document.getElementById(STYLE_ID)?.remove() }
-  }, [value])
+    return () => { doc.getElementById(STYLE_ID)?.remove() }
+  }, [value, targetDocument])
 
   return (
     <button

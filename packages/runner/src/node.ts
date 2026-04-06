@@ -171,7 +171,16 @@ function renderResults(suites: SerializableTestSuite[]): { totalPass: number; to
   return { totalPass, totalFail, totalSkip }
 }
 
-function printSummary(totalPass: number, totalFail: number, totalSkip: number) {
+function formatDuration(ms: number): string {
+  if (ms < 1000) return `${ms}ms`
+  const s = ms / 1000
+  if (s < 60) return `${s.toFixed(2)}s`
+  const m = Math.floor(s / 60)
+  const rem = (s % 60).toFixed(0).padStart(2, '0')
+  return `${m}m ${rem}s`
+}
+
+function printSummary(totalPass: number, totalFail: number, totalSkip: number, durationMs?: number, cachedCount?: number) {
   const total = totalPass + totalFail + totalSkip
   console.log(`\n${DIM}─────────────────────────────${RESET}`)
   const parts: string[] = []
@@ -179,6 +188,8 @@ function printSummary(totalPass: number, totalFail: number, totalSkip: number) {
   if (totalFail) parts.push(`${RED}${totalFail} failed${RESET}`)
   if (totalSkip) parts.push(`${DIM}${totalSkip} skipped${RESET}`)
   parts.push(`${DIM}${total} total${RESET}`)
+  if (durationMs !== undefined) parts.push(`${DIM}${formatDuration(durationMs)}${RESET}`)
+  if (cachedCount) parts.push(`${DIM}${cachedCount} cached${RESET}`)
   console.log(` ${parts.join('  ')}\n`)
 }
 
@@ -211,8 +222,9 @@ export async function runNode() {
     const { suites, shards } = mergeShardResults(shardResults)
     console.log(`\n${CYAN}${BOLD}ViewTest${RESET} ${DIM}merged ${shards.length} shard(s)${RESET}\n`)
 
+    const mergeStart = Date.now()
     const { totalPass, totalFail, totalSkip } = renderResults(suites)
-    printSummary(totalPass, totalFail, totalSkip)
+    printSummary(totalPass, totalFail, totalSkip, Date.now() - mergeStart)
     process.exit(totalFail > 0 ? 1 : 0)
     return
   }
@@ -305,6 +317,7 @@ export async function runNode() {
 
   const shardLabel = shard ? ` ${DIM}[shard ${shard.index}/${shard.total}]${RESET}` : ''
   console.log(`\n${CYAN}${BOLD}ViewTest${RESET} ${DIM}node runner${RESET}${shardLabel}\n`)
+  const runStart = Date.now()
 
   // ── Build dep graph + cache lookup ─────────────────────────────────────────
   const graph = buildDepGraph(files)
@@ -312,21 +325,21 @@ export async function runNode() {
 
   const cacheHits: SerializableTestSuite[] = []
   const cacheMisses: string[] = []
-  let cachedCount = 0
+  let cachedTestCount = 0
 
   for (const file of files) {
     const key = computeCacheKey(file, graph)
     const entry = readCache(cacheDir, key)
     if (entry) {
       cacheHits.push(...entry.suites)
-      cachedCount++
+      cachedTestCount += entry.suites.reduce((sum, s) => sum + s.tests.length, 0)
     } else {
       cacheMisses.push(file)
     }
   }
 
-  const cacheInfo = cachedCount > 0
-    ? `  ${DIM}${cachedCount} cached, ${cacheMisses.length} to run${RESET}`
+  const cacheInfo = cachedTestCount > 0
+    ? `  ${DIM}${cacheHits.length} files cached (${cacheMisses.length} to run)${RESET}`
     : `  ${DIM}${files.length} file(s)${RESET}`
   console.log(cacheInfo)
 
@@ -376,7 +389,7 @@ export async function runNode() {
   }
 
   const { totalPass, totalFail, totalSkip } = renderResults(allSuites)
-  printSummary(totalPass, totalFail, totalSkip)
+  printSummary(totalPass, totalFail, totalSkip, Date.now() - runStart, cachedTestCount)
 
   // ── Write shard result file ────────────────────────────────────────────────
   if (shard) {

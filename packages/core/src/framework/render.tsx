@@ -18,23 +18,35 @@ async function getTL() {
 let _currentContainer: HTMLElement | null = null
 
 /**
- * render() is the key primitive — it does two things at once:
- *
- * 1. Captures a Snapshot (element + live DOM HTML) onto the current test so
- *    the UI can display it as a timeline frame in the preview panel.
- * 2. Returns @testing-library/react utilities so you can query and assert on it.
- *
- * Works in Node (with happy-dom) and in the browser.
+ * When set, all render() calls target this element instead of creating a new
+ * container in document.body. Used by the display frame to render into its
+ * dedicated display root.
  */
+let _renderTarget: HTMLElement | null = null
+export function setRenderTarget(el: HTMLElement | null) { _renderTarget = el }
+
+/**
+ * When true, render() throws a sentinel after the first render so that test
+ * interactions (fireEvent, assertions) don't execute in display mode — only
+ * the initial component render happens.
+ */
+let _stopAfterFirstRender = false
+export function setStopAfterFirstRender(v: boolean) { _stopAfterFirstRender = v }
+
+/** Sentinel thrown by render() in display mode to stop further test execution */
+const DISPLAY_STOP = '__vtDisplayStop'
+
 export async function render(element: ReactElement) {
   const wrapped = _wrapper ? createElement(_wrapper, null, element) : element
 
   const { render: tlRender } = await getTL()
 
-  // Create an isolated container so queries don't bleed into the ViewTest UI
-  // (which also lives in document.body when running in the browser).
-  const container = document.createElement('div')
-  document.body.appendChild(container)
+  const container: HTMLElement = _renderTarget ?? (() => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    return div
+  })()
+
   const result = tlRender(wrapped, { container, baseElement: container })
 
   if (currentTest) {
@@ -45,20 +57,14 @@ export async function render(element: ReactElement) {
     currentTest.snapshots.push({ label, element: wrapped, html: result.container.innerHTML, timestamp: Date.now() })
   }
 
+  if (_stopAfterFirstRender) {
+    const sentinel = Object.assign(new Error(DISPLAY_STOP), { [DISPLAY_STOP]: true })
+    throw sentinel
+  }
+
   return result
 }
 
-/**
- * snapshot(label?) — capture the current DOM state as a named timeline frame.
- * Call this after interactions to record intermediate UI states.
- *
- * @example
- * await render(<Counter />)
- * await fireEvent.click(getByText('+'))
- * await snapshot('after +1')
- * await fireEvent.click(getByText('+'))
- * await snapshot('after +2')
- */
 export async function snapshot(label?: string) {
   if (!currentTest || !_currentContainer) return
   const frameLabel = label ?? `step ${currentTest.snapshots.length}`
@@ -81,10 +87,6 @@ type AsyncFireEvent = {
     : never
 }
 
-/**
- * fireEvent and act are re-exported from @testing-library/react so tests
- * don't need a direct dependency on it.
- */
 async function _fireEvent(element: Element | Node | Document | Window, event: Event) {
   const { fireEvent: fe } = await getTL()
   return fe(element, event)
@@ -101,8 +103,10 @@ for (const method of eventMethods) {
     element: Element,
     eventProperties?: object
   ) => {
-    const { fireEvent: fe } = await getTL()
-    return (fe[method] as (el: Element, props?: object) => boolean)(element, eventProperties)
+    const { fireEvent: fe, act: tlAct } = await getTL()
+    await tlAct(async () => {
+      (fe[method] as (el: Element, props?: object) => boolean)(element, eventProperties)
+    })
   }
 }
 

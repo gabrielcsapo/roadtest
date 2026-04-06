@@ -40,6 +40,8 @@ export interface TestCase {
   consoleLogs: ConsoleEntry[]
   /** Coverage delta — statements hit specifically during this test */
   testCoverage: IstanbulCoverage | null
+  /** Wall-clock ms the test took to run */
+  duration?: number
   fn: () => void | Promise<void>
 }
 
@@ -50,6 +52,8 @@ export interface TestSuite {
   status: TestStatus
   /** Absolute path of the test file that registered this suite */
   sourceFile?: string
+  /** Wall-clock ms the suite took to run (all tests) */
+  duration?: number
 }
 
 // Istanbul coverage types (subset we actually use)
@@ -77,9 +81,16 @@ export interface IstanbulFileCoverage {
 
 export type IstanbulCoverage = Record<string, IstanbulFileCoverage>
 
+export interface RunProgress {
+  done: number
+  total: number
+  startedAt: number
+}
+
 export interface StoreState {
   suites: TestSuite[]
   running: boolean
   lastRunAt: Date | null
   coverage: IstanbulCoverage | null
+  runProgress: RunProgress | null
 }

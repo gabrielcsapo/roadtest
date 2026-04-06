@@ -1,9 +1,9 @@
-import type { StoreState, TestSuite, TestCase, IstanbulCoverage } from './types'
+import type { StoreState, TestSuite, TestCase, IstanbulCoverage, RunProgress } from './types'
 
 type Listener = (state: StoreState) => void
 
-class Store {
-  private state: StoreState = { suites: [], running: false, lastRunAt: null, coverage: null }
+export class Store {
+  private state: StoreState = { suites: [], running: false, lastRunAt: null, coverage: null, runProgress: null }
   private listeners: Set<Listener> = new Set()
 
   getState(): StoreState {
@@ -43,6 +43,11 @@ class Store {
       ...this.state,
       suites: this.state.suites.map(s => s.id !== suiteId ? s : { ...s, ...patch }),
     }
+    this.emit()
+  }
+
+  setRunProgress(runProgress: RunProgress | null) {
+    this.state = { ...this.state, runProgress }
     this.emit()
   }
 
@@ -104,11 +109,11 @@ class Store {
 }
 
 function resetSuite(s: TestSuite): TestSuite {
-  return { ...s, status: 'pending', tests: s.tests.map(resetTest) }
+  return { ...s, status: 'pending', duration: undefined, tests: s.tests.map(resetTest) }
 }
 
 function resetTest(t: TestCase): TestCase {
-  return { ...t, status: 'pending', error: undefined, snapshots: [], assertions: [], consoleLogs: [], testCoverage: null }
+  return { ...t, status: 'pending', error: undefined, snapshots: [], assertions: [], consoleLogs: [], testCoverage: null, duration: undefined }
 }
 
 export const store = new Store()
