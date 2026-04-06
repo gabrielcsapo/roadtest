@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import type { TestCase, Snapshot } from '../../framework/types'
 import { StatusIcon } from './StatusIcon'
 import { GridToggle, gridStyle } from './toolbar/GridToggle'
@@ -33,6 +33,7 @@ function Timeline({ snapshots, active, onSelect }: {
   active: number
   onSelect: (i: number) => void
 }) {
+  if (!snapshots.length) return null
   const t0 = snapshots[0].timestamp
   return (
     <div style={{ padding: '20px 24px 24px' }}>
@@ -115,24 +116,65 @@ function TabBar({ tabs, active, onChange }: {
   )
 }
 
+type Viewport = 'mobile' | 'tablet' | 'desktop'
+const VIEWPORT_WIDTHS: Record<Viewport, number | null> = { mobile: 375, tablet: 768, desktop: null }
+const VIEWPORT_TITLES: Record<Viewport, string> = { mobile: 'Mobile (375px)', tablet: 'Tablet (768px)', desktop: 'Desktop (full)' }
+
+function IconMobile() {
+  return (
+    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="0.5" width="10" height="13" rx="2" stroke="currentColor" strokeWidth="1.2" fill="none"/>
+      <circle cx="6" cy="11.5" r="0.8" fill="currentColor"/>
+    </svg>
+  )
+}
+
+function IconTablet() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="1.2" fill="none"/>
+      <circle cx="11.5" cy="7" r="0.8" fill="currentColor"/>
+    </svg>
+  )
+}
+
+function IconDesktop() {
+  return (
+    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="15" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.2" fill="none"/>
+      <path d="M5 13h6M8 11v2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+const VIEWPORT_ICONS: Record<Viewport, () => React.ReactElement> = {
+  mobile: IconMobile,
+  tablet: IconTablet,
+  desktop: IconDesktop,
+}
+
 export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const [grid, setGrid] = useState(false)
   const [outline, setOutline] = useState(false)
   const [measure, setMeasure] = useState(false)
   const [vision, setVision] = useState<VisionFilterType>('none')
+  const [viewport, setViewport] = useState<Viewport>('desktop')
   const [activeFrame, setActiveFrame] = useState(0)
   const [activeTab, setActiveTab] = useState<Tab>('assertions')
-  const [canvasPaneHeight, setCanvasPaneHeight] = useState(320)
+  const [axeViolationCount, setAxeViolationCount] = useState<number | undefined>(undefined)
+  const [canvasPaneHeight, setCanvasPaneHeight] = useState<number | null>(null)
   const canvasRef = useRef<HTMLDivElement>(null)
   const measureInfo = useMeasure(canvasRef, measure)
   const dragging = useRef(false)
   const dragStartY = useRef(0)
   const dragStartH = useRef(0)
 
+  const canvasPaneRef = useRef<HTMLDivElement>(null)
+
   const onDragStart = useCallback((e: React.MouseEvent) => {
     dragging.current = true
     dragStartY.current = e.clientY
-    dragStartH.current = canvasPaneHeight
+    dragStartH.current = canvasPaneHeight ?? canvasPaneRef.current?.offsetHeight ?? 300
     e.preventDefault()
   }, [canvasPaneHeight])
 
@@ -162,6 +204,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   if (test?.id !== prevTestId.current) {
     prevTestId.current = test?.id ?? null
     if (activeFrame !== 0) setActiveFrame(0)
+    if (activeTab === 'timeline') setActiveTab('assertions')
   }
 
   if (!test) {
@@ -184,7 +227,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const tabs: { id: Tab; label: string; count?: number }[] = [
     { id: 'assertions', label: 'Assertions', count: test.assertions.length },
     ...(snapshots.length > 1 ? [{ id: 'timeline' as Tab, label: 'Timeline', count: snapshots.length }] : []),
-    { id: 'accessibility', label: 'Accessibility' },
+    { id: 'accessibility', label: 'Accessibility', ...(axeViolationCount !== undefined ? { count: axeViolationCount } : {}) },
     { id: 'trace', label: 'Trace' },
     { id: 'code', label: 'Code' },
     ...(test.consoleLogs.length > 0 ? [{ id: 'console' as Tab, label: 'Console', count: test.consoleLogs.length }] : [{ id: 'console' as Tab, label: 'Console' }]),
@@ -205,25 +248,27 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
       </div>
 
       {/* Top pane — canvas */}
-      <div style={{ height: canvasPaneHeight, flexShrink: 0, overflow: 'auto', background: '#0f0f13' }}>
+      <div ref={canvasPaneRef} style={{ ...(canvasPaneHeight !== null ? { height: canvasPaneHeight, flexShrink: 0 } : { flex: 1 }), overflow: 'auto', background: '#0f0f13' }}>
 
         {/* Canvas with floating toolbar */}
         {hasSnapshots && (
           <div style={{
             position: 'relative',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: 40, borderBottom: '1px solid #2a2a36',
+            minHeight: '100%', padding: 24,
             ...gridStyle(grid),
-            flexShrink: 0,
           }}>
             <div
               ref={canvasRef}
               data-viewtest-canvas
               style={{
-                background: '#1a1a24', borderRadius: 12,
-                padding: 40, border: '1px solid #2a2a36',
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                minWidth: 200,
+                ...(VIEWPORT_WIDTHS[viewport] !== null ? {
+                  width: VIEWPORT_WIDTHS[viewport]!,
+                  overflow: 'hidden',
+                  outline: '1px solid rgba(99,102,241,0.4)',
+                  boxShadow: '0 0 0 4px rgba(99,102,241,0.06)',
+                } : {}),
                 cursor: measure ? 'crosshair' : 'default',
                 ...visionFilterStyle(vision),
               }}
@@ -245,6 +290,29 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
               padding: '6px 10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
             }}>
+              {/* Viewport presets */}
+              {(['mobile', 'tablet', 'desktop'] as Viewport[]).map(vp => {
+                const Icon = VIEWPORT_ICONS[vp]
+                const isActive = viewport === vp
+                return (
+                  <button
+                    key={vp}
+                    title={VIEWPORT_TITLES[vp]}
+                    onClick={() => setViewport(vp)}
+                    style={{
+                      width: 26, height: 26, borderRadius: 5, border: '1px solid',
+                      borderColor: isActive ? 'rgba(99,102,241,0.6)' : '#2a2a36',
+                      background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
+                      color: isActive ? '#a5b4fc' : '#4b4b60',
+                      cursor: 'pointer',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >
+                    <Icon />
+                  </button>
+                )
+              })}
+              <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
               <MeasureToggle value={measure} onChange={setMeasure} />
               <OutlineToggle value={outline} onChange={setOutline} />
               <GridToggle value={grid} onChange={setGrid} />
@@ -310,7 +378,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
             <Timeline snapshots={snapshots} active={safeFrame} onSelect={setActiveFrame} />
           )}
           {activeTab === 'accessibility' && (
-            <AxePanel containerRef={canvasRef} active={true} />
+            <AxePanel containerRef={canvasRef} active={true} onResults={setAxeViolationCount} />
           )}
           {activeTab === 'trace' && (
             <TraceTab containerRef={canvasRef} />

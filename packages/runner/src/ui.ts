@@ -3,7 +3,7 @@ import type { Plugin } from 'vite'
 import { viewtest } from '@viewtest/core/plugin'
 import istanbul from 'vite-plugin-istanbul'
 import { readFile, readdir, stat } from 'node:fs/promises'
-import { join, resolve } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 
 const SOURCE_EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.jsx'])
 const IGNORE_PATTERNS = ['.test.', '.spec.', '/node_modules/', '/__', '.d.ts']
@@ -44,6 +44,50 @@ function viewtestDevPlugin(): Plugin {
           res.setHeader('Content-Type', 'text/plain; charset=utf-8')
           res.end(content)
         } catch { res.writeHead(404); res.end('Not Found') }
+      })
+
+      // Module graph endpoint — returns source files + static import relationships
+      server.middlewares.use('/__viewtest_graph__', async (_req, res) => {
+        try {
+          const srcDir = resolve(root, 'src')
+          await stat(srcDir)
+          const allFiles = await collectSourceFiles(srcDir, root)
+          const fileSet = new Set(allFiles)
+
+          const nodes = allFiles.map(f => ({ id: f, shortPath: f.replace(root + '/', '') }))
+          const edges: { from: string; to: string }[] = []
+
+          const importRe = /(?:^|\n)\s*(?:import|export)(?:\s+type)?\s+(?:[^'"]*?\s+from\s+)?['"](\.\.?\/[^'"]+)['"]/g
+          for (const file of allFiles) {
+            try {
+              const content = await readFile(file, 'utf8')
+              const fileDir = dirname(file)
+              let m: RegExpExecArray | null
+              importRe.lastIndex = 0
+              while ((m = importRe.exec(content)) !== null) {
+                const spec = m[1]
+                const base = resolve(fileDir, spec)
+                let resolved: string | null = null
+                for (const ext of ['', '.ts', '.tsx', '.js', '.jsx']) {
+                  if (fileSet.has(base + ext)) { resolved = base + ext; break }
+                }
+                if (!resolved) {
+                  for (const idx of ['/index.ts', '/index.tsx', '/index.js', '/index.jsx']) {
+                    if (fileSet.has(base + idx)) { resolved = base + idx; break }
+                  }
+                }
+                // Edge direction: import (dependency) → importer (the file that uses it)
+                if (resolved) edges.push({ from: resolved, to: file })
+              }
+            } catch { /* skip unreadable */ }
+          }
+
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ nodes, edges }))
+        } catch {
+          res.setHeader('Content-Type', 'application/json')
+          res.end(JSON.stringify({ nodes: [], edges: [] }))
+        }
       })
 
       // File listing endpoint — returns all source files under src/

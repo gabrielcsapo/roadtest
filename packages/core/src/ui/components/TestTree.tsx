@@ -174,6 +174,20 @@ function ViewToggle({ view, onChange }: { view: AppView; onChange: (v: AppView) 
         </svg>,
         'Coverage explorer'
       )}
+      {btn('graph',
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="7" r="1.8" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="2" cy="2" r="1.2" stroke="currentColor" strokeWidth="1.1" />
+          <circle cx="12" cy="2" r="1.2" stroke="currentColor" strokeWidth="1.1" />
+          <circle cx="2" cy="12" r="1.2" stroke="currentColor" strokeWidth="1.1" />
+          <circle cx="12" cy="12" r="1.2" stroke="currentColor" strokeWidth="1.1" />
+          <line x1="3.2" y1="2.8" x2="5.5" y2="5.8" stroke="currentColor" strokeWidth="1" />
+          <line x1="10.8" y1="2.8" x2="8.5" y2="5.8" stroke="currentColor" strokeWidth="1" />
+          <line x1="3.2" y1="11.2" x2="5.5" y2="8.2" stroke="currentColor" strokeWidth="1" />
+          <line x1="10.8" y1="11.2" x2="8.5" y2="8.2" stroke="currentColor" strokeWidth="1" />
+        </svg>,
+        'Graph view'
+      )}
     </div>
   )
 }
@@ -195,6 +209,7 @@ export function TestTree({ state, selected, search, view, onSelect, onSearchChan
   const allTests = state.suites.flatMap(s => s.tests)
   const pass = allTests.filter(t => t.status === 'pass').length
   const fail = allTests.filter(t => t.status === 'fail').length
+  const pending = allTests.filter(t => t.status === 'pending').length
   const total = allTests.filter(t => t.status !== 'skipped').length
 
   return (
@@ -210,24 +225,38 @@ export function TestTree({ state, selected, search, view, onSelect, onSearchChan
             <button
               onClick={onRunAll}
               disabled={state.running}
+              title="Run all"
               style={{
-                padding: '4px 12px', borderRadius: 6, border: 'none',
+                width: 28, height: 28, borderRadius: 6, border: 'none',
                 background: state.running ? '#1e1e2e' : '#6366f1',
                 color: state.running ? '#6b7280' : '#fff',
-                fontSize: 12, fontWeight: 600, cursor: state.running ? 'not-allowed' : 'pointer',
+                cursor: state.running ? 'not-allowed' : 'pointer',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0,
               }}
             >
-              {state.running ? 'Running…' : 'Run all'}
+              {state.running ? (
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5" strokeDasharray="8 4" strokeLinecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0 6 6" to="360 6 6" dur="0.8s" repeatCount="indefinite"/>
+                  </circle>
+                </svg>
+              ) : (
+                <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1.5L9 6L1 10.5V1.5Z" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/>
+                </svg>
+              )}
             </button>
           </div>
         </div>
 
         {/* Stats + last-run timestamp */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 11, marginBottom: 10 }}>
-          {total > 0 ? (
+          {state.lastRunAt || state.running ? (
             <div style={{ display: 'flex', gap: 10 }}>
               <span style={{ color: '#22c55e' }}>✓ {pass}</span>
               {fail > 0 && <span style={{ color: '#ef4444' }}>✗ {fail}</span>}
+              {pending > 0 && <span style={{ color: '#6b7280' }}>○ {pending}</span>}
               <span style={{ color: '#4b4b60' }}>{total} total</span>
             </div>
           ) : <span />}
@@ -285,7 +314,7 @@ export function TestTree({ state, selected, search, view, onSelect, onSearchChan
         {filteredSuites.length > 0 && !state.running && !state.lastRunAt && (
           <div style={{ padding: '12px 16px', margin: '8px 10px', borderRadius: 8, background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', fontSize: 11, color: '#6b7280', lineHeight: 1.5 }}>
             <span style={{ color: '#a5b4fc', fontWeight: 600 }}>{allTests.length} tests ready</span>
-            {' — '}click <span style={{ color: '#818cf8' }}>Run all</span> or ▶ on a suite.<br />
+            {' — '}click ▶ to run all or ▶ on a suite.<br />
             Tests re-run automatically on save.
           </div>
         )}

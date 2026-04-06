@@ -174,9 +174,11 @@ export function CodeTab({ suiteName, coverage, testCoverage, suites, onSelectTes
 
   useEffect(() => {
     if (!coverage) return
-    const match = findFileForSuite(suiteName, coverage)
+    // Prefer a file from this test's own coverage; fall back to suite name heuristic
+    const pool = testCoverage ?? coverage
+    const match = findFileForSuite(suiteName, pool) ?? (testCoverage ? Object.keys(testCoverage).find(p => !p.includes('.test.') && !p.includes('.spec.')) ?? null : null)
     setSelectedPath(match)
-  }, [suiteName, coverage])
+  }, [suiteName, coverage, testCoverage])
 
   useEffect(() => {
     if (!selectedPath) return
@@ -200,9 +202,12 @@ export function CodeTab({ suiteName, coverage, testCoverage, suites, onSelectTes
     )
   }
 
-  const sortedFiles = Object.keys(coverage)
-    .filter(p => !p.includes('.test.') && !p.includes('.spec.'))
-    .sort((a, b) => coveragePct(coverage[a]) - coveragePct(coverage[b]))
+  // When per-test coverage is available, only show files the test actually touched
+  const filePool = testCoverage
+    ? Object.keys(testCoverage).filter(p => !p.includes('.test.') && !p.includes('.spec.'))
+    : Object.keys(coverage).filter(p => !p.includes('.test.') && !p.includes('.spec.'))
+
+  const sortedFiles = filePool.sort((a, b) => coveragePct(coverage[a] ?? coverage[b]) - coveragePct(coverage[b] ?? coverage[a]))
 
   if (sortedFiles.length === 0) {
     return (

@@ -5,8 +5,9 @@ import { TestTree } from './components/TestTree'
 import { Preview } from './components/Preview'
 import { Gallery } from './components/Gallery'
 import { CoverageExplorer } from './components/CoverageExplorer'
+import { GraphView } from './components/GraphView'
 
-export type AppView = 'detail' | 'gallery' | 'coverage'
+export type AppView = 'detail' | 'gallery' | 'coverage' | 'graph'
 
 export function App() {
   const [state, setState] = useState<StoreState>(store.getState())
@@ -41,9 +42,9 @@ export function App() {
           onSelect={handleSelect}
           onSearchChange={setSearch}
           onViewChange={setView}
-          onRunAll={runAll}
-          onRunSuite={runSuite}
-          onRunTest={runTest}
+          onRunAll={() => { setSelected(null); runAll() }}
+          onRunSuite={id => { setSelected(null); runSuite(id) }}
+          onRunTest={(sid, tid) => { setSelected(null); runTest(sid, tid) }}
         />
       </div>
       <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
@@ -56,6 +57,15 @@ export function App() {
               onSelectTest={(suiteId, testId) => {
                 const test = state.suites.flatMap(s => s.tests).find(t => t.suiteId === suiteId && t.id === testId)
                 if (test) { setSelected(test); setView('detail') }
+              }}
+            />
+          : view === 'graph'
+          ? <GraphView
+              suites={state.suites}
+              coverage={state.coverage}
+              onSelectSuite={suiteId => {
+                const suite = state.suites.find(s => s.id === suiteId)
+                if (suite?.tests[0]) { setSelected(suite.tests[0]); setView('detail') }
               }}
             />
           : <Preview
