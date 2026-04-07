@@ -23,6 +23,7 @@ export function Card({ title, description, actionLabel, onAction, variant = 'def
         maxWidth: 320,
       }}
     >
+      hu
       <h3 data-testid="card-title" style={{ color: '#e2e2e8', fontSize: 16, fontWeight: 700, margin: 0 }}>
         {title}
       </h3>

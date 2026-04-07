@@ -1,2 +1,4 @@
 dist
 node_modules
+apps/example/.viewtest/cache
+apps/scale/.viewtest/cache

@@ -578,8 +578,18 @@ export async function runNode() {
     allSuites.push(...fromCache, ...fromFresh)
   }
 
-  const { totalPass, totalFail, totalSkip } = renderResults(allSuites, verboseFlag)
-  printSummary(totalPass, totalFail, totalSkip, Date.now() - runStart, cachedTestCount)
+  // When only some files were re-run, only show those results — the rest haven't changed.
+  // Summary totals still include everything.
+  const partialRun = cacheMisses.length > 0 && cacheHits.length > 0
+  const { totalPass, totalFail, totalSkip } = renderResults(partialRun ? freshSuites : allSuites, verboseFlag)
+
+  let summaryPass = totalPass, summaryFail = totalFail, summarySkip = totalSkip
+  if (partialRun) {
+    summaryPass += cacheHits.reduce((n, s) => n + s.tests.filter(t => t.status === 'pass').length, 0)
+    summaryFail += cacheHits.reduce((n, s) => n + s.tests.filter(t => t.status === 'fail').length, 0)
+    summarySkip += cacheHits.reduce((n, s) => n + s.tests.filter(t => t.status === 'skipped').length, 0)
+  }
+  printSummary(summaryPass, summaryFail, summarySkip, Date.now() - runStart, cachedTestCount)
 
   // ── Coverage report ────────────────────────────────────────────────────────
   if (coverageFlag) {
