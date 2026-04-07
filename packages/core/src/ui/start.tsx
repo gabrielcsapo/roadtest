@@ -5,6 +5,8 @@ import { setWrapper, setRenderTarget, setStopAfterFirstRender } from '../framewo
 import { setCurrentSourceFile } from '../framework/dsl'
 import { store } from '../framework/store'
 import { runAll, runSuite, runTest } from '../framework/runner'
+import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from '../framework/hooks'
+import type { TestSuite } from '../framework/types'
 
 interface StartOptions {
   wrapper?: ComponentType<{ children: React.ReactNode }>
@@ -13,7 +15,7 @@ interface StartOptions {
 async function loadTestFiles(testFiles: Record<string, () => Promise<unknown>>) {
   for (const [path, loader] of Object.entries(testFiles)) {
     setCurrentSourceFile(path)
-    try { await loader() } catch (e) { console.error(`[viewtest] Failed to load ${path}:`, e) }
+    try { await loader() } catch (e) { console.error(`[fieldtest] Failed to load ${path}:`, e) }
   }
   setCurrentSourceFile(null)
 }
@@ -22,7 +24,7 @@ export async function reloadFile(path: string, loader: () => Promise<unknown>) {
   if (window.name !== '__vt_sandbox') return
   store.removeSuitesForFile(path)
   setCurrentSourceFile(path)
-  try { await loader() } catch (e) { console.error(`[viewtest] Failed to reload ${path}:`, e) }
+  try { await loader() } catch (e) { console.error(`[fieldtest] Failed to reload ${path}:`, e) }
   setCurrentSourceFile(null)
   const fresh = store.getState().suites.filter(s => s.sourceFile === path)
   for (const suite of fresh) runSuite(suite.id)
@@ -36,9 +38,17 @@ export async function startApp(
   if (window.name === '__vt_sandbox') {
     if (options?.wrapper) setWrapper(options.wrapper)
     await loadTestFiles(testFiles)
-    ;(window as unknown as Record<string, unknown>)['__viewtest'] = {
+    ;(window as unknown as Record<string, unknown>)['__fieldtest'] = {
       store, runAll, runSuite, runTest,
     }
+    // Receive results from node tests run server-side
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(import.meta as any).hot?.on('vt:node-results', ({ suites }: { suites: TestSuite[] }) => {
+      for (const suite of suites) {
+        if (suite.sourceFile) store.removeSuitesForFile(suite.sourceFile)
+        store.addSuite(suite)
+      }
+    })
     window.parent?.postMessage({ type: '__vt_ready' }, '*')
     return
   }
@@ -59,7 +69,7 @@ export async function startApp(
     displayRoot.id = '__vt_display_root__'
     document.body.appendChild(displayRoot)
 
-    async function showTest(suiteName: string, testName: string): Promise<boolean> {
+    async function showTest(suiteName: string, testName: string, fallbackHtml?: string): Promise<boolean> {
       const { cleanup } = await import('@testing-library/react')
       cleanup()
       // Replace displayRoot's contents with a fresh element each time.
@@ -74,18 +84,36 @@ export async function startApp(
         .find(s => s.name === suiteName)?.tests.find(t => t.name === testName)
       if (!test) return false
 
+      // Run before-display hooks first — these block until complete so any setup
+      // (fetch mocking, data seeding, context providers, etc.) is in place before
+      // the component renders.
+      await runBeforeDisplayHooks()
+
+      // If the UI frame provided snapshot HTML from a previous sandbox run, use it
+      // directly. Live render in the display frame will fail for tests that use
+      // worker.use() — the MSW service worker has no handlers registered here and
+      // unmatched requests get Vite's SPA fallback (index.html) instead of JSON.
+      if (fallbackHtml) {
+        container.innerHTML = fallbackHtml
+        await runAfterDisplayHooks()
+        return true
+      }
+
+      // No snapshot yet — attempt a live render (works for tests that don't use MSW).
       setRenderTarget(container)
       setStopAfterFirstRender(true)
       try {
-        await test.fn()
+        await test.fn?.()
       } catch (e: unknown) {
         // Swallow the display-stop sentinel and any assertion errors
         if (!(e instanceof Error) || !('__vtDisplayStop' in e)) {
-          console.debug('[viewtest display]', e)
+          console.debug('[fieldtest display]', e)
         }
       } finally {
         setRenderTarget(null)
         setStopAfterFirstRender(false)
+        await runAfterTestHooks()
+        await runAfterDisplayHooks()
       }
 
       return container.innerHTML !== ''

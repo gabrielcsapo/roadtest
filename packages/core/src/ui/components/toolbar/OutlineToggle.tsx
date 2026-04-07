@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const STYLE_ID = 'viewtest-outline-style'
+const STYLE_ID = 'fieldtest-outline-style'
 
 export function OutlineToggle({ value, onChange, targetDocument }: {
   value: boolean

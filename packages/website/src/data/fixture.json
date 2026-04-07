@@ -1,0 +1,1309 @@
+[
+  {
+    "id": "mnnzqrpt-1",
+    "name": "countPending()",
+    "tests": [
+      {
+        "id": "mnnzqrpt-2",
+        "name": "counts only non-done tasks",
+        "suiteId": "mnnzqrpt-1",
+        "suiteName": "countPending()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(2)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-3",
+        "name": "returns 0 when all done",
+        "suiteId": "mnnzqrpt-1",
+        "suiteName": "countPending()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(0)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-4",
+        "name": "returns full count when none done",
+        "suiteId": "mnnzqrpt-1",
+        "suiteName": "countPending()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(3)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/logic.test.ts"
+  },
+  {
+    "id": "mnnzqrpt-5",
+    "name": "filterByKeyword()",
+    "tests": [
+      {
+        "id": "mnnzqrpt-6",
+        "name": "matches by title",
+        "suiteId": "mnnzqrpt-5",
+        "suiteName": "filterByKeyword()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(1)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-7",
+        "name": "matches by description",
+        "suiteId": "mnnzqrpt-5",
+        "suiteName": "filterByKeyword()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(1)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-8",
+        "name": "is case-insensitive",
+        "suiteId": "mnnzqrpt-5",
+        "suiteName": "filterByKeyword()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(1)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-9",
+        "name": "returns empty when no match",
+        "suiteId": "mnnzqrpt-5",
+        "suiteName": "filterByKeyword()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(0)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/logic.test.ts"
+  },
+  {
+    "id": "mnnzqrpt-a",
+    "name": "sortByTitle()",
+    "tests": [
+      {
+        "id": "mnnzqrpt-b",
+        "name": "sorts tasks alphabetically",
+        "suiteId": "mnnzqrpt-a",
+        "suiteName": "sortByTitle()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Deploy\")",
+            "status": "pass"
+          },
+          {
+            "label": "expect(…).toBe(\"Review PR\")",
+            "status": "pass"
+          },
+          {
+            "label": "expect(…).toBe(\"Write tests\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrpt-c",
+        "name": "does not mutate the original array",
+        "suiteId": "mnnzqrpt-a",
+        "suiteName": "sortByTitle()",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Write tests\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/logic.test.ts"
+  },
+  {
+    "id": "mnnzqrxb-d",
+    "name": "getGreeting() — mocked",
+    "tests": [
+      {
+        "id": "mnnzqrxb-e",
+        "name": "returns the mocked greeting",
+        "suiteId": "mnnzqrxb-d",
+        "suiteName": "getGreeting() — mocked",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Good morning, Alice!\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrxb-f",
+        "name": "passes the name through the mock",
+        "suiteId": "mnnzqrxb-d",
+        "suiteName": "getGreeting() — mocked",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Good morning, Bob!\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.test.ts"
+  },
+  {
+    "id": "mnnzqrxg-g",
+    "name": "calculateTotal() with mocked discount strategies",
+    "tests": [
+      {
+        "id": "mnnzqrxg-h",
+        "name": "calls bulkDiscount once per line item and sums the results",
+        "suiteId": "mnnzqrxg-g",
+        "suiteName": "calculateTotal() with mocked discount strategies",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(35)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrxg-i",
+        "name": "calls memberDiscount once per line item and sums the results",
+        "suiteId": "mnnzqrxg-g",
+        "suiteName": "calculateTotal() with mocked discount strategies",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(49)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqrxg-j",
+        "name": "passes price and qty as separate args — not the whole item object",
+        "suiteId": "mnnzqrxg-g",
+        "suiteName": "calculateTotal() with mocked discount strategies",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(true)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/discounts.test.ts"
+  },
+  {
+    "id": "mnnzqs17-k",
+    "name": "UserProfile",
+    "tests": [
+      {
+        "id": "mnnzqs17-l",
+        "name": "renders an admin user",
+        "suiteId": "mnnzqs17-k",
+        "suiteName": "UserProfile",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361950,
+            "html": "<div style=\"padding: 20px; color: #6b7280; font-size: 14px;\">Loading…</div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs17-m",
+        "name": "renders an editor user",
+        "suiteId": "mnnzqs17-k",
+        "suiteName": "UserProfile",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361964,
+            "html": "<div style=\"padding: 20px; color: #6b7280; font-size: 14px;\">Loading…</div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs17-n",
+        "name": "renders a viewer user",
+        "suiteId": "mnnzqs17-k",
+        "suiteName": "UserProfile",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361969,
+            "html": "<div style=\"padding: 20px; color: #6b7280; font-size: 14px;\">Loading…</div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs17-o",
+        "name": "shows error state on 404",
+        "suiteId": "mnnzqs17-k",
+        "suiteName": "UserProfile",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361973,
+            "html": "<div style=\"padding: 20px; color: #6b7280; font-size: 14px;\">Loading…</div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs17-p",
+        "name": "shows error state on 500",
+        "suiteId": "mnnzqs17-k",
+        "suiteName": "UserProfile",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361976,
+            "html": "<div style=\"padding: 20px; color: #6b7280; font-size: 14px;\">Loading…</div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/UserProfile.test.tsx"
+  },
+  {
+    "id": "mnnzqs1c-q",
+    "name": "TaskBoard",
+    "tests": [
+      {
+        "id": "mnnzqs1c-r",
+        "name": "renders pending tasks",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          },
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361982,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">2</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div></div><div data-testid=\"done-section\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #6b7280; font-size: 13px;\">Completed (1)</span><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Clear</button></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Deploy</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Push to production.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361979
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361980
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361981
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361981
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-s",
+        "name": "shows pending count badge",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"2\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361986,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">2</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div></div><div data-testid=\"done-section\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #6b7280; font-size: 13px;\">Completed (1)</span><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Clear</button></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Deploy</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Push to production.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361983
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361984
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361985
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361985
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-t",
+        "name": "shows completed task count in done section",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361988,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">2</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div></div><div data-testid=\"done-section\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #6b7280; font-size: 13px;\">Completed (1)</span><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Clear</button></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Deploy</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Push to production.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361986
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361987
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361988
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361988
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-u",
+        "name": "shows empty state when no pending tasks",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361992,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">0</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><p data-testid=\"empty-pending\" style=\"color: #6b7280; font-size: 13px;\">All caught up!</p></div><div data-testid=\"done-section\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #6b7280; font-size: 13px;\">Completed (3)</span><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Clear</button></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Deploy</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Push to production.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361989
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361990
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361990
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361991
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-v",
+        "name": "completing a task moves it to done section",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528361995,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">2</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361992
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361993
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361999
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361999
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528361999
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-w",
+        "name": "clearing done tasks removes the done section",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeFalsy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362003,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">2</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Write tests</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Cover all edge cases.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Review PR</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Leave constructive feedback.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Complete</button></div></div></div><div data-testid=\"done-section\" style=\"display: flex; flex-direction: column; gap: 12px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #6b7280; font-size: 13px;\">Completed (1)</span><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Clear</button></div><div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Deploy</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Push to production.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Remove</button></div></div></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362001
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362002
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362002
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362002
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362005
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362005
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1c-x",
+        "name": "empty board shows no pending tasks message",
+        "suiteId": "mnnzqs1c-q",
+        "suiteName": "TaskBoard",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"All caught up!\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362006,
+            "html": "<div data-testid=\"task-board\" style=\"display: flex; flex-direction: column; gap: 24px; max-width: 400px; padding: 24px;\"><div style=\"display: flex; align-items: center; justify-content: space-between;\"><span style=\"color: #e2e2e8; font-weight: 700; font-size: 18px;\">Tasks</span><span data-testid=\"pending-count\" style=\"background: #6366f1; color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; font-weight: 700;\">0</span></div><div data-testid=\"pending-tasks\" style=\"display: flex; flex-direction: column; gap: 12px;\"><p data-testid=\"empty-pending\" style=\"color: #6b7280; font-size: 13px;\">All caught up!</p></div></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/TaskBoard.test.tsx"
+  },
+  {
+    "id": "mnnzqs1f-y",
+    "name": "DisableOnClickButton",
+    "tests": [
+      {
+        "id": "mnnzqs1f-z",
+        "name": "disables itself after click",
+        "suiteId": "mnnzqs1f-y",
+        "suiteName": "DisableOnClickButton",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(true)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362006,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s;\">Submit</button>"
+          },
+          {
+            "label": "before click",
+            "timestamp": 1775528362006,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s;\">Submit</button>"
+          },
+          {
+            "label": "after click",
+            "timestamp": 1775528362007,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #6b7280; font-size: 14px; font-weight: 600; cursor: not-allowed; transition: background 0.15s, color 0.15s;\" disabled=\"\">Disabled</button>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/DisableOnClickButton.test.tsx"
+  },
+  {
+    "id": "mnnzqs1i-10",
+    "name": "Counter",
+    "tests": [
+      {
+        "id": "mnnzqs1i-11",
+        "name": "starts at zero",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"0\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362008,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">0</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1i-12",
+        "name": "starts at a custom initial value",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"10\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362009,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">10</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1i-13",
+        "name": "increments on + click",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"1\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362010,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">0</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1i-14",
+        "name": "decrements on − click",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"4\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362011,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">5</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1i-15",
+        "name": "respects custom step",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362011,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">0</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1i-16",
+        "name": "increment timeline",
+        "suiteId": "mnnzqs1i-10",
+        "suiteName": "Counter",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362012,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">0</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          },
+          {
+            "label": "start",
+            "timestamp": 1775528362012,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">0</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          },
+          {
+            "label": "+1",
+            "timestamp": 1775528362012,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">1</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          },
+          {
+            "label": "+2",
+            "timestamp": 1775528362012,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">2</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          },
+          {
+            "label": "+3",
+            "timestamp": 1775528362013,
+            "html": "<div style=\"display: flex; align-items: center; gap: 12px; font-family: sans-serif;\"><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"decrement\">−</button><span data-testid=\"count\" style=\"font-size: 28px; font-weight: 700; min-width: 48px; text-align: center; color: #e2e2e8;\">3</span><button style=\"width: 36px; height: 36px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 20px; font-weight: 700; cursor: pointer;\" aria-label=\"increment\">+</button></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/Counter.test.tsx"
+  },
+  {
+    "id": "mnnzqs1k-17",
+    "name": "Card",
+    "tests": [
+      {
+        "id": "mnnzqs1k-18",
+        "name": "renders title and description",
+        "suiteId": "mnnzqs1k-17",
+        "suiteName": "Card",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Hello\")",
+            "status": "pass"
+          },
+          {
+            "label": "expect(…).toBe(\"World\")",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362013,
+            "html": "<div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Hello</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">World</p></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1k-19",
+        "name": "renders action button and fires callback",
+        "suiteId": "mnnzqs1k-17",
+        "suiteName": "Card",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(true)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362014,
+            "html": "<div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Delete item</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">This cannot be undone.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Confirm</button></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362013
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362015
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1k-1a",
+        "name": "shows danger variant styles",
+        "suiteId": "mnnzqs1k-17",
+        "suiteName": "Card",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362016,
+            "html": "<div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Warning</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">Danger ahead.</p><div><button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Delete</button></div></div>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362016
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1k-1b",
+        "name": "renders without an action button",
+        "suiteId": "mnnzqs1k-17",
+        "suiteName": "Card",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(true)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362017,
+            "html": "<div data-testid=\"card\" style=\"background: #1a1a24; border: 1px solid #2a2a36; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 320px;\">hu<h3 data-testid=\"card-title\" style=\"color: #e2e2e8; font-size: 16px; font-weight: 700; margin: 0px;\">Info</h3><p data-testid=\"card-description\" style=\"color: #6b7280; font-size: 13px; margin: 0px; line-height: 1.5;\">No action needed.</p></div>"
+          }
+        ],
+        "consoleLogs": [],
+        "testCoverage": null
+      }
+    ],
+    "status": "pass",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/Card.test.tsx"
+  },
+  {
+    "id": "mnnzqs1m-1c",
+    "name": "Button",
+    "tests": [
+      {
+        "id": "mnnzqs1m-1d",
+        "name": "renders the label",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362018,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Click me</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362017
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1e",
+        "name": "primary variant (default)",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362018,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Primary</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362018
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1f",
+        "name": "secondary variant",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362019,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Secondary</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362018
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1g",
+        "name": "danger variant",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362019,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Delete</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362019
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1h",
+        "name": "disabled state",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBeTruthy()",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362019,
+            "html": "<button disabled=\"\" style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #6b7280; font-size: 14px; font-weight: 600; cursor: not-allowed; transition: background 0.1s; letter-spacing: 0.01em;\">Can't touch this</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362019
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1i",
+        "name": "fires onClick when clicked",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(true)",
+            "status": "pass"
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362020,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Click me</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362020
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362021
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1j",
+        "name": "wrong label",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "fail",
+        "error": "Expected \"Save\" but received \"Submit\"",
+        "assertions": [
+          {
+            "label": "expect(…).toBe(\"Save\")",
+            "status": "fail",
+            "error": "Expected \"Save\" but received \"Submit\""
+          }
+        ],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362021,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Submit</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362021
+          }
+        ],
+        "testCoverage": null
+      },
+      {
+        "id": "mnnzqs1m-1k",
+        "name": "all variants",
+        "suiteId": "mnnzqs1m-1c",
+        "suiteName": "Button",
+        "status": "pass",
+        "assertions": [],
+        "snapshots": [
+          {
+            "label": "initial",
+            "timestamp": 1775528362022,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #6366f1; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Primary</button>"
+          },
+          {
+            "label": "render 2",
+            "timestamp": 1775528362022,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Secondary</button>"
+          },
+          {
+            "label": "render 3",
+            "timestamp": 1775528362022,
+            "html": "<button style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #ef4444; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.1s; letter-spacing: 0.01em;\">Danger</button>"
+          },
+          {
+            "label": "render 4",
+            "timestamp": 1775528362023,
+            "html": "<button disabled=\"\" style=\"padding: 8px 20px; border-radius: 8px; border: none none; background: #374151; color: #6b7280; font-size: 14px; font-weight: 600; cursor: not-allowed; transition: background 0.1s; letter-spacing: 0.01em;\">Disabled</button>"
+          }
+        ],
+        "consoleLogs": [
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362022
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362022
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362022
+          },
+          {
+            "level": "log",
+            "args": [
+              "hi i am a button"
+            ],
+            "timestamp": 1775528362022
+          }
+        ],
+        "testCoverage": null
+      }
+    ],
+    "status": "fail",
+    "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/example/src/Button.test.tsx"
+  }
+]

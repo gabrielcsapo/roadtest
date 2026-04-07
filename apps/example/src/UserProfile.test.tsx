@@ -1,6 +1,6 @@
-import { describe, it, render } from '@viewtest/core'
+import { act, describe, it, render } from '@fieldtest/core'
 import { http, HttpResponse } from 'msw'
-import { worker } from '../.viewtest/setup'
+import { worker } from '../.fieldtest/setup'
 import { UserProfile } from './UserProfile'
 import type { User } from './UserProfile'
 
@@ -29,8 +29,10 @@ describe('UserProfile', () => {
     worker.use(
       http.get('/api/users/3', () => HttpResponse.json(EVE))
     )
-    const { findByText } = await render(<UserProfile userId={3} />)
+    const { findByText, container } = await render(<UserProfile userId={3} />) 
+    
     await findByText('Eve Sharma')
+    console.log(container)
   })
 
   it('shows error state on 404', async () => {

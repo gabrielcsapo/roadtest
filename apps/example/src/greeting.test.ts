@@ -2,10 +2,10 @@
  * Demonstrates ViewTest's module mocking via mock().
  *
  * The Vite plugin transforms the static `import { getGreeting }` below into
- * an `await __vtImport(...)` call, so the mock factory registered above it
+ * an `await __ftImport(...)` call, so the mock factory registered above it
  * takes effect before the import is resolved.
  */
-import { describe, it, expect, mock } from '@viewtest/core'
+import { describe, it, expect, mock } from '@fieldtest/core'
 import { getGreeting } from './greeting'
 
 // ── Mock './greeting' so the time-of-day logic is predictable ────────────────

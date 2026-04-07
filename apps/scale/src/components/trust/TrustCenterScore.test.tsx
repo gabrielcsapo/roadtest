@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, snapshot } from '@fieldtest/core'
 import { TrustCenterScore } from './TrustCenterScore'
 import { Control, User, ComplianceStatus, Framework } from '../../types'
 

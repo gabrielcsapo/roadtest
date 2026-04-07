@@ -86,11 +86,97 @@ function RunProgressToast({ progress }: { progress: RunProgress }) {
   )
 }
 
+function SuiteOverview({ suite, running, onSelectTest, onRunSuite, onRunTest }: {
+  suite: import('../framework/types').TestSuite | null
+  running: boolean
+  onSelectTest: (test: TestCase) => void
+  onRunSuite: (suiteId: string) => void
+  onRunTest: (suiteId: string, testId: string) => void
+}) {
+  if (!suite) return (
+    <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60' }}>
+      Suite not found
+    </div>
+  )
+  const pass = suite.tests.filter(t => t.status === 'pass').length
+  const fail = suite.tests.filter(t => t.status === 'fail').length
+  const pending = suite.tests.filter(t => t.status === 'pending').length
+  const fileName = suite.sourceFile ? suite.sourceFile.split('/').pop() : null
+
+  return (
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', background: '#0f0f13' }}>
+      {/* Header */}
+      <div style={{ padding: '14px 20px', borderBottom: '1px solid #2a2a36', background: '#16161d', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#c4c4d4', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{suite.name}</div>
+          {fileName && <div style={{ fontSize: 11, color: '#4b4b60', fontFamily: 'monospace', marginTop: 2 }}>{fileName}</div>}
+        </div>
+        <div style={{ display: 'flex', gap: 12, fontSize: 11, flexShrink: 0 }}>
+          {pass > 0 && <span style={{ color: '#22c55e' }}>✓ {pass}</span>}
+          {fail > 0 && <span style={{ color: '#ef4444' }}>✗ {fail}</span>}
+          {pending > 0 && <span style={{ color: '#6b7280' }}>○ {pending}</span>}
+        </div>
+        <button
+          onClick={() => onRunSuite(suite.id)}
+          disabled={running}
+          title="Run suite"
+          style={{
+            width: 28, height: 28, borderRadius: 6, border: 'none', flexShrink: 0,
+            background: running ? '#1e1e2e' : '#6366f1',
+            color: running ? '#6b7280' : '#fff',
+            cursor: running ? 'not-allowed' : 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          {running
+            ? <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5" strokeDasharray="8 4" strokeLinecap="round"><animateTransform attributeName="transform" type="rotate" from="0 6 6" to="360 6 6" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+            : <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1.5L9 6L1 10.5V1.5Z" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"/></svg>
+          }
+        </button>
+      </div>
+
+      {/* Test list */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '8px 0' }}>
+        {suite.tests.map(test => {
+          const statusColor = test.status === 'pass' ? '#22c55e' : test.status === 'fail' ? '#ef4444' : '#6b7280'
+          const statusIcon = test.status === 'pass' ? '✓' : test.status === 'fail' ? '✗' : '○'
+          return (
+            <div
+              key={test.id}
+              style={{ display: 'flex', alignItems: 'center', padding: '0 16px', height: 36, gap: 10, cursor: 'pointer' }}
+              onClick={() => onSelectTest(test)}
+            >
+              <span style={{ color: statusColor, fontSize: 12, fontWeight: 700, width: 14, flexShrink: 0 }}>{statusIcon}</span>
+              <span style={{ flex: 1, fontSize: 13, color: '#9898a8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{test.name}</span>
+              {test.duration !== undefined && test.status !== 'pending' && (
+                <span style={{ fontSize: 10, color: '#3a3a4e', fontFamily: 'monospace', flexShrink: 0 }}>
+                  {test.duration < 1000 ? `${test.duration}ms` : `${(test.duration / 1000).toFixed(2)}s`}
+                </span>
+              )}
+              <button
+                onClick={e => { e.stopPropagation(); onRunTest(suite.id, test.id) }}
+                disabled={running}
+                title="Run"
+                style={{
+                  width: 18, height: 18, borderRadius: 4, border: 'none', flexShrink: 0,
+                  background: 'transparent', color: '#4b4b60', fontSize: 9,
+                  cursor: running ? 'default' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}
+              >▶</button>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 export function App() {
   const sandboxRef = useRef<HTMLIFrameElement>(null)
   const apiRef = useRef<SandboxApi | null>(null)
   const [state, setState] = useState<StoreState>(EMPTY_STATE)
   const [selected, setSelected] = useState<TestCase | null>(null)
+  const [selectedSuiteId, setSelectedSuiteId] = useState<string | null>(null)
   const [view, setView] = useState<AppView>('detail')
   const [search, setSearch] = useState('')
   const [sandboxReady, setSandboxReady] = useState(false)
@@ -101,7 +187,7 @@ export function App() {
     const onMessage = (e: MessageEvent) => {
       if (e.data?.type !== '__vt_ready') return
       const win = sandboxRef.current?.contentWindow as Record<string, unknown> | null | undefined
-      const api = win?.['__viewtest'] as SandboxApi | undefined
+      const api = win?.['__fieldtest'] as SandboxApi | undefined
       if (!api) return
       apiRef.current = api
       setState(api.store.getState())
@@ -123,20 +209,33 @@ export function App() {
 
   const handleSelect = useCallback((test: TestCase) => {
     setSelected(test)
+    setSelectedSuiteId(null)
+    setView('detail')
+  }, [])
+
+  const handleSelectSuite = useCallback((suiteId: string) => {
+    setSelectedSuiteId(suiteId)
+    setSelected(null)
     setView('detail')
   }, [])
 
   const handlePlayTest = useCallback((test: TestCase) => {
     setSelected(test)
+    setSelectedSuiteId(null)
     setView('detail')
     apiRef.current?.runTest(test.suiteId, test.id)
   }, [])
 
-  const handleRunAll = useCallback(() => { setSelected(null); apiRef.current?.runAll() }, [])
-  const handleRunSuite = useCallback((id: string) => { setSelected(null); apiRef.current?.runSuite(id) }, [])
+  const handleRunAll = useCallback(() => { setSelected(null); setSelectedSuiteId(null); apiRef.current?.runAll() }, [])
+  const handleRunSuite = useCallback((id: string) => {
+    setSelectedSuiteId(id)
+    setSelected(null)
+    setView('detail')
+    apiRef.current?.runSuite(id)
+  }, [])
   const handleRunTest = useCallback((sid: string, tid: string) => {
     const test = state.suites.flatMap(s => s.tests).find(t => t.suiteId === sid && t.id === tid)
-    if (test) { setSelected(test); setView('detail') }
+    if (test) { setSelected(test); setSelectedSuiteId(null); setView('detail') }
     apiRef.current?.runTest(sid, tid)
   }, [state.suites])
 
@@ -146,7 +245,7 @@ export function App() {
       <iframe
         ref={sandboxRef}
         name={SANDBOX_NAME}
-        src="/"
+        src="./index.html"
         title="ViewTest Sandbox"
         style={{ position: 'fixed', width: 0, height: 0, border: 'none', top: 0, left: 0, pointerEvents: 'none' }}
       />
@@ -156,9 +255,11 @@ export function App() {
           <TestTree
             state={state}
             selected={selected}
+            selectedSuiteId={selectedSuiteId}
             search={search}
             view={view}
             onSelect={handleSelect}
+            onSelectSuite={handleSelectSuite}
             onSearchChange={setSearch}
             onViewChange={setView}
             onRunAll={handleRunAll}
@@ -196,6 +297,14 @@ export function App() {
                 const suite = state.suites.find(s => s.id === suiteId)
                 if (suite?.tests[0]) { setSelected(suite.tests[0]); setView('detail') }
               }}
+            />
+          ) : selectedSuiteId && !selected ? (
+            <SuiteOverview
+              suite={state.suites.find(s => s.id === selectedSuiteId) ?? null}
+              running={state.running}
+              onSelectTest={handleSelect}
+              onRunSuite={handleRunSuite}
+              onRunTest={handleRunTest}
             />
           ) : (
             <Preview

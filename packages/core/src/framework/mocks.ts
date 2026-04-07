@@ -23,7 +23,7 @@ const _callLog: Array<{ moduleId: string } & MockCall> = []
 
 /**
  * Cache of wrapped mock modules. Keyed by moduleId.
- * Cleared when mock() is called again (so factories re-run on next __vtImport).
+ * Cleared when mock() is called again (so factories re-run on next __ftImport).
  */
 const _cache = new Map<string, Record<string, unknown>>()
 
@@ -130,7 +130,7 @@ export function getMockEntriesWithCalls(sourceFile?: string): MockEntry[] {
  * Checks the mock registry: if a mock is registered for `moduleId` it returns
  * a spy-wrapped version of the factory result; otherwise it runs `importFn`.
  */
-export async function __vtImport(
+export async function __ftImport(
   moduleId: string,
   importFn: () => Promise<Record<string, unknown>>,
 ): Promise<Record<string, unknown>> {

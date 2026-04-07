@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
 import { CredentialRotateModal } from './CredentialRotateModal'
 import { Credential, User } from '../../types'
 

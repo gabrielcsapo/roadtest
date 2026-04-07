@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@viewtest/core'
+import { describe, it, expect } from '@fieldtest/core'
 import { paginate, getTotalPages, getPageSlice, isValidPage, clampPage, getPageNumbers } from './pagination'
 
 describe('pagination', () => {

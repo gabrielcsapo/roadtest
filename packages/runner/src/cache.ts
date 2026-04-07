@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import type { IstanbulCoverage } from '@viewtest/core'
+import type { IstanbulCoverage } from '@fieldtest/core'
 import type { SerializableTestSuite } from './serialize.js'
 
 // ─── Dep graph (shared with node.ts) ─────────────────────────────────────────

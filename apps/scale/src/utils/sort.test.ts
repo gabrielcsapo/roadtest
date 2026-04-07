@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@viewtest/core'
+import { describe, it, expect } from '@fieldtest/core'
 import { sortByField, sortByMultiple, sortByRisk, sortByStatus, sortByDate, naturalSort } from './sort'
 
 describe('sort', () => {

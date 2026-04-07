@@ -13,7 +13,7 @@ const _tabs: TabPlugin[] = []
 
 /**
  * Register a custom tab in the test detail panel.
- * Call this before `startApp` (e.g. in `.viewtest/setup.ts`).
+ * Call this before `startApp` (e.g. in `.fieldtest/setup.ts`).
  *
  * Duplicate IDs are ignored so HMR re-execution doesn't stack entries.
  */

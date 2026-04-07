@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
 import { EvidenceList } from './EvidenceList'
 
 const sampleFiles = ['access-review-q1.pdf', 'screenshot.png', 'audit-report.docx', 'data-export.csv', 'archive.zip']

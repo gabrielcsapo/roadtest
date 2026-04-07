@@ -9,7 +9,7 @@ import type { Profiler } from 'node:inspector'
 // Register the mock-hoisting loader hook for test files.
 // Must happen before any test files are imported. The hook intercepts test
 // files after tsx has processed them (receives JS), then rewrites static imports
-// to __vtImport() calls and hoists mock() registrations before them —
+// to __ftImport() calls and hoists mock() registrations before them —
 // the same transform the Vite plugin applies in the browser runner.
 register(new URL('./mock-loader-hooks.js', import.meta.url))
 import type { DepGraph } from './cache.js'
@@ -17,7 +17,7 @@ import { getCacheDir, computeCacheKey, readCache, readCacheByTestFile, writeCach
 import { parseShardArg, applySharding, getResultsDir, writeShardResult, readAllShardResults, mergeShardResults } from './shard.js'
 import { serializeTestSuite } from './serialize.js'
 import type { SerializableTestSuite } from './serialize.js'
-import type { IstanbulCoverage } from '@viewtest/core'
+import type { IstanbulCoverage } from '@fieldtest/core'
 
 // ─── V8 coverage via NODE_V8_COVERAGE ────────────────────────────────────────
 
@@ -364,6 +364,7 @@ export async function runNode() {
   const coverageFlag = args.includes('--coverage')
   const verboseFlag = args.includes('--verbose')
   const shardArg = args.find(a => a.startsWith('--shard='))?.slice('--shard='.length)
+  const outputJsonArg = args.find(a => a.startsWith('--output-json='))?.slice('--output-json='.length)
   const cwd = process.cwd()
 
   // ── --clear-cache ──────────────────────────────────────────────────────────
@@ -537,7 +538,7 @@ export async function runNode() {
   if (cacheMisses.length > 0) {
     // setCurrentSourceFile must be called before each import so suite.sourceFile
     // is populated. Imports are sequential to avoid races on the shared global.
-    const { setCurrentSourceFile, runAll, store } = await import('@viewtest/core')
+    const { setCurrentSourceFile, runAll, store } = await import('@fieldtest/core')
 
     for (const file of cacheMisses) {
       setCurrentSourceFile(file)
@@ -602,6 +603,15 @@ export async function runNode() {
     }
   }
 
+  // ── Write JSON output ──────────────────────────────────────────────────────
+  if (outputJsonArg) {
+    const outPath = resolve(cwd, outputJsonArg)
+    const { writeFileSync, mkdirSync } = await import('node:fs')
+    mkdirSync(dirname(outPath), { recursive: true })
+    writeFileSync(outPath, JSON.stringify(allSuites, null, 2), 'utf-8')
+    console.log(`${DIM}results written → ${outPath}${RESET}\n`)
+  }
+
   // ── Write shard result file ────────────────────────────────────────────────
   if (shard) {
     writeShardResult(getResultsDir(cwd), {
@@ -610,7 +620,7 @@ export async function runNode() {
       suites: allSuites,
       coverage: null, // full coverage merge happens at --merge-shards time
     })
-    console.log(`${DIM}shard result written → .viewtest/results/shard-${shard.index}-of-${shard.total}.json${RESET}\n`)
+    console.log(`${DIM}shard result written → .fieldtest/results/shard-${shard.index}-of-${shard.total}.json${RESET}\n`)
   }
 
   process.exit(totalFail > 0 ? 1 : 0)

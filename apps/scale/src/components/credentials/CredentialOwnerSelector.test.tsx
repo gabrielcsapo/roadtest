@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
 import { CredentialOwnerSelector } from './CredentialOwnerSelector'
 import { User } from '../../types'
 

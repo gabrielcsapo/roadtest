@@ -45,7 +45,7 @@ const FILTERS: Record<VisionFilter, FilterDef> = {
 export function visionFilterStyle(filter: VisionFilter): React.CSSProperties {
   if (filter === 'none') return {}
   if (filter === 'blurred') return { filter: 'blur(2px)' }
-  return { filter: 'url(#viewtest-vision-filter)' }
+  return { filter: 'url(#fieldtest-vision-filter)' }
 }
 
 function ColorBall({ filter, size = 20 }: { filter: VisionFilter; size?: number }) {
@@ -74,7 +74,7 @@ function VisionSvgFilter({ value }: { value: VisionFilter }) {
   return (
     <svg style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }} aria-hidden>
       <defs>
-        <filter id="viewtest-vision-filter">
+        <filter id="fieldtest-vision-filter">
           <feColorMatrix type="matrix" values={def.matrix} />
         </filter>
       </defs>

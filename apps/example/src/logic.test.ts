@@ -2,7 +2,7 @@
  * Pure logic tests — no render() call, no component.
  * These run identically in the browser and in Node.
  */
-import { describe, it, expect } from '@viewtest/core'
+import { describe, it, expect } from '@fieldtest/core'
 import type { Task } from './TaskBoard'
 
 function countPending(tasks: Task[]) {

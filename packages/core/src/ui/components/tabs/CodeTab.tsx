@@ -187,7 +187,7 @@ export function CodeTab({ suiteName, coverage, testCoverage, suites, onSelectTes
     const fileCov = coverage?.[selectedPath]
     const embedded = fileCov ? getEmbeddedSource(fileCov) : null
     if (embedded) { setSource(embedded); return }
-    fetch(`/__viewtest_source__?path=${encodeURIComponent(selectedPath)}`)
+    fetch(`/__fieldtest_source__?path=${encodeURIComponent(selectedPath)}`)
       .then(r => r.ok ? r.text() : Promise.reject(`${r.status} ${r.statusText}`))
       .then(setSource)
       .catch((e: unknown) => setError(String(e)))

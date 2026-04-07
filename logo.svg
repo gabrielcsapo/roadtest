@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="coinFace" cx="50%" cy="45%" r="60%">
+      <stop offset="0%"   stop-color="#e2a820"/>
+      <stop offset="55%"  stop-color="#c8880e"/>
+      <stop offset="100%" stop-color="#a86508"/>
+    </radialGradient>
+
+    <linearGradient id="coverFront" x1="0%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%"   stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#1b4332"/>
+    </linearGradient>
+
+    <filter id="bookShadow" x="-25%" y="-25%" width="160%" height="160%">
+      <feDropShadow dx="3" dy="5" stdDeviation="6" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+
+    <filter id="coinShadow" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- ── Field notebook ── -->
+  <g transform="translate(87,97) rotate(-7)" filter="url(#bookShadow)">
+
+    <!-- Pages (cream stack peeking on right/bottom edge) -->
+    <rect x="-38" y="-56" width="80" height="112" rx="2" fill="#ede8d5"/>
+    <rect x="-38" y="-54" width="78" height="108" rx="1" fill="#e5e0ce"/>
+
+    <!-- Back cover (slightly wider for depth illusion) -->
+    <rect x="-44" y="-61" width="89" height="122" rx="5" fill="#153d29"/>
+
+    <!-- Front cover -->
+    <rect x="-44" y="-61" width="87" height="120" rx="5" fill="url(#coverFront)"/>
+
+    <!-- Spine -->
+    <rect x="-44" y="-61" width="15" height="120" rx="5" fill="#153d29"/>
+    <rect x="-37" y="-61" width="8"  height="120" fill="#153d29"/>
+
+    <!-- Ruled lines (decorative, on cover face) -->
+    <rect x="-16" y="-40" width="48" height="2.5" rx="1.25" fill="rgba(255,255,255,0.28)"/>
+    <rect x="-16" y="-31" width="36" height="2"   rx="1"    fill="rgba(255,255,255,0.16)"/>
+    <rect x="-16" y="-23" width="42" height="2"   rx="1"    fill="rgba(255,255,255,0.16)"/>
+    <rect x="-16" y="-15" width="30" height="2"   rx="1"    fill="rgba(255,255,255,0.16)"/>
+
+    <!-- Elastic band (horizontal closure) -->
+    <rect x="-44" y="16" width="87" height="5" rx="2.5" fill="#c9960f" opacity="0.88"/>
+
+    <!-- Gold corner protectors (top-right + bottom-right) -->
+    <path d="M35,-61 L43,-61 Q43,-61 43,-53 Z" fill="#c9960f" opacity="0.75"/>
+    <path d="M35, 59 L43, 59 Q43, 59 43, 51 Z" fill="#c9960f" opacity="0.75"/>
+  </g>
+
+  <!-- ── Gold coin ── -->
+  <g transform="translate(134,134)" filter="url(#coinShadow)">
+    <!-- Rim -->
+    <circle r="33" fill="#8a5200"/>
+    <!-- Face -->
+    <circle r="30" fill="url(#coinFace)"/>
+    <!-- Inner emboss ring -->
+    <circle r="24.5" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1.5"/>
+    <!-- Checkmark -->
+    <path d="M-10 1 L-2 11 L13,-10"
+          stroke="#6b3a00" stroke-width="4.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,5 +1,7 @@
 import { type ReactElement, type ComponentType, createElement } from 'react'
 import { currentTest } from './store'
+import { registerAfterTestHook } from './hooks'
+import type { Snapshot } from './types'
 
 type Wrapper = ComponentType<{ children: React.ReactNode }>
 
@@ -16,6 +18,22 @@ async function getTL() {
 
 /** The container from the most recent render() — used by snapshot() */
 let _currentContainer: HTMLElement | null = null
+
+/**
+ * Reference to the snapshot created by the most recent render() call.
+ * After the test body finishes, the after-test hook updates its html to the
+ * current DOM state so async components (e.g. those that fetch data) are
+ * captured in their final rendered state rather than their loading state.
+ */
+let _lastRenderSnapshot: Snapshot | null = null
+
+registerAfterTestHook(() => {
+  if (_currentContainer && _lastRenderSnapshot) {
+    console.log(_currentContainer)
+    _lastRenderSnapshot.html = _currentContainer.innerHTML
+  }
+  _lastRenderSnapshot = null
+})
 
 /**
  * When set, all render() calls target this element instead of creating a new
@@ -54,7 +72,9 @@ export async function render(element: ReactElement) {
     const label = currentTest.snapshots.length === 0
       ? 'initial'
       : `render ${currentTest.snapshots.length + 1}`
-    currentTest.snapshots.push({ label, element: wrapped, html: result.container.innerHTML, timestamp: Date.now() })
+    const snap: Snapshot = { label, element: wrapped, html: result.container.innerHTML, timestamp: Date.now() }
+    currentTest.snapshots.push(snap)
+    _lastRenderSnapshot = snap
   }
 
   if (_stopAfterFirstRender) {

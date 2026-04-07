@@ -74,8 +74,8 @@ export async function load(url, context, nextLoad) {
  */
 function mockHoist(code) {
   const imports = collectImports(code)
-  const coreImports = imports.filter(function(n) { return n.source === '@viewtest/core' })
-  const otherImports = imports.filter(function(n) { return n.source !== '@viewtest/core' })
+  const coreImports = imports.filter(function(n) { return n.source === '@fieldtest/core' })
+  const otherImports = imports.filter(function(n) { return n.source !== '@fieldtest/core' })
 
   if (otherImports.length === 0) return null
 
@@ -224,35 +224,35 @@ function collectTopLevelMockCalls(code) {
 
 // ---- Code generation ---------------------------------------------------------
 
-/** Inject __vtImport into an existing @viewtest/core named-import list */
+/** Inject __ftImport into an existing @fieldtest/core named-import list */
 function injectVtImport(importText) {
-  if (importText.includes('__vtImport')) return importText
+  if (importText.includes('__ftImport')) return importText
   const braceMatch = importText.match(/\{([^}]*)\}/)
   if (braceMatch) {
     const inner = braceMatch[1].trim()
-    const updated = inner ? inner + ', __vtImport' : '__vtImport'
+    const updated = inner ? inner + ', __ftImport' : '__ftImport'
     return importText.replace(braceMatch[0], '{ ' + updated + ' }')
   }
-  return importText + "\nimport { __vtImport } from '@viewtest/core'"
+  return importText + "\nimport { __ftImport } from '@fieldtest/core'"
 }
 
 // Avoid the literal imp+ort( sequence so tsx's dynamic-import transform
 // does not try to rewrite this code-generation string.
 const _IMP = 'imp' + 'ort'
 
-/** Build a dynamic __vtImport() replacement for a static import */
+/** Build a dynamic __ftImport() replacement for a static import */
 function toDynamicImport(imp) {
   const mod = imp.source
   const fn = '() => ' + _IMP + '(\'' + mod + '\')'
   const spec = imp.specifierText
 
   if (!spec) {
-    return 'await __vtImport(\'' + mod + '\', ' + fn + ')'
+    return 'await __ftImport(\'' + mod + '\', ' + fn + ')'
   }
 
   const nsMatch = spec.match(/^\*\s+as\s+(\w+)$/)
   if (nsMatch) {
-    return 'const ' + nsMatch[1] + ' = await __vtImport(\'' + mod + '\', ' + fn + ')'
+    return 'const ' + nsMatch[1] + ' = await __ftImport(\'' + mod + '\', ' + fn + ')'
   }
 
   const parts = []
@@ -271,7 +271,7 @@ function toDynamicImport(imp) {
     }
   }
 
-  return 'const { ' + parts.join(', ') + ' } = await __vtImport(\'' + mod + '\', ' + fn + ')'
+  return 'const { ' + parts.join(', ') + ' } = await __ftImport(\'' + mod + '\', ' + fn + ')'
 }
 
 // ---- Scanning utilities ------------------------------------------------------

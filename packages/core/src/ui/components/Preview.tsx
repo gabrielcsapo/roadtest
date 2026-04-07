@@ -22,6 +22,10 @@ interface Props {
   coverage: IstanbulCoverage | null
   suites: TestSuite[]
   onSelectTest: (suiteId: string, testId: string) => void
+  /** Start on this frame index instead of 0. Use 1 in demo/static contexts where the live iframe is absent. */
+  initialFrame?: number
+  /** URL for the display iframe. Defaults to "/" (the current Vite app). Override in embedded demos. */
+  displaySrc?: string
 }
 
 function formatElapsed(ms: number): string {
@@ -81,39 +85,82 @@ function TabBar({ tabs, active, onChange }: {
   active: Tab
   onChange: (t: Tab) => void
 }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScroll = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 0)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    updateScroll()
+    const ro = new ResizeObserver(updateScroll)
+    ro.observe(el)
+    el.addEventListener('scroll', updateScroll)
+    return () => { ro.disconnect(); el.removeEventListener('scroll', updateScroll) }
+  }, [updateScroll])
+
   return (
-    <div style={{ display: 'flex', borderBottom: '1px solid #2a2a36', background: '#16161d', flexShrink: 0 }}>
-      {tabs.map(tab => {
-        const isActive = tab.id === active
-        return (
-          <button
-            key={tab.id}
-            onClick={() => onChange(tab.id)}
-            style={{
-              padding: '10px 16px', background: 'none', border: 'none',
-              borderBottom: `2px solid ${isActive ? '#6366f1' : 'transparent'}`,
-              color: isActive ? '#a5b4fc' : '#4b4b60',
-              fontSize: 12, fontWeight: isActive ? 600 : 400,
-              cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6,
-              transition: 'color 0.15s, border-color 0.15s',
-              marginBottom: -1,
-            }}
-          >
-            {tab.label}
-            {tab.count !== undefined && (
-              <span style={{
-                fontSize: 10, fontWeight: 700,
-                background: isActive ? 'rgba(99,102,241,0.2)' : '#1e1e2e',
-                color: isActive ? '#818cf8' : '#4b4b60',
-                borderRadius: 10, padding: '1px 6px',
-                transition: 'background 0.15s, color 0.15s',
-              }}>
-                {tab.count}
-              </span>
-            )}
-          </button>
-        )
-      })}
+    <div style={{ position: 'relative', borderBottom: '1px solid #2a2a36', background: '#16161d', flexShrink: 0 }}>
+      {canScrollLeft && (
+        <div onClick={() => scrollRef.current?.scrollBy({ left: -100, behavior: 'smooth' })} style={{
+          position: 'absolute', left: 0, top: 0, bottom: 0, width: 32, zIndex: 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'linear-gradient(to right, #16161d 60%, transparent)',
+          cursor: 'pointer', color: '#6b7280',
+        }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+      )}
+      {canScrollRight && (
+        <div onClick={() => scrollRef.current?.scrollBy({ left: 100, behavior: 'smooth' })} style={{
+          position: 'absolute', right: 0, top: 0, bottom: 0, width: 32, zIndex: 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'linear-gradient(to left, #16161d 60%, transparent)',
+          cursor: 'pointer', color: '#6b7280',
+        }}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L8.5 6l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+      )}
+      <div ref={scrollRef} style={{ display: 'flex', overflowX: 'auto', scrollbarWidth: 'none' }}>
+        {tabs.map(tab => {
+          const isActive = tab.id === active
+          return (
+            <button
+              key={tab.id}
+              onClick={() => onChange(tab.id)}
+              style={{
+                flexShrink: 0, padding: '10px 16px', background: 'none', border: 'none',
+                borderBottom: `2px solid ${isActive ? '#6366f1' : 'transparent'}`,
+                color: isActive ? '#a5b4fc' : '#4b4b60',
+                fontSize: 12, fontWeight: isActive ? 600 : 400,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6,
+                transition: 'color 0.15s, border-color 0.15s',
+                marginBottom: -1,
+              }}
+            >
+              {tab.label}
+              {tab.count !== undefined && (
+                <span style={{
+                  fontSize: 10, fontWeight: 700,
+                  background: isActive ? 'rgba(99,102,241,0.2)' : '#1e1e2e',
+                  color: isActive ? '#818cf8' : '#4b4b60',
+                  borderRadius: 10, padding: '1px 6px',
+                  transition: 'background 0.15s, color 0.15s',
+                }}>
+                  {tab.count}
+                </span>
+              )}
+            </button>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -156,21 +203,50 @@ const VIEWPORT_ICONS: Record<Viewport, () => React.ReactElement> = {
 }
 
 interface DisplayApi {
-  showTest: (suiteName: string, testName: string) => Promise<boolean>
+  showTest: (suiteName: string, testName: string, fallbackHtml?: string) => Promise<boolean>
   displayRoot: HTMLElement
   runAxe?: () => Promise<import('axe-core').AxeResults>
 }
 
-export function Preview({ test, coverage, suites, onSelectTest }: Props) {
+function ToolbarTip({ label, children }: { label: string; children: React.ReactNode }) {
+  const [tipRect, setTipRect] = useState<DOMRect | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
+  return (
+    <div ref={ref} style={{ position: 'relative', display: 'flex', flexShrink: 0 }}
+      onMouseEnter={() => setTipRect(ref.current?.getBoundingClientRect() ?? null)}
+      onMouseLeave={() => setTipRect(null)}
+    >
+      {children}
+      {tipRect && (
+        <div style={{
+          position: 'fixed',
+          top: tipRect.bottom + 6,
+          left: tipRect.left + tipRect.width / 2,
+          transform: 'translateX(-50%)',
+          background: '#1a1a24', border: '1px solid #2a2a36',
+          borderRadius: 4, padding: '3px 8px',
+          fontSize: 11, color: '#c4c4d4',
+          whiteSpace: 'nowrap', pointerEvents: 'none', zIndex: 300,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.5)',
+        }}>
+          {label}
+        </div>
+      )}
+    </div>
+  )
+}
+
+export function Preview({ test, coverage, suites, onSelectTest, initialFrame = 0, displaySrc = './index.html' }: Props) {
   const [grid, setGrid] = useState(false)
   const [outline, setOutline] = useState(false)
   const [measure, setMeasure] = useState(false)
   const [vision, setVision] = useState<VisionFilterType>('none')
   const [viewport, setViewport] = useState<Viewport>('desktop')
-  const [activeFrame, setActiveFrame] = useState(0)
+  const [activeFrame, setActiveFrame] = useState(initialFrame)
   const [activeTab, setActiveTab] = useState<Tab>('assertions')
   const [axeViolationCount, setAxeViolationCount] = useState<number | undefined>(undefined)
   const [canvasPaneHeight, setCanvasPaneHeight] = useState<number | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
   const [displayReady, setDisplayReady] = useState(false)
   const [displayHasContent, setDisplayHasContent] = useState(false)
 
@@ -180,7 +256,28 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const displayIframeRef = useRef<HTMLIFrameElement>(null)
   const displayApiRef = useRef<DisplayApi | null>(null)
 
-  const measureInfo = useMeasure(canvasRef as React.RefObject<HTMLElement | null>, measure)
+  const measureInfo = useMeasure(canvasRef as React.RefObject<HTMLElement | null>, measure, displayIframeRef.current)
+  const toolbarScrollRef = useRef<HTMLDivElement>(null)
+  const [toolbarCanScrollLeft, setToolbarCanScrollLeft] = useState(false)
+  const [toolbarCanScrollRight, setToolbarCanScrollRight] = useState(false)
+
+  const updateToolbarScroll = useCallback(() => {
+    const el = toolbarScrollRef.current
+    if (!el) return
+    setToolbarCanScrollLeft(el.scrollLeft > 0)
+    setToolbarCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+  }, [])
+
+  useEffect(() => {
+    const el = toolbarScrollRef.current
+    if (!el) return
+    updateToolbarScroll()
+    const ro = new ResizeObserver(updateToolbarScroll)
+    ro.observe(el)
+    el.addEventListener('scroll', updateToolbarScroll)
+    return () => { ro.disconnect(); el.removeEventListener('scroll', updateToolbarScroll) }
+  }, [updateToolbarScroll])
+
   const dragging = useRef(false)
   const dragStartY = useRef(0)
   const dragStartH = useRef(0)
@@ -212,7 +309,8 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
     if (!displayReady || !test || !displayApiRef.current) return
     setDisplayHasContent(false)
     canvasRef.current = null
-    displayApiRef.current.showTest(test.suiteName, test.name).then(rendered => {
+    const snapHtml = test.snapshots[test.snapshots.length - 1]?.html
+    displayApiRef.current.showTest(test.suiteName, test.name, snapHtml).then(rendered => {
       setDisplayHasContent(rendered)
       if (rendered) canvasRef.current = displayApiRef.current?.displayRoot ?? null
     })
@@ -220,6 +318,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
 
   const onDragStart = useCallback((e: React.MouseEvent) => {
     dragging.current = true
+    setIsDragging(true)
     dragStartY.current = e.clientY
     dragStartH.current = canvasPaneHeight ?? canvasPaneRef.current?.offsetHeight ?? 300
     e.preventDefault()
@@ -231,7 +330,10 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
       const delta = e.clientY - dragStartY.current
       setCanvasPaneHeight(Math.max(80, Math.min(dragStartH.current + delta, window.innerHeight - 160)))
     }
-    function onUp() { dragging.current = false }
+    function onUp() {
+      dragging.current = false
+      setIsDragging(false)
+    }
     window.addEventListener('mousemove', onMove)
     window.addEventListener('mouseup', onUp)
     return () => { window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp) }
@@ -261,7 +363,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
 
     const vw = VIEWPORT_WIDTHS[viewport]
     const visionCss = vision !== 'none'
-      ? (vision === 'blurred' ? 'filter:blur(2px)' : 'filter:url(#viewtest-vision-filter)')
+      ? (vision === 'blurred' ? 'filter:blur(2px)' : 'filter:url(#fieldtest-vision-filter)')
       : ''
 
     const update = () => {
@@ -298,7 +400,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
   const prevTestId = useRef<string | null>(null)
   if (test?.id !== prevTestId.current) {
     prevTestId.current = test?.id ?? null
-    if (activeFrame !== 0) setActiveFrame(0)
+    if (activeFrame !== initialFrame) setActiveFrame(initialFrame)
     if (activeTab === 'timeline') setActiveTab('assertions')
   }
 
@@ -306,7 +408,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
     return (
       <>
         {/* Keep display iframe alive in the background */}
-        <iframe ref={displayIframeRef} name="__vt_display" src="/" title="ViewTest Display"
+        <iframe ref={displayIframeRef} name="__vt_display" src={displaySrc} title="ViewTest Display"
           style={{ position: 'fixed', width: 0, height: 0, border: 'none', pointerEvents: 'none' }} />
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4b4b60' }}>
           <div style={{ textAlign: 'center' }}>
@@ -356,7 +458,7 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
       <iframe
         ref={displayIframeRef}
         name="__vt_display"
-        src="/"
+        src={displaySrc}
         title="ViewTest Display"
         style={{ position: 'fixed', width: 0, height: 0, border: 'none', pointerEvents: 'none' }}
       />
@@ -379,29 +481,55 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
           display: 'flex', flexDirection: 'column', background: '#0f0f13',
         }}>
           {/* Toolbar row — above the scroll area so content is never obstructed */}
-          <div style={{
-            flexShrink: 0, display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
-            gap: 6, padding: '6px 12px', borderBottom: '1px solid #1a1a24',
-          }}>
-            {(['mobile', 'tablet', 'desktop'] as Viewport[]).map(vp => {
-              const Icon = VIEWPORT_ICONS[vp]
-              const isActive = viewport === vp
-              return (
-                <button key={vp} title={VIEWPORT_TITLES[vp]} onClick={() => setViewport(vp)} style={{
-                  width: 26, height: 26, borderRadius: 5, border: '1px solid',
-                  borderColor: isActive ? 'rgba(99,102,241,0.6)' : '#2a2a36',
-                  background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
-                  color: isActive ? '#a5b4fc' : '#4b4b60',
-                  cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}><Icon /></button>
-              )
-            })}
-            <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
-            <MeasureToggle value={measure} onChange={setMeasure} />
-            <OutlineToggle value={outline} onChange={setOutline} targetDocument={displayDoc} />
-            <GridToggle value={grid} onChange={setGrid} />
-            <div style={{ width: 1, height: 16, background: '#2a2a36' }} />
-            <VisionFilter value={vision} onChange={setVision} />
+          <div style={{ flexShrink: 0, position: 'relative', borderBottom: '1px solid #1a1a24' }}>
+            {/* Left fade + arrow */}
+            {toolbarCanScrollLeft && (
+              <div onClick={() => { toolbarScrollRef.current?.scrollBy({ left: -80, behavior: 'smooth' }) }} style={{
+                position: 'absolute', left: 0, top: 0, bottom: 0, width: 32, zIndex: 1,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'linear-gradient(to right, #0f0f13 60%, transparent)',
+                cursor: 'pointer', color: '#6b7280',
+              }}>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+            )}
+            {/* Right fade + arrow */}
+            {toolbarCanScrollRight && (
+              <div onClick={() => { toolbarScrollRef.current?.scrollBy({ left: 80, behavior: 'smooth' }) }} style={{
+                position: 'absolute', right: 0, top: 0, bottom: 0, width: 32, zIndex: 1,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'linear-gradient(to left, #0f0f13 60%, transparent)',
+                cursor: 'pointer', color: '#6b7280',
+              }}>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2L8.5 6l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+            )}
+            <div ref={toolbarScrollRef} style={{
+              display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
+              gap: 6, padding: '6px 12px', overflowX: 'auto', scrollbarWidth: 'none',
+            }}>
+              {(['mobile', 'tablet', 'desktop'] as Viewport[]).map(vp => {
+                const Icon = VIEWPORT_ICONS[vp]
+                const isActive = viewport === vp
+                return (
+                  <ToolbarTip key={vp} label={VIEWPORT_TITLES[vp]}>
+                    <button onClick={() => setViewport(vp)} style={{
+                      flexShrink: 0, width: 26, height: 26, borderRadius: 5, border: '1px solid',
+                      borderColor: isActive ? 'rgba(99,102,241,0.6)' : '#2a2a36',
+                      background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
+                      color: isActive ? '#a5b4fc' : '#4b4b60',
+                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}><Icon /></button>
+                  </ToolbarTip>
+                )
+              })}
+              <div style={{ flexShrink: 0, width: 1, height: 16, background: '#2a2a36' }} />
+              <ToolbarTip label="Measure element (M)"><MeasureToggle value={measure} onChange={setMeasure} /></ToolbarTip>
+              <ToolbarTip label="Toggle outlines"><OutlineToggle value={outline} onChange={setOutline} targetDocument={displayDoc} /></ToolbarTip>
+              <ToolbarTip label="Toggle grid"><GridToggle value={grid} onChange={setGrid} /></ToolbarTip>
+              <div style={{ flexShrink: 0, width: 1, height: 16, background: '#2a2a36' }} />
+              <ToolbarTip label="Vision simulation"><VisionFilter value={vision} onChange={setVision} /></ToolbarTip>
+            </div>
           </div>
 
           {/* Content area — scrollable */}
@@ -476,6 +604,11 @@ export function Preview({ test, coverage, suites, onSelectTest }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Drag capture overlay — sits above the iframe so mouseup is never swallowed */}
+      {isDragging && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, cursor: 'row-resize' }} />
+      )}
     </>
   )
 }

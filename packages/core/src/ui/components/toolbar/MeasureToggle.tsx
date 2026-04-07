@@ -78,7 +78,11 @@ function BoxOverlay({ info }: { info: BoxInfo }) {
   )
 }
 
-export function useMeasure(containerRef: React.RefObject<HTMLElement | null>, active: boolean) {
+export function useMeasure(
+  containerRef: React.RefObject<HTMLElement | null>,
+  active: boolean,
+  iframeEl?: HTMLIFrameElement | null,
+) {
   const [info, setInfo] = useState<BoxInfo | null>(null)
 
   useEffect(() => {
@@ -89,8 +93,25 @@ export function useMeasure(containerRef: React.RefObject<HTMLElement | null>, ac
     function onOver(e: MouseEvent) {
       const target = e.target as HTMLElement
       if (!target || target === el || !el!.contains(target)) return
-      const rect = target.getBoundingClientRect()
+
+      const rawRect = target.getBoundingClientRect()
       const containerRect = el!.getBoundingClientRect()
+
+      // Rects inside an iframe are relative to the iframe's own viewport.
+      // Offset them by the iframe's position in the parent document so that
+      // the overlay (rendered with position:fixed in the parent) lands correctly.
+      const iframeOffset = iframeEl ? iframeEl.getBoundingClientRect() : { left: 0, top: 0 }
+      const rect = {
+        left:   rawRect.left   + iframeOffset.left,
+        top:    rawRect.top    + iframeOffset.top,
+        right:  rawRect.right  + iframeOffset.left,
+        bottom: rawRect.bottom + iframeOffset.top,
+        width:  rawRect.width,
+        height: rawRect.height,
+        x:      rawRect.x      + iframeOffset.left,
+        y:      rawRect.y      + iframeOffset.top,
+      } as DOMRect
+
       const s = getComputedStyle(target)
       setInfo({
         rect, containerRect,
@@ -104,7 +125,7 @@ export function useMeasure(containerRef: React.RefObject<HTMLElement | null>, ac
     el.addEventListener('mouseover', onOver)
     el.addEventListener('mouseleave', onOut)
     return () => { el.removeEventListener('mouseover', onOver); el.removeEventListener('mouseleave', onOut) }
-  }, [active, containerRef.current]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [active, containerRef.current, iframeEl]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return info
 }

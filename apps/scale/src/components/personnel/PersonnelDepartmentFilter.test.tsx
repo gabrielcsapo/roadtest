@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
 import { PersonnelDepartmentFilter } from './PersonnelDepartmentFilter'
 
 const sampleDepartments = ['Engineering', 'Sales', 'HR', 'Finance', 'Legal']

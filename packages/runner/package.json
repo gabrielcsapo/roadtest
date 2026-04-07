@@ -1,12 +1,12 @@
 {
-  "name": "@viewtest/runner",
+  "name": "@fieldtest/runner",
   "version": "0.1.0",
   "type": "module",
   "bin": {
-    "viewtest": "./bin/viewtest.js"
+    "fieldtest": "./bin/fieldtest.js"
   },
   "dependencies": {
-    "@viewtest/core": "workspace:*",
+    "@fieldtest/core": "workspace:*",
     "@vitejs/plugin-react": "^6.0.1",
     "glob": "^13.0.6",
     "happy-dom": "^20.8.9",

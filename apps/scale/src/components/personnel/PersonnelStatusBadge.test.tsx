@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, snapshot } from '@fieldtest/core'
 import { PersonnelStatusBadge } from './PersonnelStatusBadge'
 import { Personnel } from '../../types'
 

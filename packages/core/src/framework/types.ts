@@ -78,7 +78,8 @@ export interface TestCase {
   testCoverage: IstanbulCoverage | null
   /** Wall-clock ms the test took to run */
   duration?: number
-  fn: () => void | Promise<void>
+  /** Undefined for node tests — results arrive from the server, not executed in-browser */
+  fn?: () => void | Promise<void>
 }
 
 export interface TestSuite {
@@ -90,6 +91,8 @@ export interface TestSuite {
   sourceFile?: string
   /** Wall-clock ms the suite took to run (all tests) */
   duration?: number
+  /** Where the tests ran — browser (default) or Node via the Vite server */
+  runtime?: 'browser' | 'node'
 }
 
 // Istanbul coverage types (subset we actually use)

@@ -9,11 +9,14 @@ export type { CoverageProvider } from './framework/runner'
 export type { TestStatus, Assertion, TestCase, TestSuite, StoreState, Snapshot, IstanbulCoverage, ConsoleEntry, ConsoleLevel, RunProgress, NetworkEntry, MockEntry } from './framework/types'
 
 // Module mocking — vi.mock() equivalent
-export { mock, unmock, clearAllMocks, __vtImport, __vtSetMockScope } from './framework/mocks'
+export { mock, unmock, clearAllMocks, __ftImport, __vtSetMockScope } from './framework/mocks'
 export type { MockCall } from './framework/types'
 
+// Node test bridge — called by stubs emitted for node-environment test files
+export { __vtRegisterNodeTest } from './framework/node-bridge'
+
 // Plugin extension points
-export { registerAfterTestHook } from './framework/hooks'
+export { registerAfterTestHook, registerBeforeDisplayHook, registerAfterDisplayHook } from './framework/hooks'
 export { registerTab } from './ui/plugins'
 export type { TabPlugin } from './ui/plugins'
 

@@ -9,7 +9,7 @@
  * The key: `calculateTotal` lives in a *separate* file (./cart) so it is NOT
  * part of the mock and runs with the real implementation.
  */
-import { describe, it, expect, mock } from '@viewtest/core'
+import { describe, it, expect, mock } from '@fieldtest/core'
 import { calculateTotal } from './cart'
 import { bulkDiscount, memberDiscount } from './discounts'
 import type { CartItem } from './discounts'

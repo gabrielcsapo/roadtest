@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@viewtest/core'
+import { describe, it, expect } from '@fieldtest/core'
 import { slugify, initials, capitalize, camelToTitle, escapeHtml, stripHtml, countWords, padStart, repeat } from './string'
 
 describe('string', () => {

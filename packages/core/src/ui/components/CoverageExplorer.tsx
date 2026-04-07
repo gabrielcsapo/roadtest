@@ -48,7 +48,7 @@ function SourceView({ entry, lineTestIndex, onLineClick }: {
     // Prefer embedded source from Istanbul's inputSourceMap (avoids instrumented code)
     const embedded = entry.fileCov ? getEmbeddedSource(entry.fileCov) : null
     if (embedded) { setSource(embedded); return }
-    fetch(`/__viewtest_source__?path=${encodeURIComponent(entry.path)}`)
+    fetch(`/__fieldtest_source__?path=${encodeURIComponent(entry.path)}`)
       .then(r => r.ok ? r.text() : Promise.reject(`${r.status}`))
       .then(setSource)
       .catch((e: unknown) => setError(String(e)))
@@ -178,7 +178,7 @@ export function CoverageExplorer({ coverage, suites, onSelectTest }: Props) {
   const [modal, setModal] = useState<{ lineNum: number; tests: TestRef[] } | null>(null)
 
   useEffect(() => {
-    fetch('/__viewtest_files__')
+    fetch('/__fieldtest_files__')
       .then(r => r.json() as Promise<string[]>)
       .then(files => {
         setAllFiles(files)

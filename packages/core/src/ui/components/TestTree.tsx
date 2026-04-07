@@ -7,9 +7,11 @@ import type { AppView } from '../App'
 interface Props {
   state: StoreState
   selected: TestCase | null
+  selectedSuiteId: string | null
   search: string
   view: AppView
   onSelect: (test: TestCase) => void
+  onSelectSuite: (suiteId: string) => void
   onSearchChange: (q: string) => void
   onViewChange: (v: AppView) => void
   onRunAll: () => void
@@ -50,9 +52,9 @@ function RunButton({ onClick, disabled }: { onClick: (e: React.MouseEvent) => vo
   )
 }
 
-function SuiteRow({ suite, collapsed, onToggle, onRun, disabled }: {
-  suite: TestSuite; collapsed: boolean
-  onToggle: () => void; onRun: (e: React.MouseEvent) => void; disabled: boolean
+function SuiteRow({ suite, collapsed, selected, onToggle, onSelect, onRun, disabled }: {
+  suite: TestSuite; collapsed: boolean; selected: boolean
+  onToggle: () => void; onSelect: () => void; onRun: (e: React.MouseEvent) => void; disabled: boolean
 }) {
   const [hover, setHover] = useState(false)
   const fileName = suite.sourceFile ? suite.sourceFile.split('/').pop() : null
@@ -61,20 +63,35 @@ function SuiteRow({ suite, collapsed, onToggle, onRun, disabled }: {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={{ display: 'flex', alignItems: 'center', height: rowHeight }}
+      style={{
+        display: 'flex', alignItems: 'center', height: rowHeight,
+        background: selected ? '#1e1e2e' : 'transparent',
+        borderLeft: selected ? '2px solid #6366f1' : '2px solid transparent',
+      }}
     >
+      {/* Chevron — toggles collapse only */}
       <button
         onClick={onToggle}
         style={{
+          flexShrink: 0, width: 28, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: 'transparent', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 10,
+          paddingLeft: selected ? 14 : 16,
+        }}
+      >
+        {collapsed ? '▶' : '▼'}
+      </button>
+      {/* Name area — selects the suite */}
+      <button
+        onClick={onSelect}
+        style={{
           flex: 1, display: 'flex', alignItems: 'center', gap: 8,
-          padding: '0 8px 0 16px', height: '100%',
+          padding: '0 8px 0 0', height: '100%',
           background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', minWidth: 0,
         }}
       >
-        <span style={{ color: '#6b7280', fontSize: 10, flexShrink: 0 }}>{collapsed ? '▶' : '▼'}</span>
         <StatusIcon status={suite.status} />
         <span style={{ display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 }}>
-          <span style={{ fontSize: 13, fontWeight: 600, color: '#c4c4d4', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <span style={{ fontSize: 13, fontWeight: 600, color: selected ? '#e2e2e8' : '#c4c4d4', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {suite.name}
           </span>
           {fileName && (
@@ -199,7 +216,7 @@ function ViewToggle({ view, onChange }: { view: AppView; onChange: (v: AppView) 
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export function TestTree({ state, selected, search, view, onSelect, onSearchChange, onViewChange, onRunAll, onRunSuite, onRunTest }: Props) {
+export function TestTree({ state, selected, selectedSuiteId, search, view, onSelect, onSelectSuite, onSearchChange, onViewChange, onRunAll, onRunSuite, onRunTest }: Props) {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
   const [sortBy, setSortBy] = useState<'default' | 'duration'>('default')
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -290,25 +307,58 @@ export function TestTree({ state, selected, search, view, onSelect, onSearchChan
           </div>
         </div>
 
-        {/* Stats + timestamp */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 11, marginBottom: 10 }}>
-          {state.lastRunAt || state.running ? (
-            <div style={{ display: 'flex', gap: 8, fontVariantNumeric: 'tabular-nums' }}>
-              <span style={{ color: '#22c55e', minWidth: 52 }}>✓ {pass}</span>
-              {fail > 0 && <span style={{ color: '#ef4444', minWidth: 48 }}>✗ {fail}</span>}
-              {pending > 0 && <span style={{ color: '#6b7280', minWidth: 48 }}>○ {pending}</span>}
-              <span style={{ color: '#4b4b60' }}>{total} total</span>
-            </div>
-          ) : <span />}
-          {state.lastRunAt && !state.running && (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 1 }}>
-              <span style={{ color: '#3a3a4e' }}>ran {formatTime(state.lastRunAt)}</span>
-              {totalDuration !== null && (
-                <span style={{ color: '#3a3a4e', fontFamily: 'monospace' }}>{formatDuration(totalDuration)}</span>
+        {/* Stats card */}
+        {(state.lastRunAt || state.running) && (
+          <div style={{
+            marginBottom: 10, borderRadius: 8,
+            background: '#0f0f13', border: '1px solid #1e1e2e',
+            padding: '8px 10px', display: 'flex', flexDirection: 'column', gap: 6,
+          }}>
+            {/* Progress bar */}
+            {total > 0 && (
+              <div style={{ height: 3, borderRadius: 99, background: '#1e1e2e', overflow: 'hidden', display: 'flex' }}>
+                <div style={{
+                  height: '100%', width: `${(pass / total) * 100}%`,
+                  background: '#22c55e', transition: 'width 0.2s ease-out', flexShrink: 0,
+                }} />
+                <div style={{
+                  height: '100%', width: `${(fail / total) * 100}%`,
+                  background: '#ef4444', transition: 'width 0.2s ease-out', flexShrink: 0,
+                }} />
+              </div>
+            )}
+            {/* Badges row */}
+            <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', fontVariantNumeric: 'tabular-nums' }}>
+              <span style={{
+                fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 99,
+                background: 'rgba(34,197,94,0.12)', color: '#22c55e',
+              }}>✓ {pass}</span>
+              {fail > 0 && (
+                <span style={{
+                  fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 99,
+                  background: 'rgba(239,68,68,0.12)', color: '#ef4444',
+                }}>✗ {fail}</span>
               )}
+              {pending > 0 && (
+                <span style={{
+                  fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 99,
+                  background: '#1e1e2e', color: '#6b7280',
+                }}>○ {pending}</span>
+              )}
+              <span style={{
+                fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 99,
+                background: '#1e1e2e', color: '#4b4b60', marginLeft: 'auto',
+              }}>{total} tests</span>
             </div>
-          )}
-        </div>
+            {/* Timestamp + duration */}
+            {state.lastRunAt && !state.running && (
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: '#3a3a4e' }}>
+                <span>{formatTime(state.lastRunAt)}</span>
+                {totalDuration !== null && <span style={{ fontFamily: 'monospace' }}>{formatDuration(totalDuration)}</span>}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Search */}
         <div style={{ position: 'relative' }}>
@@ -401,7 +451,9 @@ export function TestTree({ state, selected, search, view, onSelect, onSearchChan
                     <SuiteRow
                       suite={item.suite}
                       collapsed={collapsed.has(item.suite.id)}
+                      selected={selectedSuiteId === item.suite.id}
                       onToggle={() => toggle(item.suite.id)}
+                      onSelect={() => onSelectSuite(item.suite.id)}
                       onRun={e => { e.stopPropagation(); onRunSuite(item.suite.id) }}
                       disabled={state.running}
                     />

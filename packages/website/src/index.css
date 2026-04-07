@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-ft-bg:        #070d0a;
+  --color-ft-surface:   #0d1a12;
+  --color-ft-raised:    #122018;
+  --color-ft-green:     #40916c;
+  --color-ft-green-dim: #2d6a4f;
+  --color-ft-green-hi:  #74c69d;
+  --color-ft-gold:      #c9960f;
+  --color-ft-gold-hi:   #e9b824;
+  --color-ft-text:      #ddeee6;
+  --color-ft-mid:       #a3c4b0;
+  --color-ft-dim:       #6b8f7a;
+  --color-ft-fail:      #e05252;
+  --color-ft-pass:      #40916c;
+}
+
+@keyframes drift-1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 28px) scale(1.08); }
+}
+@keyframes drift-2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-30px, 20px) scale(1.06); }
+}
+@keyframes drift-3 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(20px, -35px) scale(1.1); }
+}
+
+.orb-1 { animation: drift-1 20s ease-in-out infinite alternate; }
+.orb-2 { animation: drift-2 16s ease-in-out infinite alternate; animation-delay: -8s; }
+.orb-3 { animation: drift-3 24s ease-in-out infinite alternate; animation-delay: -4s; }
+
+html { scroll-behavior: smooth; }
+body { background: #070d0a; }
+
+/* Prose for markdown doc content */
+.doc-prose h1 { font-size: 1.875rem; font-weight: 800; color: #ddeee6; margin-bottom: 1rem; letter-spacing: -0.5px; }
+.doc-prose h2 { font-size: 1.375rem; font-weight: 700; color: #ddeee6; margin-top: 2rem; margin-bottom: 0.75rem; letter-spacing: -0.3px; }
+.doc-prose h3 { font-size: 1.1rem; font-weight: 600; color: #a3c4b0; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.doc-prose p  { color: #a3c4b0; line-height: 1.75; margin-bottom: 1rem; }
+.doc-prose ul { color: #a3c4b0; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+.doc-prose li { margin-bottom: 0.35rem; }
+.doc-prose a  { color: #74c69d; text-decoration: underline; text-underline-offset: 3px; }
+.doc-prose a:hover { color: #ddeee6; }
+.doc-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: #0d1a12;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  color: #74c69d;
+}
+.doc-prose pre,
+.doc-prose .shiki {
+  background: #070d0a !important;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.doc-prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #a3c4b0;
+}
+/* Shiki-rendered blocks */
+.doc-prose .shiki code {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  background: none !important;
+  border: none;
+  padding: 0;
+}
+.doc-prose blockquote {
+  border-left: 3px solid #40916c;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 1rem 0;
+  color: #6b8f7a;
+  font-style: italic;
+}
+.doc-prose hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 2rem 0;
+}
+.doc-prose strong { color: #ddeee6; font-weight: 600; }
+
+/* Tables */
+.doc-prose table {
+  width: 100%; border-collapse: collapse;
+  margin-bottom: 1.25rem; font-size: 0.875rem;
+}
+.doc-prose th {
+  background: #0d1a12; color: #74c69d;
+  font-weight: 600; text-align: left;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.doc-prose td {
+  padding: 0.6rem 1rem; color: #a3c4b0;
+  border: 1px solid rgba(255,255,255,0.07);
+  vertical-align: top;
+}
+.doc-prose tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+/* UI demo blocks used in docs */
+.ui-demo {
+  background: #16161d;
+  border: 1px solid #2a2a36;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  font-family: var(--font-mono);
+}

@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@viewtest/core'
+import { describe, it, expect } from '@fieldtest/core'
 import { groupBy, unique, uniqueBy, chunk, flatten, intersection, difference, countBy, sumBy, maxBy, minBy } from './array'
 
 describe('array', () => {

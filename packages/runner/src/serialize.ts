@@ -1,4 +1,4 @@
-import type { TestSuite, TestCase, Assertion, Snapshot, TestStatus, IstanbulCoverage, ConsoleEntry } from '@viewtest/core'
+import type { TestSuite, TestCase, Assertion, Snapshot, TestStatus, IstanbulCoverage, ConsoleEntry } from '@fieldtest/core'
 
 export interface SerializableSnapshot {
   label: string

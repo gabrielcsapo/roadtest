@@ -1,4 +1,4 @@
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls, Html } from '@react-three/drei'
 import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } from 'react'
 import * as THREE from 'three'
@@ -110,10 +110,17 @@ function useGraphData(suites: TestSuite[], coverage: IstanbulCoverage | null) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch('/__viewtest_graph__')
-      .then(r => r.json())
+    // In a static build, graph data is pre-generated as fieldtest-graph.json.
+    // In dev mode, it's served on-the-fly by the fieldtest dev server middleware.
+    fetch('./fieldtest-graph.json')
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
       .then(setRaw)
-      .catch(() => setError(true))
+      .catch(() =>
+        fetch('/__fieldtest_graph__')
+          .then(r => r.json())
+          .then(setRaw)
+          .catch(() => setError(true))
+      )
   }, [])
 
   const graphData = useMemo(() => {
@@ -385,6 +392,28 @@ function NodeSphere({ node, color, selected, hovered, onClick, onHover }: {
 
 // ─── Scene ────────────────────────────────────────────────────────────────────
 
+function CameraInit({ layout }: { layout: LayoutResult }) {
+  const { camera } = useThree()
+  const orbitRef = useRef<any>(null)
+  const initialized = useRef(false)
+
+  useEffect(() => {
+    if (initialized.current || layout.nodes.length === 0) return
+    initialized.current = true
+    const cx = layout.nodes.reduce((s, n) => s + n.x, 0) / layout.nodes.length
+    const cy = layout.nodes.reduce((s, n) => s + n.y, 0) / layout.nodes.length
+    const cz = layout.nodes.reduce((s, n) => s + n.z, 0) / layout.nodes.length
+    camera.position.set(cx, cy + 20, cz + 40)
+    camera.lookAt(cx, cy, cz)
+    if (orbitRef.current) {
+      orbitRef.current.target.set(cx, cy, cz)
+      orbitRef.current.update()
+    }
+  }, [layout, camera])
+
+  return <OrbitControls ref={orbitRef} makeDefault dampingFactor={0.1} />
+}
+
 function Scene({ layout, selectedId, onSelect }: {
   layout: LayoutResult; selectedId: string | null; onSelect: (id: string | null) => void
 }) {
@@ -402,7 +431,7 @@ function Scene({ layout, selectedId, onSelect }: {
       <ambientLight intensity={0.6} />
       <pointLight position={[20, 30, 20]} intensity={60} />
       <pointLight position={[-20, -10, -20]} intensity={20} color="#6366f1" />
-      <OrbitControls makeDefault dampingFactor={0.1} />
+      <CameraInit layout={layout} />
 
       {/* Cluster bubbles */}
       {layout.clusters.map(c => <ClusterBubble key={c.id} cluster={c} />)}
@@ -605,33 +634,54 @@ function NodeChip({ node, onClick }: { node: GNode; onClick?: () => void }) {
 // ─── Legend ───────────────────────────────────────────────────────────────────
 
 function Legend() {
+  const [open, setOpen] = useState(false)
   return (
     <div style={{
-      position: 'absolute', bottom: 16, left: 16,
+      position: 'absolute', top: 16, left: 16,
       background: 'rgba(22,22,29,0.85)', backdropFilter: 'blur(8px)',
-      border: '1px solid #2a2a36', borderRadius: 8, padding: '8px 12px',
-      display: 'flex', flexDirection: 'column', gap: 5, fontSize: 11, color: '#4b4b60',
+      border: '1px solid #2a2a36', borderRadius: 8,
+      fontSize: 11, color: '#4b4b60', overflow: 'hidden',
     }}>
-      {[
-        { color: '#3b82f6', label: 'Source file' },
-        { color: '#22c55e', label: 'File — well covered' },
-        { color: '#f59e0b', label: 'File — partial coverage' },
-        { color: '#ef4444', label: 'File — uncovered / failing suite' },
-        { color: '#6366f1', label: 'Test suite' },
-      ].map(({ color, label }) => (
-        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-          <div style={{ width: 8, height: 8, borderRadius: '50%', background: color, flexShrink: 0 }} />
-          {label}
+      <button
+        onClick={() => setOpen(v => !v)}
+        style={{
+          display: 'flex', alignItems: 'center', gap: 6,
+          padding: '6px 10px', background: 'none', border: 'none',
+          cursor: 'pointer', color: '#6b7280', fontSize: 11, width: '100%',
+        }}
+      >
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" strokeWidth="1.2"/>
+          <line x1="5.5" y1="4" x2="5.5" y2="7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+          <circle cx="5.5" cy="2.8" r="0.6" fill="currentColor"/>
+        </svg>
+        Legend
+        <span style={{ marginLeft: 'auto', fontSize: 9 }}>{open ? '▲' : '▼'}</span>
+      </button>
+      {open && (
+        <div style={{ padding: '4px 10px 8px', display: 'flex', flexDirection: 'column', gap: 5, borderTop: '1px solid #1e1e2e' }}>
+          {[
+            { color: '#3b82f6', label: 'Source file' },
+            { color: '#22c55e', label: 'File — well covered' },
+            { color: '#f59e0b', label: 'File — partial coverage' },
+            { color: '#ef4444', label: 'File — uncovered / failing suite' },
+            { color: '#6366f1', label: 'Test suite' },
+          ].map(({ color, label }) => (
+            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+              <div style={{ width: 8, height: 8, borderRadius: '50%', background: color, flexShrink: 0 }} />
+              {label}
+            </div>
+          ))}
+          <div style={{ marginTop: 2, borderTop: '1px solid #2a2a36', paddingTop: 5, display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+              <div style={{ width: 16, height: 1, background: '#374151' }} /> Import edge
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+              <div style={{ width: 16, height: 1, background: '#6366f1' }} /> Coverage edge
+            </div>
+          </div>
         </div>
-      ))}
-      <div style={{ marginTop: 2, borderTop: '1px solid #2a2a36', paddingTop: 5, display: 'flex', flexDirection: 'column', gap: 3 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-          <div style={{ width: 16, height: 1, background: '#374151' }} /> Import edge
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-          <div style={{ width: 16, height: 1, background: '#6366f1' }} /> Coverage edge
-        </div>
-      </div>
+      )}
     </div>
   )
 }

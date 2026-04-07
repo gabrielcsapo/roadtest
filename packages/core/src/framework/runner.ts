@@ -28,7 +28,21 @@ function interceptConsole(entries: ConsoleEntry[]): () => void {
         level,
         args: args.map(a => {
           if (typeof a === 'string') return a
-          try { return JSON.stringify(a) } catch { return String(a) }
+          if (a === null) return 'null'
+          if (a === undefined) return 'undefined'
+          try {
+            const seen = new WeakSet()
+            return JSON.stringify(a, (_key, value) => {
+              if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]'
+                seen.add(value)
+              }
+              if (typeof value === 'bigint') return value.toString() + 'n'
+              if (typeof value === 'function') return `[Function: ${value.name || 'anonymous'}]`
+              if (value instanceof Error) return { message: value.message, name: value.name, stack: value.stack }
+              return value
+            }, 2)
+          } catch { return String(a) }
         }),
         timestamp: Date.now(),
       })
@@ -138,6 +152,8 @@ async function execSuite(
 
   for (const test of suite.tests) {
     if (test.status === 'skipped') continue
+    // Node tests have no fn — run server-side, results pushed via WS
+    if (!test.fn) continue
     const passed = await execTest(test, cleanup)
     if (!passed) allPass = false
     localDone++

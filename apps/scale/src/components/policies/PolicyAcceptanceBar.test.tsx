@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, snapshot } from '@fieldtest/core'
 import { PolicyAcceptanceBar } from './PolicyAcceptanceBar'
 
 const rates = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]

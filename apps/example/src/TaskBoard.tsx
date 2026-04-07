@@ -2,6 +2,69 @@ import { useState } from 'react'
 import { Button } from './Button'
 import { Card } from './Card'
 
+function AddTaskForm({ onAdd }: { onAdd: (title: string, description: string) => void }) {
+  const [open, setOpen] = useState(false)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+
+  function submit() {
+    const t = title.trim()
+    if (!t) return
+    onAdd(t, description.trim())
+    setTitle('')
+    setDescription('')
+    setOpen(false)
+  }
+
+  if (!open) {
+    return (
+      <button
+        onClick={() => setOpen(true)}
+        style={{
+          width: '100%', padding: '10px 0', borderRadius: 8,
+          border: '1px dashed #2a2a36', background: 'transparent',
+          color: '#6b7280', fontSize: 13, cursor: 'pointer',
+          transition: 'border-color 0.15s, color 0.15s',
+        }}
+        onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = '#6366f1'; (e.currentTarget as HTMLButtonElement).style.color = '#818cf8' }}
+        onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = '#2a2a36'; (e.currentTarget as HTMLButtonElement).style.color = '#6b7280' }}
+      >
+        + Add task
+      </button>
+    )
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, padding: '12px 14px', background: '#1a1a24', border: '1px solid #2a2a36', borderRadius: 8 }}>
+      <input
+        autoFocus
+        placeholder="Task title"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter') submit(); if (e.key === 'Escape') setOpen(false) }}
+        style={inputStyle}
+      />
+      <input
+        placeholder="Description (optional)"
+        value={description}
+        onChange={e => setDescription(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter') submit(); if (e.key === 'Escape') setOpen(false) }}
+        style={inputStyle}
+      />
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Button label="Add" variant="primary" onClick={submit} />
+        <Button label="Cancel" variant="secondary" onClick={() => setOpen(false)} />
+      </div>
+    </div>
+  )
+}
+
+const inputStyle: React.CSSProperties = {
+  background: '#0f0f13', border: '1px solid #2a2a36', borderRadius: 6,
+  padding: '7px 10px', color: '#e2e2e8', fontSize: 13, outline: 'none',
+  width: '100%',
+}
+
 export interface Task {
   id: string
   title: string
@@ -29,6 +92,11 @@ export function TaskBoard({ initialTasks = [] }: TaskBoardProps) {
 
   function clearDone() {
     setTasks(ts => ts.filter(t => !t.done))
+  }
+
+  function addTask(title: string, description: string) {
+    const id = `task-${Date.now()}`
+    setTasks(ts => [...ts, { id, title, description, done: false }])
   }
 
   return (
@@ -64,6 +132,7 @@ export function TaskBoard({ initialTasks = [] }: TaskBoardProps) {
             All caught up!
           </p>
         )}
+        <AddTaskForm onAdd={addTask} />
       </div>
 
       {done.length > 0 && (

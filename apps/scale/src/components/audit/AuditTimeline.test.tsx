@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, snapshot } from '@fieldtest/core'
 import { AuditTimeline } from './AuditTimeline'
 import { AuditLog, User } from '../../types'
 

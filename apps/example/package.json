@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite --port 3333",
     "build": "vite build",
-    "test:node": "viewtest",
-    "test:ui": "viewtest --ui",
-    "test:node:watch": "viewtest --watch"
+    "build:demo": "fieldtest --build --outDir ../../packages/website/public/demo-ui --base ./",
+    "test:node": "fieldtest",
+    "test:ui": "fieldtest --ui",
+    "test:node:watch": "fieldtest --watch"
   },
   "dependencies": {
-    "@viewtest/core": "workspace:*",
+    "@fieldtest/core": "workspace:*",
     "msw": "^2.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
@@ -20,7 +21,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "@viewtest/runner": "workspace:*",
+    "@fieldtest/runner": "workspace:*",
     "typescript": "^6.0.2",
     "vite": "^8.0.3"
   },

@@ -1,9 +1,9 @@
 {
-  "name": "viewtest-monorepo",
+  "name": "fieldtest",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter @viewtest/core build",
-    "dev": "pnpm --filter @viewtest/core dev & pnpm --filter example dev",
+    "build": "pnpm --filter @fieldtest/core build",
+    "dev": "pnpm --filter @fieldtest/core dev & pnpm --filter example dev",
     "test:node": "pnpm --filter example test:node",
     "test:node:watch": "pnpm --filter example test:node:watch"
   }

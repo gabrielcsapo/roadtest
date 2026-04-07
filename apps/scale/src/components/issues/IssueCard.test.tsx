@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@viewtest/core'
+import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
 import { IssueCard } from './IssueCard'
 import { Issue, User, Risk, Framework } from '../../types'
 
