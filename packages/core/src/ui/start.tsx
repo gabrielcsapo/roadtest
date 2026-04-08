@@ -1,7 +1,12 @@
 import { type ComponentType } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
-import { setWrapper, setRenderTarget, setStopAfterFirstRender } from "../framework/render";
+import {
+  setWrapper,
+  setRenderTarget,
+  setStopAfterFirstRender,
+  setPlayDelay,
+} from "../framework/render";
 import { setCurrentSourceFile } from "../framework/dsl";
 import { store } from "../framework/store";
 import { runAll, runSuite, runTest } from "../framework/runner";
@@ -145,6 +150,37 @@ export async function startApp(
       return container.innerHTML !== "";
     }
 
+    async function playTest(suiteName: string, testName: string, speed = 600): Promise<boolean> {
+      const { cleanup } = await import("@testing-library/react");
+      cleanup();
+      displayRoot.innerHTML = "";
+      const container = document.createElement("div");
+      displayRoot.appendChild(container);
+
+      const test = store
+        .getState()
+        .suites.find((s) => s.name === suiteName)
+        ?.tests.find((t) => t.name === testName);
+      if (!test) return false;
+
+      await runBeforeDisplayHooks();
+
+      setRenderTarget(container);
+      setPlayDelay(speed);
+      try {
+        await test.fn?.();
+      } catch (e: unknown) {
+        console.debug("[fieldtest play]", e);
+      } finally {
+        setRenderTarget(null);
+        setPlayDelay(0);
+        await runAfterTestHooks();
+        await runAfterDisplayHooks();
+      }
+
+      return container.innerHTML !== "";
+    }
+
     async function runAxe() {
       const { default: axe } = await import("axe-core");
       return axe.run(displayRoot);
@@ -152,6 +188,7 @@ export async function startApp(
 
     (window as unknown as Record<string, unknown>)["__vtDisplay"] = {
       showTest,
+      playTest,
       displayRoot,
       runAxe,
     };

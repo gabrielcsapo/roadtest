@@ -56,6 +56,15 @@ export function setStopAfterFirstRender(v: boolean) {
   _stopAfterFirstRender = v;
 }
 
+/**
+ * When > 0, render() and fireEvent calls pause for this many ms so the user
+ * can watch the test play out step-by-step in the display frame.
+ */
+let _playDelay = 0;
+export function setPlayDelay(ms: number) {
+  _playDelay = ms;
+}
+
 /** Sentinel thrown by render() in display mode to stop further test execution */
 const DISPLAY_STOP = "__vtDisplayStop";
 
@@ -91,6 +100,10 @@ export async function render(element: ReactElement) {
   if (_stopAfterFirstRender) {
     const sentinel = Object.assign(new Error(DISPLAY_STOP), { [DISPLAY_STOP]: true });
     throw sentinel;
+  }
+
+  if (_playDelay > 0) {
+    await new Promise((resolve) => setTimeout(resolve, _playDelay));
   }
 
   return result;
@@ -153,6 +166,9 @@ for (const method of eventMethods) {
     await tlAct(async () => {
       (fe[method] as (el: Element, props?: object) => boolean)(element, eventProperties);
     });
+    if (_playDelay > 0) {
+      await new Promise((resolve) => setTimeout(resolve, _playDelay));
+    }
   };
 }
 

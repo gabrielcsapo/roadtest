@@ -22,6 +22,7 @@ interface Props {
   coverage: IstanbulCoverage | null;
   suites: TestSuite[];
   onSelectTest: (suiteId: string, testId: string) => void;
+  onSelectSuite?: (suiteId: string) => void;
   /** Start on this frame index instead of 0. Use 1 in demo/static contexts where the live iframe is absent. */
   initialFrame?: number;
   /** URL for the display iframe. Defaults to "/" (the current Vite app). Override in embedded demos. */
@@ -374,6 +375,7 @@ const VIEWPORT_ICONS: Record<Viewport, () => React.ReactElement> = {
 
 interface DisplayApi {
   showTest: (suiteName: string, testName: string, fallbackHtml?: string) => Promise<boolean>;
+  playTest: (suiteName: string, testName: string, speed?: number) => Promise<boolean>;
   displayRoot: HTMLElement;
   runAxe?: () => Promise<import("axe-core").AxeResults>;
 }
@@ -420,6 +422,7 @@ export function Preview({
   coverage,
   suites,
   onSelectTest,
+  onSelectSuite,
   initialFrame = 0,
   displaySrc = "./index.html",
 }: Props) {
@@ -435,6 +438,15 @@ export function Preview({
   const [isDragging, setIsDragging] = useState(false);
   const [displayReady, setDisplayReady] = useState(false);
   const [displayHasContent, setDisplayHasContent] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasPlayed, setHasPlayed] = useState(false);
+
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = "@keyframes spin { to { transform: rotate(360deg); } }";
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
 
   // canvasRef points into the display iframe's document after rendering,
   // so tools (axe, measure, trace) operate on the live interactive component.
@@ -470,6 +482,15 @@ export function Preview({
       el.removeEventListener("scroll", updateToolbarScroll);
     };
   }, [updateToolbarScroll]);
+
+  const handlePlay = useCallback(() => {
+    if (!test || !displayApiRef.current?.playTest || isPlaying) return;
+    setIsPlaying(true);
+    displayApiRef.current.playTest(test.suiteName, test.name).then(() => {
+      setIsPlaying(false);
+      setHasPlayed(true);
+    });
+  }, [test, isPlaying]);
 
   const dragging = useRef(false);
   const dragStartY = useRef(0);
@@ -587,10 +608,12 @@ export function Preview({
         `width:${frameW}px`,
         `height:${rect.height}px`,
         "border:none",
-        "pointer-events:auto",
+        isPlaying || hasPlayed ? "pointer-events:auto" : "pointer-events:none",
         "overflow:auto",
         "background:transparent",
         "z-index:10",
+        isPlaying || hasPlayed ? "opacity:1" : "opacity:0.45",
+        "transition:opacity 0.2s",
       ];
       if (visionCss) parts.push(visionCss);
       if (vw !== null)
@@ -609,13 +632,15 @@ export function Preview({
       ro.disconnect();
       window.removeEventListener("resize", update);
     };
-  }, [showLive, canvasPaneHeight, viewport, vision]);
+  }, [showLive, canvasPaneHeight, viewport, vision, isPlaying, hasPlayed]);
 
   const prevTestId = useRef<string | null>(null);
   if (test?.id !== prevTestId.current) {
     prevTestId.current = test?.id ?? null;
     if (activeFrame !== initialFrame) setActiveFrame(initialFrame);
     if (activeTab === "timeline") setActiveTab("assertions");
+    if (isPlaying) setIsPlaying(false);
+    if (hasPlayed) setHasPlayed(false);
   }
 
   if (!test) {
@@ -717,7 +742,26 @@ export function Preview({
           }}
         >
           <StatusIcon status={test.status} />
-          <span style={{ fontSize: 12, color: "#6b7280" }}>{test.suiteName}</span>
+          {onSelectSuite ? (
+            <button
+              onClick={() => onSelectSuite(test.suiteId)}
+              style={{
+                fontSize: 12,
+                color: "#6b7280",
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                fontFamily: "inherit",
+              }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#a5b4fc")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#6b7280")}
+            >
+              {test.suiteName}
+            </button>
+          ) : (
+            <span style={{ fontSize: 12, color: "#6b7280" }}>{test.suiteName}</span>
+          )}
           <span style={{ color: "#3a3a4e" }}>/</span>
           <span style={{ fontSize: 13, fontWeight: 600, color: "#c4c4d4" }}>{test.name}</span>
         </div>
@@ -812,6 +856,51 @@ export function Preview({
                 scrollbarWidth: "none",
               }}
             >
+              <ToolbarTip label={isPlaying ? "Playing…" : "Play test"}>
+                <button
+                  onClick={handlePlay}
+                  disabled={isPlaying}
+                  style={{
+                    flexShrink: 0,
+                    width: 26,
+                    height: 26,
+                    borderRadius: 5,
+                    border: "1px solid",
+                    borderColor: isPlaying ? "rgba(99,102,241,0.6)" : "#2a2a36",
+                    background: isPlaying ? "rgba(99,102,241,0.2)" : "transparent",
+                    color: isPlaying ? "#a5b4fc" : "#4b4b60",
+                    cursor: isPlaying ? "default" : "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: "auto",
+                  }}
+                >
+                  {isPlaying ? (
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      style={{ animation: "spin 1s linear infinite" }}
+                    >
+                      <circle
+                        cx="6"
+                        cy="6"
+                        r="4.5"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeDasharray="14 7"
+                      />
+                    </svg>
+                  ) : (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                      <path d="M2 1.5l7 3.5-7 3.5V1.5z" />
+                    </svg>
+                  )}
+                </button>
+              </ToolbarTip>
+              <div style={{ flexShrink: 0, width: 1, height: 16, background: "#2a2a36" }} />
               {(["mobile", "tablet", "desktop"] as Viewport[]).map((vp) => {
                 const Icon = VIEWPORT_ICONS[vp];
                 const isActive = viewport === vp;
@@ -886,6 +975,29 @@ export function Preview({
 
                 {/* Live interactive component is shown in the display iframe overlay (positioned by useLayoutEffect) */}
                 {showLive && <div style={{ width: "100%", minHeight: 200 }} />}
+
+                {/* Hint overlay — shown when the live component is visible but not playing */}
+                {showLive && !isPlaying && !hasPlayed && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 12,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "rgba(15,15,19,0.85)",
+                      border: "1px solid #2a2a36",
+                      borderRadius: 6,
+                      padding: "5px 10px",
+                      fontSize: 11,
+                      color: "#6b7280",
+                      pointerEvents: "none",
+                      whiteSpace: "nowrap",
+                      zIndex: 20,
+                    }}
+                  >
+                    Press <span style={{ color: "#a5b4fc" }}>▶</span> to run the test and interact
+                  </div>
+                )}
 
                 <MeasureOverlay info={measureInfo} />
               </div>

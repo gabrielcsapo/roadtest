@@ -2,3 +2,4 @@ dist
 node_modules
 apps/example/.fieldtest/cache
 apps/scale/.fieldtest/cache
+packages/website/public/demo-ui

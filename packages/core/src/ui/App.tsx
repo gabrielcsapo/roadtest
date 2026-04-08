@@ -606,6 +606,7 @@ export function App() {
                     .find((t) => t.suiteId === suiteId && t.id === testId);
                   if (test) setSelected(test);
                 }}
+                onSelectSuite={handleSelectSuite}
               />
             )}
           </div>
