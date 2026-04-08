@@ -5,20 +5,20 @@
  * an `await __ftImport(...)` call, so the mock factory registered above it
  * takes effect before the import is resolved.
  */
-import { describe, it, expect, mock } from '@fieldtest/core'
-import { getGreeting } from './greeting'
+import { describe, it, expect, mock } from "@fieldtest/core";
+import { getGreeting } from "./greeting";
 
 // ── Mock './greeting' so the time-of-day logic is predictable ────────────────
-mock('./greeting', () => ({
+mock("./greeting", () => ({
   getGreeting: (name: string) => `Good morning, ${name}!`,
-}))
+}));
 
-describe('getGreeting() — mocked', () => {
-  it('returns the mocked greeting', () => {
-    expect(getGreeting('Alice')).toBe('Good morning, Alice!')
-  })
+describe("getGreeting() — mocked", () => {
+  it("returns the mocked greeting", () => {
+    expect(getGreeting("Alice")).toBe("Good morning, Alice!");
+  });
 
-  it('passes the name through the mock', () => {
-    expect(getGreeting('Bob')).toBe('Good morning, Bob!')
-  })
-})
+  it("passes the name through the mock", () => {
+    expect(getGreeting("Bob")).toBe("Good morning, Bob!");
+  });
+});

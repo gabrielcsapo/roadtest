@@ -1,1 +1,2700 @@
-{"hash":"1335cbf36b03a740bb201426","cachedAt":1775503843243,"suites":[{"id":"mnnl5269-2","name":"isValidEmail","tests":[{"id":"mnnl5269-3","name":"accepts valid email: user@example.com","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4","name":"accepts valid email: user.name@domain.org","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5","name":"accepts valid email: user+tag@example.co.uk","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6","name":"accepts valid email: test123@test.io","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-7","name":"accepts valid email: admin@company.net","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-8","name":"accepts valid email: hello@world.dev","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-9","name":"accepts valid email: a@b.co","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-a","name":"accepts valid email: first.last@subdomain.example.com","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-b","name":"accepts valid email: email@domain.museum","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-c","name":"accepts valid email: test@domain.name","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-d","name":"rejects invalid email: \"\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-e","name":"rejects invalid email: \"notanemail\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-f","name":"rejects invalid email: \"@example.com\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-g","name":"rejects invalid email: \"user@\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-h","name":"rejects invalid email: \"user@domain\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-i","name":"rejects invalid email: \"user name@example.com\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-j","name":"rejects invalid email: \"user@@example.com\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-k","name":"rejects invalid email: \"user@.com\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-l","name":"rejects invalid email: \".user@example.com\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-m","name":"rejects invalid email: \"user@example.\"","suiteId":"mnnl5269-2","suiteName":"isValidEmail","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-n","name":"isValidUrl","tests":[{"id":"mnnl5269-o","name":"accepts valid URL: http://example.com","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-p","name":"accepts valid URL: https://example.com","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-q","name":"accepts valid URL: https://www.example.com/path","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-r","name":"accepts valid URL: https://subdomain.example.com","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-s","name":"accepts valid URL: http://localhost:3000","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-t","name":"accepts valid URL: https://example.com/path?query=1","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-u","name":"accepts valid URL: https://example.com/#anchor","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-v","name":"accepts valid URL: https://api.example.com/v1/users","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-w","name":"accepts valid URL: http://192.168.1.1","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-x","name":"accepts valid URL: https://example.co.uk","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-y","name":"rejects invalid URL: \"\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-z","name":"rejects invalid URL: \"notaurl\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-10","name":"rejects invalid URL: \"ftp://example.com\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-11","name":"rejects invalid URL: \"example.com\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-12","name":"rejects invalid URL: \"//example.com\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-13","name":"rejects invalid URL: \"javascript:alert(1)\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-14","name":"rejects invalid URL: \"mailto:user@example.com\"","suiteId":"mnnl5269-n","suiteName":"isValidUrl","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-15","name":"isRequired","tests":[{"id":"mnnl5269-16","name":"isRequired returns true for \"hello\"","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-17","name":"isRequired returns true for \"  text  \"","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-18","name":"isRequired returns true for \"0\"","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-19","name":"isRequired returns true for 0","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1a","name":"isRequired returns true for false","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1b","name":"isRequired returns true for []","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1c","name":"isRequired returns true for {}","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1d","name":"isRequired returns true for 1","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1e","name":"isRequired returns false for null","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1f","name":"isRequired returns false for undefined","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1g","name":"isRequired returns false for \"\"","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1h","name":"isRequired returns false for whitespace-only string","suiteId":"mnnl5269-15","suiteName":"isRequired","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-1i","name":"minLength","tests":[{"id":"mnnl5269-1j","name":"minLength(\"hello\", 3) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1k","name":"minLength(\"hi\", 3) is false","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1l","name":"minLength(\"exactly\", 7) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1m","name":"minLength(\"\", 0) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1n","name":"minLength(\"\", 1) is false","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1o","name":"minLength(\"abc\", 3) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1p","name":"minLength(\"ab\", 3) is false","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1q","name":"minLength(\"aaaaaaaaaa\", 100) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1r","name":"minLength(\"aaaaaaaaaa\", 100) is false","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1s","name":"minLength(\"test\", 1) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1t","name":"minLength(\"test\", 5) is false","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1u","name":"minLength(\"password12\", 8) is true","suiteId":"mnnl5269-1i","suiteName":"minLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-1v","name":"maxLength","tests":[{"id":"mnnl5269-1w","name":"maxLength(\"hello...\", 10) is true","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1x","name":"maxLength(\"hello worl...\", 10) is false","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1y","name":"maxLength(\"exactly10!...\", 10) is true","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-1z","name":"maxLength(\"exactly10!...\", 10) is false","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-20","name":"maxLength(\"...\", 0) is true","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-21","name":"maxLength(\"a...\", 0) is false","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-22","name":"maxLength(\"short...\", 255) is true","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-23","name":"maxLength(\"aaaaaaaaaa...\", 100) is true","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-24","name":"maxLength(\"aaaaaaaaaa...\", 100) is false","suiteId":"mnnl5269-1v","suiteName":"maxLength","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-25","name":"isAlphanumeric","tests":[{"id":"mnnl5269-26","name":"isAlphanumeric(\"abc\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-27","name":"isAlphanumeric(\"ABC\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-28","name":"isAlphanumeric(\"123\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-29","name":"isAlphanumeric(\"abc123\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2a","name":"isAlphanumeric(\"ABC123\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2b","name":"isAlphanumeric(\"a1b2c3\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2c","name":"isAlphanumeric(\"A1\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2d","name":"isAlphanumeric(\"z9\") is true","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2e","name":"isAlphanumeric(\"\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2f","name":"isAlphanumeric(\"hello world\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2g","name":"isAlphanumeric(\"abc!\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2h","name":"isAlphanumeric(\"abc-123\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2i","name":"isAlphanumeric(\"abc_123\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2j","name":"isAlphanumeric(\"abc.def\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2k","name":"isAlphanumeric(\"123@\") is false","suiteId":"mnnl5269-25","suiteName":"isAlphanumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-2l","name":"isNumeric","tests":[{"id":"mnnl5269-2m","name":"isNumeric(\"0\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2n","name":"isNumeric(\"123\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2o","name":"isNumeric(\"-123\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2p","name":"isNumeric(\"1.5\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2q","name":"isNumeric(\"-1.5\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2r","name":"isNumeric(\"0.001\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2s","name":"isNumeric(\"999999\") is true","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2t","name":"isNumeric(\"\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2u","name":"isNumeric(\"abc\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2v","name":"isNumeric(\"1.2.3\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2w","name":"isNumeric(\"1e5\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2x","name":"isNumeric(\"--1\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2y","name":"isNumeric(\"1-\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-2z","name":"isNumeric(\"1.\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-30","name":"isNumeric(\".5\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-31","name":"isNumeric(\"1 2\") is false","suiteId":"mnnl5269-2l","suiteName":"isNumeric","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-32","name":"matchesPattern","tests":[{"id":"mnnl5269-33","name":"matchesPattern(\"hello\", /hello/) is true","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-34","name":"matchesPattern(\"hello world\", /^hello/) is true","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-35","name":"matchesPattern(\"world hello\", /^hello/) is false","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-36","name":"matchesPattern(\"ABC123\", /^[A-Z]+\\d+$/) is true","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-37","name":"matchesPattern(\"abc123\", /^[A-Z]+\\d+$/) is false","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-38","name":"matchesPattern(\"2024-01-15\", /^\\d{4}-\\d{2}-\\d{2}$/) is true","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-39","name":"matchesPattern(\"01/15/2024\", /^\\d{4}-\\d{2}-\\d{2}$/) is false","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3a","name":"matchesPattern(\"+1-555-1234\", /^\\+\\d{1,3}-\\d{3}-\\d{4}$/) is true","suiteId":"mnnl5269-32","suiteName":"matchesPattern","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-3b","name":"validateField","tests":[{"id":"mnnl5269-3c","name":"returns null when no rules","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3d","name":"returns error for required with empty string","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"This field is required\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3e","name":"returns null for required with non-empty string","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3f","name":"returns error for invalid email","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid email address\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3g","name":"returns null for valid email","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3h","name":"returns error for invalid url","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid URL\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3i","name":"returns null for valid url","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3j","name":"returns error for minLength violation","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Minimum length is 5\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3k","name":"returns null for minLength satisfied","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3l","name":"returns error for maxLength violation","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Maximum length is 3\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3m","name":"returns null for maxLength satisfied","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3n","name":"returns error for non-alphanumeric","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Only letters and numbers are allowed\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3o","name":"returns null for alphanumeric","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3p","name":"returns error for non-numeric","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Must be a number\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3q","name":"returns null for numeric string","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3r","name":"returns error for pattern mismatch with default message","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid format\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3s","name":"returns error for pattern mismatch with custom message","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Digits only\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3t","name":"returns null for pattern match","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3u","name":"stops at first failing rule in multiple rules","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"This field is required\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3v","name":"checks second rule when first passes","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid email address\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3w","name":"returns null when all rules pass","suiteId":"mnnl5269-3b","suiteName":"validateField","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-3x","name":"isValidEmail - additional edge cases","tests":[{"id":"mnnl5269-3y","name":"accepts additional valid email: user123@example.com","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-3z","name":"accepts additional valid email: user.name+tag@domain.co.uk","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-40","name":"accepts additional valid email: test@subdomain.example.org","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-41","name":"accepts additional valid email: a@b.io","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-42","name":"accepts additional valid email: hello123@world456.net","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-43","name":"accepts additional valid email: Test.User@Example.COM","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-44","name":"accepts additional valid email: user_name@domain.info","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-45","name":"accepts additional valid email: user-name@domain.biz","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-46","name":"rejects additional invalid email: \"missing@tld.\"","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-47","name":"rejects additional invalid email: \"spaces in@email.com\"","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-48","name":"rejects additional invalid email: \"double@@at.com\"","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-49","name":"rejects additional invalid email: \"nodomain@\"","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4a","name":"rejects additional invalid email: \"@nodomain.com\"","suiteId":"mnnl5269-3x","suiteName":"isValidEmail - additional edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-4b","name":"isValidUrl - additional cases","tests":[{"id":"mnnl5269-4c","name":"accepts additional valid URL: https://example.com/path/to/page","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4d","name":"accepts additional valid URL: http://example.com/search?q=test&page=1","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4e","name":"accepts additional valid URL: https://example.com/path#section","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4f","name":"accepts additional valid URL: https://user:pass@example.com","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4g","name":"accepts additional valid URL: https://example.com:8080/path","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4h","name":"accepts additional valid URL: http://subdomain.sub2.example.co.uk","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4i","name":"rejects additional invalid URL: \"www.example.com\"","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4j","name":"rejects additional invalid URL: \"example\"","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4k","name":"rejects additional invalid URL: \"file:///etc/passwd\"","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4l","name":"rejects additional invalid URL: \"data:text/html,test\"","suiteId":"mnnl5269-4b","suiteName":"isValidUrl - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-4m","name":"minLength - additional cases","tests":[{"id":"mnnl5269-4n","name":"minLength(\"hello\", 0) = true","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4o","name":"minLength(\"\", 0) = true","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4p","name":"minLength(\"a\", 1) = true","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4q","name":"minLength(\"ab\", 2) = true","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4r","name":"minLength(\"abc\", 4) = false","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4s","name":"minLength(\"password12\", 8) = true","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4t","name":"minLength(\"pass\", 8) = false","suiteId":"mnnl5269-4m","suiteName":"minLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-4u","name":"maxLength - additional cases","tests":[{"id":"mnnl5269-4v","name":"maxLength(\"...\", 0) = true","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4w","name":"maxLength(\"a...\", 1) = true","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4x","name":"maxLength(\"ab...\", 1) = false","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4y","name":"maxLength(\"test...\", 4) = true","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-4z","name":"maxLength(\"tests...\", 4) = false","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-50","name":"maxLength(\"aaaaaaaaaa...\", 255) = true","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-51","name":"maxLength(\"aaaaaaaaaa...\", 255) = false","suiteId":"mnnl5269-4u","suiteName":"maxLength - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-52","name":"isAlphanumeric - additional cases","tests":[{"id":"mnnl5269-53","name":"isAlphanumeric(\"helloworld\") = true","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-54","name":"isAlphanumeric(\"HELLOWORLD\") = true","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-55","name":"isAlphanumeric(\"Hello123\") = true","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-56","name":"isAlphanumeric(\"12345\") = true","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-57","name":"isAlphanumeric(\"hello world\") = false","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-58","name":"isAlphanumeric(\"hello-world\") = false","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-59","name":"isAlphanumeric(\"hello_world\") = false","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5a","name":"isAlphanumeric(\"!hello\") = false","suiteId":"mnnl5269-52","suiteName":"isAlphanumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-5b","name":"isNumeric - additional cases","tests":[{"id":"mnnl5269-5c","name":"isNumeric(\"0\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5d","name":"isNumeric(\"42\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5e","name":"isNumeric(\"-42\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5f","name":"isNumeric(\"3.14\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5g","name":"isNumeric(\"-3.14\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5h","name":"isNumeric(\"1000000\") = true","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5i","name":"isNumeric(\"abc\") = false","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5j","name":"isNumeric(\"12abc\") = false","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5k","name":"isNumeric(\"1.2.3\") = false","suiteId":"mnnl5269-5b","suiteName":"isNumeric - additional cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5268-1","name":"validation","tests":[],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-5l","name":"validateField - comprehensive rule combinations","tests":[{"id":"mnnl5269-5m","name":"validateField(\"a@b.com\", [required,email]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5n","name":"validateField(\"\", [required,email]) = \"This field is required\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"This field is required\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5o","name":"validateField(\"notEmail\", [required,email]) = \"Invalid email address\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid email address\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5p","name":"validateField(\"user@example.co\", [email,maxLength]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5q","name":"validateField(\"hi\", [minLength]) = \"Minimum length is 5\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Minimum length is 5\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5r","name":"validateField(\"hello\", [minLength]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5s","name":"validateField(\"hello!\", [alphanumeric]) = \"Only letters and numbers are allowed\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Only letters and numbers are allowed\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5t","name":"validateField(\"hello\", [alphanumeric]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5u","name":"validateField(\"123\", [numeric]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5v","name":"validateField(\"abc\", [numeric]) = \"Must be a number\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Must be a number\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5w","name":"validateField(\"test\", [maxLength]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5x","name":"validateField(\"a very long str\", [maxLength]) = \"Maximum length is 5\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Maximum length is 5\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5y","name":"validateField(\"\", []) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-5z","name":"validateField(\"abc\", [pattern]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-60","name":"validateField(\"ABC\", [pattern]) = \"Invalid format\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid format\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-61","name":"validateField(\"   \", [required]) = \"This field is required\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"This field is required\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-62","name":"validateField(\"xxxxxxxxxxxxxxx\", [maxLength]) = \"Maximum length is 99\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Maximum length is 99\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-63","name":"validateField(\"xxxxxxxxxxxxxxx\", [maxLength]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-64","name":"validateField(\"xxxxxxxx\", [minLength]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-65","name":"validateField(\"xxxxxxx\", [minLength]) = \"Minimum length is 8\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Minimum length is 8\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-66","name":"validateField(\"https://example\", [url]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-67","name":"validateField(\"notaurl\", [url]) = \"Invalid URL\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid URL\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-68","name":"validateField(\"abc123\", [alphanumeric]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-69","name":"validateField(\"abc 123\", [alphanumeric]) = \"Only letters and numbers are allowed\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Only letters and numbers are allowed\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6a","name":"validateField(\"-1.5\", [numeric]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6b","name":"validateField(\"1.2.3\", [numeric]) = \"Must be a number\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Must be a number\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6c","name":"validateField(\"test@example.co\", [email]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6d","name":"validateField(\"@example.com\", [email]) = \"Invalid email address\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid email address\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6e","name":"validateField(\"ftp://bad.com\", [url]) = \"Invalid URL\"","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(\"Invalid URL\")","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6f","name":"validateField(\"A1B2C3\", [alphanumeric]) = null","suiteId":"mnnl5269-5l","suiteName":"validateField - comprehensive rule combinations","status":"pass","assertions":[{"label":"expect(…).toBe(null)","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"},{"id":"mnnl5269-6g","name":"isRequired - more edge cases","tests":[{"id":"mnnl5269-6h","name":"isRequired(\" a \") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6i","name":"isRequired(\"false\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6j","name":"isRequired(\"0\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6k","name":"isRequired(\"  hello\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6l","name":"isRequired(\"true\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6m","name":"isRequired(\"[]\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6n","name":"isRequired(\"{}\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6o","name":"isRequired(\"null\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6p","name":"isRequired(\"undefined\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6q","name":"isRequired(\"NaN\") is true (non-empty string)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeTruthy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6r","name":"isRequired(\"\") is false (whitespace/empty)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6s","name":"isRequired(\"   \") is false (whitespace/empty)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6t","name":"isRequired(\" \") is false (whitespace/empty)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6u","name":"isRequired(\" \") is false (whitespace/empty)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null},{"id":"mnnl5269-6v","name":"isRequired(\"     \") is false (whitespace/empty)","suiteId":"mnnl5269-6g","suiteName":"isRequired - more edge cases","status":"pass","assertions":[{"label":"expect(…).toBeFalsy()","status":"pass"}],"snapshots":[],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"}],"coverage":null}
+{
+  "hash": "1335cbf36b03a740bb201426",
+  "cachedAt": 1775503843243,
+  "suites": [
+    {
+      "id": "mnnl5269-2",
+      "name": "isValidEmail",
+      "tests": [
+        {
+          "id": "mnnl5269-3",
+          "name": "accepts valid email: user@example.com",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4",
+          "name": "accepts valid email: user.name@domain.org",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5",
+          "name": "accepts valid email: user+tag@example.co.uk",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6",
+          "name": "accepts valid email: test123@test.io",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-7",
+          "name": "accepts valid email: admin@company.net",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-8",
+          "name": "accepts valid email: hello@world.dev",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-9",
+          "name": "accepts valid email: a@b.co",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-a",
+          "name": "accepts valid email: first.last@subdomain.example.com",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-b",
+          "name": "accepts valid email: email@domain.museum",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-c",
+          "name": "accepts valid email: test@domain.name",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-d",
+          "name": "rejects invalid email: \"\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-e",
+          "name": "rejects invalid email: \"notanemail\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-f",
+          "name": "rejects invalid email: \"@example.com\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-g",
+          "name": "rejects invalid email: \"user@\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-h",
+          "name": "rejects invalid email: \"user@domain\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-i",
+          "name": "rejects invalid email: \"user name@example.com\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-j",
+          "name": "rejects invalid email: \"user@@example.com\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-k",
+          "name": "rejects invalid email: \"user@.com\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-l",
+          "name": "rejects invalid email: \".user@example.com\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-m",
+          "name": "rejects invalid email: \"user@example.\"",
+          "suiteId": "mnnl5269-2",
+          "suiteName": "isValidEmail",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-n",
+      "name": "isValidUrl",
+      "tests": [
+        {
+          "id": "mnnl5269-o",
+          "name": "accepts valid URL: http://example.com",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-p",
+          "name": "accepts valid URL: https://example.com",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-q",
+          "name": "accepts valid URL: https://www.example.com/path",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-r",
+          "name": "accepts valid URL: https://subdomain.example.com",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-s",
+          "name": "accepts valid URL: http://localhost:3000",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-t",
+          "name": "accepts valid URL: https://example.com/path?query=1",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-u",
+          "name": "accepts valid URL: https://example.com/#anchor",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-v",
+          "name": "accepts valid URL: https://api.example.com/v1/users",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-w",
+          "name": "accepts valid URL: http://192.168.1.1",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-x",
+          "name": "accepts valid URL: https://example.co.uk",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-y",
+          "name": "rejects invalid URL: \"\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-z",
+          "name": "rejects invalid URL: \"notaurl\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-10",
+          "name": "rejects invalid URL: \"ftp://example.com\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-11",
+          "name": "rejects invalid URL: \"example.com\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-12",
+          "name": "rejects invalid URL: \"//example.com\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-13",
+          "name": "rejects invalid URL: \"javascript:alert(1)\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-14",
+          "name": "rejects invalid URL: \"mailto:user@example.com\"",
+          "suiteId": "mnnl5269-n",
+          "suiteName": "isValidUrl",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-15",
+      "name": "isRequired",
+      "tests": [
+        {
+          "id": "mnnl5269-16",
+          "name": "isRequired returns true for \"hello\"",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-17",
+          "name": "isRequired returns true for \"  text  \"",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-18",
+          "name": "isRequired returns true for \"0\"",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-19",
+          "name": "isRequired returns true for 0",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1a",
+          "name": "isRequired returns true for false",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1b",
+          "name": "isRequired returns true for []",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1c",
+          "name": "isRequired returns true for {}",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1d",
+          "name": "isRequired returns true for 1",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1e",
+          "name": "isRequired returns false for null",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1f",
+          "name": "isRequired returns false for undefined",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1g",
+          "name": "isRequired returns false for \"\"",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1h",
+          "name": "isRequired returns false for whitespace-only string",
+          "suiteId": "mnnl5269-15",
+          "suiteName": "isRequired",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-1i",
+      "name": "minLength",
+      "tests": [
+        {
+          "id": "mnnl5269-1j",
+          "name": "minLength(\"hello\", 3) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1k",
+          "name": "minLength(\"hi\", 3) is false",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1l",
+          "name": "minLength(\"exactly\", 7) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1m",
+          "name": "minLength(\"\", 0) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1n",
+          "name": "minLength(\"\", 1) is false",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1o",
+          "name": "minLength(\"abc\", 3) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1p",
+          "name": "minLength(\"ab\", 3) is false",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1q",
+          "name": "minLength(\"aaaaaaaaaa\", 100) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1r",
+          "name": "minLength(\"aaaaaaaaaa\", 100) is false",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1s",
+          "name": "minLength(\"test\", 1) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1t",
+          "name": "minLength(\"test\", 5) is false",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1u",
+          "name": "minLength(\"password12\", 8) is true",
+          "suiteId": "mnnl5269-1i",
+          "suiteName": "minLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-1v",
+      "name": "maxLength",
+      "tests": [
+        {
+          "id": "mnnl5269-1w",
+          "name": "maxLength(\"hello...\", 10) is true",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1x",
+          "name": "maxLength(\"hello worl...\", 10) is false",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1y",
+          "name": "maxLength(\"exactly10!...\", 10) is true",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-1z",
+          "name": "maxLength(\"exactly10!...\", 10) is false",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-20",
+          "name": "maxLength(\"...\", 0) is true",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-21",
+          "name": "maxLength(\"a...\", 0) is false",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-22",
+          "name": "maxLength(\"short...\", 255) is true",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-23",
+          "name": "maxLength(\"aaaaaaaaaa...\", 100) is true",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-24",
+          "name": "maxLength(\"aaaaaaaaaa...\", 100) is false",
+          "suiteId": "mnnl5269-1v",
+          "suiteName": "maxLength",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-25",
+      "name": "isAlphanumeric",
+      "tests": [
+        {
+          "id": "mnnl5269-26",
+          "name": "isAlphanumeric(\"abc\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-27",
+          "name": "isAlphanumeric(\"ABC\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-28",
+          "name": "isAlphanumeric(\"123\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-29",
+          "name": "isAlphanumeric(\"abc123\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2a",
+          "name": "isAlphanumeric(\"ABC123\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2b",
+          "name": "isAlphanumeric(\"a1b2c3\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2c",
+          "name": "isAlphanumeric(\"A1\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2d",
+          "name": "isAlphanumeric(\"z9\") is true",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2e",
+          "name": "isAlphanumeric(\"\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2f",
+          "name": "isAlphanumeric(\"hello world\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2g",
+          "name": "isAlphanumeric(\"abc!\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2h",
+          "name": "isAlphanumeric(\"abc-123\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2i",
+          "name": "isAlphanumeric(\"abc_123\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2j",
+          "name": "isAlphanumeric(\"abc.def\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2k",
+          "name": "isAlphanumeric(\"123@\") is false",
+          "suiteId": "mnnl5269-25",
+          "suiteName": "isAlphanumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-2l",
+      "name": "isNumeric",
+      "tests": [
+        {
+          "id": "mnnl5269-2m",
+          "name": "isNumeric(\"0\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2n",
+          "name": "isNumeric(\"123\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2o",
+          "name": "isNumeric(\"-123\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2p",
+          "name": "isNumeric(\"1.5\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2q",
+          "name": "isNumeric(\"-1.5\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2r",
+          "name": "isNumeric(\"0.001\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2s",
+          "name": "isNumeric(\"999999\") is true",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2t",
+          "name": "isNumeric(\"\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2u",
+          "name": "isNumeric(\"abc\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2v",
+          "name": "isNumeric(\"1.2.3\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2w",
+          "name": "isNumeric(\"1e5\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2x",
+          "name": "isNumeric(\"--1\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2y",
+          "name": "isNumeric(\"1-\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-2z",
+          "name": "isNumeric(\"1.\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-30",
+          "name": "isNumeric(\".5\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-31",
+          "name": "isNumeric(\"1 2\") is false",
+          "suiteId": "mnnl5269-2l",
+          "suiteName": "isNumeric",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-32",
+      "name": "matchesPattern",
+      "tests": [
+        {
+          "id": "mnnl5269-33",
+          "name": "matchesPattern(\"hello\", /hello/) is true",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-34",
+          "name": "matchesPattern(\"hello world\", /^hello/) is true",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-35",
+          "name": "matchesPattern(\"world hello\", /^hello/) is false",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-36",
+          "name": "matchesPattern(\"ABC123\", /^[A-Z]+\\d+$/) is true",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-37",
+          "name": "matchesPattern(\"abc123\", /^[A-Z]+\\d+$/) is false",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-38",
+          "name": "matchesPattern(\"2024-01-15\", /^\\d{4}-\\d{2}-\\d{2}$/) is true",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-39",
+          "name": "matchesPattern(\"01/15/2024\", /^\\d{4}-\\d{2}-\\d{2}$/) is false",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3a",
+          "name": "matchesPattern(\"+1-555-1234\", /^\\+\\d{1,3}-\\d{3}-\\d{4}$/) is true",
+          "suiteId": "mnnl5269-32",
+          "suiteName": "matchesPattern",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-3b",
+      "name": "validateField",
+      "tests": [
+        {
+          "id": "mnnl5269-3c",
+          "name": "returns null when no rules",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3d",
+          "name": "returns error for required with empty string",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"This field is required\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3e",
+          "name": "returns null for required with non-empty string",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3f",
+          "name": "returns error for invalid email",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Invalid email address\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3g",
+          "name": "returns null for valid email",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3h",
+          "name": "returns error for invalid url",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Invalid URL\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3i",
+          "name": "returns null for valid url",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3j",
+          "name": "returns error for minLength violation",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Minimum length is 5\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3k",
+          "name": "returns null for minLength satisfied",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3l",
+          "name": "returns error for maxLength violation",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Maximum length is 3\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3m",
+          "name": "returns null for maxLength satisfied",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3n",
+          "name": "returns error for non-alphanumeric",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"Only letters and numbers are allowed\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3o",
+          "name": "returns null for alphanumeric",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3p",
+          "name": "returns error for non-numeric",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Must be a number\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3q",
+          "name": "returns null for numeric string",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3r",
+          "name": "returns error for pattern mismatch with default message",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Invalid format\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3s",
+          "name": "returns error for pattern mismatch with custom message",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Digits only\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3t",
+          "name": "returns null for pattern match",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3u",
+          "name": "stops at first failing rule in multiple rules",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"This field is required\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3v",
+          "name": "checks second rule when first passes",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Invalid email address\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3w",
+          "name": "returns null when all rules pass",
+          "suiteId": "mnnl5269-3b",
+          "suiteName": "validateField",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-3x",
+      "name": "isValidEmail - additional edge cases",
+      "tests": [
+        {
+          "id": "mnnl5269-3y",
+          "name": "accepts additional valid email: user123@example.com",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-3z",
+          "name": "accepts additional valid email: user.name+tag@domain.co.uk",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-40",
+          "name": "accepts additional valid email: test@subdomain.example.org",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-41",
+          "name": "accepts additional valid email: a@b.io",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-42",
+          "name": "accepts additional valid email: hello123@world456.net",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-43",
+          "name": "accepts additional valid email: Test.User@Example.COM",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-44",
+          "name": "accepts additional valid email: user_name@domain.info",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-45",
+          "name": "accepts additional valid email: user-name@domain.biz",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-46",
+          "name": "rejects additional invalid email: \"missing@tld.\"",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-47",
+          "name": "rejects additional invalid email: \"spaces in@email.com\"",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-48",
+          "name": "rejects additional invalid email: \"double@@at.com\"",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-49",
+          "name": "rejects additional invalid email: \"nodomain@\"",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4a",
+          "name": "rejects additional invalid email: \"@nodomain.com\"",
+          "suiteId": "mnnl5269-3x",
+          "suiteName": "isValidEmail - additional edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-4b",
+      "name": "isValidUrl - additional cases",
+      "tests": [
+        {
+          "id": "mnnl5269-4c",
+          "name": "accepts additional valid URL: https://example.com/path/to/page",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4d",
+          "name": "accepts additional valid URL: http://example.com/search?q=test&page=1",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4e",
+          "name": "accepts additional valid URL: https://example.com/path#section",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4f",
+          "name": "accepts additional valid URL: https://user:pass@example.com",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4g",
+          "name": "accepts additional valid URL: https://example.com:8080/path",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4h",
+          "name": "accepts additional valid URL: http://subdomain.sub2.example.co.uk",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4i",
+          "name": "rejects additional invalid URL: \"www.example.com\"",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4j",
+          "name": "rejects additional invalid URL: \"example\"",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4k",
+          "name": "rejects additional invalid URL: \"file:///etc/passwd\"",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4l",
+          "name": "rejects additional invalid URL: \"data:text/html,test\"",
+          "suiteId": "mnnl5269-4b",
+          "suiteName": "isValidUrl - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-4m",
+      "name": "minLength - additional cases",
+      "tests": [
+        {
+          "id": "mnnl5269-4n",
+          "name": "minLength(\"hello\", 0) = true",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4o",
+          "name": "minLength(\"\", 0) = true",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4p",
+          "name": "minLength(\"a\", 1) = true",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4q",
+          "name": "minLength(\"ab\", 2) = true",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4r",
+          "name": "minLength(\"abc\", 4) = false",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4s",
+          "name": "minLength(\"password12\", 8) = true",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4t",
+          "name": "minLength(\"pass\", 8) = false",
+          "suiteId": "mnnl5269-4m",
+          "suiteName": "minLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-4u",
+      "name": "maxLength - additional cases",
+      "tests": [
+        {
+          "id": "mnnl5269-4v",
+          "name": "maxLength(\"...\", 0) = true",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4w",
+          "name": "maxLength(\"a...\", 1) = true",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4x",
+          "name": "maxLength(\"ab...\", 1) = false",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4y",
+          "name": "maxLength(\"test...\", 4) = true",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-4z",
+          "name": "maxLength(\"tests...\", 4) = false",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-50",
+          "name": "maxLength(\"aaaaaaaaaa...\", 255) = true",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-51",
+          "name": "maxLength(\"aaaaaaaaaa...\", 255) = false",
+          "suiteId": "mnnl5269-4u",
+          "suiteName": "maxLength - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-52",
+      "name": "isAlphanumeric - additional cases",
+      "tests": [
+        {
+          "id": "mnnl5269-53",
+          "name": "isAlphanumeric(\"helloworld\") = true",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-54",
+          "name": "isAlphanumeric(\"HELLOWORLD\") = true",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-55",
+          "name": "isAlphanumeric(\"Hello123\") = true",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-56",
+          "name": "isAlphanumeric(\"12345\") = true",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-57",
+          "name": "isAlphanumeric(\"hello world\") = false",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-58",
+          "name": "isAlphanumeric(\"hello-world\") = false",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-59",
+          "name": "isAlphanumeric(\"hello_world\") = false",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5a",
+          "name": "isAlphanumeric(\"!hello\") = false",
+          "suiteId": "mnnl5269-52",
+          "suiteName": "isAlphanumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-5b",
+      "name": "isNumeric - additional cases",
+      "tests": [
+        {
+          "id": "mnnl5269-5c",
+          "name": "isNumeric(\"0\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5d",
+          "name": "isNumeric(\"42\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5e",
+          "name": "isNumeric(\"-42\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5f",
+          "name": "isNumeric(\"3.14\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5g",
+          "name": "isNumeric(\"-3.14\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5h",
+          "name": "isNumeric(\"1000000\") = true",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5i",
+          "name": "isNumeric(\"abc\") = false",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5j",
+          "name": "isNumeric(\"12abc\") = false",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5k",
+          "name": "isNumeric(\"1.2.3\") = false",
+          "suiteId": "mnnl5269-5b",
+          "suiteName": "isNumeric - additional cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5268-1",
+      "name": "validation",
+      "tests": [],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-5l",
+      "name": "validateField - comprehensive rule combinations",
+      "tests": [
+        {
+          "id": "mnnl5269-5m",
+          "name": "validateField(\"a@b.com\", [required,email]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5n",
+          "name": "validateField(\"\", [required,email]) = \"This field is required\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"This field is required\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5o",
+          "name": "validateField(\"notEmail\", [required,email]) = \"Invalid email address\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Invalid email address\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5p",
+          "name": "validateField(\"user@example.co\", [email,maxLength]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5q",
+          "name": "validateField(\"hi\", [minLength]) = \"Minimum length is 5\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Minimum length is 5\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5r",
+          "name": "validateField(\"hello\", [minLength]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5s",
+          "name": "validateField(\"hello!\", [alphanumeric]) = \"Only letters and numbers are allowed\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"Only letters and numbers are allowed\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5t",
+          "name": "validateField(\"hello\", [alphanumeric]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5u",
+          "name": "validateField(\"123\", [numeric]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5v",
+          "name": "validateField(\"abc\", [numeric]) = \"Must be a number\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Must be a number\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5w",
+          "name": "validateField(\"test\", [maxLength]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5x",
+          "name": "validateField(\"a very long str\", [maxLength]) = \"Maximum length is 5\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Maximum length is 5\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5y",
+          "name": "validateField(\"\", []) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-5z",
+          "name": "validateField(\"abc\", [pattern]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-60",
+          "name": "validateField(\"ABC\", [pattern]) = \"Invalid format\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Invalid format\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-61",
+          "name": "validateField(\"   \", [required]) = \"This field is required\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"This field is required\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-62",
+          "name": "validateField(\"xxxxxxxxxxxxxxx\", [maxLength]) = \"Maximum length is 99\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Maximum length is 99\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-63",
+          "name": "validateField(\"xxxxxxxxxxxxxxx\", [maxLength]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-64",
+          "name": "validateField(\"xxxxxxxx\", [minLength]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-65",
+          "name": "validateField(\"xxxxxxx\", [minLength]) = \"Minimum length is 8\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Minimum length is 8\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-66",
+          "name": "validateField(\"https://example\", [url]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-67",
+          "name": "validateField(\"notaurl\", [url]) = \"Invalid URL\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Invalid URL\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-68",
+          "name": "validateField(\"abc123\", [alphanumeric]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-69",
+          "name": "validateField(\"abc 123\", [alphanumeric]) = \"Only letters and numbers are allowed\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"Only letters and numbers are allowed\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6a",
+          "name": "validateField(\"-1.5\", [numeric]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6b",
+          "name": "validateField(\"1.2.3\", [numeric]) = \"Must be a number\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Must be a number\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6c",
+          "name": "validateField(\"test@example.co\", [email]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6d",
+          "name": "validateField(\"@example.com\", [email]) = \"Invalid email address\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Invalid email address\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6e",
+          "name": "validateField(\"ftp://bad.com\", [url]) = \"Invalid URL\"",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Invalid URL\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6f",
+          "name": "validateField(\"A1B2C3\", [alphanumeric]) = null",
+          "suiteId": "mnnl5269-5l",
+          "suiteName": "validateField - comprehensive rule combinations",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    },
+    {
+      "id": "mnnl5269-6g",
+      "name": "isRequired - more edge cases",
+      "tests": [
+        {
+          "id": "mnnl5269-6h",
+          "name": "isRequired(\" a \") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6i",
+          "name": "isRequired(\"false\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6j",
+          "name": "isRequired(\"0\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6k",
+          "name": "isRequired(\"  hello\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6l",
+          "name": "isRequired(\"true\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6m",
+          "name": "isRequired(\"[]\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6n",
+          "name": "isRequired(\"{}\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6o",
+          "name": "isRequired(\"null\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6p",
+          "name": "isRequired(\"undefined\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6q",
+          "name": "isRequired(\"NaN\") is true (non-empty string)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6r",
+          "name": "isRequired(\"\") is false (whitespace/empty)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6s",
+          "name": "isRequired(\"   \") is false (whitespace/empty)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6t",
+          "name": "isRequired(\" \") is false (whitespace/empty)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6u",
+          "name": "isRequired(\" \") is false (whitespace/empty)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl5269-6v",
+          "name": "isRequired(\"     \") is false (whitespace/empty)",
+          "suiteId": "mnnl5269-6g",
+          "suiteName": "isRequired - more edge cases",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/utils/validation.test.ts"
+    }
+  ],
+  "coverage": null
+}

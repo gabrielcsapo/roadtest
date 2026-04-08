@@ -1,2 +1,29 @@
-import{_ as e,d as t,f as n,h as r,l as i,p as a}from"./src-bHa7jhTB.js";e(`./discounts`,()=>({noDiscount:(e,t)=>e*t,bulkDiscount:(e,t)=>e*t*.5,memberDiscount:(e,t)=>e*t*.7}));var{calculateTotal:o}=await r(`./cart`,()=>i(()=>import(`./cart-BaaaffbU.js`),[],import.meta.url)),{bulkDiscount:s,memberDiscount:c}=await r(`./discounts`,()=>i(()=>import(`./discounts-C__ymJZ6.js`),[],import.meta.url)),l=[{name:`Widget`,price:10,qty:2},{name:`Gadget`,price:25,qty:1},{name:`Doohickey`,price:5,qty:5}];n(`calculateTotal() with mocked discount strategies`,()=>{a(`calls bulkDiscount once per line item and sums the results`,()=>{t(o(l,s)).toBe(35)}),a(`calls memberDiscount once per line item and sums the results`,()=>{t(o(l,c)).toBe(49)}),a(`passes price and qty as separate args — not the whole item object`,()=>{o([{name:`Solo`,price:99,qty:3}],s),t(!0).toBe(!0)})});
+import { _ as e, d as t, f as n, h as r, l as i, p as a } from "./src-bHa7jhTB.js";
+e(`./discounts`, () => ({
+  noDiscount: (e, t) => e * t,
+  bulkDiscount: (e, t) => e * t * 0.5,
+  memberDiscount: (e, t) => e * t * 0.7,
+}));
+var { calculateTotal: o } = await r(`./cart`, () =>
+    i(() => import(`./cart-BaaaffbU.js`), [], import.meta.url),
+  ),
+  { bulkDiscount: s, memberDiscount: c } = await r(`./discounts`, () =>
+    i(() => import(`./discounts-C__ymJZ6.js`), [], import.meta.url),
+  ),
+  l = [
+    { name: `Widget`, price: 10, qty: 2 },
+    { name: `Gadget`, price: 25, qty: 1 },
+    { name: `Doohickey`, price: 5, qty: 5 },
+  ];
+n(`calculateTotal() with mocked discount strategies`, () => {
+  (a(`calls bulkDiscount once per line item and sums the results`, () => {
+    t(o(l, s)).toBe(35);
+  }),
+    a(`calls memberDiscount once per line item and sums the results`, () => {
+      t(o(l, c)).toBe(49);
+    }),
+    a(`passes price and qty as separate args — not the whole item object`, () => {
+      (o([{ name: `Solo`, price: 99, qty: 3 }], s), t(!0).toBe(!0));
+    }));
+});
 //# sourceMappingURL=discounts.test-cP7UmMf8.js.map

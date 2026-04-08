@@ -1,1 +1,2056 @@
-{"hash":"00cb3e61665abcfd91b71e78","cachedAt":1775503843333,"suites":[{"id":"mnnl52bm-7ti","name":"AuditActionBadge","tests":[{"id":"mnnl52bm-7tj","name":"renders badge for create action: vendor.created","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841821,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tk","name":"renders badge for create action: policy.added","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tl","name":"renders badge for create action: credential.uploaded","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tm","name":"renders badge for create action: user.registered","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tn","name":"renders badge for create action: control.created","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7to","name":"create action vendor.created has green category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"create\" but received null","assertions":[{"label":"expect(…).toBe(\"create\")","status":"fail","error":"Expected \"create\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tp","name":"create action policy.added has green category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"create\" but received null","assertions":[{"label":"expect(…).toBe(\"create\")","status":"fail","error":"Expected \"create\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tq","name":"create action credential.uploaded has green category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"create\" but received null","assertions":[{"label":"expect(…).toBe(\"create\")","status":"fail","error":"Expected \"create\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841822,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tr","name":"create action user.registered has green category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"create\" but received null","assertions":[{"label":"expect(…).toBe(\"create\")","status":"fail","error":"Expected \"create\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ts","name":"create action control.created has green category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"create\" but received null","assertions":[{"label":"expect(…).toBe(\"create\")","status":"fail","error":"Expected \"create\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tt","name":"renders badge for update action: policy.updated","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tu","name":"renders badge for update action: credential.rotated","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tv","name":"renders badge for update action: user.role_changed","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tw","name":"renders badge for update action: vendor.modified","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tx","name":"renders badge for update action: control.edited","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841823,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ty","name":"renders badge for update action: license.renewed","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7tz","name":"update action policy.updated has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u0","name":"update action credential.rotated has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u1","name":"update action user.role_changed has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u2","name":"update action vendor.modified has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u3","name":"update action control.edited has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841824,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u4","name":"update action license.renewed has update category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"update\" but received null","assertions":[{"label":"expect(…).toBe(\"update\")","status":"fail","error":"Expected \"update\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u5","name":"renders badge for delete action: vendor.deleted","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u6","name":"renders badge for delete action: policy.removed","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u7","name":"renders badge for delete action: credential.revoked","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u8","name":"renders badge for delete action: user.terminated","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7u9","name":"renders badge for delete action: control.deleted","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ua","name":"delete action vendor.deleted has delete category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"delete\" but received null","assertions":[{"label":"expect(…).toBe(\"delete\")","status":"fail","error":"Expected \"delete\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841825,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ub","name":"delete action policy.removed has delete category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"delete\" but received null","assertions":[{"label":"expect(…).toBe(\"delete\")","status":"fail","error":"Expected \"delete\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uc","name":"delete action credential.revoked has delete category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"delete\" but received null","assertions":[{"label":"expect(…).toBe(\"delete\")","status":"fail","error":"Expected \"delete\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ud","name":"delete action user.terminated has delete category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"delete\" but received null","assertions":[{"label":"expect(…).toBe(\"delete\")","status":"fail","error":"Expected \"delete\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ue","name":"delete action control.deleted has delete category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"delete\" but received null","assertions":[{"label":"expect(…).toBe(\"delete\")","status":"fail","error":"Expected \"delete\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uf","name":"renders badge for view action: report.viewed","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ug","name":"renders badge for view action: policy.accessed","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uh","name":"renders badge for view action: credential.downloaded","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841826,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ui","name":"renders badge for view action: data.exported","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841829,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uj","name":"renders badge for view action: audit.read","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uk","name":"view action report.viewed has view category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"view\" but received null","assertions":[{"label":"expect(…).toBe(\"view\")","status":"fail","error":"Expected \"view\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ul","name":"view action policy.accessed has view category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"view\" but received null","assertions":[{"label":"expect(…).toBe(\"view\")","status":"fail","error":"Expected \"view\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7um","name":"view action credential.downloaded has view category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"view\" but received null","assertions":[{"label":"expect(…).toBe(\"view\")","status":"fail","error":"Expected \"view\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7un","name":"view action data.exported has view category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"view\" but received null","assertions":[{"label":"expect(…).toBe(\"view\")","status":"fail","error":"Expected \"view\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uo","name":"view action audit.read has view category","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"view\" but received null","assertions":[{"label":"expect(…).toBe(\"view\")","status":"fail","error":"Expected \"view\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841830,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7up","name":"unknown action vendor.synced renders with fallback","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uq","name":"unknown action policy.approved renders with fallback","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ur","name":"unknown action system.restarted renders with fallback","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7us","name":"unknown action job.queued renders with fallback","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ut","name":"renders vendor.created at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uu","name":"renders vendor.created at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uv","name":"renders policy.added at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841831,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uw","name":"renders policy.added at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ux","name":"renders policy.updated at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uy","name":"renders policy.updated at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7uz","name":"renders credential.rotated at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v0","name":"renders credential.rotated at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v1","name":"renders vendor.deleted at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v2","name":"renders vendor.deleted at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841832,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v3","name":"renders policy.removed at size sm","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v4","name":"renders policy.removed at size md","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v5","name":"shows Create label for created actions","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v6","name":"shows Update label for updated actions","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v7","name":"shows Delete label for deleted actions","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v8","name":"shows View label for viewed actions","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841833,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7v9","name":"shows Action label for unknown actions","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Action\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7va","name":"stores action in data-action attribute","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"policy.updated\" but received null","assertions":[{"label":"expect(…).toBe(\"policy.updated\")","status":"fail","error":"Expected \"policy.updated\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vb","name":"uses custom data-testid when provided","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"custom-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vc","name":"defaults to md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vd","name":"renders action without dot notation","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7ve","name":"renders empty action string","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841834,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vf","name":"matches snapshot for create action","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"},{"label":"audit-action-badge-create","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vg","name":"matches snapshot for update action","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"},{"label":"audit-action-badge-update","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vh","name":"matches snapshot for delete action","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"},{"label":"audit-action-badge-delete","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vi","name":"matches snapshot for view action","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"},{"label":"audit-action-badge-view","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vj","name":"matches snapshot for unknown action","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"},{"label":"audit-action-badge-unknown","timestamp":1775503841837,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vk","name":"create action vendor.created renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"vendor.created\" but received null","assertions":[{"label":"expect(…).toBe(\"vendor.created\")","status":"fail","error":"Expected \"vendor.created\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vl","name":"create action policy.added renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"policy.added\" but received null","assertions":[{"label":"expect(…).toBe(\"policy.added\")","status":"fail","error":"Expected \"policy.added\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vm","name":"create action credential.uploaded renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"credential.uploaded\" but received null","assertions":[{"label":"expect(…).toBe(\"credential.uploaded\")","status":"fail","error":"Expected \"credential.uploaded\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vn","name":"create action user.registered renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"user.registered\" but received null","assertions":[{"label":"expect(…).toBe(\"user.registered\")","status":"fail","error":"Expected \"user.registered\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vo","name":"create action control.created renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"control.created\" but received null","assertions":[{"label":"expect(…).toBe(\"control.created\")","status":"fail","error":"Expected \"control.created\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vp","name":"update action policy.updated renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"policy.updated\" but received null","assertions":[{"label":"expect(…).toBe(\"policy.updated\")","status":"fail","error":"Expected \"policy.updated\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vq","name":"update action credential.rotated renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"credential.rotated\" but received null","assertions":[{"label":"expect(…).toBe(\"credential.rotated\")","status":"fail","error":"Expected \"credential.rotated\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841838,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vr","name":"update action user.role_changed renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"user.role_changed\" but received null","assertions":[{"label":"expect(…).toBe(\"user.role_changed\")","status":"fail","error":"Expected \"user.role_changed\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vs","name":"update action vendor.modified renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"vendor.modified\" but received null","assertions":[{"label":"expect(…).toBe(\"vendor.modified\")","status":"fail","error":"Expected \"vendor.modified\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vt","name":"update action control.edited renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"control.edited\" but received null","assertions":[{"label":"expect(…).toBe(\"control.edited\")","status":"fail","error":"Expected \"control.edited\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vu","name":"update action license.renewed renders at md size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"fail","error":"Expected \"license.renewed\" but received null","assertions":[{"label":"expect(…).toBe(\"license.renewed\")","status":"fail","error":"Expected \"license.renewed\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vv","name":"delete action vendor.deleted renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vw","name":"delete action policy.removed renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vx","name":"delete action credential.revoked renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vy","name":"delete action user.terminated renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841839,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7vz","name":"delete action control.deleted renders at sm size","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Delete\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w0","name":"view action report.viewed shows View label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w1","name":"view action policy.accessed shows View label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w2","name":"view action credential.downloaded shows View label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w3","name":"view action data.exported shows View label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w4","name":"view action audit.read shows View label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"View\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w5","name":"create action vendor.created shows Create label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w6","name":"create action policy.added shows Create label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841840,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w7","name":"create action credential.uploaded shows Create label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w8","name":"create action user.registered shows Create label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7w9","name":"create action control.created shows Create label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Create\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7wa","name":"update action policy.updated shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7wb","name":"update action credential.rotated shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7wc","name":"update action user.role_changed shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841841,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7wd","name":"update action vendor.modified shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841842,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7we","name":"update action control.edited shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841842,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52bm-7wf","name":"update action license.renewed shows Update label","suiteId":"mnnl52bm-7ti","suiteName":"AuditActionBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Update\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503841842,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"}],"consoleLogs":[],"testCoverage":null}],"status":"fail","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/audit/AuditActionBadge.test.tsx"}],"coverage":null}
+{
+  "hash": "00cb3e61665abcfd91b71e78",
+  "cachedAt": 1775503843333,
+  "suites": [
+    {
+      "id": "mnnl52bm-7ti",
+      "name": "AuditActionBadge",
+      "tests": [
+        {
+          "id": "mnnl52bm-7tj",
+          "name": "renders badge for create action: vendor.created",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841821,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tk",
+          "name": "renders badge for create action: policy.added",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tl",
+          "name": "renders badge for create action: credential.uploaded",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tm",
+          "name": "renders badge for create action: user.registered",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tn",
+          "name": "renders badge for create action: control.created",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7to",
+          "name": "create action vendor.created has green category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"create\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"create\")",
+              "status": "fail",
+              "error": "Expected \"create\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tp",
+          "name": "create action policy.added has green category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"create\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"create\")",
+              "status": "fail",
+              "error": "Expected \"create\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tq",
+          "name": "create action credential.uploaded has green category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"create\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"create\")",
+              "status": "fail",
+              "error": "Expected \"create\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841822,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tr",
+          "name": "create action user.registered has green category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"create\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"create\")",
+              "status": "fail",
+              "error": "Expected \"create\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ts",
+          "name": "create action control.created has green category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"create\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"create\")",
+              "status": "fail",
+              "error": "Expected \"create\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tt",
+          "name": "renders badge for update action: policy.updated",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tu",
+          "name": "renders badge for update action: credential.rotated",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tv",
+          "name": "renders badge for update action: user.role_changed",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tw",
+          "name": "renders badge for update action: vendor.modified",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tx",
+          "name": "renders badge for update action: control.edited",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841823,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ty",
+          "name": "renders badge for update action: license.renewed",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7tz",
+          "name": "update action policy.updated has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u0",
+          "name": "update action credential.rotated has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u1",
+          "name": "update action user.role_changed has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u2",
+          "name": "update action vendor.modified has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u3",
+          "name": "update action control.edited has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841824,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u4",
+          "name": "update action license.renewed has update category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"update\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"update\")",
+              "status": "fail",
+              "error": "Expected \"update\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u5",
+          "name": "renders badge for delete action: vendor.deleted",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u6",
+          "name": "renders badge for delete action: policy.removed",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u7",
+          "name": "renders badge for delete action: credential.revoked",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u8",
+          "name": "renders badge for delete action: user.terminated",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7u9",
+          "name": "renders badge for delete action: control.deleted",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ua",
+          "name": "delete action vendor.deleted has delete category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"delete\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"delete\")",
+              "status": "fail",
+              "error": "Expected \"delete\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841825,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ub",
+          "name": "delete action policy.removed has delete category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"delete\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"delete\")",
+              "status": "fail",
+              "error": "Expected \"delete\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uc",
+          "name": "delete action credential.revoked has delete category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"delete\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"delete\")",
+              "status": "fail",
+              "error": "Expected \"delete\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ud",
+          "name": "delete action user.terminated has delete category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"delete\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"delete\")",
+              "status": "fail",
+              "error": "Expected \"delete\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ue",
+          "name": "delete action control.deleted has delete category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"delete\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"delete\")",
+              "status": "fail",
+              "error": "Expected \"delete\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uf",
+          "name": "renders badge for view action: report.viewed",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ug",
+          "name": "renders badge for view action: policy.accessed",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uh",
+          "name": "renders badge for view action: credential.downloaded",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841826,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ui",
+          "name": "renders badge for view action: data.exported",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841829,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uj",
+          "name": "renders badge for view action: audit.read",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uk",
+          "name": "view action report.viewed has view category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"view\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"view\")",
+              "status": "fail",
+              "error": "Expected \"view\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ul",
+          "name": "view action policy.accessed has view category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"view\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"view\")",
+              "status": "fail",
+              "error": "Expected \"view\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7um",
+          "name": "view action credential.downloaded has view category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"view\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"view\")",
+              "status": "fail",
+              "error": "Expected \"view\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7un",
+          "name": "view action data.exported has view category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"view\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"view\")",
+              "status": "fail",
+              "error": "Expected \"view\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uo",
+          "name": "view action audit.read has view category",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"view\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"view\")",
+              "status": "fail",
+              "error": "Expected \"view\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841830,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7up",
+          "name": "unknown action vendor.synced renders with fallback",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uq",
+          "name": "unknown action policy.approved renders with fallback",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ur",
+          "name": "unknown action system.restarted renders with fallback",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7us",
+          "name": "unknown action job.queued renders with fallback",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ut",
+          "name": "renders vendor.created at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uu",
+          "name": "renders vendor.created at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uv",
+          "name": "renders policy.added at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841831,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uw",
+          "name": "renders policy.added at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ux",
+          "name": "renders policy.updated at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uy",
+          "name": "renders policy.updated at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7uz",
+          "name": "renders credential.rotated at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v0",
+          "name": "renders credential.rotated at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v1",
+          "name": "renders vendor.deleted at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v2",
+          "name": "renders vendor.deleted at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841832,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v3",
+          "name": "renders policy.removed at size sm",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v4",
+          "name": "renders policy.removed at size md",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v5",
+          "name": "shows Create label for created actions",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v6",
+          "name": "shows Update label for updated actions",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v7",
+          "name": "shows Delete label for deleted actions",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v8",
+          "name": "shows View label for viewed actions",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841833,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7v9",
+          "name": "shows Action label for unknown actions",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Action\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7va",
+          "name": "stores action in data-action attribute",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"policy.updated\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"policy.updated\")",
+              "status": "fail",
+              "error": "Expected \"policy.updated\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vb",
+          "name": "uses custom data-testid when provided",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"custom-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vc",
+          "name": "defaults to md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vd",
+          "name": "renders action without dot notation",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7ve",
+          "name": "renders empty action string",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841834,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vf",
+          "name": "matches snapshot for create action",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            },
+            {
+              "label": "audit-action-badge-create",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vg",
+          "name": "matches snapshot for update action",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            },
+            {
+              "label": "audit-action-badge-update",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vh",
+          "name": "matches snapshot for delete action",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            },
+            {
+              "label": "audit-action-badge-delete",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vi",
+          "name": "matches snapshot for view action",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            },
+            {
+              "label": "audit-action-badge-view",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vj",
+          "name": "matches snapshot for unknown action",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            },
+            {
+              "label": "audit-action-badge-unknown",
+              "timestamp": 1775503841837,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Action</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vk",
+          "name": "create action vendor.created renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"vendor.created\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"vendor.created\")",
+              "status": "fail",
+              "error": "Expected \"vendor.created\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vl",
+          "name": "create action policy.added renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"policy.added\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"policy.added\")",
+              "status": "fail",
+              "error": "Expected \"policy.added\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vm",
+          "name": "create action credential.uploaded renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"credential.uploaded\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"credential.uploaded\")",
+              "status": "fail",
+              "error": "Expected \"credential.uploaded\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vn",
+          "name": "create action user.registered renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"user.registered\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"user.registered\")",
+              "status": "fail",
+              "error": "Expected \"user.registered\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vo",
+          "name": "create action control.created renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"control.created\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"control.created\")",
+              "status": "fail",
+              "error": "Expected \"control.created\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vp",
+          "name": "update action policy.updated renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"policy.updated\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"policy.updated\")",
+              "status": "fail",
+              "error": "Expected \"policy.updated\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vq",
+          "name": "update action credential.rotated renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"credential.rotated\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"credential.rotated\")",
+              "status": "fail",
+              "error": "Expected \"credential.rotated\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841838,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vr",
+          "name": "update action user.role_changed renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"user.role_changed\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"user.role_changed\")",
+              "status": "fail",
+              "error": "Expected \"user.role_changed\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vs",
+          "name": "update action vendor.modified renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"vendor.modified\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"vendor.modified\")",
+              "status": "fail",
+              "error": "Expected \"vendor.modified\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vt",
+          "name": "update action control.edited renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"control.edited\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"control.edited\")",
+              "status": "fail",
+              "error": "Expected \"control.edited\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vu",
+          "name": "update action license.renewed renders at md size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "fail",
+          "error": "Expected \"license.renewed\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"license.renewed\")",
+              "status": "fail",
+              "error": "Expected \"license.renewed\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vv",
+          "name": "delete action vendor.deleted renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vw",
+          "name": "delete action policy.removed renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vx",
+          "name": "delete action credential.revoked renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vy",
+          "name": "delete action user.terminated renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841839,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7vz",
+          "name": "delete action control.deleted renders at sm size",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Delete\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Delete</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w0",
+          "name": "view action report.viewed shows View label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w1",
+          "name": "view action policy.accessed shows View label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w2",
+          "name": "view action credential.downloaded shows View label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w3",
+          "name": "view action data.exported shows View label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w4",
+          "name": "view action audit.read shows View label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"View\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">View</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w5",
+          "name": "create action vendor.created shows Create label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w6",
+          "name": "create action policy.added shows Create label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841840,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w7",
+          "name": "create action credential.uploaded shows Create label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w8",
+          "name": "create action user.registered shows Create label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7w9",
+          "name": "create action control.created shows Create label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Create\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Create</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7wa",
+          "name": "update action policy.updated shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7wb",
+          "name": "update action credential.rotated shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7wc",
+          "name": "update action user.role_changed shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841841,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7wd",
+          "name": "update action vendor.modified shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841842,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7we",
+          "name": "update action control.edited shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841842,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52bm-7wf",
+          "name": "update action license.renewed shows Update label",
+          "suiteId": "mnnl52bm-7ti",
+          "suiteName": "AuditActionBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Update\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503841842,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"audit-action-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"action-badge-label\">Update</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "fail",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/audit/AuditActionBadge.test.tsx"
+    }
+  ],
+  "coverage": null
+}

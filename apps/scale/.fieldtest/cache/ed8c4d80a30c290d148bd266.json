@@ -1,1 +1,2248 @@
-{"hash":"ed8c4d80a30c290d148bd266","cachedAt":1775503843297,"suites":[{"id":"mnnl52af-5wa","name":"PolicyFrameworkBadge","tests":[{"id":"mnnl52af-5wb","name":"renders badge for framework SOC2","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838723,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wc","name":"renders badge for framework ISO27001","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838723,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wd","name":"renders badge for framework HIPAA","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5we","name":"renders badge for framework GDPR","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wf","name":"renders badge for framework PCI-DSS","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wg","name":"renders badge for framework FedRAMP","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wh","name":"renders SOC2 badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wi","name":"renders SOC2 badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838724,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wj","name":"renders ISO27001 badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wk","name":"renders ISO27001 badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wl","name":"renders HIPAA badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wm","name":"renders HIPAA badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wn","name":"renders GDPR badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wo","name":"renders GDPR badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wp","name":"renders PCI-DSS badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838725,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wq","name":"renders PCI-DSS badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838726,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wr","name":"renders FedRAMP badge at size sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838726,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ws","name":"renders FedRAMP badge at size md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838726,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wt","name":"renders SOC2 badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838726,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wu","name":"renders SOC2 badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wv","name":"renders ISO27001 badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ww","name":"renders ISO27001 badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wx","name":"renders HIPAA badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wy","name":"renders HIPAA badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5wz","name":"renders GDPR badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838727,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x0","name":"renders GDPR badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x1","name":"renders PCI-DSS badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x2","name":"renders PCI-DSS badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x3","name":"renders FedRAMP badge with showFull=true","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x4","name":"renders FedRAMP badge with showFull=false","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x5","name":"applies correct color purple for SOC2","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"purple\" but received null","assertions":[{"label":"expect(…).toBe(\"purple\")","status":"fail","error":"Expected \"purple\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x6","name":"applies correct color blue for ISO27001","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"blue\" but received null","assertions":[{"label":"expect(…).toBe(\"blue\")","status":"fail","error":"Expected \"blue\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838728,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x7","name":"applies correct color green for HIPAA","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"green\" but received null","assertions":[{"label":"expect(…).toBe(\"green\")","status":"fail","error":"Expected \"green\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838729,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x8","name":"applies correct color orange for GDPR","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"orange\" but received null","assertions":[{"label":"expect(…).toBe(\"orange\")","status":"fail","error":"Expected \"orange\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838729,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5x9","name":"applies correct color red for PCI-DSS","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"red\" but received null","assertions":[{"label":"expect(…).toBe(\"red\")","status":"fail","error":"Expected \"red\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838729,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xa","name":"applies correct color indigo for FedRAMP","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"indigo\" but received null","assertions":[{"label":"expect(…).toBe(\"indigo\")","status":"fail","error":"Expected \"indigo\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838731,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xb","name":"shows SOC2 short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838731,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xc","name":"shows ISO27001 short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838731,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xd","name":"shows HIPAA short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838731,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xe","name":"shows GDPR short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xf","name":"shows PCI-DSS short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xg","name":"shows FedRAMP short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xh","name":"shows full label for SOC2","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"SOC 2 Type II\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xi","name":"shows full label for ISO27001","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"ISO/IEC 27001\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xj","name":"shows full label for HIPAA","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"HIPAA Privacy & Security\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xk","name":"shows full label for GDPR","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"General Data Protection Regulation\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xl","name":"shows full label for PCI-DSS","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Payment Card Industry DSS\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838732,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xm","name":"shows full label for FedRAMP","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Federal Risk and Authorization Management Program\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xn","name":"defaults to md size when size is not provided","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xo","name":"defaults to short label when showFull is not provided","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xp","name":"uses custom data-testid when provided","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"custom-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xq","name":"matches snapshot for SOC2","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"},{"label":"framework-badge-soc2","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xr","name":"matches snapshot for ISO27001","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"},{"label":"framework-badge-iso27001","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xs","name":"matches snapshot for HIPAA","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"},{"label":"framework-badge-hipaa","timestamp":1775503838733,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xt","name":"matches snapshot for GDPR","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"},{"label":"framework-badge-gdpr","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xu","name":"matches snapshot for PCI-DSS","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"},{"label":"framework-badge-pci-dss","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xv","name":"matches snapshot for FedRAMP","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"},{"label":"framework-badge-fedramp","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xw","name":"renders SOC2 at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"SOC 2 Type II\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xx","name":"renders ISO27001 at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"ISO/IEC 27001\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xy","name":"renders HIPAA at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"HIPAA Privacy & Security\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5xz","name":"renders GDPR at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"General Data Protection Regulation\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838734,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y0","name":"renders PCI-DSS at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Payment Card Industry DSS\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y1","name":"renders FedRAMP at sm size with full label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBe(\"Federal Risk and Authorization Management Program\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y2","name":"renders SOC2 at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"SOC2\" but received null","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"fail","error":"Expected \"SOC2\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y3","name":"renders ISO27001 at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"ISO27001\" but received null","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"fail","error":"Expected \"ISO27001\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y4","name":"renders HIPAA at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"HIPAA\" but received null","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"fail","error":"Expected \"HIPAA\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y5","name":"renders GDPR at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"GDPR\" but received null","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"fail","error":"Expected \"GDPR\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y6","name":"renders PCI-DSS at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"PCI-DSS\" but received null","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"fail","error":"Expected \"PCI-DSS\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838735,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y7","name":"renders FedRAMP at md size with short label","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"FedRAMP\" but received null","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"fail","error":"Expected \"FedRAMP\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838736,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y8","name":"SOC2 badge has purple color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"purple\" but received null","assertions":[{"label":"expect(…).toBe(\"purple\")","status":"fail","error":"Expected \"purple\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838737,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5y9","name":"ISO27001 badge has blue color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"blue\" but received null","assertions":[{"label":"expect(…).toBe(\"blue\")","status":"fail","error":"Expected \"blue\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838738,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ya","name":"FedRAMP badge has indigo color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"indigo\" but received null","assertions":[{"label":"expect(…).toBe(\"indigo\")","status":"fail","error":"Expected \"indigo\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838738,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yb","name":"PCI-DSS badge has red color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"red\" but received null","assertions":[{"label":"expect(…).toBe(\"red\")","status":"fail","error":"Expected \"red\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838738,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yc","name":"HIPAA badge has green color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"green\" but received null","assertions":[{"label":"expect(…).toBe(\"green\")","status":"fail","error":"Expected \"green\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838738,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yd","name":"GDPR badge has orange color attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"orange\" but received null","assertions":[{"label":"expect(…).toBe(\"orange\")","status":"fail","error":"Expected \"orange\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838738,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ye","name":"renders SOC2 at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"SOC2\" but received null","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"fail","error":"Expected \"SOC2\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yf","name":"renders SOC2 at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"SOC2\" but received null","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"fail","error":"Expected \"SOC2\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yg","name":"renders SOC2 at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"SOC2\" but received null","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"fail","error":"Expected \"SOC2\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yh","name":"renders SOC2 at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"SOC2\" but received null","assertions":[{"label":"expect(…).toBe(\"SOC2\")","status":"fail","error":"Expected \"SOC2\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yi","name":"renders ISO27001 at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"ISO27001\" but received null","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"fail","error":"Expected \"ISO27001\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yj","name":"renders ISO27001 at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"ISO27001\" but received null","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"fail","error":"Expected \"ISO27001\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yk","name":"renders ISO27001 at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"ISO27001\" but received null","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"fail","error":"Expected \"ISO27001\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838739,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yl","name":"renders ISO27001 at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"ISO27001\" but received null","assertions":[{"label":"expect(…).toBe(\"ISO27001\")","status":"fail","error":"Expected \"ISO27001\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ym","name":"renders HIPAA at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"HIPAA\" but received null","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"fail","error":"Expected \"HIPAA\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yn","name":"renders HIPAA at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"HIPAA\" but received null","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"fail","error":"Expected \"HIPAA\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yo","name":"renders HIPAA at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"HIPAA\" but received null","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"fail","error":"Expected \"HIPAA\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yp","name":"renders HIPAA at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"HIPAA\" but received null","assertions":[{"label":"expect(…).toBe(\"HIPAA\")","status":"fail","error":"Expected \"HIPAA\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yq","name":"renders GDPR at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"GDPR\" but received null","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"fail","error":"Expected \"GDPR\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yr","name":"renders GDPR at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"GDPR\" but received null","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"fail","error":"Expected \"GDPR\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838740,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5ys","name":"renders GDPR at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"GDPR\" but received null","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"fail","error":"Expected \"GDPR\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yt","name":"renders GDPR at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"GDPR\" but received null","assertions":[{"label":"expect(…).toBe(\"GDPR\")","status":"fail","error":"Expected \"GDPR\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yu","name":"renders PCI-DSS at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"PCI-DSS\" but received null","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"fail","error":"Expected \"PCI-DSS\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yv","name":"renders PCI-DSS at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"PCI-DSS\" but received null","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"fail","error":"Expected \"PCI-DSS\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yw","name":"renders PCI-DSS at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"PCI-DSS\" but received null","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"fail","error":"Expected \"PCI-DSS\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yx","name":"renders PCI-DSS at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"PCI-DSS\" but received null","assertions":[{"label":"expect(…).toBe(\"PCI-DSS\")","status":"fail","error":"Expected \"PCI-DSS\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yy","name":"renders FedRAMP at sm with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"FedRAMP\" but received null","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"fail","error":"Expected \"FedRAMP\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5yz","name":"renders FedRAMP at sm with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"FedRAMP\" but received null","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"fail","error":"Expected \"FedRAMP\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838741,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z0","name":"renders FedRAMP at md with showFull=true and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"FedRAMP\" but received null","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"fail","error":"Expected \"FedRAMP\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z1","name":"renders FedRAMP at md with showFull=false and has data-framework attribute","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"fail","error":"Expected \"FedRAMP\" but received null","assertions":[{"label":"expect(…).toBe(\"FedRAMP\")","status":"fail","error":"Expected \"FedRAMP\" but received null"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z2","name":"label text is not empty for SOC2 at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z3","name":"label text is not empty for SOC2 at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z4","name":"label text is not empty for ISO27001 at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z5","name":"label text is not empty for ISO27001 at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z6","name":"label text is not empty for HIPAA at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838742,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z7","name":"label text is not empty for HIPAA at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z8","name":"label text is not empty for GDPR at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5z9","name":"label text is not empty for GDPR at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5za","name":"label text is not empty for PCI-DSS at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5zb","name":"label text is not empty for PCI-DSS at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5zc","name":"label text is not empty for FedRAMP at sm","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl52af-5zd","name":"label text is not empty for FedRAMP at md","suiteId":"mnnl52af-5wa","suiteName":"PolicyFrameworkBadge","status":"pass","assertions":[{"label":"expect(…).toBeGreaterThan(0)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838743,"html":"<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"}],"consoleLogs":[],"testCoverage":null}],"status":"fail","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/policies/PolicyFrameworkBadge.test.tsx"}],"coverage":null}
+{
+  "hash": "ed8c4d80a30c290d148bd266",
+  "cachedAt": 1775503843297,
+  "suites": [
+    {
+      "id": "mnnl52af-5wa",
+      "name": "PolicyFrameworkBadge",
+      "tests": [
+        {
+          "id": "mnnl52af-5wb",
+          "name": "renders badge for framework SOC2",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838723,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wc",
+          "name": "renders badge for framework ISO27001",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838723,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wd",
+          "name": "renders badge for framework HIPAA",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5we",
+          "name": "renders badge for framework GDPR",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wf",
+          "name": "renders badge for framework PCI-DSS",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wg",
+          "name": "renders badge for framework FedRAMP",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wh",
+          "name": "renders SOC2 badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wi",
+          "name": "renders SOC2 badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838724,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wj",
+          "name": "renders ISO27001 badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wk",
+          "name": "renders ISO27001 badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wl",
+          "name": "renders HIPAA badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wm",
+          "name": "renders HIPAA badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wn",
+          "name": "renders GDPR badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wo",
+          "name": "renders GDPR badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wp",
+          "name": "renders PCI-DSS badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838725,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wq",
+          "name": "renders PCI-DSS badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838726,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wr",
+          "name": "renders FedRAMP badge at size sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838726,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ws",
+          "name": "renders FedRAMP badge at size md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838726,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wt",
+          "name": "renders SOC2 badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838726,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wu",
+          "name": "renders SOC2 badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wv",
+          "name": "renders ISO27001 badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ww",
+          "name": "renders ISO27001 badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wx",
+          "name": "renders HIPAA badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wy",
+          "name": "renders HIPAA badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5wz",
+          "name": "renders GDPR badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838727,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x0",
+          "name": "renders GDPR badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x1",
+          "name": "renders PCI-DSS badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x2",
+          "name": "renders PCI-DSS badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x3",
+          "name": "renders FedRAMP badge with showFull=true",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x4",
+          "name": "renders FedRAMP badge with showFull=false",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x5",
+          "name": "applies correct color purple for SOC2",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"purple\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"purple\")",
+              "status": "fail",
+              "error": "Expected \"purple\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x6",
+          "name": "applies correct color blue for ISO27001",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"blue\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"blue\")",
+              "status": "fail",
+              "error": "Expected \"blue\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838728,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x7",
+          "name": "applies correct color green for HIPAA",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"green\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"green\")",
+              "status": "fail",
+              "error": "Expected \"green\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838729,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x8",
+          "name": "applies correct color orange for GDPR",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"orange\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"orange\")",
+              "status": "fail",
+              "error": "Expected \"orange\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838729,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5x9",
+          "name": "applies correct color red for PCI-DSS",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"red\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"red\")",
+              "status": "fail",
+              "error": "Expected \"red\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838729,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xa",
+          "name": "applies correct color indigo for FedRAMP",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"indigo\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"indigo\")",
+              "status": "fail",
+              "error": "Expected \"indigo\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838731,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xb",
+          "name": "shows SOC2 short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"SOC2\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838731,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xc",
+          "name": "shows ISO27001 short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"ISO27001\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838731,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xd",
+          "name": "shows HIPAA short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"HIPAA\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838731,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xe",
+          "name": "shows GDPR short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"GDPR\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xf",
+          "name": "shows PCI-DSS short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"PCI-DSS\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xg",
+          "name": "shows FedRAMP short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"FedRAMP\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xh",
+          "name": "shows full label for SOC2",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"SOC 2 Type II\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xi",
+          "name": "shows full label for ISO27001",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"ISO/IEC 27001\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xj",
+          "name": "shows full label for HIPAA",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"HIPAA Privacy & Security\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xk",
+          "name": "shows full label for GDPR",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"General Data Protection Regulation\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xl",
+          "name": "shows full label for PCI-DSS",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Payment Card Industry DSS\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838732,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xm",
+          "name": "shows full label for FedRAMP",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"Federal Risk and Authorization Management Program\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xn",
+          "name": "defaults to md size when size is not provided",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xo",
+          "name": "defaults to short label when showFull is not provided",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"GDPR\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xp",
+          "name": "uses custom data-testid when provided",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"custom-badge\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xq",
+          "name": "matches snapshot for SOC2",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            },
+            {
+              "label": "framework-badge-soc2",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xr",
+          "name": "matches snapshot for ISO27001",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            },
+            {
+              "label": "framework-badge-iso27001",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xs",
+          "name": "matches snapshot for HIPAA",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            },
+            {
+              "label": "framework-badge-hipaa",
+              "timestamp": 1775503838733,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xt",
+          "name": "matches snapshot for GDPR",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            },
+            {
+              "label": "framework-badge-gdpr",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xu",
+          "name": "matches snapshot for PCI-DSS",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            },
+            {
+              "label": "framework-badge-pci-dss",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xv",
+          "name": "matches snapshot for FedRAMP",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            },
+            {
+              "label": "framework-badge-fedramp",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xw",
+          "name": "renders SOC2 at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"SOC 2 Type II\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xx",
+          "name": "renders ISO27001 at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"ISO/IEC 27001\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xy",
+          "name": "renders HIPAA at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"HIPAA Privacy & Security\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5xz",
+          "name": "renders GDPR at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"General Data Protection Regulation\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838734,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y0",
+          "name": "renders PCI-DSS at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"Payment Card Industry DSS\")", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y1",
+          "name": "renders FedRAMP at sm size with full label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"Federal Risk and Authorization Management Program\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y2",
+          "name": "renders SOC2 at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"SOC2\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"SOC2\")",
+              "status": "fail",
+              "error": "Expected \"SOC2\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y3",
+          "name": "renders ISO27001 at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"ISO27001\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"ISO27001\")",
+              "status": "fail",
+              "error": "Expected \"ISO27001\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y4",
+          "name": "renders HIPAA at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"HIPAA\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"HIPAA\")",
+              "status": "fail",
+              "error": "Expected \"HIPAA\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y5",
+          "name": "renders GDPR at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"GDPR\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"GDPR\")",
+              "status": "fail",
+              "error": "Expected \"GDPR\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y6",
+          "name": "renders PCI-DSS at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"PCI-DSS\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"PCI-DSS\")",
+              "status": "fail",
+              "error": "Expected \"PCI-DSS\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838735,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y7",
+          "name": "renders FedRAMP at md size with short label",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"FedRAMP\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"FedRAMP\")",
+              "status": "fail",
+              "error": "Expected \"FedRAMP\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838736,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y8",
+          "name": "SOC2 badge has purple color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"purple\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"purple\")",
+              "status": "fail",
+              "error": "Expected \"purple\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838737,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5y9",
+          "name": "ISO27001 badge has blue color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"blue\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"blue\")",
+              "status": "fail",
+              "error": "Expected \"blue\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838738,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ya",
+          "name": "FedRAMP badge has indigo color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"indigo\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"indigo\")",
+              "status": "fail",
+              "error": "Expected \"indigo\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838738,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yb",
+          "name": "PCI-DSS badge has red color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"red\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"red\")",
+              "status": "fail",
+              "error": "Expected \"red\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838738,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yc",
+          "name": "HIPAA badge has green color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"green\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"green\")",
+              "status": "fail",
+              "error": "Expected \"green\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838738,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yd",
+          "name": "GDPR badge has orange color attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"orange\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"orange\")",
+              "status": "fail",
+              "error": "Expected \"orange\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838738,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ye",
+          "name": "renders SOC2 at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"SOC2\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"SOC2\")",
+              "status": "fail",
+              "error": "Expected \"SOC2\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yf",
+          "name": "renders SOC2 at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"SOC2\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"SOC2\")",
+              "status": "fail",
+              "error": "Expected \"SOC2\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yg",
+          "name": "renders SOC2 at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"SOC2\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"SOC2\")",
+              "status": "fail",
+              "error": "Expected \"SOC2\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC 2 Type II</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yh",
+          "name": "renders SOC2 at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"SOC2\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"SOC2\")",
+              "status": "fail",
+              "error": "Expected \"SOC2\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yi",
+          "name": "renders ISO27001 at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"ISO27001\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"ISO27001\")",
+              "status": "fail",
+              "error": "Expected \"ISO27001\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yj",
+          "name": "renders ISO27001 at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"ISO27001\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"ISO27001\")",
+              "status": "fail",
+              "error": "Expected \"ISO27001\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yk",
+          "name": "renders ISO27001 at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"ISO27001\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"ISO27001\")",
+              "status": "fail",
+              "error": "Expected \"ISO27001\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838739,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO/IEC 27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yl",
+          "name": "renders ISO27001 at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"ISO27001\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"ISO27001\")",
+              "status": "fail",
+              "error": "Expected \"ISO27001\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ym",
+          "name": "renders HIPAA at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"HIPAA\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"HIPAA\")",
+              "status": "fail",
+              "error": "Expected \"HIPAA\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yn",
+          "name": "renders HIPAA at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"HIPAA\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"HIPAA\")",
+              "status": "fail",
+              "error": "Expected \"HIPAA\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yo",
+          "name": "renders HIPAA at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"HIPAA\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"HIPAA\")",
+              "status": "fail",
+              "error": "Expected \"HIPAA\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA Privacy &amp; Security</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yp",
+          "name": "renders HIPAA at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"HIPAA\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"HIPAA\")",
+              "status": "fail",
+              "error": "Expected \"HIPAA\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yq",
+          "name": "renders GDPR at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"GDPR\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"GDPR\")",
+              "status": "fail",
+              "error": "Expected \"GDPR\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yr",
+          "name": "renders GDPR at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"GDPR\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"GDPR\")",
+              "status": "fail",
+              "error": "Expected \"GDPR\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838740,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5ys",
+          "name": "renders GDPR at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"GDPR\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"GDPR\")",
+              "status": "fail",
+              "error": "Expected \"GDPR\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">General Data Protection Regulation</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yt",
+          "name": "renders GDPR at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"GDPR\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"GDPR\")",
+              "status": "fail",
+              "error": "Expected \"GDPR\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yu",
+          "name": "renders PCI-DSS at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"PCI-DSS\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"PCI-DSS\")",
+              "status": "fail",
+              "error": "Expected \"PCI-DSS\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yv",
+          "name": "renders PCI-DSS at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"PCI-DSS\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"PCI-DSS\")",
+              "status": "fail",
+              "error": "Expected \"PCI-DSS\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yw",
+          "name": "renders PCI-DSS at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"PCI-DSS\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"PCI-DSS\")",
+              "status": "fail",
+              "error": "Expected \"PCI-DSS\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">Payment Card Industry DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yx",
+          "name": "renders PCI-DSS at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"PCI-DSS\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"PCI-DSS\")",
+              "status": "fail",
+              "error": "Expected \"PCI-DSS\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yy",
+          "name": "renders FedRAMP at sm with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"FedRAMP\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"FedRAMP\")",
+              "status": "fail",
+              "error": "Expected \"FedRAMP\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5yz",
+          "name": "renders FedRAMP at sm with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"FedRAMP\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"FedRAMP\")",
+              "status": "fail",
+              "error": "Expected \"FedRAMP\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838741,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z0",
+          "name": "renders FedRAMP at md with showFull=true and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"FedRAMP\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"FedRAMP\")",
+              "status": "fail",
+              "error": "Expected \"FedRAMP\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">Federal Risk and Authorization Management Program</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z1",
+          "name": "renders FedRAMP at md with showFull=false and has data-framework attribute",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "fail",
+          "error": "Expected \"FedRAMP\" but received null",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"FedRAMP\")",
+              "status": "fail",
+              "error": "Expected \"FedRAMP\" but received null"
+            }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z2",
+          "name": "label text is not empty for SOC2 at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z3",
+          "name": "label text is not empty for SOC2 at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-SOC2\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-SOC2\">SOC2</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z4",
+          "name": "label text is not empty for ISO27001 at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z5",
+          "name": "label text is not empty for ISO27001 at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-ISO27001\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-ISO27001\">ISO27001</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z6",
+          "name": "label text is not empty for HIPAA at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838742,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z7",
+          "name": "label text is not empty for HIPAA at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-HIPAA\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-HIPAA\">HIPAA</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z8",
+          "name": "label text is not empty for GDPR at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5z9",
+          "name": "label text is not empty for GDPR at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-GDPR\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-GDPR\">GDPR</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5za",
+          "name": "label text is not empty for PCI-DSS at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5zb",
+          "name": "label text is not empty for PCI-DSS at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-PCI-DSS\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-PCI-DSS\">PCI-DSS</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5zc",
+          "name": "label text is not empty for FedRAMP at sm",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 10px; padding: 2px 6px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl52af-5zd",
+          "name": "label text is not empty for FedRAMP at md",
+          "suiteId": "mnnl52af-5wa",
+          "suiteName": "PolicyFrameworkBadge",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThan(0)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838743,
+              "html": "<span style=\"display: inline-flex; align-items: center; gap: 4px; font-weight: 500; border-radius: 4px; background-color: #3a3a4a; color: #a0a0b0; font-size: 12px; padding: 4px 10px;\" data-testid=\"framework-badge-FedRAMP\" role=\"status\"><span data-testid=\"badge-content\"><span data-testid=\"framework-label-FedRAMP\">FedRAMP</span></span></span>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "fail",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/policies/PolicyFrameworkBadge.test.tsx"
+    }
+  ],
+  "coverage": null
+}

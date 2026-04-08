@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "vite build",
-    "dev": "vite build --watch"
+    "dev": "vite build --watch",
+    "test:node": "node ../runner/bin/fieldtest.js"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

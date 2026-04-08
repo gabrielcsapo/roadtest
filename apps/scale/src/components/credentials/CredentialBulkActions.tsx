@@ -1,13 +1,13 @@
-import React from 'react'
-import { Button } from '../ui/Button'
-import { Spinner } from '../ui/Spinner'
+import React from "react";
+import { Button } from "../ui/Button";
+import { Spinner } from "../ui/Spinner";
 
 interface CredentialBulkActionsProps {
-  selectedCount: number
-  onRotate?: () => void
-  onDelete?: () => void
-  onExport?: () => void
-  loading?: boolean
+  selectedCount: number;
+  onRotate?: () => void;
+  onDelete?: () => void;
+  onExport?: () => void;
+  loading?: boolean;
 }
 
 export function CredentialBulkActions({
@@ -17,10 +17,10 @@ export function CredentialBulkActions({
   onExport,
   loading = false,
 }: CredentialBulkActionsProps) {
-  const isDisabled = loading || selectedCount === 0
+  const isDisabled = loading || selectedCount === 0;
 
   if (selectedCount === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -28,25 +28,25 @@ export function CredentialBulkActions({
       data-testid="credential-bulk-actions"
       data-selected-count={selectedCount}
       style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        padding: '12px 16px',
-        background: '#f5f3ff',
-        borderRadius: '8px',
-        border: '1px solid #ddd6fe',
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        padding: "12px 16px",
+        background: "#f5f3ff",
+        borderRadius: "8px",
+        border: "1px solid #ddd6fe",
       }}
     >
       <span
         data-testid="bulk-count-label"
-        style={{ fontSize: '14px', fontWeight: 600, color: '#7c3aed' }}
+        style={{ fontSize: "14px", fontWeight: 600, color: "#7c3aed" }}
       >
         {selectedCount} selected
       </span>
 
-      <div style={{ width: '1px', height: '20px', background: '#ddd6fe' }} />
+      <div style={{ width: "1px", height: "20px", background: "#ddd6fe" }} />
 
-      <div style={{ display: 'flex', gap: '8px' }}>
+      <div style={{ display: "flex", gap: "8px" }}>
         {onRotate && (
           <Button
             data-testid="bulk-rotate-btn"
@@ -55,7 +55,7 @@ export function CredentialBulkActions({
             disabled={isDisabled}
             onClick={onRotate}
           >
-            {loading ? <Spinner size="xs" /> : 'Rotate All'}
+            {loading ? <Spinner size="xs" /> : "Rotate All"}
           </Button>
         )}
 
@@ -67,7 +67,7 @@ export function CredentialBulkActions({
             disabled={isDisabled}
             onClick={onExport}
           >
-            {loading ? <Spinner size="xs" /> : 'Export'}
+            {loading ? <Spinner size="xs" /> : "Export"}
           </Button>
         )}
 
@@ -79,16 +79,16 @@ export function CredentialBulkActions({
             disabled={isDisabled}
             onClick={onDelete}
           >
-            {loading ? <Spinner size="xs" /> : 'Delete'}
+            {loading ? <Spinner size="xs" /> : "Delete"}
           </Button>
         )}
       </div>
 
       {loading && (
-        <span data-testid="bulk-loading-text" style={{ fontSize: '12px', color: '#7c3aed' }}>
+        <span data-testid="bulk-loading-text" style={{ fontSize: "12px", color: "#7c3aed" }}>
           Processing...
         </span>
       )}
     </div>
-  )
+  );
 }

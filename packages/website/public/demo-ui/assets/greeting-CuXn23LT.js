@@ -1,2 +1,75 @@
-function e(){var t=`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`,n=`14eea49e54935c4042306e961f45877e17addb1e`,r=globalThis,i=`__coverage__`,a={path:`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`,statementMap:{0:{start:{line:2,column:14},end:{line:2,column:35}},1:{start:{line:3,column:19},end:{line:3,column:78}},2:{start:{line:4,column:1},end:{line:4,column:38}}},fnMap:{0:{name:`getGreeting`,decl:{start:{line:1,column:16},end:{line:1,column:27}},loc:{start:{line:1,column:34},end:{line:5,column:1}},line:1}},branchMap:{0:{loc:{start:{line:3,column:19},end:{line:3,column:78}},type:`cond-expr`,locations:[{start:{line:3,column:31},end:{line:3,column:40}},{start:{line:3,column:43},end:{line:3,column:78}}],line:3},1:{loc:{start:{line:3,column:43},end:{line:3,column:78}},type:`cond-expr`,locations:[{start:{line:3,column:55},end:{line:3,column:66}},{start:{line:3,column:69},end:{line:3,column:78}}],line:3}},s:{0:0,1:0,2:0},f:{0:0},b:{0:[0,0],1:[0,0]},inputSourceMap:{version:3,names:[],sources:[`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`],mappings:`AAAA,OAAO,SAAS,YAAY,MAAsB;CAChD,MAAM,OAAO,IAAI,MAAM,CAAC,UAAU;CAClC,MAAM,YAAY,OAAO,KAAK,YAAY,OAAO,KAAK,cAAc;AACpE,QAAO,QAAQ,UAAU,IAAI,KAAK`},_coverageSchema:`1a1c01bbd47fc00a2c39e90264f33305004495a9`,hash:`14eea49e54935c4042306e961f45877e17addb1e`},o=r[i]||(r[i]={});(!o[t]||o[t].hash!==n)&&(o[t]=a);var s=o[t];return e=function(){return s},s}e();function t(t){e().f[0]++;let n=(e().s[0]++,new Date().getHours()),r=(e().s[1]++,n<12?(e().b[0][0]++,`morning`):(e().b[0][1]++,n<18?(e().b[1][0]++,`afternoon`):(e().b[1][1]++,`evening`)));return e().s[2]++,`Good ${r}, ${t}!`}export{t as getGreeting};
+function e() {
+  var t = `/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`,
+    n = `14eea49e54935c4042306e961f45877e17addb1e`,
+    r = globalThis,
+    i = `__coverage__`,
+    a = {
+      path: `/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`,
+      statementMap: {
+        0: { start: { line: 2, column: 14 }, end: { line: 2, column: 35 } },
+        1: { start: { line: 3, column: 19 }, end: { line: 3, column: 78 } },
+        2: { start: { line: 4, column: 1 }, end: { line: 4, column: 38 } },
+      },
+      fnMap: {
+        0: {
+          name: `getGreeting`,
+          decl: { start: { line: 1, column: 16 }, end: { line: 1, column: 27 } },
+          loc: { start: { line: 1, column: 34 }, end: { line: 5, column: 1 } },
+          line: 1,
+        },
+      },
+      branchMap: {
+        0: {
+          loc: { start: { line: 3, column: 19 }, end: { line: 3, column: 78 } },
+          type: `cond-expr`,
+          locations: [
+            { start: { line: 3, column: 31 }, end: { line: 3, column: 40 } },
+            { start: { line: 3, column: 43 }, end: { line: 3, column: 78 } },
+          ],
+          line: 3,
+        },
+        1: {
+          loc: { start: { line: 3, column: 43 }, end: { line: 3, column: 78 } },
+          type: `cond-expr`,
+          locations: [
+            { start: { line: 3, column: 55 }, end: { line: 3, column: 66 } },
+            { start: { line: 3, column: 69 }, end: { line: 3, column: 78 } },
+          ],
+          line: 3,
+        },
+      },
+      s: { 0: 0, 1: 0, 2: 0 },
+      f: { 0: 0 },
+      b: { 0: [0, 0], 1: [0, 0] },
+      inputSourceMap: {
+        version: 3,
+        names: [],
+        sources: [`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/greeting.ts`],
+        mappings: `AAAA,OAAO,SAAS,YAAY,MAAsB;CAChD,MAAM,OAAO,IAAI,MAAM,CAAC,UAAU;CAClC,MAAM,YAAY,OAAO,KAAK,YAAY,OAAO,KAAK,cAAc;AACpE,QAAO,QAAQ,UAAU,IAAI,KAAK`,
+      },
+      _coverageSchema: `1a1c01bbd47fc00a2c39e90264f33305004495a9`,
+      hash: `14eea49e54935c4042306e961f45877e17addb1e`,
+    },
+    o = r[i] || (r[i] = {});
+  (!o[t] || o[t].hash !== n) && (o[t] = a);
+  var s = o[t];
+  return (
+    (e = function () {
+      return s;
+    }),
+    s
+  );
+}
+e();
+function t(t) {
+  e().f[0]++;
+  let n = (e().s[0]++, new Date().getHours()),
+    r =
+      (e().s[1]++,
+      n < 12
+        ? (e().b[0][0]++, `morning`)
+        : (e().b[0][1]++, n < 18 ? (e().b[1][0]++, `afternoon`) : (e().b[1][1]++, `evening`)));
+  return (e().s[2]++, `Good ${r}, ${t}!`);
+}
+export { t as getGreeting };
 //# sourceMappingURL=greeting-CuXn23LT.js.map

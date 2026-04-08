@@ -1,2 +1,58 @@
-function e(){var t=`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`,n=`ff2da356494b52b44437471cac312216d3930a1b`,r=globalThis,i=`__coverage__`,a={path:`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`,statementMap:{0:{start:{line:3,column:1},end:{line:3,column:101}},1:{start:{line:3,column:47},end:{line:3,column:83}}},fnMap:{0:{name:`calculateTotal`,decl:{start:{line:2,column:16},end:{line:2,column:30}},loc:{start:{line:2,column:48},end:{line:4,column:1}},line:2},1:{name:`(anonymous_1)`,decl:{start:{line:3,column:32},end:{line:3,column:33}},loc:{start:{line:3,column:47},end:{line:3,column:83}},line:3}},branchMap:{},s:{0:0,1:0},f:{0:0,1:0},b:{},inputSourceMap:{version:3,names:[],sources:[`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`],mappings:`;AAKA,OAAO,SAAS,eACd,OACA,UACQ;AACR,QAAO,KAAK,MAAM,MAAM,QAAQ,KAAK,SAAS,MAAM,SAAS,KAAK,OAAO,KAAK,IAAI,EAAE,EAAE,GAAG,IAAI,GAAG`},_coverageSchema:`1a1c01bbd47fc00a2c39e90264f33305004495a9`,hash:`ff2da356494b52b44437471cac312216d3930a1b`},o=r[i]||(r[i]={});(!o[t]||o[t].hash!==n)&&(o[t]=a);var s=o[t];return e=function(){return s},s}e();function t(t,n){return e().f[0]++,e().s[0]++,Math.round(t.reduce((t,r)=>(e().f[1]++,e().s[1]++,t+n(r.price,r.qty)),0)*100)/100}export{t as calculateTotal};
+function e() {
+  var t = `/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`,
+    n = `ff2da356494b52b44437471cac312216d3930a1b`,
+    r = globalThis,
+    i = `__coverage__`,
+    a = {
+      path: `/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`,
+      statementMap: {
+        0: { start: { line: 3, column: 1 }, end: { line: 3, column: 101 } },
+        1: { start: { line: 3, column: 47 }, end: { line: 3, column: 83 } },
+      },
+      fnMap: {
+        0: {
+          name: `calculateTotal`,
+          decl: { start: { line: 2, column: 16 }, end: { line: 2, column: 30 } },
+          loc: { start: { line: 2, column: 48 }, end: { line: 4, column: 1 } },
+          line: 2,
+        },
+        1: {
+          name: `(anonymous_1)`,
+          decl: { start: { line: 3, column: 32 }, end: { line: 3, column: 33 } },
+          loc: { start: { line: 3, column: 47 }, end: { line: 3, column: 83 } },
+          line: 3,
+        },
+      },
+      branchMap: {},
+      s: { 0: 0, 1: 0 },
+      f: { 0: 0, 1: 0 },
+      b: {},
+      inputSourceMap: {
+        version: 3,
+        names: [],
+        sources: [`/Users/gabrielcsapo/Documents/test-idea/apps/example/src/cart.ts`],
+        mappings: `;AAKA,OAAO,SAAS,eACd,OACA,UACQ;AACR,QAAO,KAAK,MAAM,MAAM,QAAQ,KAAK,SAAS,MAAM,SAAS,KAAK,OAAO,KAAK,IAAI,EAAE,EAAE,GAAG,IAAI,GAAG`,
+      },
+      _coverageSchema: `1a1c01bbd47fc00a2c39e90264f33305004495a9`,
+      hash: `ff2da356494b52b44437471cac312216d3930a1b`,
+    },
+    o = r[i] || (r[i] = {});
+  (!o[t] || o[t].hash !== n) && (o[t] = a);
+  var s = o[t];
+  return (
+    (e = function () {
+      return s;
+    }),
+    s
+  );
+}
+e();
+function t(t, n) {
+  return (
+    e().f[0]++,
+    e().s[0]++,
+    Math.round(t.reduce((t, r) => (e().f[1]++, e().s[1]++, t + n(r.price, r.qty)), 0) * 100) / 100
+  );
+}
+export { t as calculateTotal };
 //# sourceMappingURL=cart-BaaaffbU.js.map

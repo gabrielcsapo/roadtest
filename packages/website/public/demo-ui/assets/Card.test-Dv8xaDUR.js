@@ -1,2 +1,43 @@
-import{d as e,f as t,o as n,p as r,s as i}from"./src-bHa7jhTB.js";import{t as a}from"./jsx-runtime-BSbMHKsn.js";import{t as o}from"./Card-Bc0IYsp9.js";var s=a();t(`Card`,()=>{r(`renders title and description`,async()=>{let{getByTestId:t}=await i((0,s.jsx)(o,{title:`Hello`,description:`World`}));e(t(`card-title`).textContent).toBe(`Hello`),e(t(`card-description`).textContent).toBe(`World`)}),r(`renders action button and fires callback`,async()=>{let t=!1,{getByRole:r}=await i((0,s.jsx)(o,{title:`Delete item`,description:`This cannot be undone.`,actionLabel:`Confirm`,onAction:()=>{t=!0},variant:`danger`}));await n.click(r(`button`)),e(t).toBe(!0)}),r(`shows danger variant styles`,async()=>{await i((0,s.jsx)(o,{title:`Warning`,description:`Danger ahead.`,actionLabel:`Delete`,variant:`danger`}))}),r(`renders without an action button`,async()=>{let{getByTestId:t}=await i((0,s.jsx)(o,{title:`Info`,description:`No action needed.`}));e(t(`card`).textContent?.includes(`Info`)).toBe(!0)})});
+import { d as e, f as t, o as n, p as r, s as i } from "./src-bHa7jhTB.js";
+import { t as a } from "./jsx-runtime-BSbMHKsn.js";
+import { t as o } from "./Card-Bc0IYsp9.js";
+var s = a();
+t(`Card`, () => {
+  (r(`renders title and description`, async () => {
+    let { getByTestId: t } = await i((0, s.jsx)(o, { title: `Hello`, description: `World` }));
+    (e(t(`card-title`).textContent).toBe(`Hello`),
+      e(t(`card-description`).textContent).toBe(`World`));
+  }),
+    r(`renders action button and fires callback`, async () => {
+      let t = !1,
+        { getByRole: r } = await i(
+          (0, s.jsx)(o, {
+            title: `Delete item`,
+            description: `This cannot be undone.`,
+            actionLabel: `Confirm`,
+            onAction: () => {
+              t = !0;
+            },
+            variant: `danger`,
+          }),
+        );
+      (await n.click(r(`button`)), e(t).toBe(!0));
+    }),
+    r(`shows danger variant styles`, async () => {
+      await i(
+        (0, s.jsx)(o, {
+          title: `Warning`,
+          description: `Danger ahead.`,
+          actionLabel: `Delete`,
+          variant: `danger`,
+        }),
+      );
+    }),
+    r(`renders without an action button`, async () => {
+      let { getByTestId: t } = await i(
+        (0, s.jsx)(o, { title: `Info`, description: `No action needed.` }),
+      );
+      e(t(`card`).textContent?.includes(`Info`)).toBe(!0);
+    }));
+});
 //# sourceMappingURL=Card.test-Dv8xaDUR.js.map

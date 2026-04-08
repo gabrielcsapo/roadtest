@@ -1,48 +1,53 @@
-import { describe, it, expect, render, fireEvent, snapshot } from '@fieldtest/core'
-import { Button } from './Button'
+import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { Button } from "./Button";
 
-describe('Button', () => {
-  it('renders the label', async () => {
-    const { getByText } = await render(<Button label="Click me" />)
-    expect(getByText('Click me')).toBeTruthy()
-  })
+describe("Button", () => {
+  it("renders the label", async () => {
+    const { getByText } = await render(<Button label="Click me" />);
+    expect(getByText("Click me")).toBeTruthy();
+  });
 
-  it('primary variant (default)', async () => {
-    await render(<Button label="Primary" />)
-  })
+  it("primary variant (default)", async () => {
+    await render(<Button label="Primary" />);
+  });
 
-  it('secondary variant', async () => {
-    await render(<Button label="Secondary" variant="secondary" />)
-  })
+  it("secondary variant", async () => {
+    await render(<Button label="Secondary" variant="secondary" />);
+  });
 
-  it('danger variant', async () => {
-    await render(<Button label="Delete" variant="danger" />)
-  })
+  it("danger variant", async () => {
+    await render(<Button label="Delete" variant="danger" />);
+  });
 
-  it('disabled state', async () => {
-    const { getByRole } = await render(<Button label="Can't touch this" disabled />)
-    const btn = getByRole('button')
-    expect(btn.hasAttribute('disabled')).toBeTruthy()
-  })
+  it("disabled state", async () => {
+    const { getByRole } = await render(<Button label="Can't touch this" disabled />);
+    const btn = getByRole("button");
+    expect(btn.hasAttribute("disabled")).toBeTruthy();
+  });
 
-  it('fires onClick when clicked', async () => {
-    let clicked = false
+  it("fires onClick when clicked", async () => {
+    let clicked = false;
     const { getByRole } = await render(
-      <Button label="Click me" onClick={() => { clicked = true }} />
-    )
-    await fireEvent.click(getByRole('button'))
-    expect(clicked).toBe(true)
-  })
+      <Button
+        label="Click me"
+        onClick={() => {
+          clicked = true;
+        }}
+      />,
+    );
+    await fireEvent.click(getByRole("button"));
+    expect(clicked).toBe(true);
+  });
 
-  it('wrong label', async () => {
-    const { getByRole } = await render(<Button label="Submit" />)
-    expect(getByRole('button').textContent).toBe('Save')
-  })
+  it("wrong label", async () => {
+    const { getByRole } = await render(<Button label="Submit" />);
+    expect(getByRole("button").textContent).toBe("Save");
+  });
 
-  it('all variants', async () => {
-    await render(<Button label="Primary" />)
-    await render(<Button label="Secondary" variant="secondary" />)
-    await render(<Button label="Danger" variant="danger" />)
-    await render(<Button label="Disabled" disabled />)
-  })
-})
+  it("all variants", async () => {
+    await render(<Button label="Primary" />);
+    await render(<Button label="Secondary" variant="secondary" />);
+    await render(<Button label="Danger" variant="danger" />);
+    await render(<Button label="Disabled" disabled />);
+  });
+});

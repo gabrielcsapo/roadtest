@@ -1,5 +1,5 @@
-import { store } from './store'
-import type { TestSuite } from './types'
+import { store } from "./store";
+import type { TestSuite } from "./types";
 
 /**
  * Called in the browser sandbox by the stub module emitted for node test files.
@@ -11,12 +11,12 @@ export function __vtRegisterNodeTest(path: string): void {
     id: `node:${path}`,
     name: path,
     tests: [],
-    status: 'pending',
+    status: "pending",
     sourceFile: path,
-    runtime: 'node',
-  } as TestSuite)
+    runtime: "node",
+  } as TestSuite);
 
   // import.meta.hot is available in all Vite-served modules
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ;(import.meta as any).hot?.send('vt:run-node-test', { path })
+  (import.meta as any).hot?.send("vt:run-node-test", { path });
 }

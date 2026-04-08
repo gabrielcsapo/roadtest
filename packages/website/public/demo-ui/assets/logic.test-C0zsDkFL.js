@@ -1,2 +1,55 @@
-import{d as e,f as t,p as n}from"./src-bHa7jhTB.js";function r(e){return e.filter(e=>!e.done).length}function i(e,t){let n=t.toLowerCase();return e.filter(e=>e.title.toLowerCase().includes(n)||e.description.toLowerCase().includes(n))}function a(e){return[...e].sort((e,t)=>e.title.localeCompare(t.title))}var o=[{id:`1`,title:`Write tests`,description:`Cover all edge cases.`,done:!1},{id:`2`,title:`Review PR`,description:`Leave constructive feedback.`,done:!0},{id:`3`,title:`Deploy`,description:`Push to production.`,done:!1}];t(`countPending()`,()=>{n(`counts only non-done tasks`,()=>{e(r(o)).toBe(2)}),n(`returns 0 when all done`,()=>{e(r(o.map(e=>({...e,done:!0})))).toBe(0)}),n(`returns full count when none done`,()=>{e(r(o.map(e=>({...e,done:!1})))).toBe(3)})}),t(`filterByKeyword()`,()=>{n(`matches by title`,()=>{e(i(o,`deploy`).length).toBe(1)}),n(`matches by description`,()=>{e(i(o,`edge cases`).length).toBe(1)}),n(`is case-insensitive`,()=>{e(i(o,`WRITE`).length).toBe(1)}),n(`returns empty when no match`,()=>{e(i(o,`zzznomatch`).length).toBe(0)})}),t(`sortByTitle()`,()=>{n(`sorts tasks alphabetically`,()=>{let t=a(o);e(t[0].title).toBe(`Deploy`),e(t[1].title).toBe(`Review PR`),e(t[2].title).toBe(`Write tests`)}),n(`does not mutate the original array`,()=>{a(o),e(o[0].title).toBe(`Write tests`)})});
+import { d as e, f as t, p as n } from "./src-bHa7jhTB.js";
+function r(e) {
+  return e.filter((e) => !e.done).length;
+}
+function i(e, t) {
+  let n = t.toLowerCase();
+  return e.filter(
+    (e) => e.title.toLowerCase().includes(n) || e.description.toLowerCase().includes(n),
+  );
+}
+function a(e) {
+  return [...e].sort((e, t) => e.title.localeCompare(t.title));
+}
+var o = [
+  { id: `1`, title: `Write tests`, description: `Cover all edge cases.`, done: !1 },
+  { id: `2`, title: `Review PR`, description: `Leave constructive feedback.`, done: !0 },
+  { id: `3`, title: `Deploy`, description: `Push to production.`, done: !1 },
+];
+(t(`countPending()`, () => {
+  (n(`counts only non-done tasks`, () => {
+    e(r(o)).toBe(2);
+  }),
+    n(`returns 0 when all done`, () => {
+      e(r(o.map((e) => ({ ...e, done: !0 })))).toBe(0);
+    }),
+    n(`returns full count when none done`, () => {
+      e(r(o.map((e) => ({ ...e, done: !1 })))).toBe(3);
+    }));
+}),
+  t(`filterByKeyword()`, () => {
+    (n(`matches by title`, () => {
+      e(i(o, `deploy`).length).toBe(1);
+    }),
+      n(`matches by description`, () => {
+        e(i(o, `edge cases`).length).toBe(1);
+      }),
+      n(`is case-insensitive`, () => {
+        e(i(o, `WRITE`).length).toBe(1);
+      }),
+      n(`returns empty when no match`, () => {
+        e(i(o, `zzznomatch`).length).toBe(0);
+      }));
+  }),
+  t(`sortByTitle()`, () => {
+    (n(`sorts tasks alphabetically`, () => {
+      let t = a(o);
+      (e(t[0].title).toBe(`Deploy`),
+        e(t[1].title).toBe(`Review PR`),
+        e(t[2].title).toBe(`Write tests`));
+    }),
+      n(`does not mutate the original array`, () => {
+        (a(o), e(o[0].title).toBe(`Write tests`));
+      }));
+  }));
 //# sourceMappingURL=logic.test-C0zsDkFL.js.map

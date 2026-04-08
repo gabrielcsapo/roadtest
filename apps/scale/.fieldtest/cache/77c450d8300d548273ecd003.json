@@ -1,1 +1,1136 @@
-{"hash":"77c450d8300d548273ecd003","cachedAt":1775503843287,"suites":[{"id":"mnnl529l-4jm","name":"Select","tests":[{"id":"mnnl529l-4jn","name":"renders trigger","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837760,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jo","name":"renders wrapper","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837761,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jp","name":"renders with placeholder","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837761,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Choose one</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jq","name":"renders default placeholder when none given","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837761,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jr","name":"renders arrow indicator","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837762,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4js","name":"opens dropdown on click","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837762,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jt","name":"shows options when open","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837764,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ju","name":"dropdown not shown when closed","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837765,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jv","name":"selects option on click","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBe(\"a\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837765,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jw","name":"closes dropdown after selection in single mode","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837766,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jx","name":"does not open when disabled","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837767,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jy","name":"shows selected value label","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837768,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option B</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4jz","name":"does not fire onChange for disabled option","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBe(\"\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837768,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k0","name":"shows multiple selected count","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837771,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">2 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k1","name":"multiple mode keeps dropdown open after selection","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837771,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k2","name":"renders label when provided","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837772,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Framework</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k3","name":"no label when not provided","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837772,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k4","name":"renders label=\"Framework\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837772,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Framework</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k5","name":"renders label=\"Status\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837773,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Status</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k6","name":"renders label=\"Risk Level\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837773,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Risk Level</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k7","name":"renders label=\"Assignee\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837773,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Assignee</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k8","name":"renders error","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837774,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4k9","name":"shows error=\"Required\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837774,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ka","name":"shows error=\"Invalid selection\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837774,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Invalid selection</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kb","name":"shows error=\"Please choose\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837774,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Please choose</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kc","name":"shows error=\"Not available\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837775,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Not available</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kd","name":"shows error=\"Select at least one\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837775,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Select at least one</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ke","name":"shows error=\"Maximum reached\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837775,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Maximum reached</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kf","name":"shows error=\"No longer valid\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837775,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">No longer valid</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kg","name":"shows error=\"Option removed\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837776,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Option removed</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kh","name":"shows error=\"Restricted\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837776,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Restricted</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ki","name":"shows empty state when no options","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837777,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kj","name":"handles empty options array without crash","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837778,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kk","name":"shows search input when searchable","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837778,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kl","name":"no search input when not searchable","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"fail","error":"getByTestId is not defined","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837780,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4km","name":"filters options when searching","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837781,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kn","name":"shows no options when search matches nothing","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837782,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ko","name":"snapshot: default state","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837783,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"},{"label":"select-default","timestamp":1775503837783,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kp","name":"snapshot: with value","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option A</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"},{"label":"select-with-value","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option A</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kq","name":"snapshot: disabled","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"},{"label":"select-disabled","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kr","name":"snapshot: with error","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"},{"label":"select-error","timestamp":1775503837784,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ks","name":"snapshot: with label","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503837785,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Choose</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"},{"label":"select-labeled","timestamp":1775503837785,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Choose</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kt","name":"handles many options","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837785,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ku","name":"renders option 1 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837786,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kv","name":"renders option 2 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837787,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kw","name":"renders option 3 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837788,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kx","name":"renders option 4 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837791,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ky","name":"renders option 5 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837792,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4kz","name":"renders option 6 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837793,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l0","name":"renders option 7 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837794,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l1","name":"renders option 8 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837795,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l2","name":"renders option 9 of many","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837796,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l3","name":"multiple: onChange returns array","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toContain(\"a\")","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837797,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l4","name":"multiple: can deselect","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toEqual([])","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837797,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">1 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l5","name":"multiple: shows checkboxes","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837798,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l6","name":"multiple: empty value shows placeholder","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837801,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l7","name":"multiple: two items shows count","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837801,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">2 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l8","name":"placeholder=\"Select vendor\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837801,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select vendor</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4l9","name":"placeholder=\"Choose status\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837801,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Choose status</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4la","name":"placeholder=\"Pick framework\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837802,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Pick framework</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4lb","name":"placeholder=\"Assign user\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837802,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Assign user</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4lc","name":"placeholder=\"Filter by risk\"","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837802,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Filter by risk</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4ld","name":"renders with custom testId","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837802,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"my-select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"my-select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"my-select-value\">Select...</span><span data-testid=\"my-select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529l-4le","name":"combobox has aria-expanded false initially","suiteId":"mnnl529l-4jm","suiteName":"Select","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503837803,"html":"<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"}],"consoleLogs":[],"testCoverage":null}],"status":"fail","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/Select.test.tsx"}],"coverage":null}
+{
+  "hash": "77c450d8300d548273ecd003",
+  "cachedAt": 1775503843287,
+  "suites": [
+    {
+      "id": "mnnl529l-4jm",
+      "name": "Select",
+      "tests": [
+        {
+          "id": "mnnl529l-4jn",
+          "name": "renders trigger",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837760,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jo",
+          "name": "renders wrapper",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837761,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jp",
+          "name": "renders with placeholder",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837761,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Choose one</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jq",
+          "name": "renders default placeholder when none given",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837761,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jr",
+          "name": "renders arrow indicator",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837762,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4js",
+          "name": "opens dropdown on click",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837762,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jt",
+          "name": "shows options when open",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837764,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ju",
+          "name": "dropdown not shown when closed",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837765,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jv",
+          "name": "selects option on click",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"a\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837765,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jw",
+          "name": "closes dropdown after selection in single mode",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837766,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jx",
+          "name": "does not open when disabled",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837767,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jy",
+          "name": "shows selected value label",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837768,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option B</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4jz",
+          "name": "does not fire onChange for disabled option",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837768,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k0",
+          "name": "shows multiple selected count",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837771,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">2 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k1",
+          "name": "multiple mode keeps dropdown open after selection",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837771,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k2",
+          "name": "renders label when provided",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837772,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Framework</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k3",
+          "name": "no label when not provided",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837772,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k4",
+          "name": "renders label=\"Framework\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837772,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Framework</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k5",
+          "name": "renders label=\"Status\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837773,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Status</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k6",
+          "name": "renders label=\"Risk Level\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837773,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Risk Level</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k7",
+          "name": "renders label=\"Assignee\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837773,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Assignee</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k8",
+          "name": "renders error",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837774,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4k9",
+          "name": "shows error=\"Required\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837774,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ka",
+          "name": "shows error=\"Invalid selection\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837774,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Invalid selection</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kb",
+          "name": "shows error=\"Please choose\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837774,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Please choose</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kc",
+          "name": "shows error=\"Not available\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837775,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Not available</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kd",
+          "name": "shows error=\"Select at least one\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837775,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Select at least one</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ke",
+          "name": "shows error=\"Maximum reached\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837775,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Maximum reached</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kf",
+          "name": "shows error=\"No longer valid\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837775,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">No longer valid</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kg",
+          "name": "shows error=\"Option removed\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837776,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Option removed</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kh",
+          "name": "shows error=\"Restricted\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837776,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Restricted</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ki",
+          "name": "shows empty state when no options",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837777,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kj",
+          "name": "handles empty options array without crash",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837778,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kk",
+          "name": "shows search input when searchable",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837778,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kl",
+          "name": "no search input when not searchable",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "fail",
+          "error": "getByTestId is not defined",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837780,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4km",
+          "name": "filters options when searching",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837781,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kn",
+          "name": "shows no options when search matches nothing",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837782,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ko",
+          "name": "snapshot: default state",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837783,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            },
+            {
+              "label": "select-default",
+              "timestamp": 1775503837783,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kp",
+          "name": "snapshot: with value",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option A</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            },
+            {
+              "label": "select-with-value",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Option A</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kq",
+          "name": "snapshot: disabled",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            },
+            {
+              "label": "select-disabled",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: not-allowed; opacity: 0.6; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"true\" tabindex=\"-1\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kr",
+          "name": "snapshot: with error",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"
+            },
+            {
+              "label": "select-error",
+              "timestamp": 1775503837784,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #ef4444; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div><span style=\"font-size: 11px; color: #f87171;\" data-testid=\"select-error\">Required</span></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ks",
+          "name": "snapshot: with label",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837785,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Choose</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            },
+            {
+              "label": "select-labeled",
+              "timestamp": 1775503837785,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><label for=\"select\" style=\"font-size: 13px; font-weight: 500; color: #c0c0d0;\" data-testid=\"select-label\">Choose</label><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kt",
+          "name": "handles many options",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837785,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ku",
+          "name": "renders option 1 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837786,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kv",
+          "name": "renders option 2 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837787,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kw",
+          "name": "renders option 3 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837788,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kx",
+          "name": "renders option 4 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837791,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ky",
+          "name": "renders option 5 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837792,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4kz",
+          "name": "renders option 6 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837793,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l0",
+          "name": "renders option 7 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837794,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l1",
+          "name": "renders option 8 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837795,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l2",
+          "name": "renders option 9 of many",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837796,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l3",
+          "name": "multiple: onChange returns array",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toContain(\"a\")", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837797,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l4",
+          "name": "multiple: can deselect",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toEqual([])", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837797,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">1 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l5",
+          "name": "multiple: shows checkboxes",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837798,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l6",
+          "name": "multiple: empty value shows placeholder",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837801,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l7",
+          "name": "multiple: two items shows count",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837801,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #e0e0f0; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">2 selected</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l8",
+          "name": "placeholder=\"Select vendor\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837801,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select vendor</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4l9",
+          "name": "placeholder=\"Choose status\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837801,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Choose status</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4la",
+          "name": "placeholder=\"Pick framework\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837802,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Pick framework</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4lb",
+          "name": "placeholder=\"Assign user\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837802,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Assign user</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4lc",
+          "name": "placeholder=\"Filter by risk\"",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837802,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Filter by risk</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4ld",
+          "name": "renders with custom testId",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837802,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"my-select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"my-select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"my-select-value\">Select...</span><span data-testid=\"my-select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529l-4le",
+          "name": "combobox has aria-expanded false initially",
+          "suiteId": "mnnl529l-4jm",
+          "suiteName": "Select",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503837803,
+              "html": "<div style=\"display: flex; flex-direction: column; gap: 4px; width: 100%; position: relative;\" data-testid=\"select-wrapper\"><div style=\"display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background-color: #1e1e2e; border: 1px solid #3a3a4a; border-radius: 6px; color: #6b6b8a; cursor: pointer; opacity: 1; font-size: 14px; font-family: inherit;\" data-testid=\"select-trigger\" role=\"combobox\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-disabled=\"false\" tabindex=\"0\"><span data-testid=\"select-value\">Select...</span><span data-testid=\"select-arrow\" aria-hidden=\"true\">▾</span></div></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "fail",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/Select.test.tsx"
+    }
+  ],
+  "coverage": null
+}

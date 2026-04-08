@@ -1,14 +1,18 @@
-type Hook = () => void | Promise<void>
+type Hook = () => void | Promise<void>;
 
-const afterTestHooks: Hook[] = []
+const afterTestHooks: Hook[] = [];
 
 export function registerAfterTestHook(fn: Hook) {
-  afterTestHooks.push(fn)
+  afterTestHooks.push(fn);
 }
 
 export async function runAfterTestHooks() {
   for (const fn of afterTestHooks) {
-    try { await fn() } catch { /* don't let hook failures break test runner */ }
+    try {
+      await fn();
+    } catch {
+      /* don't let hook failures break test runner */
+    }
   }
 }
 
@@ -17,25 +21,33 @@ export async function runAfterTestHooks() {
 // beforeDisplay hooks are awaited before test.fn() runs, so setup is guaranteed
 // to be in place before the component renders (fetch mocking, data seeding, etc.).
 
-const beforeDisplayHooks: Hook[] = []
-const afterDisplayHooks: Hook[] = []
+const beforeDisplayHooks: Hook[] = [];
+const afterDisplayHooks: Hook[] = [];
 
 export function registerBeforeDisplayHook(fn: Hook) {
-  beforeDisplayHooks.push(fn)
+  beforeDisplayHooks.push(fn);
 }
 
 export function registerAfterDisplayHook(fn: Hook) {
-  afterDisplayHooks.push(fn)
+  afterDisplayHooks.push(fn);
 }
 
 export async function runBeforeDisplayHooks() {
   for (const fn of beforeDisplayHooks) {
-    try { await fn() } catch { /* don't let hook failures block render */ }
+    try {
+      await fn();
+    } catch {
+      /* don't let hook failures block render */
+    }
   }
 }
 
 export async function runAfterDisplayHooks() {
   for (const fn of afterDisplayHooks) {
-    try { await fn() } catch { /* don't let hook failures break display frame */ }
+    try {
+      await fn();
+    } catch {
+      /* don't let hook failures break display frame */
+    }
   }
 }

@@ -1,4 +1,4 @@
-import '../src/globals.css'
+import "../src/globals.css";
 
 /**
  * Wrap every rendered component in the ViewTest preview environment.
@@ -6,9 +6,5 @@ import '../src/globals.css'
  * components expect to exist at runtime.
  */
 export default function Wrapper({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ fontFamily: 'inherit', color: 'inherit' }}>
-      {children}
-    </div>
-  )
+  return <div style={{ fontFamily: "inherit", color: "inherit" }}>{children}</div>;
 }

@@ -1,3 +1,155 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./browser-C9yF4_qq.js","./isCommonAssetRequest-Cr39sXTT.js","./core-DjC8CACf.js","./core-B1yr4Vn1.js","./src-BmcA7K9q.js","./src-bHa7jhTB.js","./chunk-DECur_0Z.js","./axe-CftruGSC.js","./client-DsoX8Bqk.js","./react-BpVXNi5D.js","./jsx-runtime-BSbMHKsn.js","./NetworkTab-NB4GXuqP.js"])))=>i.map(i=>d[i]);
-import{l as e,u as t,v as n}from"./src-bHa7jhTB.js";var r=!(typeof process<`u`&&typeof process.versions?.node==`string`),i=typeof window<`u`&&window.name===`__vt_sandbox`,a=typeof window<`u`&&window.name===`__vt_display`,o=new Map;async function s(e,t,n){let r=o.get(e);if(o.delete(e),!r||!r.test)return;let i;try{i=await t.clone().text()||void 0}catch{}let a={method:r.method,url:r.url,status:t.status,mocked:n,requestBody:r.requestBody,responseBody:i,duration:Date.now()-r.t0,timestamp:r.t0};r.test.networkEntries||(r.test.networkEntries=[]),r.test.networkEntries.push(a)}var c;if(r&&(i||a)){let{setupWorker:t}=await e(async()=>{let{setupWorker:e}=await import(`./browser-C9yF4_qq.js`);return{setupWorker:e}},__vite__mapDeps([0,1]),import.meta.url),{http:r,HttpResponse:a}=await e(async()=>{let{http:e,HttpResponse:t}=await import(`./core-DjC8CACf.js`);return{http:e,HttpResponse:t}},__vite__mapDeps([2,1,3]),import.meta.url),l=t(r.get(`/__fieldtest_source__`,()=>new a(null,{status:404})),r.get(`/__fieldtest_files__`,()=>a.json([])),r.get(`/__fieldtest_graph__`,()=>a.json({nodes:[],edges:[]})));try{await l.start({serviceWorker:{url:`./mockServiceWorker.js`},onUnhandledRequest:`bypass`,quiet:!0})}catch(e){console.warn("[MSW] Failed to start service worker. Run `npx msw init ./public` to fix.",e)}if(l.events.on(`*`,async e=>{let{type:t,requestId:r,request:i,response:a}=e;if(r){if(t===`request:start`&&i){if(!n)return;o.set(r,{t0:Date.now(),method:i.method,url:i.url,test:n});try{let e=await i.clone().text(),t=o.get(r);t&&e&&(t.requestBody=e)}catch{}return}(t===`response:mocked`||t===`response:bypass`)&&a&&await s(r,a,t===`response:mocked`)}}),c=l,i){let{registerTab:t}=await e(async()=>{let{registerTab:e}=await import(`./src-BmcA7K9q.js`);return{registerTab:e}},__vite__mapDeps([4,5,6,7,8,9,10]),import.meta.url),{NetworkTab:n}=await e(async()=>{let{NetworkTab:e}=await import(`./NetworkTab-NB4GXuqP.js`);return{NetworkTab:e}},__vite__mapDeps([11,6,10,9]),import.meta.url);t({id:`network`,label:`Network`,getCount:e=>e.networkEntries.length||void 0,component:n})}}else if(!r){let{setupServer:t}=await e(async()=>{let{setupServer:e}=await import(`msw/node`);return{setupServer:e}},[],import.meta.url),r=t();r.listen({onUnhandledRequest:`bypass`}),r.events.on(`*`,async e=>{let{type:t,requestId:r,request:i,response:a}=e;if(r){if(t===`request:start`&&i){if(!n)return;o.set(r,{t0:Date.now(),method:i.method,url:i.url,test:n});try{let e=await i.clone().text(),t=o.get(r);t&&e&&(t.requestBody=e)}catch{}return}(t===`response:mocked`||t===`response:bypass`)&&a&&await s(r,a,t===`response:mocked`)}}),c=r}t(()=>c?.resetHandlers());var l=c;export{l as t};
+const __vite__mapDeps = (
+  i,
+  m = __vite__mapDeps,
+  d = m.f ||
+    (m.f = [
+      "./browser-C9yF4_qq.js",
+      "./isCommonAssetRequest-Cr39sXTT.js",
+      "./core-DjC8CACf.js",
+      "./core-B1yr4Vn1.js",
+      "./src-BmcA7K9q.js",
+      "./src-bHa7jhTB.js",
+      "./chunk-DECur_0Z.js",
+      "./axe-CftruGSC.js",
+      "./client-DsoX8Bqk.js",
+      "./react-BpVXNi5D.js",
+      "./jsx-runtime-BSbMHKsn.js",
+      "./NetworkTab-NB4GXuqP.js",
+    ]),
+) => i.map((i) => d[i]);
+import { l as e, u as t, v as n } from "./src-bHa7jhTB.js";
+var r = !(typeof process < `u` && typeof process.versions?.node == `string`),
+  i = typeof window < `u` && window.name === `__vt_sandbox`,
+  a = typeof window < `u` && window.name === `__vt_display`,
+  o = new Map();
+async function s(e, t, n) {
+  let r = o.get(e);
+  if ((o.delete(e), !r || !r.test)) return;
+  let i;
+  try {
+    i = (await t.clone().text()) || void 0;
+  } catch {}
+  let a = {
+    method: r.method,
+    url: r.url,
+    status: t.status,
+    mocked: n,
+    requestBody: r.requestBody,
+    responseBody: i,
+    duration: Date.now() - r.t0,
+    timestamp: r.t0,
+  };
+  (r.test.networkEntries || (r.test.networkEntries = []), r.test.networkEntries.push(a));
+}
+var c;
+if (r && (i || a)) {
+  let { setupWorker: t } = await e(
+      async () => {
+        let { setupWorker: e } = await import(`./browser-C9yF4_qq.js`);
+        return { setupWorker: e };
+      },
+      __vite__mapDeps([0, 1]),
+      import.meta.url,
+    ),
+    { http: r, HttpResponse: a } = await e(
+      async () => {
+        let { http: e, HttpResponse: t } = await import(`./core-DjC8CACf.js`);
+        return { http: e, HttpResponse: t };
+      },
+      __vite__mapDeps([2, 1, 3]),
+      import.meta.url,
+    ),
+    l = t(
+      r.get(`/__fieldtest_source__`, () => new a(null, { status: 404 })),
+      r.get(`/__fieldtest_files__`, () => a.json([])),
+      r.get(`/__fieldtest_graph__`, () => a.json({ nodes: [], edges: [] })),
+    );
+  try {
+    await l.start({
+      serviceWorker: { url: `./mockServiceWorker.js` },
+      onUnhandledRequest: `bypass`,
+      quiet: !0,
+    });
+  } catch (e) {
+    console.warn("[MSW] Failed to start service worker. Run `npx msw init ./public` to fix.", e);
+  }
+  if (
+    (l.events.on(`*`, async (e) => {
+      let { type: t, requestId: r, request: i, response: a } = e;
+      if (r) {
+        if (t === `request:start` && i) {
+          if (!n) return;
+          o.set(r, { t0: Date.now(), method: i.method, url: i.url, test: n });
+          try {
+            let e = await i.clone().text(),
+              t = o.get(r);
+            t && e && (t.requestBody = e);
+          } catch {}
+          return;
+        }
+        (t === `response:mocked` || t === `response:bypass`) &&
+          a &&
+          (await s(r, a, t === `response:mocked`));
+      }
+    }),
+    (c = l),
+    i)
+  ) {
+    let { registerTab: t } = await e(
+        async () => {
+          let { registerTab: e } = await import(`./src-BmcA7K9q.js`);
+          return { registerTab: e };
+        },
+        __vite__mapDeps([4, 5, 6, 7, 8, 9, 10]),
+        import.meta.url,
+      ),
+      { NetworkTab: n } = await e(
+        async () => {
+          let { NetworkTab: e } = await import(`./NetworkTab-NB4GXuqP.js`);
+          return { NetworkTab: e };
+        },
+        __vite__mapDeps([11, 6, 10, 9]),
+        import.meta.url,
+      );
+    t({
+      id: `network`,
+      label: `Network`,
+      getCount: (e) => e.networkEntries.length || void 0,
+      component: n,
+    });
+  }
+} else if (!r) {
+  let { setupServer: t } = await e(
+      async () => {
+        let { setupServer: e } = await import(`msw/node`);
+        return { setupServer: e };
+      },
+      [],
+      import.meta.url,
+    ),
+    r = t();
+  (r.listen({ onUnhandledRequest: `bypass` }),
+    r.events.on(`*`, async (e) => {
+      let { type: t, requestId: r, request: i, response: a } = e;
+      if (r) {
+        if (t === `request:start` && i) {
+          if (!n) return;
+          o.set(r, { t0: Date.now(), method: i.method, url: i.url, test: n });
+          try {
+            let e = await i.clone().text(),
+              t = o.get(r);
+            t && e && (t.requestBody = e);
+          } catch {}
+          return;
+        }
+        (t === `response:mocked` || t === `response:bypass`) &&
+          a &&
+          (await s(r, a, t === `response:mocked`));
+      }
+    }),
+    (c = r));
+}
+t(() => c?.resetHandlers());
+var l = c;
+export { l as t };
 //# sourceMappingURL=setup-BPUuYb5b.js.map

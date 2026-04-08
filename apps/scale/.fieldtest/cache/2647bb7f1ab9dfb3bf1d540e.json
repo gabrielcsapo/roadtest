@@ -1,1 +1,1514 @@
-{"hash":"2647bb7f1ab9dfb3bf1d540e","cachedAt":1775503843293,"suites":[{"id":"mnnl529z-5ca","name":"Button","tests":[{"id":"mnnl529z-5cb","name":"renders variant=primary size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838250,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cc","name":"renders variant=primary size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838250,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cd","name":"renders variant=primary size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838250,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ce","name":"renders variant=primary size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838250,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cf","name":"renders variant=secondary size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838251,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cg","name":"renders variant=secondary size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838251,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ch","name":"renders variant=secondary size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838251,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ci","name":"renders variant=secondary size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838251,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cj","name":"renders variant=danger size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838251,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ck","name":"renders variant=danger size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838252,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cl","name":"renders variant=danger size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838252,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cm","name":"renders variant=danger size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838252,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cn","name":"renders variant=ghost size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838252,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5co","name":"renders variant=ghost size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838253,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cp","name":"renders variant=ghost size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838253,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cq","name":"renders variant=ghost size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838253,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cr","name":"renders variant=link size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838255,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 4px 8px; font-size: 11px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cs","name":"renders variant=link size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838255,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 6px 12px; font-size: 13px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ct","name":"renders variant=link size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cu","name":"renders variant=link size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 12px 24px; font-size: 16px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cv","name":"snapshot: variant=primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-primary","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cw","name":"snapshot: variant=secondary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-secondary","timestamp":1775503838256,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cx","name":"snapshot: variant=danger","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-danger","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cy","name":"snapshot: variant=ghost","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-ghost","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5cz","name":"snapshot: variant=link","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-link","timestamp":1775503838257,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d0","name":"disabled state for variant=primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838257,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d1","name":"disabled state for variant=secondary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838258,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d2","name":"disabled state for variant=danger","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838258,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d3","name":"disabled state for variant=ghost","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838258,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d4","name":"disabled state for variant=link","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838258,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d5","name":"loading state for variant=primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838259,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d6","name":"loading state for variant=secondary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838259,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d7","name":"loading state for variant=danger","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838259,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d8","name":"loading state for variant=ghost","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838259,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5d9","name":"loading state for variant=link","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838260,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5da","name":"snapshot: size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-size-xs","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5db","name":"snapshot: size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-size-sm","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dc","name":"snapshot: size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-size-md","timestamp":1775503838260,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dd","name":"snapshot: size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838261,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"},{"label":"button-size-lg","timestamp":1775503838261,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5de","name":"calls onClick when clicked","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838261,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5df","name":"does not call onClick when disabled","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBe(false)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838262,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dg","name":"does not call onClick when loading","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBe(false)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838263,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dh","name":"renders with icon","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838263,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>★</span></span><span data-testid=\"button-label\">With Icon</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5di","name":"does not show icon when loading","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838263,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dj","name":"renders fullWidth button","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838264,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dk","name":"renders with type=submit","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838264,"html":"<button type=\"submit\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Submit</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dl","name":"renders with type=reset","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838264,"html":"<button type=\"reset\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Reset</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dm","name":"renders with type=button","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838264,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Button</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dn","name":"renders label text","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838264,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Hello World</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5do","name":"renders with custom className","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838265,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" class=\"custom-class\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dp","name":"renders with custom data-testid","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838265,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"my-btn\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dq","name":"renders spinner when loading","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838265,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dr","name":"renders without children","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838265,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ds","name":"renders button with long text","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838266,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">This is a very long button label text</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dt","name":"renders button with emoji","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838266,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">🔒 Secure</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5du","name":"fires multiple click events","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBe(3)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838266,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dv","name":"disabled at size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838267,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dw","name":"disabled at size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838267,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dx","name":"disabled at size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838267,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dy","name":"disabled at size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838267,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5dz","name":"loading at size=xs","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838267,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e0","name":"loading at size=sm","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838268,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e1","name":"loading at size=md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838268,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e2","name":"loading at size=lg","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838268,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e3","name":"fullWidth with variant=primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838269,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e4","name":"fullWidth with variant=secondary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838269,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e5","name":"fullWidth with variant=danger","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838269,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e6","name":"fullWidth with variant=ghost","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838269,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e7","name":"fullWidth with variant=link","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838269,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e8","name":"icon with variant=primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838270,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5e9","name":"icon with variant=secondary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838270,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ea","name":"icon with variant=danger","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838270,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5eb","name":"icon with variant=ghost","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838270,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ec","name":"icon with variant=link","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838271,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ed","name":"has aria-busy when loading","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838272,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ee","name":"has aria-disabled when disabled","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838272,"html":"<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ef","name":"renders default variant primary","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838272,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Default</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5eg","name":"renders default size md","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838273,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Default Size</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5eh","name":"renders with null children","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838273,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ei","name":"icon not shown when no icon prop","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838273,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">No Icon</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ej","name":"spinner not shown when not loading","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838273,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Not Loading</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5ek","name":"renders with number children","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838273,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">42</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5el","name":"renders multiple icon types","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838274,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>★</span></span><span data-testid=\"button-label\">Btn</span></button>"},{"label":"render 2","timestamp":1775503838274,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>✓</span></span><span data-testid=\"button-label\">Btn</span></button>"},{"label":"render 3","timestamp":1775503838274,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>→</span></span><span data-testid=\"button-label\">Btn</span></button>"},{"label":"render 4","timestamp":1775503838274,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>⚠</span></span><span data-testid=\"button-label\">Btn</span></button>"},{"label":"render 5","timestamp":1775503838274,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>🔒</span></span><span data-testid=\"button-label\">Btn</span></button>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529z-5em","name":"fires onClick with event object","suiteId":"mnnl529z-5ca","suiteName":"Button","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838275,"html":"<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"}],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/Button.test.tsx"}],"coverage":null}
+{
+  "hash": "2647bb7f1ab9dfb3bf1d540e",
+  "cachedAt": 1775503843293,
+  "suites": [
+    {
+      "id": "mnnl529z-5ca",
+      "name": "Button",
+      "tests": [
+        {
+          "id": "mnnl529z-5cb",
+          "name": "renders variant=primary size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838250,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cc",
+          "name": "renders variant=primary size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838250,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cd",
+          "name": "renders variant=primary size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838250,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ce",
+          "name": "renders variant=primary size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838250,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cf",
+          "name": "renders variant=secondary size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838251,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cg",
+          "name": "renders variant=secondary size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838251,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ch",
+          "name": "renders variant=secondary size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838251,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ci",
+          "name": "renders variant=secondary size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838251,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cj",
+          "name": "renders variant=danger size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838251,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ck",
+          "name": "renders variant=danger size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838252,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cl",
+          "name": "renders variant=danger size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838252,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cm",
+          "name": "renders variant=danger size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838252,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cn",
+          "name": "renders variant=ghost size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838252,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5co",
+          "name": "renders variant=ghost size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838253,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cp",
+          "name": "renders variant=ghost size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838253,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cq",
+          "name": "renders variant=ghost size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838253,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cr",
+          "name": "renders variant=link size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838255,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 4px 8px; font-size: 11px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cs",
+          "name": "renders variant=link size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838255,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 6px 12px; font-size: 13px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ct",
+          "name": "renders variant=link size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cu",
+          "name": "renders variant=link size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 12px 24px; font-size: 16px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cv",
+          "name": "snapshot: variant=primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-primary",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cw",
+          "name": "snapshot: variant=secondary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-secondary",
+              "timestamp": 1775503838256,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cx",
+          "name": "snapshot: variant=danger",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-danger",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cy",
+          "name": "snapshot: variant=ghost",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-ghost",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5cz",
+          "name": "snapshot: variant=link",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-link",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d0",
+          "name": "disabled state for variant=primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838257,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d1",
+          "name": "disabled state for variant=secondary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838258,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d2",
+          "name": "disabled state for variant=danger",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838258,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d3",
+          "name": "disabled state for variant=ghost",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838258,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d4",
+          "name": "disabled state for variant=link",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838258,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d5",
+          "name": "loading state for variant=primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838259,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d6",
+          "name": "loading state for variant=secondary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838259,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d7",
+          "name": "loading state for variant=danger",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838259,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d8",
+          "name": "loading state for variant=ghost",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838259,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5d9",
+          "name": "loading state for variant=link",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5da",
+          "name": "snapshot: size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-size-xs",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5db",
+          "name": "snapshot: size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-size-sm",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dc",
+          "name": "snapshot: size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-size-md",
+              "timestamp": 1775503838260,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dd",
+          "name": "snapshot: size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838261,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            },
+            {
+              "label": "button-size-lg",
+              "timestamp": 1775503838261,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Label</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5de",
+          "name": "calls onClick when clicked",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838261,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5df",
+          "name": "does not call onClick when disabled",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838262,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dg",
+          "name": "does not call onClick when loading",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838263,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dh",
+          "name": "renders with icon",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838263,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>★</span></span><span data-testid=\"button-label\">With Icon</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5di",
+          "name": "does not show icon when loading",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838263,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dj",
+          "name": "renders fullWidth button",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838264,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dk",
+          "name": "renders with type=submit",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838264,
+              "html": "<button type=\"submit\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Submit</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dl",
+          "name": "renders with type=reset",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838264,
+              "html": "<button type=\"reset\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Reset</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dm",
+          "name": "renders with type=button",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838264,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Button</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dn",
+          "name": "renders label text",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838264,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Hello World</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5do",
+          "name": "renders with custom className",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838265,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" class=\"custom-class\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dp",
+          "name": "renders with custom data-testid",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838265,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"my-btn\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dq",
+          "name": "renders spinner when loading",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838265,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dr",
+          "name": "renders without children",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838265,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ds",
+          "name": "renders button with long text",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838266,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">This is a very long button label text</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dt",
+          "name": "renders button with emoji",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838266,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">🔒 Secure</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5du",
+          "name": "fires multiple click events",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(3)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838266,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dv",
+          "name": "disabled at size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838267,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dw",
+          "name": "disabled at size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838267,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dx",
+          "name": "disabled at size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838267,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dy",
+          "name": "disabled at size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838267,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5dz",
+          "name": "loading at size=xs",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838267,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 11px; padding: 4px 8px; border-radius: 4px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e0",
+          "name": "loading at size=sm",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838268,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 13px; padding: 6px 12px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e1",
+          "name": "loading at size=md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838268,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e2",
+          "name": "loading at size=lg",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838268,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 16px; padding: 12px 24px; border-radius: 8px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e3",
+          "name": "fullWidth with variant=primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838269,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e4",
+          "name": "fullWidth with variant=secondary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838269,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e5",
+          "name": "fullWidth with variant=danger",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838269,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e6",
+          "name": "fullWidth with variant=ghost",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838269,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e7",
+          "name": "fullWidth with variant=link",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838269,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; width: 100%; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Full</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e8",
+          "name": "icon with variant=primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838270,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5e9",
+          "name": "icon with variant=secondary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838270,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #1e1e2e; color: #a0a0b0; border: 1px solid #3a3a4a; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ea",
+          "name": "icon with variant=danger",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838270,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #ef4444; color: #ffffff; border: 1px solid #ef4444; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5eb",
+          "name": "icon with variant=ghost",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838270,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #a0a0b0; border: 1px solid transparent; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ec",
+          "name": "icon with variant=link",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838271,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: transparent; color: #6366f1; border: none none; text-decoration: underline; padding: 8px 16px; font-size: 14px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>+</span></span><span data-testid=\"button-label\">Add</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ed",
+          "name": "has aria-busy when loading",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838272,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span data-testid=\"button-spinner\" aria-hidden=\"true\" style=\"display: inline-block; width: 12px; height: 12px; border-radius: 50%; animation: spin 0.6s linear infinite; border-width: 2px; border-style: solid; border-color: transparent currentcolor currentcolor; border-image: initial;\"></span><span data-testid=\"button-label\">Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ee",
+          "name": "has aria-disabled when disabled",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838272,
+              "html": "<button type=\"button\" disabled=\"\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.6; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"true\"><span data-testid=\"button-label\">Disabled</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ef",
+          "name": "renders default variant primary",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838272,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Default</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5eg",
+          "name": "renders default size md",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838273,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Default Size</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5eh",
+          "name": "renders with null children",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838273,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ei",
+          "name": "icon not shown when no icon prop",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838273,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">No Icon</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ej",
+          "name": "spinner not shown when not loading",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838273,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Not Loading</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5ek",
+          "name": "renders with number children",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838273,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">42</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5el",
+          "name": "renders multiple icon types",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838274,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>★</span></span><span data-testid=\"button-label\">Btn</span></button>"
+            },
+            {
+              "label": "render 2",
+              "timestamp": 1775503838274,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>✓</span></span><span data-testid=\"button-label\">Btn</span></button>"
+            },
+            {
+              "label": "render 3",
+              "timestamp": 1775503838274,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>→</span></span><span data-testid=\"button-label\">Btn</span></button>"
+            },
+            {
+              "label": "render 4",
+              "timestamp": 1775503838274,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>⚠</span></span><span data-testid=\"button-label\">Btn</span></button>"
+            },
+            {
+              "label": "render 5",
+              "timestamp": 1775503838274,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-icon\"><span>🔒</span></span><span data-testid=\"button-label\">Btn</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529z-5em",
+          "name": "fires onClick with event object",
+          "suiteId": "mnnl529z-5ca",
+          "suiteName": "Button",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838275,
+              "html": "<button type=\"button\" style=\"display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-weight: 500; cursor: pointer; opacity: 1; font-family: inherit; transition: all 0.15s ease; background-color: #6366f1; color: #ffffff; border: 1px solid #6366f1; font-size: 14px; padding: 8px 16px; border-radius: 6px;\" data-testid=\"button\" aria-busy=\"false\" aria-disabled=\"false\"><span data-testid=\"button-label\">Click</span></button>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/Button.test.tsx"
+    }
+  ],
+  "coverage": null
+}

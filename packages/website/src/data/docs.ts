@@ -1,19 +1,19 @@
 export interface DocEntry {
-  id: string
-  category: string
-  title: string
+  id: string;
+  category: string;
+  title: string;
   /** Markdown content */
-  body: string
+  body: string;
   /** Optional demo component id — rendered below the markdown */
-  demo?: string
+  demo?: string;
 }
 
 export const docs: DocEntry[] = [
   // ── Getting Started ──────────────────────────────────────────────────────
   {
-    id: 'installation',
-    category: 'Getting Started',
-    title: 'Installation',
+    id: "installation",
+    category: "Getting Started",
+    title: "Installation",
     body: `
 ## Installation
 
@@ -44,9 +44,9 @@ export default defineConfig({
 `,
   },
   {
-    id: 'quick-start',
-    category: 'Getting Started',
-    title: 'Quick Start',
+    id: "quick-start",
+    category: "Getting Started",
+    title: "Quick Start",
     body: `
 ## Quick Start
 
@@ -89,9 +89,9 @@ fieldtest
 `,
   },
   {
-    id: 'project-setup',
-    category: 'Getting Started',
-    title: 'Project Setup',
+    id: "project-setup",
+    category: "Getting Started",
+    title: "Project Setup",
     body: `
 ## Project Setup
 
@@ -138,9 +138,9 @@ export default function Preview({ children }: { children: React.ReactNode }) {
 
   // ── Core API ─────────────────────────────────────────────────────────────
   {
-    id: 'describe-it',
-    category: 'Core API',
-    title: 'describe / it / test',
+    id: "describe-it",
+    category: "Core API",
+    title: "describe / it / test",
     body: `
 ## describe / it / test
 
@@ -177,9 +177,9 @@ describe('Form', () => {
 `,
   },
   {
-    id: 'expect',
-    category: 'Core API',
-    title: 'expect',
+    id: "expect",
+    category: "Core API",
+    title: "expect",
     body: `
 ## expect
 
@@ -218,9 +218,9 @@ expect(btn.hasAttribute('disabled')).toBeFalsy()
 `,
   },
   {
-    id: 'render',
-    category: 'Core API',
-    title: 'render',
+    id: "render",
+    category: "Core API",
+    title: "render",
     body: `
 ## render
 
@@ -256,9 +256,9 @@ expect(container.querySelector('.badge')?.textContent).toBe('new')
 `,
   },
   {
-    id: 'snapshot',
-    category: 'Core API',
-    title: 'snapshot',
+    id: "snapshot",
+    category: "Core API",
+    title: "snapshot",
     body: `
 ## snapshot
 
@@ -284,9 +284,9 @@ Snapshots are **visual only** — they don't assert anything. They're checkpoint
 `,
   },
   {
-    id: 'fire-event',
-    category: 'Core API',
-    title: 'fireEvent',
+    id: "fire-event",
+    category: "Core API",
+    title: "fireEvent",
     body: `
 ## fireEvent
 
@@ -318,9 +318,9 @@ it('updates on input', async () => {
 `,
   },
   {
-    id: 'mock',
-    category: 'Core API',
-    title: 'mock / unmock',
+    id: "mock",
+    category: "Core API",
+    title: "mock / unmock",
     body: `
 ## mock / unmock
 
@@ -365,10 +365,10 @@ unmock('../api/user')
 
   // ── Browser UI ───────────────────────────────────────────────────────────
   {
-    id: 'ui-overview',
-    category: 'Browser UI',
-    title: 'Overview',
-    demo: 'ui-overview',
+    id: "ui-overview",
+    category: "Browser UI",
+    title: "Overview",
+    demo: "ui-overview",
     body: `
 ## Browser UI
 
@@ -397,10 +397,10 @@ Saving any file re-runs affected tests automatically. Only tests whose dependenc
 `,
   },
   {
-    id: 'filmstrip',
-    category: 'Browser UI',
-    title: 'Filmstrip',
-    demo: 'filmstrip',
+    id: "filmstrip",
+    category: "Browser UI",
+    title: "Filmstrip",
+    demo: "filmstrip",
     body: `
 ## Filmstrip
 
@@ -426,10 +426,10 @@ These overlays apply to the live preview only and don't affect your test results
 `,
   },
   {
-    id: 'tabs',
-    category: 'Browser UI',
-    title: 'Tabs',
-    demo: 'tabs',
+    id: "tabs",
+    category: "Browser UI",
+    title: "Tabs",
+    demo: "tabs",
     body: `
 ## Tabs
 
@@ -455,9 +455,9 @@ Accessibility audit results from axe-core. Failing rules show the impacted DOM n
 `,
   },
   {
-    id: 'graph-view',
-    category: 'Browser UI',
-    title: 'Graph View',
+    id: "graph-view",
+    category: "Browser UI",
+    title: "Graph View",
     body: `
 ## Graph View
 
@@ -481,9 +481,9 @@ The graph makes it easy to see which parts of your codebase have no test coverag
 
   // ── Node / CI ────────────────────────────────────────────────────────────
   {
-    id: 'node-mode',
-    category: 'Node / CI',
-    title: 'Running Tests',
+    id: "node-mode",
+    category: "Node / CI",
+    title: "Running Tests",
     body: `
 ## Running Tests in Node
 
@@ -515,9 +515,9 @@ fieldtest uses [happy-dom](https://github.com/capricorn86/happy-dom) as a lightw
 `,
   },
   {
-    id: 'watch-mode',
-    category: 'Node / CI',
-    title: 'Watch Mode',
+    id: "watch-mode",
+    category: "Node / CI",
+    title: "Watch Mode",
     body: `
 ## Watch Mode
 
@@ -533,9 +533,9 @@ This makes watch mode fast even in large codebases.
 `,
   },
   {
-    id: 'coverage',
-    category: 'Node / CI',
-    title: 'Coverage',
+    id: "coverage",
+    category: "Node / CI",
+    title: "Coverage",
     body: `
 ## Coverage
 
@@ -559,9 +559,9 @@ In the browser UI, coverage is tracked per individual test — not just in aggre
 `,
   },
   {
-    id: 'sharding',
-    category: 'Node / CI',
-    title: 'Sharding',
+    id: "sharding",
+    category: "Node / CI",
+    title: "Sharding",
     body: `
 ## Sharding
 
@@ -597,9 +597,9 @@ steps:
 `,
   },
   {
-    id: 'caching',
-    category: 'Node / CI',
-    title: 'Caching',
+    id: "caching",
+    category: "Node / CI",
+    title: "Caching",
     body: `
 ## Caching
 
@@ -632,9 +632,9 @@ Cache the \`.fieldtest/cache/\` directory between runs for maximum speed:
 
   // ── Configuration ─────────────────────────────────────────────────────────
   {
-    id: 'vite-plugin',
-    category: 'Configuration',
-    title: 'Vite Plugin',
+    id: "vite-plugin",
+    category: "Configuration",
+    title: "Vite Plugin",
     body: `
 ## Vite Plugin
 
@@ -657,7 +657,7 @@ export default defineConfig({
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| \`include\` | \`string \| string[]\` | \`**/*.test.{ts,tsx}\` | Glob pattern(s) for test files |
+| \`include\` | \`string | string[]\` | \`**/*.test.{ts,tsx}\` | Glob pattern(s) for test files |
 
 The plugin does two things:
 
@@ -666,9 +666,9 @@ The plugin does two things:
 `,
   },
   {
-    id: 'env-override',
-    category: 'Configuration',
-    title: 'Environment Override',
+    id: "env-override",
+    category: "Configuration",
+    title: "Environment Override",
     body: `
 ## Environment Override
 
@@ -691,9 +691,9 @@ This is useful for tests that involve Node-only APIs or where a DOM is unnecessa
 
   // ── Plugins ───────────────────────────────────────────────────────────────
   {
-    id: 'register-tab',
-    category: 'Plugins',
-    title: 'registerTab',
+    id: "register-tab",
+    category: "Plugins",
+    title: "registerTab",
     body: `
 ## registerTab
 
@@ -727,9 +727,9 @@ Register tabs in your \`.fieldtest/setup.ts\` or \`.fieldtest/preview.tsx\`.
 `,
   },
   {
-    id: 'after-test-hook',
-    category: 'Plugins',
-    title: 'registerAfterTestHook',
+    id: "after-test-hook",
+    category: "Plugins",
+    title: "registerAfterTestHook",
     body: `
 ## registerAfterTestHook
 
@@ -750,6 +750,6 @@ registerAfterTestHook(async () => {
 The hook runs in the same environment as the test (browser or Node). In browser mode, you can access the DOM. In Node mode, \`currentTest()\` still gives you full test metadata.
 `,
   },
-]
+];
 
-export const categories = [...new Set(docs.map(d => d.category))]
+export const categories = [...new Set(docs.map((d) => d.category))];

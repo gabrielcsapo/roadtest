@@ -1,1 +1,1798 @@
-{"hash":"0773e1f097ccd1924348102e","cachedAt":1775503843291,"suites":[{"id":"mnnl529u-50u","name":"EmptyState","tests":[{"id":"mnnl529u-50v","name":"renders title=\"No vendors found\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838103,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-50w","name":"renders title=\"No results\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838103,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-50x","name":"renders title=\"Nothing here yet\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838103,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing here yet\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing here yet</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-50y","name":"renders title=\"No policies\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838103,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-50z","name":"renders title=\"No controls\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No controls\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No controls</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-510","name":"renders title=\"No issues found\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No issues found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No issues found</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-511","name":"renders title=\"No personnel\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No personnel\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No personnel</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-512","name":"renders title=\"No credentials\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No credentials\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No credentials</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-513","name":"renders title=\"Empty list\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty list\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty list</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-514","name":"renders title=\"No data available\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No data available\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No data available</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-515","name":"renders title=\"No frameworks\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No frameworks\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No frameworks</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-516","name":"renders title=\"No audit logs\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838104,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No audit logs\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No audit logs</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-517","name":"renders title=\"No notifications\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No notifications\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No notifications</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-518","name":"renders title=\"No pending items\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No pending items\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No pending items</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-519","name":"renders title=\"No risk assessments\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No risk assessments\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No risk assessments</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51a","name":"renders title=\"Start by adding a vendor\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Start by adding a vendor\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Start by adding a vendor</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51b","name":"renders title=\"Create your first policy\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Create your first policy\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Create your first policy</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51c","name":"renders title=\"Add team members\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Add team members\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Add team members</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51d","name":"renders title=\"Nothing to display\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838105,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing to display\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing to display</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51e","name":"renders title=\"All caught up!\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838106,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"All caught up!\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">All caught up!</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51f","name":"renders description when provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838106,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your search filters</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51g","name":"no description element when not provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838106,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51h","name":"description=\"Try adjusting your filters\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838106,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51i","name":"description=\"Add a vendor to get started\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838106,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add a vendor to get started</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51j","name":"description=\"No items match your criteria\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51k","name":"description=\"Check back later\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Check back later</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51l","name":"description=\"Create a policy to get started\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51m","name":"description=\"Invite team members to begin\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Invite team members to begin</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51n","name":"description=\"Upload evidence to proceed\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51o","name":"description=\"Configure your settings first\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838107,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Configure your settings first</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51p","name":"renders action button when provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838108,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51q","name":"no action button when not provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838108,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51r","name":"action label=\"Add vendor\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838108,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51s","name":"action label=\"Create policy\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838108,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51t","name":"action label=\"Invite user\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838109,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Invite user</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51u","name":"action label=\"Upload file\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838109,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Upload file</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51v","name":"action label=\"Get started\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838109,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Get started</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51w","name":"action label=\"Learn more\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838111,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Learn more</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51x","name":"action label=\"View docs\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838111,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">View docs</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51y","name":"action label=\"Configure now\"","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838111,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Configure now</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-51z","name":"calls action onClick when clicked","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838111,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Click me</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-520","name":"action click test 1","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838112,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 0\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 0</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 0</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-521","name":"action click test 2","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838112,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 1\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 1</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 1</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-522","name":"action click test 3","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838112,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 2\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 2</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 2</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-523","name":"action click test 4","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838113,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 3\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 3</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 3</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-524","name":"action click test 5","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838113,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 4\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 4</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 4</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-525","name":"action click test 6","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838113,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 5\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 5</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 5</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-526","name":"action click test 7","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838114,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 6\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 6</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 6</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-527","name":"action click test 8","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838114,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 7\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 7</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 7</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-528","name":"action click test 9","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBe(true)","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838114,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 8\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 8</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 8</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-529","name":"renders in compact mode","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Compact\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Compact</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52a","name":"renders in non-compact mode","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Normal\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Normal</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52b","name":"compact mode test 1","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 0\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 0</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52c","name":"compact mode test 2","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 1\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 1</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52d","name":"compact mode test 3","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 2\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 2</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52e","name":"compact mode test 4","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838115,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 3\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 3</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52f","name":"compact mode test 5","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 4\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 4</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52g","name":"compact mode test 6","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 5\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 5</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52h","name":"compact mode test 7","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 6\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 6</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52i","name":"compact mode test 8","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 7\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 7</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52j","name":"renders icon when provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52k","name":"no icon when not provided","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeNull()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838116,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52l","name":"icon=\"📋\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-📋\">📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52m","name":"icon=\"🔍\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🔍\">🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52n","name":"icon=\"👥\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-👥\">👥</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52o","name":"icon=\"🔒\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🔒\">🔒</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52p","name":"icon=\"📊\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-📊\">📊</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52q","name":"icon=\"⚠️\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838117,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-⚠️\">⚠️</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52r","name":"icon=\"✅\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838118,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-✅\">✅</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52s","name":"icon=\"🚀\" renders","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838119,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🚀\">🚀</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52t","name":"snapshot: simple","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838119,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add your first vendor</p></div>"},{"label":"empty-state-simple","timestamp":1775503838119,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add your first vendor</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52u","name":"snapshot: with action","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"},{"label":"empty-state-action","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52v","name":"snapshot: compact","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No items\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No items</h3></div>"},{"label":"empty-state-compact","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No items\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No items</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52w","name":"snapshot: with icon","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No matches</p></div>"},{"label":"empty-state-icon","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No matches</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52x","name":"snapshot: full","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[],"snapshots":[{"label":"initial","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try clearing filters or add a new vendor</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"},{"label":"empty-state-full","timestamp":1775503838120,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try clearing filters or add a new vendor</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52y","name":"title + description + action","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838121,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No results</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-52z","name":"title + icon + action","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"},{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838121,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>⭐</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Go</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-530","name":"title + compact + action","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838121,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-531","name":"combined props test 1","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838121,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 0</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-532","name":"combined props test 2","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838121,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-533","name":"combined props test 3","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing here yet\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing here yet</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-534","name":"combined props test 4","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-535","name":"combined props test 5","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No controls\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No controls</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 4</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-536","name":"combined props test 6","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No issues found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No issues found</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-537","name":"combined props test 7","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No personnel\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No personnel</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-538","name":"combined props test 8","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838122,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No credentials\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No credentials</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-539","name":"combined props test 9","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838123,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty list\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty list</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 8</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53a","name":"combined props test 10","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838123,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No data available\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No data available</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53b","name":"combined props test 11","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838123,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No frameworks\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No frameworks</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53c","name":"combined props test 12","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838123,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No audit logs\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No audit logs</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53d","name":"combined props test 13","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838123,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No notifications\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No notifications</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 12</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53e","name":"combined props test 14","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No pending items\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No pending items</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53f","name":"combined props test 15","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No risk assessments\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No risk assessments</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53g","name":"combined props test 16","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Start by adding a vendor\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Start by adding a vendor</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53h","name":"combined props test 17","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Create your first policy\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Create your first policy</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 16</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53i","name":"combined props test 18","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Add team members\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Add team members</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53j","name":"combined props test 19","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838124,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing to display\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing to display</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53k","name":"combined props test 20","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"All caught up!\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">All caught up!</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53l","name":"combined props test 21","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 20</button></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53m","name":"combined props test 22","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53n","name":"custom className","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" class=\"custom\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53o","name":"custom testId","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"my-empty\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"my-empty-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null},{"id":"mnnl529u-53p","name":"has role=status","suiteId":"mnnl529u-50u","suiteName":"EmptyState","status":"pass","assertions":[{"label":"expect(…).toBeDefined()","status":"pass"}],"snapshots":[{"label":"initial","timestamp":1775503838125,"html":"<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"}],"consoleLogs":[],"testCoverage":null}],"status":"pass","sourceFile":"/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/EmptyState.test.tsx"}],"coverage":null}
+{
+  "hash": "0773e1f097ccd1924348102e",
+  "cachedAt": 1775503843291,
+  "suites": [
+    {
+      "id": "mnnl529u-50u",
+      "name": "EmptyState",
+      "tests": [
+        {
+          "id": "mnnl529u-50v",
+          "name": "renders title=\"No vendors found\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838103,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-50w",
+          "name": "renders title=\"No results\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838103,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-50x",
+          "name": "renders title=\"Nothing here yet\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838103,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing here yet\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing here yet</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-50y",
+          "name": "renders title=\"No policies\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838103,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-50z",
+          "name": "renders title=\"No controls\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No controls\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No controls</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-510",
+          "name": "renders title=\"No issues found\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No issues found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No issues found</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-511",
+          "name": "renders title=\"No personnel\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No personnel\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No personnel</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-512",
+          "name": "renders title=\"No credentials\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No credentials\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No credentials</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-513",
+          "name": "renders title=\"Empty list\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty list\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty list</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-514",
+          "name": "renders title=\"No data available\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No data available\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No data available</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-515",
+          "name": "renders title=\"No frameworks\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No frameworks\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No frameworks</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-516",
+          "name": "renders title=\"No audit logs\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838104,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No audit logs\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No audit logs</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-517",
+          "name": "renders title=\"No notifications\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No notifications\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No notifications</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-518",
+          "name": "renders title=\"No pending items\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No pending items\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No pending items</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-519",
+          "name": "renders title=\"No risk assessments\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No risk assessments\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No risk assessments</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51a",
+          "name": "renders title=\"Start by adding a vendor\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Start by adding a vendor\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Start by adding a vendor</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51b",
+          "name": "renders title=\"Create your first policy\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Create your first policy\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Create your first policy</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51c",
+          "name": "renders title=\"Add team members\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Add team members\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Add team members</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51d",
+          "name": "renders title=\"Nothing to display\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838105,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing to display\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing to display</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51e",
+          "name": "renders title=\"All caught up!\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838106,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"All caught up!\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">All caught up!</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51f",
+          "name": "renders description when provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838106,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your search filters</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51g",
+          "name": "no description element when not provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838106,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51h",
+          "name": "description=\"Try adjusting your filters\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838106,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51i",
+          "name": "description=\"Add a vendor to get started\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838106,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add a vendor to get started</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51j",
+          "name": "description=\"No items match your criteria\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51k",
+          "name": "description=\"Check back later\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Check back later</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51l",
+          "name": "description=\"Create a policy to get started\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51m",
+          "name": "description=\"Invite team members to begin\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Invite team members to begin</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51n",
+          "name": "description=\"Upload evidence to proceed\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51o",
+          "name": "description=\"Configure your settings first\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838107,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Configure your settings first</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51p",
+          "name": "renders action button when provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838108,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51q",
+          "name": "no action button when not provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838108,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51r",
+          "name": "action label=\"Add vendor\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838108,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51s",
+          "name": "action label=\"Create policy\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838108,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51t",
+          "name": "action label=\"Invite user\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838109,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Invite user</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51u",
+          "name": "action label=\"Upload file\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838109,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Upload file</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51v",
+          "name": "action label=\"Get started\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838109,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Get started</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51w",
+          "name": "action label=\"Learn more\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838111,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Learn more</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51x",
+          "name": "action label=\"View docs\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838111,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">View docs</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51y",
+          "name": "action label=\"Configure now\"",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838111,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Configure now</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-51z",
+          "name": "calls action onClick when clicked",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838111,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Click me</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-520",
+          "name": "action click test 1",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838112,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 0\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 0</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 0</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-521",
+          "name": "action click test 2",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838112,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 1\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 1</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 1</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-522",
+          "name": "action click test 3",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838112,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 2\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 2</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 2</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-523",
+          "name": "action click test 4",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838113,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 3\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 3</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 3</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-524",
+          "name": "action click test 5",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838113,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 4\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 4</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 4</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-525",
+          "name": "action click test 6",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838113,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 5\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 5</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 5</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-526",
+          "name": "action click test 7",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838114,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 6\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 6</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 6</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-527",
+          "name": "action click test 8",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838114,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 7\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 7</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 7</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-528",
+          "name": "action click test 9",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838114,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty 8\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty 8</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 8</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-529",
+          "name": "renders in compact mode",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Compact\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Compact</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52a",
+          "name": "renders in non-compact mode",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Normal\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Normal</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52b",
+          "name": "compact mode test 1",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 0\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 0</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52c",
+          "name": "compact mode test 2",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 1\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 1</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52d",
+          "name": "compact mode test 3",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 2\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 2</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52e",
+          "name": "compact mode test 4",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838115,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 3\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 3</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52f",
+          "name": "compact mode test 5",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 4\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 4</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52g",
+          "name": "compact mode test 6",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 5\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 5</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52h",
+          "name": "compact mode test 7",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 6\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 6</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52i",
+          "name": "compact mode test 8",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Title 7\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Title 7</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Desc</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52j",
+          "name": "renders icon when provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52k",
+          "name": "no icon when not provided",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838116,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52l",
+          "name": "icon=\"📋\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-📋\">📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52m",
+          "name": "icon=\"🔍\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🔍\">🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52n",
+          "name": "icon=\"👥\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-👥\">👥</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52o",
+          "name": "icon=\"🔒\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🔒\">🔒</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52p",
+          "name": "icon=\"📊\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-📊\">📊</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52q",
+          "name": "icon=\"⚠️\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838117,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-⚠️\">⚠️</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52r",
+          "name": "icon=\"✅\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838118,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-✅\">✅</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52s",
+          "name": "icon=\"🚀\" renders",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838119,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span data-testid=\"icon-🚀\">🚀</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52t",
+          "name": "snapshot: simple",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838119,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add your first vendor</p></div>"
+            },
+            {
+              "label": "empty-state-simple",
+              "timestamp": 1775503838119,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Add your first vendor</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52u",
+          "name": "snapshot: with action",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"
+            },
+            {
+              "label": "empty-state-action",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Create policy</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52v",
+          "name": "snapshot: compact",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No items\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No items</h3></div>"
+            },
+            {
+              "label": "empty-state-compact",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No items\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No items</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52w",
+          "name": "snapshot: with icon",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No matches</p></div>"
+            },
+            {
+              "label": "empty-state-icon",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>🔍</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No matches</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52x",
+          "name": "snapshot: full",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try clearing filters or add a new vendor</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"
+            },
+            {
+              "label": "empty-state-full",
+              "timestamp": 1775503838120,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>📋</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try clearing filters or add a new vendor</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add vendor</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52y",
+          "name": "title + description + action",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838121,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No results</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-52z",
+          "name": "title + icon + action",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838121,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><div style=\"font-size: 48px; color: #3a3a4a; margin-bottom: 4px;\" data-testid=\"empty-state-icon\" aria-hidden=\"true\"><span>⭐</span></div><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Go</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-530",
+          "name": "title + compact + action",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838121,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Add</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-531",
+          "name": "combined props test 1",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838121,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 0</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-532",
+          "name": "combined props test 2",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838121,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-533",
+          "name": "combined props test 3",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing here yet\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing here yet</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-534",
+          "name": "combined props test 4",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No policies\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No policies</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-535",
+          "name": "combined props test 5",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No controls\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No controls</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 4</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-536",
+          "name": "combined props test 6",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No issues found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No issues found</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-537",
+          "name": "combined props test 7",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No personnel\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No personnel</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-538",
+          "name": "combined props test 8",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838122,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No credentials\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No credentials</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-539",
+          "name": "combined props test 9",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838123,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty list\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty list</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 8</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53a",
+          "name": "combined props test 10",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838123,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No data available\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No data available</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53b",
+          "name": "combined props test 11",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838123,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No frameworks\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No frameworks</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53c",
+          "name": "combined props test 12",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838123,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No audit logs\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No audit logs</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53d",
+          "name": "combined props test 13",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838123,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No notifications\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No notifications</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 4px; padding: 6px 14px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 12</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53e",
+          "name": "combined props test 14",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No pending items\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No pending items</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53f",
+          "name": "combined props test 15",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No risk assessments\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No risk assessments</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Upload evidence to proceed</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53g",
+          "name": "combined props test 16",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Start by adding a vendor\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Start by adding a vendor</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53h",
+          "name": "combined props test 17",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Create your first policy\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Create your first policy</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Try adjusting your filters</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 16</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53i",
+          "name": "combined props test 18",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Add team members\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Add team members</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53j",
+          "name": "combined props test 19",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838124,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Nothing to display\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Nothing to display</h3><p style=\"font-size: 13px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">No items match your criteria</p></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53k",
+          "name": "combined props test 20",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"All caught up!\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">All caught up!</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53l",
+          "name": "combined props test 21",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No vendors found\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No vendors found</h3><p style=\"font-size: 14px; color: #6b6b8a; max-width: 360px; margin: 0px; line-height: 1.6;\" data-testid=\"empty-state-description\">Create a policy to get started</p><button style=\"margin-top: 8px; padding: 8px 20px; background-color: #6366f1; color: #ffffff; border: none none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit;\" data-testid=\"empty-state-action\">Action 20</button></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53m",
+          "name": "combined props test 22",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px 16px; gap: 8px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"No results\"><h3 style=\"font-size: 15px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">No results</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53n",
+          "name": "custom className",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" class=\"custom\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53o",
+          "name": "custom testId",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"my-empty\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"my-empty-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "mnnl529u-53p",
+          "name": "has role=status",
+          "suiteId": "mnnl529u-50u",
+          "suiteName": "EmptyState",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeDefined()", "status": "pass" }],
+          "snapshots": [
+            {
+              "label": "initial",
+              "timestamp": 1775503838125,
+              "html": "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; gap: 12px;\" data-testid=\"empty-state\" role=\"status\" aria-label=\"Empty\"><h3 style=\"font-size: 18px; font-weight: 600; color: #c0c0d0; margin: 0px;\" data-testid=\"empty-state-title\">Empty</h3></div>"
+            }
+          ],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/test-idea/apps/scale/src/components/ui/EmptyState.test.tsx"
+    }
+  ],
+  "coverage": null
+}

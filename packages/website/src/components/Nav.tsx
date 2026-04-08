@@ -1,13 +1,16 @@
-import { Link, useLocation } from 'react-router-dom'
-import Logo from './Logo'
+import { Link, useLocation } from "react-router-dom";
+import Logo from "./Logo";
 
 export default function Nav() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   return (
     <nav className="sticky top-0 z-50 border-b border-white/7 bg-ft-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-[60px] max-w-[1100px] items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2.5 font-bold text-ft-text no-underline hover:text-white transition-colors">
+        <Link
+          to="/"
+          className="flex items-center gap-2.5 font-bold text-ft-text no-underline hover:text-white transition-colors"
+        >
           <Logo size={28} id="nav" />
           <span className="text-[17px] tracking-tight">fieldtest</span>
         </Link>
@@ -16,9 +19,9 @@ export default function Nav() {
           <Link
             to="/docs"
             className={`rounded-lg px-3.5 py-1.5 text-sm font-medium transition-colors no-underline ${
-              pathname.startsWith('/docs')
-                ? 'bg-ft-green/20 text-ft-green-hi'
-                : 'text-ft-mid hover:text-ft-text hover:bg-white/5'
+              pathname.startsWith("/docs")
+                ? "bg-ft-green/20 text-ft-green-hi"
+                : "text-ft-mid hover:text-ft-text hover:bg-white/5"
             }`}
           >
             Docs
@@ -35,5 +38,5 @@ export default function Nav() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

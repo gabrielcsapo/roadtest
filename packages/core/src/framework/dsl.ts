@@ -1,14 +1,14 @@
-import { nanoid } from './nanoid'
-import { store } from './store'
-import { __vtSetMockScope } from './mocks'
-import type { TestCase, TestSuite } from './types'
+import { nanoid } from "./nanoid";
+import { store } from "./store";
+import { __vtSetMockScope } from "./mocks";
+import type { TestCase, TestSuite } from "./types";
 
-let currentSuite: TestSuite | null = null
-let _currentSourceFile: string | null = null
+let currentSuite: TestSuite | null = null;
+let _currentSourceFile: string | null = null;
 
 export function setCurrentSourceFile(file: string | null) {
-  _currentSourceFile = file
-  __vtSetMockScope(file)
+  _currentSourceFile = file;
+  __vtSetMockScope(file);
 }
 
 export function describe(name: string, fn: () => void) {
@@ -16,27 +16,33 @@ export function describe(name: string, fn: () => void) {
     id: nanoid(),
     name,
     tests: [],
-    status: 'pending',
+    status: "pending",
     sourceFile: _currentSourceFile ?? undefined,
-  }
+  };
 
-  const prev = currentSuite
-  currentSuite = suite
-  fn()
-  currentSuite = prev
+  const prev = currentSuite;
+  currentSuite = suite;
+  fn();
+  currentSuite = prev;
 
-  store.addSuite(suite)
+  store.addSuite(suite);
 }
 
 function registerTest(name: string, fn: () => void | Promise<void>, skip = false) {
   if (!currentSuite) {
-    const suite: TestSuite = { id: nanoid(), name: '(root)', tests: [], status: 'pending', sourceFile: _currentSourceFile ?? undefined }
-    currentSuite = suite
-    _addTest(name, fn, skip)
-    currentSuite = null
-    store.addSuite(suite)
+    const suite: TestSuite = {
+      id: nanoid(),
+      name: "(root)",
+      tests: [],
+      status: "pending",
+      sourceFile: _currentSourceFile ?? undefined,
+    };
+    currentSuite = suite;
+    _addTest(name, fn, skip);
+    currentSuite = null;
+    store.addSuite(suite);
   } else {
-    _addTest(name, fn, skip)
+    _addTest(name, fn, skip);
   }
 }
 
@@ -46,7 +52,7 @@ function _addTest(name: string, fn: () => void | Promise<void>, skip: boolean) {
     name,
     suiteId: currentSuite!.id,
     suiteName: currentSuite!.name,
-    status: skip ? 'skipped' : 'pending',
+    status: skip ? "skipped" : "pending",
     assertions: [],
     snapshots: [],
     consoleLogs: [],
@@ -54,17 +60,17 @@ function _addTest(name: string, fn: () => void | Promise<void>, skip: boolean) {
     mockEntries: [], // calls are populated by the runner after the test finishes
     testCoverage: null,
     fn,
-  }
-  currentSuite!.tests.push(entry)
+  };
+  currentSuite!.tests.push(entry);
 }
 
 function _it(name: string, fn: () => void | Promise<void>) {
-  registerTest(name, fn)
+  registerTest(name, fn);
 }
 
 _it.skip = function skip(name: string, fn: () => void | Promise<void>) {
-  registerTest(name, fn, true)
-}
+  registerTest(name, fn, true);
+};
 
-export const it: typeof _it & { skip: typeof _it.skip } = _it
-export const test: typeof _it & { skip: typeof _it.skip } = _it
+export const it: typeof _it & { skip: typeof _it.skip } = _it;
+export const test: typeof _it & { skip: typeof _it.skip } = _it;

@@ -1,9 +1,12 @@
 {
   "name": "@fieldtest/runner",
   "version": "0.1.0",
-  "type": "module",
   "bin": {
     "fieldtest": "./bin/fieldtest.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test:node": "node ./bin/fieldtest.js"
   },
   "dependencies": {
     "@fieldtest/core": "workspace:*",
