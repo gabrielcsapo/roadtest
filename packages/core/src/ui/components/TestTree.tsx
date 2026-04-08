@@ -1,4 +1,5 @@
 import { useState, useDeferredValue, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { StoreState, TestCase, TestSuite } from "../../framework/types";
 import { StatusIcon } from "./StatusIcon";
@@ -260,10 +261,27 @@ function formatDuration(ms: number): string {
   return `${(ms / 1000).toFixed(2)}s`;
 }
 
-export function ViewToggle({ view, onChange }: { view: AppView; onChange: (v: AppView) => void }) {
+const VIEW_ROUTES: Record<AppView, string> = {
+  detail: "/",
+  gallery: "/gallery",
+  coverage: "/coverage",
+  graph: "/graph",
+};
+
+export function ViewToggle() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const view: AppView = location.pathname.startsWith("/gallery")
+    ? "gallery"
+    : location.pathname.startsWith("/coverage")
+      ? "coverage"
+      : location.pathname.startsWith("/graph")
+        ? "graph"
+        : "detail";
+
   const btn = (v: AppView, icon: React.ReactNode, label: string) => (
     <button
-      onClick={() => onChange(v)}
+      onClick={() => navigate(VIEW_ROUTES[v])}
       title={label}
       style={{
         background: view === v ? "rgba(99,102,241,0.2)" : "transparent",

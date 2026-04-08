@@ -1,22 +1,23 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import type { Store } from "../framework/store";
+import {
+  createHashRouter,
+  RouterProvider,
+  Outlet,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import type { StoreState, TestCase, RunProgress } from "../framework/types";
 import { TestTree, ViewToggle } from "./components/TestTree";
 import { Preview } from "./components/Preview";
 import { Gallery } from "./components/Gallery";
 import { CoverageExplorer, CoverageFileList } from "./components/CoverageExplorer";
 import { GraphView } from "./components/GraphView";
+import { AppContext, useApp, type SandboxApi } from "./context";
 
 export type AppView = "detail" | "gallery" | "coverage" | "graph";
 
 const SANDBOX_NAME = "__vt_sandbox";
-
-interface SandboxApi {
-  store: Store;
-  runAll: () => Promise<void>;
-  runSuite: (id: string) => Promise<void>;
-  runTest: (suiteId: string, testId: string) => Promise<void>;
-}
 
 const EMPTY_STATE: StoreState = {
   suites: [],
@@ -25,6 +26,14 @@ const EMPTY_STATE: StoreState = {
   coverage: null,
   runProgress: null,
 };
+
+function toTestUrl(suiteName: string, testName: string) {
+  return `/suite/${encodeURIComponent(suiteName)}/test/${encodeURIComponent(testName)}`;
+}
+
+function toSuiteUrl(suiteName: string) {
+  return `/suite/${encodeURIComponent(suiteName)}`;
+}
 
 function formatEta(progress: RunProgress): string {
   const elapsed = Date.now() - progress.startedAt;
@@ -37,7 +46,6 @@ function formatEta(progress: RunProgress): string {
 }
 
 function RunProgressToast({ progress }: { progress: RunProgress }) {
-  // Tick every 500ms so the ETA stays fresh even between test completions
   const [, setTick] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 500);
@@ -167,7 +175,6 @@ function SuiteOverview({
         background: "#0f0f13",
       }}
     >
-      {/* Header */}
       <div
         style={{
           padding: "14px 20px",
@@ -256,7 +263,6 @@ function SuiteOverview({
         </button>
       </div>
 
-      {/* Test list */}
       <div style={{ flex: 1, overflowY: "auto", padding: "8px 0" }}>
         {suite.tests.map((test) => {
           const statusColor =
@@ -339,18 +345,52 @@ function SuiteOverview({
   );
 }
 
-export function App() {
+function LoadingSpinner() {
+  return (
+    <div
+      style={{
+        flex: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#4b4b60",
+        flexDirection: "column",
+        gap: 12,
+      }}
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle
+          cx="10"
+          cy="10"
+          r="8"
+          stroke="#6366f1"
+          strokeWidth="1.5"
+          strokeDasharray="12 6"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 10 10"
+            to="360 10 10"
+            dur="0.8s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+      <span style={{ fontSize: 13 }}>Loading test sandbox…</span>
+    </div>
+  );
+}
+
+// ── Root layout ───────────────────────────────────────────────────────────────
+
+function AppShell() {
   const sandboxRef = useRef<HTMLIFrameElement>(null);
   const apiRef = useRef<SandboxApi | null>(null);
   const [state, setState] = useState<StoreState>(EMPTY_STATE);
-  const [selected, setSelected] = useState<TestCase | null>(null);
-  const [selectedSuiteId, setSelectedSuiteId] = useState<string | null>(null);
-  const [view, setView] = useState<AppView>("detail");
-  const [search, setSearch] = useState("");
   const [sandboxReady, setSandboxReady] = useState(false);
-  const [selectedCoverageFile, setSelectedCoverageFile] = useState<string | null>(null);
 
-  // Subscribe to sandbox store once it signals readiness
   useEffect(() => {
     let unsub: (() => void) | undefined;
     const onMessage = (e: MessageEvent) => {
@@ -360,12 +400,7 @@ export function App() {
       if (!api) return;
       apiRef.current = api;
       setState(api.store.getState());
-      unsub = api.store.subscribe((s) => {
-        setState(s);
-        setSelected((prev) =>
-          prev ? (s.suites.flatMap((su) => su.tests).find((t) => t.id === prev.id) ?? prev) : prev,
-        );
-      });
+      unsub = api.store.subscribe((s) => setState(s));
       setSandboxReady(true);
     };
     window.addEventListener("message", onMessage);
@@ -375,54 +410,8 @@ export function App() {
     };
   }, []);
 
-  const handleSelect = useCallback((test: TestCase) => {
-    setSelected(test);
-    setSelectedSuiteId(null);
-    setView("detail");
-  }, []);
-
-  const handleSelectSuite = useCallback((suiteId: string) => {
-    setSelectedSuiteId(suiteId);
-    setSelected(null);
-    setView("detail");
-  }, []);
-
-  const handlePlayTest = useCallback((test: TestCase) => {
-    setSelected(test);
-    setSelectedSuiteId(null);
-    setView("detail");
-    apiRef.current?.runTest(test.suiteId, test.id);
-  }, []);
-
-  const handleRunAll = useCallback(() => {
-    setSelected(null);
-    setSelectedSuiteId(null);
-    apiRef.current?.runAll();
-  }, []);
-  const handleRunSuite = useCallback((id: string) => {
-    setSelectedSuiteId(id);
-    setSelected(null);
-    setView("detail");
-    apiRef.current?.runSuite(id);
-  }, []);
-  const handleRunTest = useCallback(
-    (sid: string, tid: string) => {
-      const test = state.suites
-        .flatMap((s) => s.tests)
-        .find((t) => t.suiteId === sid && t.id === tid);
-      if (test) {
-        setSelected(test);
-        setSelectedSuiteId(null);
-        setView("detail");
-      }
-      apiRef.current?.runTest(sid, tid);
-    },
-    [state.suites],
-  );
-
   return (
-    <>
-      {/* Hidden sandbox iframe — all test execution happens here */}
+    <AppContext.Provider value={{ state, apiRef, sandboxReady }}>
       <iframe
         ref={sandboxRef}
         name={SANDBOX_NAME}
@@ -438,11 +427,9 @@ export function App() {
           pointerEvents: "none",
         }}
       />
-
       <div
         style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}
       >
-        {/* ── Global navbar ── */}
         <div
           style={{
             height: 44,
@@ -467,153 +454,246 @@ export function App() {
           >
             Fieldtest
           </span>
-          <ViewToggle view={view} onChange={setView} />
+          <ViewToggle />
         </div>
-
-        {/* ── Content row ── */}
         <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
-          {/* Left rail — TestTree for detail, coverage file list for coverage, hidden for gallery/graph */}
-          {view === "detail" ? (
-            <div
-              style={{
-                width: 280,
-                minWidth: 220,
-                borderRight: "1px solid #2a2a36",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <TestTree
-                state={state}
-                selected={selected}
-                selectedSuiteId={selectedSuiteId}
-                search={search}
-                onSelect={handleSelect}
-                onSelectSuite={handleSelectSuite}
-                onSearchChange={setSearch}
-                onRunAll={handleRunAll}
-                onRunSuite={handleRunSuite}
-                onRunTest={handleRunTest}
-              />
-            </div>
-          ) : view === "coverage" ? (
-            <div
-              style={{
-                width: 280,
-                minWidth: 220,
-                borderRight: "1px solid #2a2a36",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                background: "#16161d",
-              }}
-            >
-              <CoverageFileList
-                coverage={state.coverage}
-                selectedFile={selectedCoverageFile}
-                onSelectFile={setSelectedCoverageFile}
-              />
-            </div>
-          ) : null}
-
-          <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
-            {!sandboxReady ? (
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#4b4b60",
-                  flexDirection: "column",
-                  gap: 12,
-                }}
-              >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <circle
-                    cx="10"
-                    cy="10"
-                    r="8"
-                    stroke="#6366f1"
-                    strokeWidth="1.5"
-                    strokeDasharray="12 6"
-                    strokeLinecap="round"
-                  >
-                    <animateTransform
-                      attributeName="transform"
-                      type="rotate"
-                      from="0 10 10"
-                      to="360 10 10"
-                      dur="0.8s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                </svg>
-                <span style={{ fontSize: 13 }}>Loading test sandbox…</span>
-              </div>
-            ) : view === "gallery" ? (
-              <Gallery
-                state={state}
-                search={search}
-                onSearchChange={setSearch}
-                onSelect={handleSelect}
-                onPlayTest={handlePlayTest}
-              />
-            ) : view === "coverage" ? (
-              <CoverageExplorer
-                coverage={state.coverage}
-                suites={state.suites}
-                selectedFile={selectedCoverageFile}
-                onSelectTest={(suiteId, testId) => {
-                  const test = state.suites
-                    .flatMap((s) => s.tests)
-                    .find((t) => t.suiteId === suiteId && t.id === testId);
-                  if (test) {
-                    setSelected(test);
-                    setView("detail");
-                  }
-                }}
-              />
-            ) : view === "graph" ? (
-              <GraphView
-                suites={state.suites}
-                coverage={state.coverage}
-                onSelectSuite={(suiteId) => {
-                  const suite = state.suites.find((s) => s.id === suiteId);
-                  if (suite?.tests[0]) {
-                    setSelected(suite.tests[0]);
-                    setView("detail");
-                  }
-                }}
-              />
-            ) : selectedSuiteId && !selected ? (
-              <SuiteOverview
-                suite={state.suites.find((s) => s.id === selectedSuiteId) ?? null}
-                running={state.running}
-                onSelectTest={handleSelect}
-                onRunSuite={handleRunSuite}
-                onRunTest={handleRunTest}
-              />
-            ) : (
-              <Preview
-                test={selected}
-                coverage={state.coverage}
-                suites={state.suites}
-                onSelectTest={(suiteId, testId) => {
-                  const test = state.suites
-                    .flatMap((s) => s.tests)
-                    .find((t) => t.suiteId === suiteId && t.id === testId);
-                  if (test) setSelected(test);
-                }}
-                onSelectSuite={handleSelectSuite}
-              />
-            )}
-          </div>
+          {!sandboxReady ? <LoadingSpinner /> : <Outlet />}
         </div>
       </div>
-
       {state.running && state.runProgress && <RunProgressToast progress={state.runProgress} />}
-    </>
+    </AppContext.Provider>
   );
+}
+
+// ── Detail layout (TestTree sidebar + Preview/SuiteOverview) ──────────────────
+// Uses a pathless layout route so Preview (and its display iframe) stays mounted
+// while navigating between suite and test URLs.
+
+function DetailLayout() {
+  const { state, apiRef } = useApp();
+  const { suiteName, testName } = useParams<{ suiteName?: string; testName?: string }>();
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const suite = suiteName ? (state.suites.find((s) => s.name === suiteName) ?? null) : null;
+
+  const selected: TestCase | null =
+    testName && suite ? (suite.tests.find((t) => t.name === testName) ?? null) : null;
+
+  const handleSelect = useCallback(
+    (test: TestCase) => navigate(toTestUrl(test.suiteName, test.name)),
+    [navigate],
+  );
+
+  const handleSelectSuite = useCallback(
+    (suiteId: string) => {
+      const s = state.suites.find((su) => su.id === suiteId);
+      if (s) navigate(toSuiteUrl(s.name));
+    },
+    [navigate, state.suites],
+  );
+
+  const handleRunAll = useCallback(() => {
+    apiRef.current?.runAll();
+  }, [apiRef]);
+
+  const handleRunSuite = useCallback(
+    (id: string) => {
+      const s = state.suites.find((su) => su.id === id);
+      if (s) navigate(toSuiteUrl(s.name));
+      apiRef.current?.runSuite(id);
+    },
+    [navigate, state.suites, apiRef],
+  );
+
+  const handleRunTest = useCallback(
+    (sid: string, tid: string) => {
+      const test = state.suites
+        .flatMap((s) => s.tests)
+        .find((t) => t.suiteId === sid && t.id === tid);
+      if (test) navigate(toTestUrl(test.suiteName, test.name));
+      apiRef.current?.runTest(sid, tid);
+    },
+    [navigate, state.suites, apiRef],
+  );
+
+  return (
+    <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+      {/* Left rail */}
+      <div
+        style={{
+          width: 280,
+          minWidth: 220,
+          borderRight: "1px solid #2a2a36",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <TestTree
+          state={state}
+          selected={selected}
+          selectedSuiteId={suite?.id ?? null}
+          search={search}
+          onSelect={handleSelect}
+          onSelectSuite={handleSelectSuite}
+          onSearchChange={setSearch}
+          onRunAll={handleRunAll}
+          onRunSuite={handleRunSuite}
+          onRunTest={handleRunTest}
+        />
+      </div>
+
+      {/* Right pane — always Preview so the display iframe stays alive */}
+      <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+        {suite && !testName ? (
+          <SuiteOverview
+            suite={suite}
+            running={state.running}
+            onSelectTest={handleSelect}
+            onRunSuite={(id) => apiRef.current?.runSuite(id)}
+            onRunTest={handleRunTest}
+          />
+        ) : (
+          <Preview
+            test={selected}
+            coverage={state.coverage}
+            suites={state.suites}
+            onSelectTest={(suiteId, testId) => {
+              const test = state.suites
+                .flatMap((s) => s.tests)
+                .find((t) => t.suiteId === suiteId && t.id === testId);
+              if (test) navigate(toTestUrl(test.suiteName, test.name));
+            }}
+            onSelectSuite={handleSelectSuite}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Gallery route ─────────────────────────────────────────────────────────────
+
+function GalleryRoute() {
+  const { state, apiRef } = useApp();
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  return (
+    <Gallery
+      state={state}
+      search={search}
+      onSearchChange={setSearch}
+      onSelect={(test) => navigate(toTestUrl(test.suiteName, test.name))}
+      onPlayTest={(test) => {
+        navigate(toTestUrl(test.suiteName, test.name));
+        apiRef.current?.runTest(test.suiteId, test.id);
+      }}
+      onRunAll={() => apiRef.current?.runAll()}
+    />
+  );
+}
+
+// ── Coverage route ────────────────────────────────────────────────────────────
+
+/** Mirrors the shortPath() logic in CoverageExplorer — extracts src/… from an absolute path. */
+function coverageShortPath(absPath: string): string {
+  const m = absPath.match(/\/src\/(.+)$/);
+  return m ? `src/${m[1]}` : (absPath.split("/").pop() ?? absPath);
+}
+
+function CoverageRoute() {
+  const { state } = useApp();
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const fileParam = searchParams.get("file"); // e.g. "src/Counter.tsx"
+
+  // Resolve short param back to the full absolute path used internally
+  const allPaths = Object.keys(state.coverage?.files ?? {});
+  const selectedFile = fileParam
+    ? (allPaths.find((p) => coverageShortPath(p) === fileParam) ?? fileParam)
+    : null;
+
+  return (
+    <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+      <div
+        style={{
+          width: 280,
+          minWidth: 220,
+          borderRight: "1px solid #2a2a36",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          background: "#16161d",
+        }}
+      >
+        <CoverageFileList
+          coverage={state.coverage}
+          selectedFile={selectedFile}
+          onSelectFile={(file) => {
+            if (file) setSearchParams({ file: coverageShortPath(file) });
+            else setSearchParams({});
+          }}
+        />
+      </div>
+      <CoverageExplorer
+        coverage={state.coverage}
+        suites={state.suites}
+        selectedFile={selectedFile}
+        onSelectTest={(suiteId, testId) => {
+          const test = state.suites
+            .flatMap((s) => s.tests)
+            .find((t) => t.suiteId === suiteId && t.id === testId);
+          if (test) navigate(toTestUrl(test.suiteName, test.name));
+        }}
+      />
+    </div>
+  );
+}
+
+// ── Graph route ───────────────────────────────────────────────────────────────
+
+function GraphRoute() {
+  const { state } = useApp();
+  const navigate = useNavigate();
+
+  return (
+    <GraphView
+      suites={state.suites}
+      coverage={state.coverage}
+      onSelectSuite={(suiteId) => {
+        const suite = state.suites.find((s) => s.id === suiteId);
+        if (suite?.tests[0]) navigate(toTestUrl(suite.tests[0].suiteName, suite.tests[0].name));
+      }}
+    />
+  );
+}
+
+// ── Router ────────────────────────────────────────────────────────────────────
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <AppShell />,
+    children: [
+      // Pathless layout: keeps Preview (and its display iframe) mounted while
+      // navigating between suite and test URLs.
+      {
+        element: <DetailLayout />,
+        children: [
+          { index: true, element: null },
+          { path: "suite/:suiteName", element: null },
+          { path: "suite/:suiteName/test/:testName", element: null },
+        ],
+      },
+      { path: "gallery", element: <GalleryRoute /> },
+      { path: "coverage", element: <CoverageRoute /> },
+      { path: "graph", element: <GraphRoute /> },
+    ],
+  },
+]);
+
+export function App() {
+  return <RouterProvider router={router} />;
 }
