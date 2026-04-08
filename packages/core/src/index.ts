@@ -30,6 +30,7 @@ export { __vtRegisterNodeTest } from "./framework/node-bridge";
 
 // Plugin extension points
 export {
+  registerBeforeTestHook,
   registerAfterTestHook,
   registerBeforeDisplayHook,
   registerAfterDisplayHook,

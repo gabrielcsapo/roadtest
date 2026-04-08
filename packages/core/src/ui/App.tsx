@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   createHashRouter,
   RouterProvider,
@@ -604,13 +604,22 @@ function coverageShortPath(absPath: string): string {
 }
 
 function CoverageRoute() {
-  const { state } = useApp();
+  const { state, apiRef } = useApp();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [allSourceFiles, setAllSourceFiles] = useState<string[]>([]);
   const fileParam = searchParams.get("file"); // e.g. "src/Counter.tsx"
 
-  // Resolve short param back to the full absolute path used internally
-  const allPaths = Object.keys(state.coverage?.files ?? {});
+  useEffect(() => {
+    fetch("/__fieldtest_files__")
+      .then((r) => r.json() as Promise<string[]>)
+      .then(setAllSourceFiles)
+      .catch(() => {});
+  }, []);
+
+  // Resolve short param back to the full absolute path used internally.
+  // Check coverage paths first, then all source files (covers uncovered files).
+  const allPaths = [...new Set([...Object.keys(state.coverage ?? {}), ...allSourceFiles])];
   const selectedFile = fileParam
     ? (allPaths.find((p) => coverageShortPath(p) === fileParam) ?? fileParam)
     : null;
@@ -630,6 +639,7 @@ function CoverageRoute() {
       >
         <CoverageFileList
           coverage={state.coverage}
+          allFiles={allSourceFiles}
           selectedFile={selectedFile}
           onSelectFile={(file) => {
             if (file) setSearchParams({ file: coverageShortPath(file) });
@@ -647,6 +657,7 @@ function CoverageRoute() {
             .find((t) => t.suiteId === suiteId && t.id === testId);
           if (test) navigate(toTestUrl(test.suiteName, test.name));
         }}
+        onRunAll={() => apiRef.current?.runAll()}
       />
     </div>
   );

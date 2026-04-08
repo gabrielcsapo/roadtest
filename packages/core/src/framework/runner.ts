@@ -1,6 +1,6 @@
 import { store, setCurrentTest } from "./store";
 import type { TestCase, TestSuite, IstanbulCoverage, ConsoleEntry, ConsoleLevel } from "./types";
-import { runAfterTestHooks } from "./hooks";
+import { runBeforeTestHooks, runAfterTestHooks } from "./hooks";
 import { clearCallLog, getMockEntriesWithCalls } from "./mocks";
 
 export interface CoverageProvider {
@@ -104,6 +104,7 @@ async function execTest(test: TestCase, cleanup: (() => void) | null) {
   const sourceFile = store.getState().suites.find((s) => s.id === test.suiteId)?.sourceFile;
   const consoleLogs: ConsoleEntry[] = [];
   const restoreConsole = interceptConsole(consoleLogs);
+  await runBeforeTestHooks();
   const beforeSnap = await takeCoverageSnap();
   const t0 = Date.now();
   try {

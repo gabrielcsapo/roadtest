@@ -13,9 +13,27 @@ import { CodeTab } from "./tabs/CodeTab";
 import { ConsoleTab } from "./tabs/ConsoleTab";
 import { MocksPanel } from "./tabs/MocksPanel";
 import { getRegisteredTabs } from "../plugins";
+import type { TabPlugin } from "../plugins";
 import type { IstanbulCoverage, TestSuite } from "../../framework/types";
 
 type Tab = string;
+
+// Cache lazy components by plugin ID so React.lazy isn't recreated on every render
+const _lazyComponentCache = new Map<
+  string,
+  React.ComponentType<{ test: import("../../framework/types").TestCase }>
+>();
+function getPluginComponent(plugin: TabPlugin) {
+  if (plugin.component) return plugin.component;
+  if (!plugin.load) return null;
+  if (!_lazyComponentCache.has(plugin.id)) {
+    _lazyComponentCache.set(
+      plugin.id,
+      React.lazy(() => plugin.load!().then((c) => ({ default: c }))),
+    );
+  }
+  return _lazyComponentCache.get(plugin.id)!;
+}
 
 interface Props {
   test: TestCase | null;
@@ -1122,8 +1140,13 @@ export function Preview({
             {activeTab === "mocks" && <MocksPanel test={test} />}
             {getRegisteredTabs().map((plugin) => {
               if (activeTab !== plugin.id) return null;
-              const Component = plugin.component;
-              return <Component key={plugin.id} test={test} />;
+              const Component = getPluginComponent(plugin);
+              if (!Component) return null;
+              return (
+                <React.Suspense key={plugin.id} fallback={null}>
+                  <Component test={test} />
+                </React.Suspense>
+              );
             })}
           </div>
         </div>

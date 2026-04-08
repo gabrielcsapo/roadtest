@@ -121,16 +121,6 @@ if (isBrowser && isSandboxFrame) {
   });
 
   _mswInstance = w;
-
-  // Register the Network tab — sandbox frame only
-  const { registerTab } = await import("@fieldtest/core");
-  const { NetworkTab } = await import("./NetworkTab");
-  registerTab({
-    id: "network",
-    label: "Network",
-    getCount: (test) => test.networkEntries.length || undefined,
-    component: NetworkTab,
-  });
 } else if (isBrowser && isDisplayFrame) {
   // Display frame: intercept window.fetch directly (no service worker) so
   // worker.use() handlers take effect without triggering SW navigation failures.
@@ -208,3 +198,15 @@ export const worker: { use(...h: any[]): void; resetHandlers(): void } = _mswIns
   use() {},
   resetHandlers() {},
 };
+
+// Register the Network tab in all browser frames.
+// Using `load` means each frame imports the component itself (correct React instance).
+if (isBrowser) {
+  const { registerTab } = await import("@fieldtest/core");
+  registerTab({
+    id: "network",
+    label: "Network",
+    getCount: (test) => test.networkEntries.length || undefined,
+    load: () => import("./NetworkTab").then((m) => m.NetworkTab),
+  });
+}

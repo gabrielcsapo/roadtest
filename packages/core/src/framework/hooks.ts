@@ -1,6 +1,21 @@
 type Hook = () => void | Promise<void>;
 
+const beforeTestHooks: Hook[] = [];
 const afterTestHooks: Hook[] = [];
+
+export function registerBeforeTestHook(fn: Hook) {
+  beforeTestHooks.push(fn);
+}
+
+export async function runBeforeTestHooks() {
+  for (const fn of beforeTestHooks) {
+    try {
+      await fn();
+    } catch {
+      /* don't let hook failures break test runner */
+    }
+  }
+}
 
 export function registerAfterTestHook(fn: Hook) {
   afterTestHooks.push(fn);

@@ -6,7 +6,24 @@ export interface TabPlugin {
   label: string;
   /** Return a count badge value, or undefined to hide the badge */
   getCount?: (test: TestCase) => number | undefined;
-  component: React.ComponentType<{ test: TestCase }>;
+  /**
+   * Direct component reference. Only safe when called from the UI frame.
+   * If registering from `.fieldtest/setup.ts` (which runs in all frames),
+   * use `load` instead to avoid React instance conflicts.
+   */
+  component?: React.ComponentType<{ test: TestCase }>;
+  /**
+   * Lazy loader for the component. Preferred when registering from setup.ts.
+   * The UI frame imports the component itself, ensuring the correct React instance.
+   *
+   * @example
+   * registerTab({
+   *   id: 'network',
+   *   label: 'Network',
+   *   load: () => import('./NetworkTab').then(m => m.NetworkTab),
+   * })
+   */
+  load?: () => Promise<React.ComponentType<{ test: TestCase }>>;
 }
 
 const _tabs: TabPlugin[] = [];

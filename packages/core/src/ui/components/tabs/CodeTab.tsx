@@ -8,6 +8,19 @@ import {
 } from "../coverageUtils";
 import type { TestRef } from "../coverageUtils";
 
+// ── static sources cache ─────────────────────────────────────────────────────
+// In static/CDN deployments (e.g. GitHub Pages), /__fieldtest_source__ doesn't exist.
+// buildUi() writes fieldtest-sources.json alongside the bundle as a fallback.
+let _staticSourcesPromise: Promise<Record<string, string>> | null = null;
+function loadStaticSources(): Promise<Record<string, string>> {
+  if (!_staticSourcesPromise) {
+    _staticSourcesPromise = fetch("./fieldtest-sources.json")
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, string>>) : {}))
+      .catch(() => ({}));
+  }
+  return _staticSourcesPromise;
+}
+
 function coveragePct(fileCov: IstanbulFileCoverage): number {
   const stmts = Object.values(fileCov.s);
   if (stmts.length === 0) return 100;
@@ -290,7 +303,15 @@ export function CodeTab({ suiteName, coverage, testCoverage, suites, onSelectTes
       return;
     }
     fetch(`/__fieldtest_source__?path=${encodeURIComponent(selectedPath)}`)
-      .then((r) => (r.ok ? r.text() : Promise.reject(`${r.status} ${r.statusText}`)))
+      .then((r) => {
+        if (r.ok) return r.text();
+        // Fallback: static sources bundle written by `fieldtest build` for CDN/static hosts
+        return loadStaticSources().then((sources) => {
+          const src = sources[selectedPath];
+          if (src != null) return src;
+          return Promise.reject(`${r.status} ${r.statusText}`);
+        });
+      })
       .then(setSource)
       .catch((e: unknown) => setError(String(e)));
   }, [selectedPath, coverage]);

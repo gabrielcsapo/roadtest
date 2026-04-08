@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import type { IstanbulCoverage, IstanbulFileCoverage, TestSuite } from "../../framework/types";
 import {
   computeLineCoverage,
@@ -297,30 +298,34 @@ function SourceView({
 
 interface CoverageFileListProps {
   coverage: IstanbulCoverage | null;
+  allFiles: string[];
   selectedFile: string | null;
   onSelectFile: (path: string) => void;
 }
 
-export function CoverageFileList({ coverage, selectedFile, onSelectFile }: CoverageFileListProps) {
-  const [allFiles, setAllFiles] = useState<string[]>([]);
+export function CoverageFileList({
+  coverage,
+  allFiles,
+  selectedFile,
+  onSelectFile,
+}: CoverageFileListProps) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("/__fieldtest_files__")
-      .then((r) => r.json() as Promise<string[]>)
-      .then((files) => {
-        setAllFiles(files);
-        if (files.length > 0 && !selectedFile) {
-          const sorted = [...files].sort((a, b) => {
-            const pa = coverage?.[a] ? coveragePct(coverage[a]) : 0;
-            const pb = coverage?.[b] ? coveragePct(coverage[b]) : 0;
-            return pa - pb;
-          });
-          onSelectFile(sorted[0]);
-        }
-      })
-      .catch(() => {});
-  }, [coverage]);
+    if (allFiles.length > 0 && !selectedFile) {
+      const sorted = [...allFiles].sort((a, b) => {
+        const pa = coverage?.[a] ? coveragePct(coverage[a]) : 0;
+        const pb = coverage?.[b] ? coveragePct(coverage[b]) : 0;
+        return pa - pb;
+      });
+      // Prefer a partially-covered file (has data but not 100%) over a bare 0%
+      const partial = sorted.find((f) => {
+        const pct = coverage?.[f] ? coveragePct(coverage[f]) : 0;
+        return pct > 0 && pct < 100;
+      });
+      onSelectFile(partial ?? sorted[0]);
+    }
+  }, [allFiles, coverage]);
 
   if (!coverage) {
     return (
@@ -499,9 +504,16 @@ interface Props {
   suites: TestSuite[];
   selectedFile: string | null;
   onSelectTest: (suiteId: string, testId: string) => void;
+  onRunAll?: () => void;
 }
 
-export function CoverageExplorer({ coverage, suites, selectedFile, onSelectTest }: Props) {
+export function CoverageExplorer({
+  coverage,
+  suites,
+  selectedFile,
+  onSelectTest,
+  onRunAll,
+}: Props) {
   const [modal, setModal] = useState<{ lineNum: number; tests: TestRef[] } | null>(null);
 
   const handleLineClick = useCallback((lineNum: number, tests: TestRef[]) => {
@@ -516,20 +528,75 @@ export function CoverageExplorer({ coverage, suites, selectedFile, onSelectTest 
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          flexDirection: "column",
-          gap: 12,
           color: "#4b4b60",
         }}
       >
-        <svg width="40" height="40" viewBox="0 0 14 14" fill="none" style={{ opacity: 0.4 }}>
-          <rect x="1" y="7" width="2.5" height="6" rx="1" fill="currentColor" />
-          <rect x="5" y="4" width="2.5" height="9" rx="1" fill="currentColor" />
-          <rect x="9" y="1" width="2.5" height="12" rx="1" fill="currentColor" />
-        </svg>
-        <div style={{ fontSize: 14 }}>Run tests to see coverage</div>
-        <div style={{ fontSize: 12, color: "#3a3a4e" }}>
-          Coverage data is collected when running via{" "}
-          <code style={{ color: "#a5b4fc" }}>fieldtest --ui</code>
+        <div style={{ textAlign: "center", maxWidth: 320 }}>
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 14 14"
+            fill="none"
+            style={{ opacity: 0.4, marginBottom: 16 }}
+          >
+            <rect x="1" y="7" width="2.5" height="6" rx="1" fill="currentColor" />
+            <rect x="5" y="4" width="2.5" height="9" rx="1" fill="currentColor" />
+            <rect x="9" y="1" width="2.5" height="12" rx="1" fill="currentColor" />
+          </svg>
+          <div style={{ fontSize: 14, color: "#c4c4d4", marginBottom: 8 }}>
+            No coverage data yet
+          </div>
+          <div style={{ fontSize: 12, color: "#4b4b60", marginBottom: 20, lineHeight: 1.6 }}>
+            Run your tests to see coverage here. Coverage is collected when running via{" "}
+            <code
+              style={{
+                background: "#1e1e2e",
+                border: "1px solid #2a2a36",
+                borderRadius: 3,
+                padding: "1px 5px",
+                fontSize: 11,
+                color: "#a5b4fc",
+              }}
+            >
+              fieldtest --ui
+            </code>
+          </div>
+          <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+            {onRunAll && (
+              <button
+                onClick={onRunAll}
+                style={{
+                  padding: "6px 14px",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  background: "#6366f1",
+                  border: "none",
+                  borderRadius: 6,
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                Run all tests
+              </button>
+            )}
+            <Link
+              to="/"
+              style={{
+                padding: "6px 14px",
+                fontSize: 12,
+                fontWeight: 600,
+                background: "transparent",
+                border: "1px solid #2a2a36",
+                borderRadius: 6,
+                color: "#c4c4d4",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              View tests
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -557,7 +624,9 @@ export function CoverageExplorer({ coverage, suites, selectedFile, onSelectTest 
   const untested = entries.filter((e) => e.pct === 0).length;
 
   const selectedEntry = selectedFile
-    ? (entries.find((e) => e.path === selectedFile) ?? null)
+    ? (entries.find((e) => e.path === selectedFile) ??
+      // Synthetic entry for files in the source tree but not in coverage
+      (selectedFile.startsWith("/") ? { path: selectedFile, fileCov: null, pct: 0 } : null))
     : null;
   const lineTestIndex = selectedFile
     ? buildLineTestIndex(selectedFile, suites)
@@ -674,7 +743,7 @@ export function CoverageExplorer({ coverage, suites, selectedFile, onSelectTest 
               fontSize: 13,
             }}
           >
-            Select a file
+            {selectedFile ? "No coverage data for this file" : "Select a file"}
           </div>
         )}
       </div>
