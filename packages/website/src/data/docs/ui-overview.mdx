@@ -1,0 +1,28 @@
+import { UiOverviewDemo } from "../../components/UiDemos";
+
+## Browser UI
+
+Start the browser UI with:
+
+```bash
+fieldtest --ui
+```
+
+This starts a Vite dev server at `http://localhost:3333` with the full interactive test environment.
+
+### Layout
+
+The UI has two main panels:
+
+- **Left — Test tree**: your suites and tests, with pass/fail/skip indicators. Click any test to select it.
+- **Right — Detail view**: the selected test's filmstrip, tabs, and live component preview.
+
+### Gallery view
+
+Toggle to gallery mode to see all tests at once as a grid of thumbnails — useful for spotting visual regressions across an entire suite.
+
+### Hot reload
+
+Saving any file re-runs affected tests automatically. Only tests whose dependency graph was touched are re-run.
+
+<UiOverviewDemo />

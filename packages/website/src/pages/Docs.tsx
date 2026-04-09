@@ -1,104 +1,14 @@
 import { useState, useMemo, useEffect, useRef } from "react";
+import { Link, useParams, Navigate } from "react-router-dom";
 import Fuse from "fuse.js";
 import Nav from "../components/Nav";
-import { DocDemo } from "../components/UiDemos";
 import { docs, categories, type DocEntry } from "../data/docs";
-import { getHighlighter, highlight as shikiHighlight } from "../lib/highlighter";
-import type { Highlighter } from "shiki";
 
-// ── Minimal markdown → HTML renderer ────────────────────────────────────────
-function renderMarkdown(md: string, highlighter: Highlighter | null): string {
-  let html = md.trim();
-
-  // Fenced code blocks — use Shiki when available, plain fallback while loading
-  html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    const trimmed = code.trimEnd();
-    if (highlighter) {
-      return shikiHighlight(highlighter, trimmed, lang || "text");
-    }
-    const escaped = trimmed.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    return `<pre><code>${escaped}</code></pre>`;
-  });
-
-  // Headings
-  html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
-  html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
-  html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
-
-  // Horizontal rule
-  html = html.replace(/^---$/gm, "<hr />");
-
-  // Blockquote
-  html = html.replace(/^> (.+)$/gm, "<blockquote>$1</blockquote>");
-
-  // Unordered list
-  html = html.replace(/((?:^- .+\n?)+)/gm, (block) => {
-    const items = block
-      .trim()
-      .split("\n")
-      .map((line) => `<li>${line.replace(/^- /, "")}</li>`)
-      .join("");
-    return `<ul>${items}</ul>`;
-  });
-
-  // Tables (must run before inline code/bold to avoid mangling pipes)
-  html = html.replace(
-    /^\|(.+)\|\s*\n\|[-| :]+\|\s*\n((?:\|.+\|\s*\n?)+)/gm,
-    (_match, header, body) => {
-      const cols = header
-        .split("|")
-        .map((h: string) => h.trim())
-        .filter(Boolean);
-      const thead = `<thead><tr>${cols.map((c: string) => `<th>${c}</th>`).join("")}</tr></thead>`;
-      const tbody = body
-        .trim()
-        .split("\n")
-        .map((row: string) => {
-          const cells = row
-            .split("|")
-            .map((c: string) => c.trim())
-            .filter(Boolean);
-          return `<tr>${cells.map((c: string) => `<td>${c}</td>`).join("")}</tr>`;
-        })
-        .join("");
-      return `<table>${thead}<tbody>${tbody}</tbody></table>`;
-    },
-  );
-
-  // Bold
-  html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-
-  // Inline code
-  html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
-
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-
-  // Paragraphs
-  const lines = html.split("\n");
-  const result: string[] = [];
-  let inBlock = false;
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) {
-      inBlock = false;
-      continue;
-    }
-    if (/^<(h[123]|pre|ul|ol|li|blockquote|hr|div)/.test(trimmed)) {
-      inBlock = false;
-      result.push(trimmed);
-    } else if (!inBlock) {
-      result.push(`<p>${trimmed}`);
-      inBlock = true;
-    } else {
-      result[result.length - 1] += " " + trimmed;
-    }
-  }
-
-  return result
-    .map((l) => (l.startsWith("<p>") && !l.endsWith("</p>") ? l + "</p>" : l))
-    .join("\n");
+// ── Types ─────────────────────────────────────────────────────────────────────
+interface TocHeading {
+  level: number;
+  text: string;
+  id: string;
 }
 
 // ── Search input ──────────────────────────────────────────────────────────────
@@ -148,7 +58,7 @@ function SearchInput({ value, onChange }: { value: string; onChange: (v: string)
   );
 }
 
-// ── Highlight matching text ───────────────────────────────────────────────────
+// ── Highlight matching text in sidebar titles ─────────────────────────────────
 function highlight(text: string, query: string): string {
   if (!query.trim()) return text;
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -158,53 +68,121 @@ function highlight(text: string, query: string): string {
   );
 }
 
-// ── Shared highlighter — loaded once, shared across all sections ──────────────
-let _highlighter: Highlighter | null = null;
-getHighlighter().then((h) => {
-  _highlighter = h;
-});
-
-// ── Doc section ───────────────────────────────────────────────────────────────
-function DocSection({ doc, query }: { doc: DocEntry; query: string }) {
-  const [highlighter, setHighlighter] = useState<Highlighter | null>(_highlighter);
-
-  useEffect(() => {
-    if (_highlighter) {
-      setHighlighter(_highlighter);
-      return;
-    }
-    getHighlighter().then((h) => {
-      _highlighter = h;
-      setHighlighter(h);
-    });
-  }, []);
-
-  const html = useMemo(() => renderMarkdown(doc.body, highlighter), [doc.body, highlighter]);
-  const highlighted = useMemo(() => {
-    if (!query.trim()) return html;
-    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return html.replace(
-      new RegExp(`(${escaped})`, "gi"),
-      '<mark class="bg-ft-gold/30 text-ft-gold-hi rounded px-0.5">$1</mark>',
-    );
-  }, [html, query]);
-
+// ── Table of contents ─────────────────────────────────────────────────────────
+function TableOfContents({
+  headings,
+  activeTocId,
+  onClickHeading,
+}: {
+  headings: TocHeading[];
+  activeTocId: string;
+  onClickHeading: (id: string) => void;
+}) {
+  if (headings.length === 0) return null;
   return (
-    <article id={doc.id} className="border-b border-white/7 py-10 scroll-mt-[80px]">
-      <div className="doc-prose" dangerouslySetInnerHTML={{ __html: highlighted }} />
-      {doc.demo && <DocDemo id={doc.demo} />}
-    </article>
+    <div>
+      <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-ft-dim">
+        On this page
+      </div>
+      <nav className="space-y-0.5">
+        {headings.map((h) => (
+          <button
+            key={h.id}
+            onClick={() => onClickHeading(h.id)}
+            className={`block w-full cursor-pointer border-none bg-transparent text-left transition-colors rounded py-[5px] leading-snug ${
+              h.level === 3 ? "pl-3 text-[11.5px]" : "pl-0 text-[12px]"
+            } ${
+              activeTocId === h.id
+                ? "text-ft-green-hi font-medium"
+                : "text-ft-dim hover:text-ft-mid"
+            }`}
+          >
+            {h.text}
+          </button>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
+// ── Prev / Next navigation ────────────────────────────────────────────────────
+function PrevNextNav({ prev, next }: { prev: DocEntry | null; next: DocEntry | null }) {
+  return (
+    <div className="mt-12 flex items-start justify-between border-t border-white/7 pt-8 gap-4">
+      {prev ? (
+        <Link
+          to={`/docs/${prev.id}`}
+          className="group flex items-center gap-3 no-underline text-ft-mid hover:text-ft-text transition-colors min-w-0"
+        >
+          <svg
+            className="shrink-0"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          <div className="min-w-0">
+            <div className="text-[11px] uppercase tracking-wide text-ft-dim mb-0.5">Previous</div>
+            <div className="text-sm font-medium text-ft-text group-hover:text-ft-green-hi transition-colors truncate">
+              {prev.title}
+            </div>
+          </div>
+        </Link>
+      ) : (
+        <div />
+      )}
+      {next ? (
+        <Link
+          to={`/docs/${next.id}`}
+          className="group flex items-center gap-3 no-underline text-ft-mid hover:text-ft-text transition-colors text-right min-w-0"
+        >
+          <div className="min-w-0">
+            <div className="text-[11px] uppercase tracking-wide text-ft-dim mb-0.5">Next</div>
+            <div className="text-sm font-medium text-ft-text group-hover:text-ft-green-hi transition-colors truncate">
+              {next.title}
+            </div>
+          </div>
+          <svg
+            className="shrink-0"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </Link>
+      ) : (
+        <div />
+      )}
+    </div>
   );
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 export default function Docs() {
+  const { docId } = useParams<{ docId: string }>();
   const [query, setQuery] = useState("");
-  const [activeId, setActiveId] = useState(() => {
-    return window.location.hash.slice(1) || docs[0].id;
-  });
+  const [activeTocId, setActiveTocId] = useState("");
+  const [tocHeadings, setTocHeadings] = useState<TocHeading[]>([]);
   const mainRef = useRef<HTMLDivElement>(null);
-  const scrollPendingRef = useRef(false);
+
+  const currentIndex = docs.findIndex((d) => d.id === docId);
+  const currentDoc = currentIndex !== -1 ? docs[currentIndex] : null;
+  const prevDoc = currentIndex > 0 ? docs[currentIndex - 1] : null;
+  const nextDoc = currentIndex < docs.length - 1 ? docs[currentIndex + 1] : null;
+
+  if (!currentDoc) return <Navigate to="/docs/installation" replace />;
 
   const fuse = useMemo(
     () =>
@@ -212,7 +190,6 @@ export default function Docs() {
         keys: [
           { name: "title", weight: 3 },
           { name: "category", weight: 1 },
-          { name: "body", weight: 1 },
         ],
         threshold: 0.35,
         includeScore: true,
@@ -233,64 +210,60 @@ export default function Docs() {
     return map;
   }, [filtered]);
 
-  // Scroll to hash on initial load
+  // Scroll to top and reset TOC on page change
   useEffect(() => {
-    const id = window.location.hash.slice(1);
-    if (id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ block: "start" });
-    }
-  }, []);
+    window.scrollTo({ top: 0 });
+    setActiveTocId("");
+  }, [docId]);
 
-  // Sync hash → activeId when user navigates back/forward
-  useEffect(() => {
-    function onHashChange() {
-      const id = window.location.hash.slice(1);
-      if (id) setActiveId(id);
-    }
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
-  // Track active section on scroll via IntersectionObserver
+  // Extract TOC headings from the rendered doc
   useEffect(() => {
     const main = mainRef.current;
     if (!main) return;
+    // Small delay to let MDX render
+    const id = requestAnimationFrame(() => {
+      const nodes = Array.from(main.querySelectorAll<HTMLElement>("h2[id], h3[id]"));
+      setTocHeadings(
+        nodes.map((el) => ({
+          level: el.tagName === "H2" ? 2 : 3,
+          text: el.textContent ?? "",
+          id: el.id,
+        })),
+      );
+    });
+    return () => cancelAnimationFrame(id);
+  }, [docId]);
+
+  // Track active heading for TOC scroll-spy
+  useEffect(() => {
+    const main = mainRef.current;
+    if (!main || tocHeadings.length === 0) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        if (scrollPendingRef.current) return;
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            const id = entry.target.id;
-            setActiveId(id);
-            history.replaceState(null, "", `#${id}`);
+            setActiveTocId(entry.target.id);
           }
         }
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 },
+      { rootMargin: "-8% 0px -82% 0px", threshold: 0 },
     );
-    main.querySelectorAll("article[id]").forEach((el) => observer.observe(el));
+    main.querySelectorAll("h2[id], h3[id]").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [filtered]);
+  }, [docId, tocHeadings]);
 
-  function scrollTo(id: string) {
-    scrollPendingRef.current = true;
-    setActiveId(id);
-    history.replaceState(null, "", `#${id}`);
+  function scrollToHeading(id: string) {
     const el = document.getElementById(id);
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
-    // Re-enable observer after scroll settles
-    setTimeout(() => {
-      scrollPendingRef.current = false;
-    }, 800);
+    setActiveTocId(id);
   }
 
   return (
     <div className="flex min-h-screen flex-col bg-ft-bg font-sans text-ft-text">
       <Nav />
 
-      <div className="mx-auto flex w-full max-w-[1100px] flex-1 gap-0 px-0">
-        {/* Sidebar */}
+      <div className="mx-auto flex w-full max-w-[1100px] xl:max-w-[1340px] flex-1 gap-0 px-0">
+        {/* Left sidebar — doc navigation */}
         <aside className="sticky top-[60px] hidden h-[calc(100vh-60px)] w-[260px] flex-shrink-0 overflow-y-auto border-r border-white/7 px-4 py-6 lg:block">
           <SearchInput value={query} onChange={setQuery} />
 
@@ -304,16 +277,17 @@ export default function Docs() {
                     {cat}
                   </div>
                   {items.map((doc) => (
-                    <button
+                    <Link
                       key={doc.id}
-                      onClick={() => scrollTo(doc.id)}
-                      className={`block w-full cursor-pointer rounded-lg px-2.5 py-1.5 text-left text-[13.5px] transition-colors border-none bg-transparent ${
-                        activeId === doc.id
+                      to={`/docs/${doc.id}`}
+                      className={`block w-full rounded-lg px-2.5 py-1.5 text-left text-[13.5px] transition-colors no-underline ${
+                        docId === doc.id
                           ? "bg-ft-green/15 font-medium text-ft-green-hi"
                           : "text-ft-mid hover:bg-white/5 hover:text-ft-text"
                       }`}
-                      dangerouslySetInnerHTML={{ __html: highlight(doc.title, query) }}
-                    />
+                    >
+                      <span dangerouslySetInnerHTML={{ __html: highlight(doc.title, query) }} />
+                    </Link>
                   ))}
                 </div>
               );
@@ -332,23 +306,21 @@ export default function Docs() {
             <SearchInput value={query} onChange={setQuery} />
           </div>
 
-          {filtered.length === 0 ? (
-            <div className="py-20 text-center">
-              <div className="mb-3 text-4xl">🔍</div>
-              <p className="text-ft-mid">
-                No docs matched <strong className="text-ft-text">"{query}"</strong>
-              </p>
-              <button
-                onClick={() => setQuery("")}
-                className="mt-4 cursor-pointer rounded-lg border border-white/7 bg-transparent px-4 py-2 text-sm text-ft-mid hover:text-ft-text transition-colors"
-              >
-                Clear search
-              </button>
-            </div>
-          ) : (
-            filtered.map((doc) => <DocSection key={doc.id} doc={doc} query={query} />)
-          )}
+          <article className="doc-prose">
+            <currentDoc.Component />
+          </article>
+
+          <PrevNextNav prev={prevDoc} next={nextDoc} />
         </main>
+
+        {/* Right sidebar — table of contents, xl screens only */}
+        <aside className="sticky top-[60px] hidden h-[calc(100vh-60px)] w-[200px] flex-shrink-0 overflow-y-auto border-l border-white/7 px-5 py-8 xl:block">
+          <TableOfContents
+            headings={tocHeadings}
+            activeTocId={activeTocId}
+            onClickHeading={scrollToHeading}
+          />
+        </aside>
       </div>
     </div>
   );

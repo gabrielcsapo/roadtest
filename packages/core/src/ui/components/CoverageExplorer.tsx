@@ -74,7 +74,9 @@ function SourceView({
       setSource(embedded);
       return;
     }
-    fetch(`/__fieldtest_source__?path=${encodeURIComponent(entry.path)}`)
+    fetch(`/__fieldtest_source__?path=${encodeURIComponent(entry.path)}`, {
+      headers: { "X-MSW-Intention": "bypass" },
+    })
       .then((r) => {
         if (r.ok) return r.text();
         // Fallback: static sources bundle written by `fieldtest build` for CDN/static hosts

@@ -1,0 +1,31 @@
+## Sharding
+
+Split your test suite across multiple CI workers:
+
+```bash
+# Worker 1 of 4
+fieldtest --shard=1/4
+
+# Worker 2 of 4
+fieldtest --shard=2/4
+```
+
+Each shard runs its slice of tests independently. Results are written to `.fieldtest/results/shard-N-of-M.json`.
+
+### Merging results
+
+After all shards complete, merge results for a combined report:
+
+```bash
+fieldtest --merge-shards
+```
+
+### Example GitHub Actions matrix
+
+```yaml
+strategy:
+  matrix:
+    shard: [1, 2, 3, 4]
+steps:
+  - run: fieldtest --shard=${{ matrix.shard }}/4 --coverage
+```

@@ -11,7 +11,12 @@ import { setCurrentSourceFile } from "../framework/dsl";
 import { store } from "../framework/store";
 import { runAll, runSuite, runTest } from "../framework/runner";
 import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from "../framework/hooks";
+import { postParentMessage, onHmrMessage } from "../framework/messages";
+import { checkDevServer, writeSnapshotsToServer, compareSnapshotsWithServer } from "./snapshots";
 import type { TestSuite } from "../framework/types";
+
+/** Whether the FieldTest dev server is reachable — false in static --build deployments. */
+export let devServerAvailable = false;
 
 interface StartOptions {
   wrapper?: ComponentType<{ children: React.ReactNode }>;
@@ -51,21 +56,46 @@ export async function startApp(
   if (window.name === "__vt_sandbox") {
     if (options?.wrapper) setWrapper(options.wrapper);
     await loadTestFiles(testFiles);
-    (window as unknown as Record<string, unknown>)["__fieldtest"] = {
-      store,
-      runAll,
-      runSuite,
-      runTest,
-    };
     // Receive results from node tests run server-side
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (import.meta as any).hot?.on("vt:node-results", ({ suites }: { suites: TestSuite[] }) => {
+    onHmrMessage("vt:node-results", ({ suites }: { suites: TestSuite[] }) => {
       for (const suite of suites) {
         if (suite.sourceFile) store.removeSuitesForFile(suite.sourceFile);
         store.addSuite(suite);
       }
     });
-    window.parent?.postMessage({ type: "__vt_ready" }, "*");
+
+    // Check if the dev server is running and whether --update-snapshots was passed.
+    // In a static --build deployment this fetch will fail → devServerAvailable stays false.
+    const { devServer, autoWrite } = await checkDevServer();
+    devServerAvailable = devServer;
+
+    // Expose sandbox API — devServerAvailable is now set correctly.
+    (window as unknown as Record<string, unknown>)["__fieldtest"] = {
+      store,
+      runAll,
+      runSuite,
+      runTest,
+      devServerAvailable,
+    };
+
+    // After every run: compare snapshots against server baselines (always when
+    // the dev server is available) and optionally write new baselines to disk.
+    let wasRunning = false;
+    store.subscribe(() => {
+      const { running, suites } = store.getState();
+      const justFinished = wasRunning && !running;
+      wasRunning = running; // update before async calls to prevent re-entrancy
+      if (justFinished) {
+        if (devServer) {
+          compareSnapshotsWithServer(suites).catch(() => {});
+        }
+        if (autoWrite) {
+          writeSnapshotsToServer(suites).catch(() => {});
+        }
+      }
+    });
+
+    postParentMessage({ type: "__vt_ready" });
     return;
   }
 
@@ -192,7 +222,7 @@ export async function startApp(
       displayRoot,
       runAxe,
     };
-    window.parent?.postMessage({ type: "__vt_display_ready" }, "*");
+    postParentMessage({ type: "__vt_display_ready" });
     return;
   }
 

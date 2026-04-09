@@ -1,0 +1,353 @@
+## expect
+
+Wraps a value and returns a set of matchers to assert its state. Every assertion is recorded in the test result and appears in the Assertions tab of the browser UI.
+
+```ts
+import { expect } from "@fieldtest/core";
+
+expect(value).toBe(expected);
+```
+
+### Type signature
+
+```ts
+function expect(received: unknown): Matchers;
+```
+
+---
+
+## Equality
+
+### toBe
+
+```ts
+toBe(expected: unknown): void
+```
+
+Checks strict identity using `Object.is`. Use this for primitives (strings, numbers, booleans). For objects, prefer `toEqual`.
+
+```ts
+expect(1 + 1).toBe(2);
+expect(user.name).toBe("Alice");
+```
+
+### toEqual
+
+```ts
+toEqual(expected: unknown): void
+```
+
+Deep equality via `JSON.stringify` comparison. Use this for objects and arrays.
+
+```ts
+expect({ a: 1 }).toEqual({ a: 1 });
+expect([1, 2, 3]).toEqual([1, 2, 3]);
+```
+
+---
+
+## Truthiness
+
+### toBeTruthy
+
+```ts
+toBeTruthy(): void
+```
+
+Passes for any value that is truthy (`!= null`, `!= 0`, `!= ''`, `!= false`).
+
+```ts
+expect("hello").toBeTruthy();
+expect(1).toBeTruthy();
+```
+
+### toBeFalsy
+
+```ts
+toBeFalsy(): void
+```
+
+Passes for `0`, `''`, `null`, `undefined`, `false`, and `NaN`.
+
+```ts
+expect(0).toBeFalsy();
+expect("").toBeFalsy();
+```
+
+### toBeNull
+
+```ts
+toBeNull(): void
+```
+
+Strict `=== null` check.
+
+```ts
+expect(result).toBeNull();
+```
+
+### toBeUndefined
+
+```ts
+toBeUndefined(): void
+```
+
+Strict `=== undefined` check.
+
+```ts
+expect(user.middleName).toBeUndefined();
+```
+
+### toBeDefined
+
+```ts
+toBeDefined(): void
+```
+
+Passes for any value that is not `undefined`.
+
+```ts
+expect(response.data).toBeDefined();
+```
+
+---
+
+## Numeric
+
+### toBeGreaterThan
+
+```ts
+toBeGreaterThan(n: number): void
+```
+
+```ts
+expect(price).toBeGreaterThan(0);
+```
+
+### toBeLessThan
+
+```ts
+toBeLessThan(n: number): void
+```
+
+```ts
+expect(responseTime).toBeLessThan(200);
+```
+
+### toBeGreaterThanOrEqual
+
+```ts
+toBeGreaterThanOrEqual(n: number): void
+```
+
+```ts
+expect(items.length).toBeGreaterThanOrEqual(1);
+```
+
+### toBeLessThanOrEqual
+
+```ts
+toBeLessThanOrEqual(n: number): void
+```
+
+```ts
+expect(discount).toBeLessThanOrEqual(100);
+```
+
+---
+
+## Strings & Patterns
+
+### toMatch
+
+```ts
+toMatch(pattern: string | RegExp): void
+```
+
+Checks that the string contains a substring, or matches a regular expression.
+
+```ts
+expect(message).toMatch("Welcome");
+expect(email).toMatch(/@fieldtest\.dev$/);
+```
+
+---
+
+## Arrays & Strings
+
+### toContain
+
+```ts
+toContain(item: unknown): void
+```
+
+Checks that an array includes an item (strict equality), or that a string contains a substring.
+
+```ts
+expect(["a", "b", "c"]).toContain("b");
+expect("hello world").toContain("world");
+```
+
+### toHaveLength
+
+```ts
+toHaveLength(n: number): void
+```
+
+Checks the `.length` property of an array, string, or any value with a `length`.
+
+```ts
+expect([1, 2, 3]).toHaveLength(3);
+expect("hello").toHaveLength(5);
+```
+
+---
+
+## Objects
+
+### toMatchObject
+
+```ts
+toMatchObject(expected: object): void
+```
+
+Checks that the received object contains all properties in `expected` with matching values. Extra properties are allowed.
+
+```ts
+expect(user).toMatchObject({ name: "Alice", role: "admin" });
+```
+
+### toBeInstanceOf
+
+```ts
+toBeInstanceOf(cls: new (...args: unknown[]) => unknown): void
+```
+
+Checks that the value was created with `new cls`.
+
+```ts
+expect(error).toBeInstanceOf(Error);
+expect(date).toBeInstanceOf(Date);
+```
+
+### toHaveProperty
+
+```ts
+toHaveProperty(keyPath: string, value?: unknown): void
+```
+
+Checks that the object has a property at the given dot-separated key path. Optionally asserts the value at that path.
+
+```ts
+expect(user).toHaveProperty("address.city");
+expect(user).toHaveProperty("address.city", "Auckland");
+```
+
+---
+
+## Functions & Exceptions
+
+### toThrow
+
+```ts
+toThrow(message?: string): void
+```
+
+Checks that a function throws when called. Pass a string to also assert the error message contains that substring.
+
+```ts
+expect(() => JSON.parse("{")).toThrow();
+expect(() => validateAge(-1)).toThrow("must be positive");
+```
+
+---
+
+## Spy matchers
+
+These matchers work on spy functions — functions exported from a mocked module. See [mock / unmock](/docs/mock) for how to create spies.
+
+### toHaveBeenCalled
+
+```ts
+toHaveBeenCalled(): void
+```
+
+Passes if the spy was called at least once.
+
+```ts
+expect(fetchUser).toHaveBeenCalled();
+```
+
+### toHaveBeenCalledTimes
+
+```ts
+toHaveBeenCalledTimes(n: number): void
+```
+
+Passes if the spy was called exactly `n` times.
+
+```ts
+expect(fetchUser).toHaveBeenCalledTimes(2);
+```
+
+### toHaveBeenCalledWith
+
+```ts
+toHaveBeenCalledWith(...args: unknown[]): void
+```
+
+Passes if the spy was called at least once with the given arguments (deep equality).
+
+```ts
+expect(fetchUser).toHaveBeenCalledWith("user-123");
+```
+
+---
+
+## Snapshots
+
+### toMatchSnapshot
+
+```ts
+toMatchSnapshot(label?: string): Promise<void>
+```
+
+Captures the HTML of the received value as a visual snapshot assertion. Works on `HTMLElement` instances or strings.
+
+- If `received` is an `HTMLElement`, its `innerHTML` is captured.
+- If `received` is a string, it is captured directly.
+- The snapshot appears in the Assertions tab of the browser UI with a diff view on changes.
+- In Node mode this is a no-op.
+
+```ts
+const { getByRole } = await render(<Button label="Save" />)
+await expect(getByRole('button')).toMatchSnapshot()
+
+// With a custom label
+await expect(getByRole('button')).toMatchSnapshot('save button')
+```
+
+---
+
+## Negation
+
+Prefix any matcher with `.not` to invert the assertion.
+
+```ts
+expect(value).not.toBe(expected);
+expect(result).not.toBeNull();
+expect(list).not.toContain("banned");
+expect(fn).not.toHaveBeenCalled();
+```
+
+---
+
+## DOM example
+
+```tsx
+const { getByRole } = await render(<Button label="Save" />);
+const btn = getByRole("button");
+
+expect(btn.textContent).toBe("Save");
+expect(btn.hasAttribute("disabled")).toBeFalsy();
+```

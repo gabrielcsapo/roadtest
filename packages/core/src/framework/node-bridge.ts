@@ -1,4 +1,5 @@
 import { store } from "./store";
+import { sendHmrMessage } from "./messages";
 import type { TestSuite } from "./types";
 
 /**
@@ -16,7 +17,5 @@ export function __vtRegisterNodeTest(path: string): void {
     runtime: "node",
   } as TestSuite);
 
-  // import.meta.hot is available in all Vite-served modules
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (import.meta as any).hot?.send("vt:run-node-test", { path });
+  sendHmrMessage({ event: "vt:run-node-test", data: { path } });
 }

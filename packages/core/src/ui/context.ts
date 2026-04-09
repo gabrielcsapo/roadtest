@@ -7,12 +7,14 @@ export interface SandboxApi {
   runAll: () => Promise<void>;
   runSuite: (id: string) => Promise<void>;
   runTest: (suiteId: string, testId: string) => Promise<void>;
+  devServerAvailable: boolean;
 }
 
 export interface AppContextValue {
   state: StoreState;
   apiRef: RefObject<SandboxApi | null>;
   sandboxReady: boolean;
+  devServerAvailable: boolean;
 }
 
 const EMPTY_STATE: StoreState = {
@@ -27,6 +29,7 @@ export const AppContext = createContext<AppContextValue>({
   state: EMPTY_STATE,
   apiRef: { current: null },
   sandboxReady: false,
+  devServerAvailable: false,
 });
 
 export function useApp() {

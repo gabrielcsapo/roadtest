@@ -163,7 +163,7 @@ function useGraphData(suites: TestSuite[], coverage: IstanbulCoverage | null) {
       })
       .then(setRaw)
       .catch(() =>
-        fetch("/__fieldtest_graph__")
+        fetch("/__fieldtest_graph__", { headers: { "X-MSW-Intention": "bypass" } })
           .then((r) => r.json())
           .then(setRaw)
           .catch(() => setError(true)),

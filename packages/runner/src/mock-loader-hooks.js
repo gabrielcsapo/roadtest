@@ -33,7 +33,15 @@ async function getEsbuild() {
   return _esbuild;
 }
 
+// CSS files are not meaningful in happy-dom — stub them as empty modules so
+// imports like `import "./globals.css"` in preview.tsx don't throw.
+const CSS_FILE_RE = /\.css(\?.*)?$/;
+
 export async function load(url, context, nextLoad) {
+  if (CSS_FILE_RE.test(url)) {
+    return { shortCircuit: true, source: "export default {}", format: "module" };
+  }
+
   if (!TEST_FILE_RE.test(url)) return nextLoad(url, context);
 
   // Read raw TypeScript source directly from disk (before tsx touches it)

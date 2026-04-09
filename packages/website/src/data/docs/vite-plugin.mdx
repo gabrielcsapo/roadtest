@@ -1,0 +1,27 @@
+## Vite Plugin
+
+The fieldtest Vite plugin enables the browser UI and handles test file transforms.
+
+```ts
+import { fieldtest } from "@fieldtest/core/plugin";
+
+export default defineConfig({
+  plugins: [
+    react(),
+    fieldtest({
+      include: "src/**/*.test.{ts,tsx}",
+    }),
+  ],
+});
+```
+
+### Options
+
+| Option    | Type                 | Default              | Description                    |
+| --------- | -------------------- | -------------------- | ------------------------------ |
+| `include` | `string \| string[]` | `**/*.test.{ts,tsx}` | Glob pattern(s) for test files |
+
+The plugin does two things:
+
+1. **Transform** — rewrites test files to hoist `mock()` calls before imports (required for proper mock isolation)
+2. **Serve** — exposes middleware endpoints the browser UI uses to list files, fetch source, and stream coverage data

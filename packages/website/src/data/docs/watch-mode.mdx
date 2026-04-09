@@ -1,0 +1,11 @@
+## Watch Mode
+
+```bash
+fieldtest --watch
+```
+
+Watch mode monitors your source files and re-runs only the tests affected by each change, using a dependency graph computed from your imports.
+
+If you edit `Button.tsx`, only tests that import `Button.tsx` (directly or transitively) will re-run. Tests with no connection to the changed file are skipped entirely.
+
+This makes watch mode fast even in large codebases.

@@ -1,0 +1,147 @@
+## describe / it / test
+
+fieldtest uses a familiar Jest-compatible DSL for structuring tests. Import everything from `@fieldtest/core`.
+
+```ts
+import { describe, it, test, expect } from "@fieldtest/core";
+
+describe("MyComponent", () => {
+  it("does something", async () => {
+    expect(1 + 1).toBe(2);
+  });
+
+  test("alias for it", async () => {
+    expect(true).toBeTruthy();
+  });
+});
+```
+
+Test callbacks are always **async**. `await` any `render()` or `fireEvent` call.
+
+---
+
+## describe
+
+```ts
+function describe(name: string, fn: () => void): void;
+```
+
+Groups related tests. The `name` appears as the suite label in the test tree. `describe` blocks can be nested to any depth.
+
+```ts
+describe('Form', () => {
+  describe('validation', () => {
+    it('rejects empty fields', async () => { ... })
+    it('rejects invalid email', async () => { ... })
+  })
+
+  describe('submission', () => {
+    it('sends the correct payload', async () => { ... })
+  })
+})
+```
+
+### describe.only
+
+```ts
+describe.only(name: string, fn: () => void): void
+```
+
+Marks this suite as the only one to run in the file. All other suites are skipped. Useful when debugging a single feature.
+
+```ts
+describe.only('focused suite', () => {
+  it('runs', async () => { ... })
+})
+
+describe('skipped suite', () => {
+  it('does not run', async () => { ... })
+})
+```
+
+---
+
+## it / test
+
+```ts
+function it(name: string, fn: () => void | Promise<void>): void;
+function test(name: string, fn: () => void | Promise<void>): void;
+```
+
+`test` is an alias for `it` — they are identical. Use whichever reads better for your test.
+
+### it.only
+
+```ts
+it.only(name: string, fn: () => void | Promise<void>): void
+```
+
+Runs only this test within its suite. All other `it` / `test` calls in the same file are skipped.
+
+```ts
+describe("Button", () => {
+  it.only("renders label", async () => {
+    // only this test runs
+  });
+
+  it("handles click", async () => {
+    // skipped
+  });
+});
+```
+
+### it.skip
+
+```ts
+it.skip(name: string, fn: () => void | Promise<void>): void
+```
+
+Marks a test as skipped. It appears in the test tree with a skipped status and does not run.
+
+```ts
+it.skip("not implemented yet", async () => {
+  // body is never executed
+});
+```
+
+### it.each
+
+```ts
+it.each<T extends unknown[]>(cases: T[]): (
+  nameTemplate: string,
+  fn: (...args: T) => void | Promise<void>
+) => void
+```
+
+Runs the same test body for each row of inputs. `test.each` is also available as an alias.
+
+Use `%s`, `%d`, `%i`, or `%o` as placeholders in the name template — they are replaced with the corresponding argument values in order.
+
+```ts
+it.each([
+  [1, 1, 2],
+  [2, 3, 5],
+  [10, -2, 8],
+])("adds %d + %d = %d", async (a, b, expected) => {
+  expect(a + b).toBe(expected);
+});
+```
+
+This produces three separate tests:
+
+- `adds 1 + 1 = 2`
+- `adds 2 + 3 = 5`
+- `adds 10 + -2 = 8`
+
+Each test appears independently in the test tree and can be inspected separately in the UI.
+
+```ts
+// Works with objects too — use %o for object substitution
+it.each([
+  [{ name: 'Alice', role: 'admin' }],
+  [{ name: 'Bob',   role: 'viewer' }],
+])('renders user %o', async (user) => {
+  const { getByText } = await render(<UserCard user={user} />)
+  expect(getByText(user.name)).toBeTruthy()
+})
+```

@@ -4,8 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite & pnpm --filter example run dev",
-    "dev:demo": "pnpm --filter example run dev",
+    "dev": "vite",
     "build:demo": "pnpm --filter example run build:demo",
     "build": "pnpm run build:demo && vite build",
     "preview": "vite preview"
@@ -19,10 +18,13 @@
     "shiki": "^4.0.2"
   },
   "devDependencies": {
+    "@mdx-js/rollup": "^3.1.1",
+    "@shikijs/rehype": "^4.0.2",
     "@tailwindcss/vite": "^4.1.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "rehype-slug": "^6.0.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^6.0.2",
     "vite": "^8.0.3"

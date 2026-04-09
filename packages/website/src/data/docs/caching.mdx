@@ -1,0 +1,26 @@
+## Caching
+
+fieldtest caches test results keyed by a hash of each test file and its full dependency graph. On subsequent runs, unchanged tests are skipped instantly.
+
+The cache lives in `.fieldtest/cache/`. Add it to `.gitignore`:
+
+```
+.fieldtest/cache/
+```
+
+### Clearing the cache
+
+```bash
+fieldtest --clear-cache
+```
+
+### In CI
+
+Cache the `.fieldtest/cache/` directory between runs for maximum speed:
+
+```yaml
+- uses: actions/cache@v3
+  with:
+    path: .fieldtest/cache
+    key: fieldtest-${{ hashFiles('src/**') }}
+```

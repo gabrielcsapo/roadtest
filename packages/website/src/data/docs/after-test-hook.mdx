@@ -1,0 +1,41 @@
+## registerAfterTestHook
+
+Run custom logic after every test completes. Useful for cleanup, logging, or attaching extra data to the test result.
+
+```ts
+import { registerAfterTestHook, currentTest } from "@fieldtest/core";
+
+registerAfterTestHook(async () => {
+  if (!currentTest) return;
+
+  // e.g. attach performance metrics
+  console.log(`[${currentTest.name}] render count: ${getRenderCount()}`);
+});
+```
+
+`currentTest` is a variable (not a function) — read it directly. It holds the active `TestCase` during a test run, or `null` outside of one.
+
+The hook runs in the same environment as the test (browser or Node). In browser mode, you can access the DOM. In Node mode, `currentTest` still gives you full test metadata.
+
+### Other hooks
+
+```ts
+import {
+  registerBeforeTestHook,
+  registerAfterTestHook,
+  registerBeforeDisplayHook,
+  registerAfterDisplayHook,
+} from '@fieldtest/core'
+
+// Runs before each test
+registerBeforeTestHook(async () => { ... })
+
+// Runs after each test
+registerAfterTestHook(async () => { ... })
+
+// Runs before rendering in the browser UI (display mode only)
+registerBeforeDisplayHook(async () => { ... })
+
+// Runs after rendering in the browser UI (display mode only)
+registerAfterDisplayHook(async () => { ... })
+```

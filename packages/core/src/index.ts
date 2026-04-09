@@ -4,7 +4,7 @@ export { expect } from "./framework/expect";
 export { render, snapshot, fireEvent, act } from "./framework/render";
 export { store, currentTest } from "./framework/store";
 export type { Store } from "./framework/store";
-export { runAll, runSuite, runTest, setCoverageProvider } from "./framework/runner";
+export { runAll, runSuite, runTest, setCoverageProvider, setTestTimeout } from "./framework/runner";
 export type { CoverageProvider } from "./framework/runner";
 export type {
   TestStatus,

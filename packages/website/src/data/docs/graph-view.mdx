@@ -1,0 +1,17 @@
+## Graph View
+
+The graph view renders an interactive 3D force-directed graph of your entire test suite's dependency structure.
+
+- **Nodes** represent source files and test suites
+- **Edges** represent import relationships and coverage links
+- **Node size** scales with the number of tests that cover the file
+- **Node color** differentiates source files, test files, and entry points
+
+### Interacting
+
+- **Orbit** — click and drag to rotate
+- **Zoom** — scroll to zoom in/out
+- **Hover** — shows the file path and coverage percentage
+- **Click** — selects the file and shows its coverage details
+
+The graph makes it easy to see which parts of your codebase have no test coverage (isolated nodes with no edges).

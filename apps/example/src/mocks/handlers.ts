@@ -2,7 +2,7 @@ import { http, HttpResponse } from "msw";
 import type { User } from "../UserProfile";
 
 const users: User[] = [
-  { id: 1, name: "Alice Chen", email: "alice@example.com", role: "admin" },
+  { id: 1, name: "Alice Chen", email: "alicechen@example.com", role: "admin" },
   { id: 2, name: "Bob Torres", email: "bob@example.com", role: "editor" },
   { id: 3, name: "Eve Nakamura", email: "eve@example.com", role: "viewer" },
 ];

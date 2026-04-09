@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { StoreState, TestCase } from "../../framework/types";
 import { StatusIcon } from "./StatusIcon";
+import { SnapshotFrame } from "./SnapshotFrame";
 
 interface Props {
   state: StoreState;
@@ -135,9 +136,11 @@ function GalleryCard({
           {test.status === "running" ? (
             <RunningPlaceholder />
           ) : test.snapshots[0] ? (
-            <div
-              style={{ pointerEvents: "none", transform: "scale(0.85)", transformOrigin: "center" }}
-              dangerouslySetInnerHTML={{ __html: test.snapshots[0].html }}
+            <SnapshotFrame
+              html={test.snapshots[0].html}
+              displayWidth={240}
+              displayHeight={116}
+              virtualWidth={800}
             />
           ) : test.status === "fail" ? (
             <div style={{ color: "#ef4444", fontSize: 28 }}>✗</div>

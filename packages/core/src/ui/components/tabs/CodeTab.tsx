@@ -302,7 +302,9 @@ export function CodeTab({ suiteName, coverage, testCoverage, suites, onSelectTes
       setSource(embedded);
       return;
     }
-    fetch(`/__fieldtest_source__?path=${encodeURIComponent(selectedPath)}`)
+    fetch(`/__fieldtest_source__?path=${encodeURIComponent(selectedPath)}`, {
+      headers: { "X-MSW-Intention": "bypass" },
+    })
       .then((r) => {
         if (r.ok) return r.text();
         // Fallback: static sources bundle written by `fieldtest build` for CDN/static hosts

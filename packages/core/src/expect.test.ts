@@ -258,3 +258,189 @@ describe("expect — .not", () => {
     expect(threw).toBe(true);
   });
 });
+
+describe("expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual", () => {
+  it("toBeGreaterThanOrEqual passes when equal", () => {
+    expect(5).toBeGreaterThanOrEqual(5);
+  });
+
+  it("toBeGreaterThanOrEqual passes when greater", () => {
+    expect(6).toBeGreaterThanOrEqual(5);
+  });
+
+  it("toBeGreaterThanOrEqual throws when less", () => {
+    let threw = false;
+    try {
+      expect(4).toBeGreaterThanOrEqual(5);
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+
+  it("toBeLessThanOrEqual passes when equal", () => {
+    expect(5).toBeLessThanOrEqual(5);
+  });
+
+  it("toBeLessThanOrEqual passes when less", () => {
+    expect(4).toBeLessThanOrEqual(5);
+  });
+});
+
+describe("expect — toMatch", () => {
+  it("passes with a regex", () => {
+    expect("hello world").toMatch(/world/);
+  });
+
+  it("passes with a substring string", () => {
+    expect("hello world").toMatch("hello");
+  });
+
+  it("throws when no match", () => {
+    let threw = false;
+    try {
+      expect("hello").toMatch(/xyz/);
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+});
+
+describe("expect — toMatchObject", () => {
+  it("passes when object is a superset of expected", () => {
+    expect({ a: 1, b: 2, c: 3 }).toMatchObject({ a: 1, b: 2 });
+  });
+
+  it("passes with nested objects", () => {
+    expect({ user: { name: "Alice", age: 30 } }).toMatchObject({ user: { name: "Alice" } });
+  });
+
+  it("throws when a key differs", () => {
+    let threw = false;
+    try {
+      expect({ a: 1 }).toMatchObject({ a: 2 });
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+
+  it("throws when a key is missing", () => {
+    let threw = false;
+    try {
+      expect({ a: 1 }).toMatchObject({ b: 1 });
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+});
+
+describe("expect — toBeInstanceOf", () => {
+  it("passes for correct class", () => {
+    expect(new Error("boom")).toBeInstanceOf(Error);
+    expect([]).toBeInstanceOf(Array);
+  });
+
+  it("throws for wrong class", () => {
+    let threw = false;
+    try {
+      expect("string").toBeInstanceOf(Error);
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+});
+
+describe("expect — toHaveProperty", () => {
+  it("passes when property exists", () => {
+    expect({ a: 1 }).toHaveProperty("a");
+  });
+
+  it("passes for nested key path", () => {
+    expect({ a: { b: 2 } }).toHaveProperty("a.b");
+  });
+
+  it("passes when property equals expected value", () => {
+    expect({ a: 42 }).toHaveProperty("a", 42);
+  });
+
+  it("throws when property is missing", () => {
+    let threw = false;
+    try {
+      expect({ a: 1 }).toHaveProperty("b");
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+
+  it("throws when value does not match", () => {
+    let threw = false;
+    try {
+      expect({ a: 1 }).toHaveProperty("a", 2);
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+});
+
+describe("expect — mock spy assertions", () => {
+  it("toHaveBeenCalled passes after spy is called", () => {
+    const spy = Object.assign(() => {}, {
+      _isSpy: true as const,
+      _spyCalls: [{ args: [], result: undefined, threw: false }],
+    });
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("toHaveBeenCalled throws when spy was not called", () => {
+    const spy = Object.assign(() => {}, {
+      _isSpy: true as const,
+      _spyCalls: [] as Array<{ args: unknown[]; result: unknown; threw: boolean }>,
+    });
+    let threw = false;
+    try {
+      expect(spy).toHaveBeenCalled();
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+
+  it("toHaveBeenCalledTimes passes for exact count", () => {
+    const spy = Object.assign(() => {}, {
+      _isSpy: true as const,
+      _spyCalls: [
+        { args: [], result: undefined, threw: false },
+        { args: [], result: undefined, threw: false },
+      ],
+    });
+    expect(spy).toHaveBeenCalledTimes(2);
+  });
+
+  it("toHaveBeenCalledWith passes when args match", () => {
+    const spy = Object.assign(() => {}, {
+      _isSpy: true as const,
+      _spyCalls: [{ args: ["hello", 42], result: undefined, threw: false }],
+    });
+    expect(spy).toHaveBeenCalledWith("hello", 42);
+  });
+
+  it("toHaveBeenCalledWith throws when args differ", () => {
+    const spy = Object.assign(() => {}, {
+      _isSpy: true as const,
+      _spyCalls: [{ args: ["hello"], result: undefined, threw: false }],
+    });
+    let threw = false;
+    try {
+      expect(spy).toHaveBeenCalledWith("world");
+    } catch {
+      threw = true;
+    }
+    expect(threw).toBe(true);
+  });
+});

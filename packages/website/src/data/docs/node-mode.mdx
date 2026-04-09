@@ -1,0 +1,27 @@
+## Running Tests in Node
+
+Run all tests headlessly:
+
+```bash
+fieldtest
+```
+
+fieldtest uses [happy-dom](https://github.com/capricorn86/happy-dom) as a lightweight DOM implementation and [tsx](https://github.com/privatenumber/tsx) to transpile TypeScript on the fly — no separate build step needed.
+
+### Output
+
+```
+✓ Button › renders the label        12ms
+✓ Button › primary variant           8ms
+✓ Button › fires onClick when clicked 14ms
+✗ Button › wrong label
+  Expected "Save" · Received "Submit"
+
+─────────────────────────────────────────
+7 passed  1 failed  42ms total
+```
+
+### Exit codes
+
+- `0` — all tests passed
+- `1` — one or more tests failed

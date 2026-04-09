@@ -37,39 +37,172 @@ describe('Button', () => {
   })
 })`;
 
+const FilmstripIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M2 8h2M2 12h2M2 16h2M20 8h2M20 12h2M20 16h2" />
+    <rect x="7" y="8" width="10" height="8" rx="1" />
+  </svg>
+);
+
+const CoverageIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 3h18v18H3z" rx="2" />
+    <path d="M7 8h4M7 12h8M7 16h6" />
+    <circle cx="17" cy="8" r="1.5" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const AccessibilityIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="5" r="1.5" />
+    <path d="M5 9h14M12 9v6M9 21l3-6 3 6" />
+  </svg>
+);
+
+const TabsIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="6" width="20" height="14" rx="2" />
+    <path d="M2 10h20M6 6V4M12 6V4M18 6V4" />
+  </svg>
+);
+
+const GraphIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="2" />
+    <circle cx="4" cy="6" r="2" />
+    <circle cx="20" cy="6" r="2" />
+    <circle cx="4" cy="18" r="2" />
+    <circle cx="20" cy="18" r="2" />
+    <path d="M6 7l4 4M14 7l4-1M6 17l4-4M14 17l4 1" />
+  </svg>
+);
+
+const CacheIcon = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+  </svg>
+);
+
+const BrowserIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="3" width="20" height="16" rx="2" />
+    <path d="M2 7h20M6 3v4M9 3v4" />
+  </svg>
+);
+
+const NodeIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M6 8l4 4-4 4M12 16h6" />
+  </svg>
+);
+
 const features = [
   {
-    icon: "🎞️",
+    icon: <FilmstripIcon />,
     color: "g",
     title: "Visual Filmstrip",
     desc: "Every render step captured as a live snapshot. Scrub through exactly how your component looked at each point in the test.",
   },
   {
-    icon: "🔬",
+    icon: <CoverageIcon />,
     color: "g",
     title: "Per-test Coverage",
     desc: "See which lines each individual test exercises — not just aggregate coverage. Click a line to see which tests hit it.",
   },
   {
-    icon: "♿",
+    icon: <AccessibilityIcon />,
     color: "g",
     title: "Accessibility Audits",
     desc: "axe-core runs automatically on every test. Failing rules highlight the exact DOM region. Passing tests show green too.",
   },
   {
-    icon: "🌐",
+    icon: <TabsIcon />,
     color: "y",
     title: "Extensible Tabs",
     desc: "Add custom tabs with registerTab() to expose whatever data your tests produce — network requests, performance marks, custom traces.",
   },
   {
-    icon: "🕸️",
+    icon: <GraphIcon />,
     color: "y",
     title: "3D Coverage Graph",
     desc: "An interactive force-directed graph maps your test files to source files. Understand your coverage topology at a glance.",
   },
   {
-    icon: "⚡",
+    icon: <CacheIcon />,
     color: "y",
     title: "Smart Caching",
     desc: "Dependency graph analysis means only tests affected by your change re-run. Plus built-in sharding for CI parallelism.",
@@ -276,10 +409,10 @@ export default function Home() {
                     } ${i >= 3 ? "border-t border-white/7 md:border-t-0 lg:border-t border-white/7" : ""}`}
                   >
                     <div
-                      className={`mb-5 flex h-11 w-11 items-center justify-center rounded-xl border text-[22px] ${
+                      className={`mb-5 flex h-11 w-11 items-center justify-center rounded-xl border ${
                         f.color === "g"
-                          ? "border-ft-green/25 bg-ft-green/12"
-                          : "border-ft-gold/25 bg-ft-gold/12"
+                          ? "border-ft-green/25 bg-ft-green/12 text-ft-green-hi"
+                          : "border-ft-gold/25 bg-ft-gold/12 text-ft-gold-hi"
                       }`}
                     >
                       {f.icon}
@@ -394,8 +527,8 @@ export default function Home() {
               {/* Browser card */}
               <div className="overflow-hidden rounded-2xl border border-white/7 bg-ft-surface">
                 <div className="flex items-center gap-3 border-b border-white/7 px-6 py-5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-ft-green/25 bg-ft-green/12 text-[18px]">
-                    🖥️
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-ft-green/25 bg-ft-green/12 text-ft-green-hi">
+                    <BrowserIcon />
                   </div>
                   <div>
                     <div className="text-[15px] font-bold text-ft-text">Browser UI</div>
@@ -421,8 +554,8 @@ export default function Home() {
               {/* Node card */}
               <div className="overflow-hidden rounded-2xl border border-white/7 bg-ft-surface">
                 <div className="flex items-center gap-3 border-b border-white/7 px-6 py-5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-ft-gold/25 bg-ft-gold/12 text-[18px]">
-                    ⚙️
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-ft-gold/25 bg-ft-gold/12 text-ft-gold-hi">
+                    <NodeIcon />
                   </div>
                   <div>
                     <div className="text-[15px] font-bold text-ft-text">Node / CI</div>

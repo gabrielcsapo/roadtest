@@ -1,5 +1,5 @@
 import { Window } from "happy-dom";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, realpathSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { findSourceMap, register } from "node:module";
@@ -20,6 +20,7 @@ import {
   readCacheByTestFile,
   writeCache,
   clearCache,
+  hashFileContent,
 } from "./cache.js";
 import {
   parseShardArg,
@@ -31,6 +32,7 @@ import {
 } from "./shard.js";
 import { serializeTestSuite } from "./serialize.js";
 import type { SerializableTestSuite } from "./serialize.js";
+import { processSnapshots, snapshotPath } from "./snapshots.js";
 import type { IstanbulCoverage } from "@fieldtest/core";
 
 // ─── V8 coverage via NODE_V8_COVERAGE ────────────────────────────────────────
@@ -167,13 +169,69 @@ function parseImports(content: string): string[] {
   return result;
 }
 
-function resolveImport(fromFile: string, imp: string): string | null {
-  if (!imp.startsWith(".")) return null;
-  const base = resolve(dirname(fromFile), imp);
-  for (const c of [`${base}.ts`, `${base}.tsx`, join(base, "index.ts"), join(base, "index.tsx")]) {
-    if (existsSync(c)) return c;
+/**
+ * Resolve a workspace package import (one whose node_modules entry is a symlink)
+ * to its TypeScript source entry. Returns null if the package is not a workspace
+ * symlink or if its source entry cannot be found.
+ */
+function resolveWorkspaceImport(fromFile: string, imp: string): string | null {
+  // Extract bare package name (handle scoped packages like @scope/pkg)
+  const parts = imp.split("/");
+  const pkgName = imp.startsWith("@") ? `${parts[0]}/${parts[1]}` : parts[0];
+  if (!pkgName) return null;
+
+  // Walk up the directory tree from fromFile to find node_modules/<pkgName>
+  let dir = dirname(fromFile);
+  for (let i = 0; i < 10; i++) {
+    const nmPkg = join(dir, "node_modules", pkgName);
+    if (existsSync(nmPkg)) {
+      try {
+        const realPath = realpathSync(nmPkg);
+        if (realPath === nmPkg) return null; // not a symlink → not a workspace package
+        // Read package.json to find the TypeScript source entry
+        const pkgJson = JSON.parse(readFileSync(join(realPath, "package.json"), "utf-8")) as {
+          exports?: Record<string, { import?: string } | string>;
+          main?: string;
+          source?: string;
+        };
+        // Prefer exports["."].import (TypeScript source path), then source, then main
+        const exportsRoot = pkgJson.exports?.["."];
+        const srcRelative =
+          (typeof exportsRoot === "object" ? exportsRoot?.import : undefined) ??
+          pkgJson.source ??
+          pkgJson.main;
+        if (!srcRelative) return null;
+        const srcAbs = resolve(realPath, srcRelative);
+        // The exports field may already point at a .ts file; try as-is plus .ts/.tsx
+        for (const candidate of [srcAbs, `${srcAbs}.ts`, `${srcAbs}.tsx`]) {
+          if (existsSync(candidate)) return candidate;
+        }
+        return null;
+      } catch {
+        return null;
+      }
+    }
+    const parent = resolve(dir, "..");
+    if (parent === dir) break; // reached filesystem root
+    dir = parent;
   }
   return null;
+}
+
+function resolveImport(fromFile: string, imp: string): string | null {
+  if (imp.startsWith(".")) {
+    const base = resolve(dirname(fromFile), imp);
+    for (const c of [
+      `${base}.ts`,
+      `${base}.tsx`,
+      join(base, "index.ts"),
+      join(base, "index.tsx"),
+    ]) {
+      if (existsSync(c)) return c;
+    }
+    return null;
+  }
+  return resolveWorkspaceImport(fromFile, imp);
 }
 
 function buildDepGraph(testFiles: string[]): DepGraph {
@@ -187,9 +245,13 @@ function buildDepGraph(testFiles: string[]): DepGraph {
     if (!dependents.has(file)) dependents.set(file, new Set());
     dependents.get(file)!.add(testFile);
 
+    if (!importedBy.has(testFile)) importedBy.set(testFile, new Map());
     if (parent !== null) {
-      if (!importedBy.has(testFile)) importedBy.set(testFile, new Map());
       importedBy.get(testFile)!.set(file, parent);
+    } else {
+      // Record the test file as a dependency of itself so that getDepsForFile
+      // always includes it — cache key changes whenever the test file changes.
+      importedBy.get(testFile)!.set(file, file);
     }
 
     let content: string;
@@ -461,6 +523,9 @@ export async function runNode() {
   const outputJsonArg = args
     .find((a) => a.startsWith("--output-json="))
     ?.slice("--output-json=".length);
+  const grepArg = args.find((a) => a.startsWith("--grep="))?.slice("--grep=".length);
+  const timeoutArg = args.find((a) => a.startsWith("--timeout="))?.slice("--timeout=".length);
+  const updateSnapshots = args.includes("--update-snapshots") || args.includes("--update-snapshot");
   const cwd = process.cwd();
 
   // ── --clear-cache ──────────────────────────────────────────────────────────
@@ -647,6 +712,8 @@ export async function runNode() {
   // ── Run cache misses ───────────────────────────────────────────────────────
   const freshSuites: SerializableTestSuite[] = [];
   let freshCoverage: IstanbulCoverage | null = null;
+  // Keyed by test file path; populated during the run, read after snapshot processing.
+  const serializedByFile = new Map<string, SerializableTestSuite[]>();
 
   if (cacheMisses.length > 0) {
     // setCurrentSourceFile must be called before each import so suite.sourceFile
@@ -659,7 +726,10 @@ export async function runNode() {
     }
     setCurrentSourceFile(null);
 
-    await runAll();
+    await runAll({
+      grep: grepArg,
+      timeout: timeoutArg !== undefined ? parseInt(timeoutArg, 10) : undefined,
+    });
 
     // NODE_V8_COVERAGE was set by the bin script before this process started,
     // so all scripts are instrumented. Flush and convert now.
@@ -667,19 +737,13 @@ export async function runNode() {
 
     const state = store.getState();
 
-    // Group suites back to their source file, write each to cache
+    // Serialize suites per file but do NOT write the cache yet — we need snapshot
+    // hashes, which we can only compute after processSnapshots writes the files.
     for (const file of cacheMisses) {
       const fileSuites = state.suites.filter((s) => s.sourceFile === file);
       const serialized = fileSuites.map(serializeTestSuite);
       freshSuites.push(...serialized);
-
-      const { key, fileHashes } = cacheKeys.get(file)!;
-      writeCache(cacheDir, key, file, {
-        suites: serialized,
-        // Store the real V8 total coverage so subsequent cached runs can report it
-        coverage: freshCoverage,
-        fileHashes,
-      });
+      serializedByFile.set(file, serialized);
     }
   }
 
@@ -690,6 +754,79 @@ export async function runNode() {
     const fromCache = cacheHits.filter((s) => s.sourceFile === file);
     const fromFresh = freshSuites.filter((s) => s.sourceFile === file);
     allSuites.push(...fromCache, ...fromFresh);
+  }
+
+  // ── Snapshot persistence ───────────────────────────────────────────────────
+  {
+    // freshSuites controls which snapshots get written/updated.
+    // For the diff display we always compare allSuites so that cached failures
+    // still show their diffs even when 0 files were re-executed this run.
+    const suitesToCompare = updateSnapshots ? freshSuites : allSuites;
+    const { mismatches: snapshotMismatches, removed: snapshotRemoved } = processSnapshots(
+      allSuites,
+      updateSnapshots,
+      suitesToCompare,
+    );
+    if (snapshotRemoved.length > 0) {
+      console.log(
+        `\n${DIM}Removed ${snapshotRemoved.length} obsolete snapshot${snapshotRemoved.length === 1 ? "" : "s"}:${RESET}`,
+      );
+      for (const p of snapshotRemoved) {
+        console.log(`  ${DIM}− ${rel(p, cwd)}${RESET}`);
+      }
+    }
+    if (snapshotMismatches.length > 0) {
+      console.log(`\n${YELLOW}${BOLD}Snapshot mismatches (${snapshotMismatches.length}):${RESET}`);
+      for (const m of snapshotMismatches) {
+        console.log(`\n  ${BOLD}${m.suiteName} > ${m.testName} > ${m.label}${RESET}`);
+        console.log(`  ${DIM}${m.path}${RESET}`);
+        console.log(
+          m.diff
+            .split("\n")
+            .map((l) => {
+              if (l.startsWith("+")) return `  ${GREEN}${l}${RESET}`;
+              if (l.startsWith("-")) return `  ${RED}${l}${RESET}`;
+              return `  ${l}`;
+            })
+            .join("\n"),
+        );
+      }
+      console.log(`\n${DIM}Run with --update-snapshots to update stored snapshots.${RESET}\n`);
+    }
+  }
+
+  // Write cache entries for all cache-miss files. This happens AFTER processSnapshots
+  // so we can record the snapshot file hashes and detect external snapshot updates
+  // (e.g. via the web UI) on the next run.
+  if (serializedByFile.size > 0) {
+    for (const file of cacheMisses) {
+      const serialized = serializedByFile.get(file) ?? [];
+      const { key, fileHashes } = cacheKeys.get(file)!;
+
+      const snapshotHashes: Record<string, string> = {};
+      for (const suite of serialized) {
+        if (!suite.sourceFile) continue;
+        for (const test of suite.tests) {
+          for (const assertion of test.assertions) {
+            if (!assertion.snapshot) continue;
+            const p = snapshotPath(
+              suite.sourceFile,
+              suite.name,
+              test.name,
+              assertion.snapshot.label,
+            );
+            if (existsSync(p)) snapshotHashes[p] = hashFileContent(p);
+          }
+        }
+      }
+
+      writeCache(cacheDir, key, file, {
+        suites: serialized,
+        coverage: freshCoverage,
+        fileHashes,
+        snapshotHashes: Object.keys(snapshotHashes).length > 0 ? snapshotHashes : undefined,
+      });
+    }
   }
 
   // When only some files were re-run, only show those results — the rest haven't changed.

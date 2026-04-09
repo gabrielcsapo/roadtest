@@ -1,0 +1,16 @@
+## Environment Override
+
+By default, test files run in whatever environment fieldtest was invoked in (browser or Node). You can force a specific file to always run in Node with a comment at the top:
+
+```ts
+// @fieldtest-env node
+import { describe, it, expect } from "@fieldtest/core";
+
+describe("pure logic", () => {
+  it("sorts correctly", () => {
+    expect([3, 1, 2].sort()).toEqual([1, 2, 3]);
+  });
+});
+```
+
+This is useful for tests that involve Node-only APIs or where a DOM is unnecessary overhead.

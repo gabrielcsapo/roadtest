@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   createHashRouter,
   RouterProvider,
@@ -7,32 +7,22 @@ import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
-import type { StoreState, TestCase, RunProgress } from "../framework/types";
+import type { TestCase, RunProgress } from "../framework/types";
 import { TestTree, ViewToggle } from "./components/TestTree";
 import { Preview } from "./components/Preview";
 import { Gallery } from "./components/Gallery";
 import { CoverageExplorer, CoverageFileList } from "./components/CoverageExplorer";
 import { GraphView } from "./components/GraphView";
-import { AppContext, useApp, type SandboxApi } from "./context";
+import { AppContext, useApp } from "./context";
+import { useSandboxBridge } from "./hooks/useSandboxBridge";
+import { useTestNavigation } from "./hooks/useTestNavigation";
 
 export type AppView = "detail" | "gallery" | "coverage" | "graph";
 
 const SANDBOX_NAME = "__vt_sandbox";
 
-const EMPTY_STATE: StoreState = {
-  suites: [],
-  running: false,
-  lastRunAt: null,
-  coverage: null,
-  runProgress: null,
-};
-
 function toTestUrl(suiteName: string, testName: string) {
   return `/suite/${encodeURIComponent(suiteName)}/test/${encodeURIComponent(testName)}`;
-}
-
-function toSuiteUrl(suiteName: string) {
-  return `/suite/${encodeURIComponent(suiteName)}`;
 }
 
 function formatEta(progress: RunProgress): string {
@@ -387,31 +377,10 @@ function LoadingSpinner() {
 
 function AppShell() {
   const sandboxRef = useRef<HTMLIFrameElement>(null);
-  const apiRef = useRef<SandboxApi | null>(null);
-  const [state, setState] = useState<StoreState>(EMPTY_STATE);
-  const [sandboxReady, setSandboxReady] = useState(false);
-
-  useEffect(() => {
-    let unsub: (() => void) | undefined;
-    const onMessage = (e: MessageEvent) => {
-      if (e.data?.type !== "__vt_ready") return;
-      const win = sandboxRef.current?.contentWindow as Record<string, unknown> | null | undefined;
-      const api = win?.["__fieldtest"] as SandboxApi | undefined;
-      if (!api) return;
-      apiRef.current = api;
-      setState(api.store.getState());
-      unsub = api.store.subscribe((s) => setState(s));
-      setSandboxReady(true);
-    };
-    window.addEventListener("message", onMessage);
-    return () => {
-      window.removeEventListener("message", onMessage);
-      unsub?.();
-    };
-  }, []);
+  const { state, apiRef, sandboxReady, devServerAvailable } = useSandboxBridge(sandboxRef);
 
   return (
-    <AppContext.Provider value={{ state, apiRef, sandboxReady }}>
+    <AppContext.Provider value={{ state, apiRef, sandboxReady, devServerAvailable }}>
       <iframe
         ref={sandboxRef}
         name={SANDBOX_NAME}
@@ -472,50 +441,12 @@ function AppShell() {
 function DetailLayout() {
   const { state, apiRef } = useApp();
   const { suiteName, testName } = useParams<{ suiteName?: string; testName?: string }>();
-  const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const nav = useTestNavigation(state, apiRef);
 
   const suite = suiteName ? (state.suites.find((s) => s.name === suiteName) ?? null) : null;
-
   const selected: TestCase | null =
     testName && suite ? (suite.tests.find((t) => t.name === testName) ?? null) : null;
-
-  const handleSelect = useCallback(
-    (test: TestCase) => navigate(toTestUrl(test.suiteName, test.name)),
-    [navigate],
-  );
-
-  const handleSelectSuite = useCallback(
-    (suiteId: string) => {
-      const s = state.suites.find((su) => su.id === suiteId);
-      if (s) navigate(toSuiteUrl(s.name));
-    },
-    [navigate, state.suites],
-  );
-
-  const handleRunAll = useCallback(() => {
-    apiRef.current?.runAll();
-  }, [apiRef]);
-
-  const handleRunSuite = useCallback(
-    (id: string) => {
-      const s = state.suites.find((su) => su.id === id);
-      if (s) navigate(toSuiteUrl(s.name));
-      apiRef.current?.runSuite(id);
-    },
-    [navigate, state.suites, apiRef],
-  );
-
-  const handleRunTest = useCallback(
-    (sid: string, tid: string) => {
-      const test = state.suites
-        .flatMap((s) => s.tests)
-        .find((t) => t.suiteId === sid && t.id === tid);
-      if (test) navigate(toTestUrl(test.suiteName, test.name));
-      apiRef.current?.runTest(sid, tid);
-    },
-    [navigate, state.suites, apiRef],
-  );
 
   return (
     <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
@@ -535,12 +466,12 @@ function DetailLayout() {
           selected={selected}
           selectedSuiteId={suite?.id ?? null}
           search={search}
-          onSelect={handleSelect}
-          onSelectSuite={handleSelectSuite}
+          onSelect={nav.handleSelect}
+          onSelectSuite={nav.handleSelectSuite}
           onSearchChange={setSearch}
-          onRunAll={handleRunAll}
-          onRunSuite={handleRunSuite}
-          onRunTest={handleRunTest}
+          onRunAll={nav.handleRunAll}
+          onRunSuite={nav.handleRunSuite}
+          onRunTest={nav.handleRunTest}
         />
       </div>
 
@@ -550,22 +481,17 @@ function DetailLayout() {
           <SuiteOverview
             suite={suite}
             running={state.running}
-            onSelectTest={handleSelect}
+            onSelectTest={nav.handleSelect}
             onRunSuite={(id) => apiRef.current?.runSuite(id)}
-            onRunTest={handleRunTest}
+            onRunTest={nav.handleRunTest}
           />
         ) : (
           <Preview
             test={selected}
             coverage={state.coverage}
             suites={state.suites}
-            onSelectTest={(suiteId, testId) => {
-              const test = state.suites
-                .flatMap((s) => s.tests)
-                .find((t) => t.suiteId === suiteId && t.id === testId);
-              if (test) navigate(toTestUrl(test.suiteName, test.name));
-            }}
-            onSelectSuite={handleSelectSuite}
+            onSelectTest={nav.handleNavigateToTest}
+            onSelectSuite={nav.handleSelectSuite}
           />
         )}
       </div>
@@ -611,7 +537,7 @@ function CoverageRoute() {
   const fileParam = searchParams.get("file"); // e.g. "src/Counter.tsx"
 
   useEffect(() => {
-    fetch("/__fieldtest_files__")
+    fetch("/__fieldtest_files__", { headers: { "X-MSW-Intention": "bypass" } })
       .then((r) => r.json() as Promise<string[]>)
       .then(setAllSourceFiles)
       .catch(() => {});

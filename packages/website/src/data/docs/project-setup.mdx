@@ -1,0 +1,40 @@
+## Project Setup
+
+fieldtest looks for a `.fieldtest/` directory in your project root for optional configuration files.
+
+```
+your-app/
+├── .fieldtest/
+│   ├── setup.ts       # global setup (MSW, providers, etc.)
+│   └── preview.tsx    # wrap every test render in a provider
+├── src/
+│   └── Button.test.tsx
+└── vite.config.ts
+```
+
+### setup.ts
+
+Runs once before any tests. Use it to start MSW, set global mocks, or configure libraries:
+
+```ts
+// .fieldtest/setup.ts
+import { setupServer } from "msw/browser";
+import { handlers } from "../src/mocks/handlers";
+
+export const worker = setupServer(...handlers);
+await worker.start({ onUnhandledRequest: "bypass" });
+```
+
+### preview.tsx
+
+Wraps every `render()` call in your providers automatically:
+
+```tsx
+// .fieldtest/preview.tsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+export default function Preview({ children }: { children: React.ReactNode }) {
+  const client = new QueryClient();
+  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+}
+```
