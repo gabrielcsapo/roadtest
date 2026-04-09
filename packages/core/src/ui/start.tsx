@@ -14,6 +14,7 @@ import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from "
 import { postParentMessage, onHmrMessage } from "../framework/messages";
 import { checkDevServer, writeSnapshotsToServer, compareSnapshotsWithServer } from "./snapshots";
 import type { TestSuite } from "../framework/types";
+import { captureProps } from "../framework/traceUtils";
 
 /** Whether the FieldTest dev server is reachable — false in static --build deployments. */
 export let devServerAvailable = false;
@@ -216,11 +217,117 @@ export async function startApp(
       return axe.run(displayRoot);
     }
 
+    const _highlightedEls: Map<HTMLElement, { outline: string; outlineOffset: string }> = new Map();
+
+    function highlight(highlights: { path: number[]; color: string }[]) {
+      for (const [el, saved] of _highlightedEls) {
+        el.style.outline = saved.outline;
+        el.style.outlineOffset = saved.outlineOffset;
+      }
+      _highlightedEls.clear();
+
+      for (const { path, color } of highlights) {
+        let el: Element | null = displayRoot.firstElementChild;
+        for (const idx of path) {
+          el = el?.children[idx] ?? null;
+        }
+        if (el instanceof HTMLElement && !_highlightedEls.has(el)) {
+          _highlightedEls.set(el, {
+            outline: el.style.outline,
+            outlineOffset: el.style.outlineOffset,
+          });
+          el.style.outline = `2px solid ${color}`;
+          el.style.outlineOffset = "2px";
+        }
+      }
+    }
+
+    function getComponentTree() {
+      const container = displayRoot.firstElementChild as HTMLElement | null;
+      if (!container) return [];
+      const keys = Object.keys(container);
+      const containerKey = keys.find((k) => k.startsWith("__reactContainer$"));
+      if (!containerKey) return [];
+      const results: {
+        name: string;
+        depth: number;
+        key: string | null;
+        isForwardRef: boolean;
+        isMemo: boolean;
+        domPath?: number[];
+      }[] = [];
+      walkDisplayFiber((container as any)[containerKey]?.child, 0, results, container);
+      return results;
+    }
+
+    function walkDisplayFiber(
+      fiber: any,
+      depth: number,
+      results: ReturnType<typeof getComponentTree>,
+      container: HTMLElement,
+    ) {
+      if (!fiber) return;
+      let name = "";
+      let isForwardRef = false;
+      let isMemo = false;
+      if (typeof fiber.type === "function") {
+        name = fiber.type.displayName || fiber.type.name || "";
+      } else if (fiber.type && typeof fiber.type === "object") {
+        const inner = fiber.type;
+        if (inner.$$typeof) {
+          const sym = String(inner.$$typeof);
+          isForwardRef = sym.includes("forward_ref");
+          isMemo = sym.includes("memo");
+        }
+        name =
+          inner.displayName ||
+          inner.render?.name ||
+          inner.type?.name ||
+          inner.type?.displayName ||
+          "";
+      }
+      const isComponent = !!name && name !== "Anonymous";
+      if (isComponent) {
+        const hostNode = getFirstDisplayHostNode(fiber);
+        results.push({
+          name,
+          depth,
+          key: fiber.key ?? null,
+          isForwardRef,
+          isMemo,
+          domPath: hostNode ? getDisplayDomPath(hostNode, container) : undefined,
+          props: captureProps(fiber),
+        });
+      }
+      walkDisplayFiber(fiber.child, isComponent ? depth + 1 : depth, results, container);
+      walkDisplayFiber(fiber.sibling, depth, results, container);
+    }
+
+    function getFirstDisplayHostNode(fiber: any): HTMLElement | null {
+      if (!fiber) return null;
+      if (fiber.tag === 5 && fiber.stateNode instanceof HTMLElement) return fiber.stateNode;
+      return getFirstDisplayHostNode(fiber.child);
+    }
+
+    function getDisplayDomPath(node: HTMLElement, root: HTMLElement): number[] | undefined {
+      const path: number[] = [];
+      let current: HTMLElement | null = node;
+      while (current && current !== root) {
+        const parent: HTMLElement | null = current.parentElement;
+        if (!parent) return undefined;
+        path.unshift(Array.from(parent.children).indexOf(current));
+        current = parent;
+      }
+      return current === root ? path : undefined;
+    }
+
     (window as unknown as Record<string, unknown>)["__vtDisplay"] = {
       showTest,
       playTest,
       displayRoot,
       runAxe,
+      highlight,
+      getComponentTree,
     };
     postParentMessage({ type: "__vt_display_ready" });
     return;

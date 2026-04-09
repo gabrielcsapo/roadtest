@@ -1,7 +1,85 @@
 import { type ReactElement, type ComponentType, createElement } from "react";
 import { currentTest, store } from "./store";
 import { registerAfterTestHook } from "./hooks";
-import type { Snapshot } from "./types";
+import type { ComponentNode, Snapshot } from "./types";
+import { captureProps } from "./traceUtils";
+
+/** Returns the first HostComponent (tag 5) DOM node in a fiber subtree */
+function getFirstHostNode(fiber: any): HTMLElement | null {
+  if (!fiber) return null;
+  if (fiber.tag === 5 && fiber.stateNode instanceof HTMLElement) return fiber.stateNode;
+  return getFirstHostNode(fiber.child);
+}
+
+/** Computes child-index path from root to node, or undefined if node isn't a descendant */
+function getDomPath(node: HTMLElement, root: HTMLElement): number[] | undefined {
+  const path: number[] = [];
+  let current: HTMLElement | null = node;
+  while (current && current !== root) {
+    const parent: HTMLElement | null = current.parentElement;
+    if (!parent) return undefined;
+    path.unshift(Array.from(parent.children).indexOf(current));
+    current = parent;
+  }
+  return current === root ? path : undefined;
+}
+
+function captureComponentTree(container: HTMLElement): ComponentNode[] {
+  const keys = Object.keys(container);
+
+  // React 18 createRoot sets __reactContainer$ on the root container element.
+  const containerKey = keys.find((k) => k.startsWith("__reactContainer$"));
+  if (containerKey) {
+    const results: ComponentNode[] = [];
+    walkFiber((container as any)[containerKey]?.child, 0, results, container);
+    return results;
+  }
+
+  // Fallback: __reactFiber$ for non-root elements
+  const fiberKey = keys.find((k) => k.startsWith("__reactFiber$"));
+  if (fiberKey) {
+    const results: ComponentNode[] = [];
+    walkFiber((container as any)[fiberKey]?.child, 0, results, container);
+    return results;
+  }
+
+  return [];
+}
+
+function walkFiber(fiber: any, depth: number, results: ComponentNode[], container: HTMLElement) {
+  if (!fiber) return;
+  let name = "";
+  let isForwardRef = false;
+  let isMemo = false;
+  if (typeof fiber.type === "function") {
+    name = fiber.type.displayName || fiber.type.name || "";
+  } else if (fiber.type && typeof fiber.type === "object") {
+    const inner = fiber.type;
+    if (inner.$$typeof) {
+      const sym = String(inner.$$typeof);
+      isForwardRef = sym.includes("forward_ref");
+      isMemo = sym.includes("memo");
+    }
+    name =
+      inner.displayName || inner.render?.name || inner.type?.name || inner.type?.displayName || "";
+  }
+  const isComponent = !!name && name !== "Anonymous";
+  if (isComponent) {
+    const hostNode = getFirstHostNode(fiber);
+    const domPath = hostNode ? getDomPath(hostNode, container) : undefined;
+    results.push({
+      name,
+      depth,
+      key: fiber.key ?? null,
+      isForwardRef,
+      isMemo,
+      domPath,
+      props: captureProps(fiber),
+    });
+  }
+  walkFiber(fiber.child, isComponent ? depth + 1 : depth, results, container);
+  walkFiber(fiber.sibling, depth, results, container);
+}
 
 type Wrapper = ComponentType<{ children: React.ReactNode }>;
 
@@ -32,6 +110,7 @@ let _lastRenderSnapshot: Snapshot | null = null;
 registerAfterTestHook(() => {
   if (_currentContainer && _lastRenderSnapshot) {
     _lastRenderSnapshot.html = _currentContainer.innerHTML;
+    _lastRenderSnapshot.componentTree = captureComponentTree(_currentContainer);
   }
   _lastRenderSnapshot = null;
 });
@@ -91,6 +170,7 @@ export async function render(element: ReactElement) {
       label,
       element: wrapped,
       html: result.container.innerHTML,
+      componentTree: captureComponentTree(result.container),
       timestamp: Date.now(),
       comparison: false, // preview-only; not compared against baselines
     };

@@ -312,12 +312,13 @@ expect(fetchUser).toHaveBeenCalledWith("user-123");
 toMatchSnapshot(label?: string): Promise<void>
 ```
 
-Captures the HTML of the received value as a visual snapshot assertion. Works on `HTMLElement` instances or strings.
+Captures the rendered HTML of the received element as a snapshot assertion. Works on `HTMLElement` instances or strings.
 
 - If `received` is an `HTMLElement`, its `innerHTML` is captured.
 - If `received` is a string, it is captured directly.
 - The snapshot appears in the Assertions tab of the browser UI with a diff view on changes.
-- In Node mode this is a no-op.
+- Snapshots are stored as plain `.html` files in a `__snapshots__/` directory next to your test file — diffable and reviewable in any editor or code review tool.
+- Run with `--update-snapshots` to regenerate stored baselines.
 
 ```ts
 const { getByRole } = await render(<Button label="Save" />)
@@ -325,6 +326,29 @@ await expect(getByRole('button')).toMatchSnapshot()
 
 // With a custom label
 await expect(getByRole('button')).toMatchSnapshot('save button')
+```
+
+#### HTML-aware comparison
+
+Unlike plain string snapshot tools, fieldtest normalizes HTML before comparing so cosmetic serialization differences never cause false failures:
+
+- **Attribute order** — attributes are sorted alphabetically, so `<div class="x" id="y">` and `<div id="y" class="x">` are treated as equal.
+- **CSS normalization** — inline style declarations are sorted and shorthand properties (`flex`, `border`, `border-top`, etc.) are expanded to their longhand equivalents. `flex: 1 0 auto` and `flex-grow: 1; flex-shrink: 0; flex-basis: auto` are the same snapshot.
+- **Color normalization** — hex colors are converted to `rgb()`/`rgba()` so `#ff0000` and `rgb(255, 0, 0)` are identical.
+
+#### Cross-environment consistency
+
+When running in the browser, fieldtest wraps your component in a passthrough container div (for layout). Node/happy-dom renders do not include this wrapper. fieldtest detects and strips the mismatched wrapper automatically, so the same snapshot passes in both environments without any special handling on your part.
+
+#### Readable diffs
+
+On mismatch, fieldtest pretty-prints the stored and current HTML tag-per-line before diffing, so you see which specific elements changed rather than one enormous string diff:
+
+```
+-  <button style="background-color: rgb(0, 123, 255); color: rgb(255, 255, 255);">
++  <button style="background-color: rgb(108, 117, 125); color: rgb(255, 255, 255);">
+     Save
+   </button>
 ```
 
 ---

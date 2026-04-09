@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import Logo from "../components/Logo";
@@ -211,6 +211,55 @@ const features = [
 
 export default function Home() {
   const [codeHtml, setCodeHtml] = useState<string | null>(null);
+  const [heroExpanded, setHeroExpanded] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const placeholderRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const iframe = iframeRef.current;
+    const placeholder = placeholderRef.current;
+    if (!iframe) return;
+
+    const update = () => {
+      const CHROME_H = 36;
+      if (heroExpanded) {
+        iframe.style.cssText = [
+          "position:fixed",
+          `top:${window.innerHeight * 0.1 + CHROME_H}px`,
+          `left:${window.innerWidth * 0.1}px`,
+          `width:${window.innerWidth * 0.8}px`,
+          `height:${window.innerHeight * 0.8 - CHROME_H}px`,
+          "border:none",
+          "display:block",
+          "z-index:1000",
+          "border-radius:0 0 10px 10px",
+        ].join(";");
+      } else if (placeholder) {
+        const rect = placeholder.getBoundingClientRect();
+        iframe.style.cssText = [
+          "position:fixed",
+          `top:${rect.top}px`,
+          `left:${rect.left}px`,
+          `width:${rect.width}px`,
+          `height:${rect.height}px`,
+          "border:none",
+          "display:block",
+          "z-index:11",
+        ].join(";");
+      }
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    if (placeholder) ro.observe(placeholder);
+    window.addEventListener("resize", update);
+    window.addEventListener("scroll", update, { passive: true });
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", update);
+    };
+  }, [heroExpanded]);
 
   useEffect(() => {
     if (_hl) {
@@ -229,6 +278,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-ft-bg font-sans text-ft-text">
+      {/* Single persistent iframe — always fixed, repositioned by useLayoutEffect */}
+      <iframe
+        ref={iframeRef}
+        src={DEMO_SRC}
+        title="fieldtest live demo"
+        style={{
+          position: "fixed",
+          width: 0,
+          height: 0,
+          border: "none",
+          display: "block",
+          zIndex: 1,
+        }}
+      />
+
       {/* Orbs */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div
@@ -273,6 +337,8 @@ export default function Home() {
                       padding: "10px 14px",
                       borderBottom: "1px solid #2a2a36",
                       background: "#0f0f13",
+                      position: "relative",
+                      zIndex: 12,
                     }}
                   >
                     <div style={{ display: "flex", gap: 6 }}>
@@ -294,13 +360,156 @@ export default function Home() {
                     >
                       localhost:3333 — fieldtest
                     </div>
+                    <button
+                      onClick={() => setHeroExpanded(true)}
+                      title="Expand preview"
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: 5,
+                        border: "1px solid #2a2a36",
+                        background: "transparent",
+                        color: "#6b7280",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLButtonElement).style.borderColor =
+                          "rgba(99,102,241,0.6)";
+                        (e.currentTarget as HTMLButtonElement).style.color = "#a5b4fc";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLButtonElement).style.borderColor = "#2a2a36";
+                        (e.currentTarget as HTMLButtonElement).style.color = "#6b7280";
+                      }}
+                    >
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      >
+                        <path d="M1.5 4.5V1.5h3M10.5 4.5V1.5h-3M1.5 7.5v3h3M10.5 7.5v3h-3" />
+                      </svg>
+                    </button>
                   </div>
-                  <iframe
-                    src={DEMO_SRC}
-                    title="fieldtest live demo"
-                    style={{ width: "100%", height: "580px", border: "none", display: "block" }}
-                  />
+                  {/* Placeholder — iframe is overlaid here via useLayoutEffect */}
+                  <div ref={placeholderRef} style={{ width: "100%", height: "580px" }} />
                 </div>
+
+                {/* Backdrop when expanded */}
+                {heroExpanded && (
+                  <div
+                    onClick={() => setHeroExpanded(false)}
+                    style={{
+                      position: "fixed",
+                      inset: 0,
+                      background: "rgba(0,0,0,0.75)",
+                      zIndex: 999,
+                    }}
+                  />
+                )}
+
+                {/* Expanded chrome frame (just the header bar + collapse button) */}
+                {heroExpanded && (
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: "10vh",
+                      left: "10vw",
+                      width: "80vw",
+                      zIndex: 1001,
+                      borderRadius: "10px 10px 0 0",
+                      overflow: "hidden",
+                      border: "1px solid #2a2a36",
+                      borderBottom: "none",
+                      boxShadow: "0 0 0 4px rgba(99,102,241,0.06), 0 24px 64px rgba(0,0,0,0.6)",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        padding: "10px 14px",
+                        background: "#0f0f13",
+                      }}
+                    >
+                      <div style={{ display: "flex", gap: 6 }}>
+                        {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
+                          <div
+                            key={c}
+                            style={{ width: 11, height: 11, borderRadius: "50%", background: c }}
+                          />
+                        ))}
+                      </div>
+                      <div
+                        style={{
+                          flex: 1,
+                          textAlign: "center",
+                          fontFamily: "var(--font-mono)",
+                          fontSize: 11,
+                          color: "#6b7280",
+                        }}
+                      >
+                        localhost:3333 — fieldtest
+                      </div>
+                      <button
+                        onClick={() => setHeroExpanded(false)}
+                        title="Collapse preview"
+                        style={{
+                          width: 24,
+                          height: 24,
+                          borderRadius: 5,
+                          border: "1px solid rgba(99,102,241,0.4)",
+                          background: "rgba(99,102,241,0.15)",
+                          color: "#a5b4fc",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <svg
+                          width="11"
+                          height="11"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                        >
+                          <path d="M4.5 1.5H1.5v3M7.5 1.5h3v3M4.5 10.5H1.5v-3M7.5 10.5h3v-3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* Expanded border/shadow frame around the iframe */}
+                {heroExpanded && (
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: "10vh",
+                      left: "10vw",
+                      width: "80vw",
+                      height: "80vh",
+                      zIndex: 999,
+                      borderRadius: 10,
+                      border: "1px solid #2a2a36",
+                      boxShadow: "0 0 0 4px rgba(99,102,241,0.06), 0 24px 64px rgba(0,0,0,0.6)",
+                      pointerEvents: "none",
+                    }}
+                  />
+                )}
               </div>
 
               {/* Right — hero copy */}

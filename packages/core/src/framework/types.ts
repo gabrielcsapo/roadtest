@@ -30,6 +30,8 @@ export interface Snapshot {
   element: ReactElement;
   /** DOM innerHTML captured at this point — used for filmstrip thumbnails */
   html: string;
+  /** React component tree captured from the fiber at this point */
+  componentTree?: ComponentNode[];
   /** Stored baseline HTML — set when a mismatch is detected, used for side-by-side comparison */
   baselineHtml?: string;
   /**
@@ -39,6 +41,18 @@ export interface Snapshot {
    * filmstrip but never written to disk or compared against baselines.
    */
   comparison?: boolean;
+}
+
+export interface ComponentNode {
+  name: string;
+  depth: number;
+  key: string | null;
+  isForwardRef: boolean;
+  isMemo: boolean;
+  /** Child-index path from the render container root to this component's first DOM node */
+  domPath?: number[];
+  /** Serialized props (children excluded) */
+  props?: Record<string, import("./traceUtils").SerializedProp>;
 }
 
 export type ConsoleLevel = "log" | "warn" | "error" | "info" | "debug";

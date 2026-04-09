@@ -1,62 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import type { ComponentNode } from "../../../framework/types";
+import type { SerializedProp } from "../../../framework/traceUtils";
 
-interface ComponentNode {
-  name: string;
-  depth: number;
-  key: string | null;
-  isForwardRef: boolean;
-  isMemo: boolean;
-}
+export type { ComponentNode };
 
-function getFiberKey(el: HTMLElement): string | null {
-  return Object.keys(el).find((k) => k.startsWith("__reactFiber$")) ?? null;
-}
+// Distinct colors per depth level, cycling after 8
+const DEPTH_COLORS = [
+  "#a5b4fc", // indigo
+  "#6ee7b7", // emerald
+  "#fcd34d", // amber
+  "#f9a8d4", // pink
+  "#67e8f9", // cyan
+  "#d8b4fe", // purple
+  "#86efac", // green
+  "#fda4af", // rose
+];
 
-function collectComponents(fiber: any, depth: number, results: ComponentNode[]) {
-  if (!fiber) return;
+const KIND_COLORS: Record<SerializedProp["kind"], string> = {
+  string: "#6ee7b7",
+  number: "#fcd34d",
+  boolean: "#f9a8d4",
+  function: "#d8b4fe",
+  element: "#67e8f9",
+  object: "#94a3b8",
+  null: "#4b4b60",
+};
 
-  let name = "";
-  let isForwardRef = false;
-  let isMemo = false;
-
-  if (typeof fiber.type === "function") {
-    name = fiber.type.displayName || fiber.type.name || "";
-  } else if (fiber.type && typeof fiber.type === "object") {
-    // memo, forwardRef, lazy, etc.
-    const inner = fiber.type;
-    if (inner.$$typeof) {
-      const sym = String(inner.$$typeof);
-      isForwardRef = sym.includes("forward_ref");
-      isMemo = sym.includes("memo");
-    }
-    name =
-      inner.displayName || inner.render?.name || inner.type?.name || inner.type?.displayName || "";
-  }
-
-  const isComponent = !!name && name !== "Anonymous";
-  const nextDepth = isComponent ? depth + 1 : depth;
-
-  if (isComponent) {
-    results.push({
-      name,
-      depth,
-      key: fiber.key ?? null,
-      isForwardRef,
-      isMemo,
-    });
-  }
-
-  collectComponents(fiber.child, nextDepth, results);
-  collectComponents(fiber.sibling, depth, results);
-}
-
-function buildTree(container: HTMLElement): ComponentNode[] {
-  const fiberKey = getFiberKey(container);
-  if (!fiberKey) return [];
-  const fiber = (container as any)[fiberKey];
-  const results: ComponentNode[] = [];
-  collectComponents(fiber?.child, 0, results);
-  return results;
+function depthColor(depth: number): string {
+  return DEPTH_COLORS[depth % DEPTH_COLORS.length];
 }
 
 function TypeBadge({ label, color }: { label: string; color: string }) {
@@ -80,64 +51,148 @@ function TypeBadge({ label, color }: { label: string; color: string }) {
   );
 }
 
-export function TraceTab({ containerRef }: { containerRef: React.RefObject<HTMLElement | null> }) {
-  const [nodes, setNodes] = useState<ComponentNode[]>([]);
+const MAX_INLINE_PROPS = 3;
 
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    // Small delay to ensure React has finished rendering into the container
-    const id = setTimeout(() => setNodes(buildTree(el)), 50);
-    return () => clearTimeout(id);
-  }, [containerRef.current]); // eslint-disable-line react-hooks/exhaustive-deps
+function PropList({ props }: { props: Record<string, SerializedProp> }) {
+  const entries = Object.entries(props);
+  const visible = entries.slice(0, MAX_INLINE_PROPS);
+  const overflow = entries.length - MAX_INLINE_PROPS;
+  return (
+    <span
+      style={{
+        marginLeft: 8,
+        fontFamily: "monospace",
+        fontSize: 11,
+        display: "flex",
+        alignItems: "center",
+        flexWrap: "wrap",
+        gap: "0 6px",
+        minWidth: 0,
+      }}
+    >
+      {visible.map(([k, p]) => (
+        <span key={k}>
+          <span style={{ color: "#4b5563" }}>{k}</span>
+          <span style={{ color: "#3a3a4e" }}>=</span>
+          <span style={{ color: KIND_COLORS[p.kind] }}>{p.value}</span>
+        </span>
+      ))}
+      {overflow > 0 && <span style={{ color: "#4b4b60" }}>+{overflow}</span>}
+    </span>
+  );
+}
 
-  if (nodes.length === 0) {
+export function TraceTab({
+  nodes = [],
+  onHighlight,
+}: {
+  nodes: ComponentNode[];
+  onHighlight?: (highlights: { path: number[]; color: string }[]) => void;
+}) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedIndices, setSelectedIndices] = useState<Set<number>>(new Set());
+
+  function emit(selected: Set<number>, hovered: number | null) {
+    const highlights: { path: number[]; color: string }[] = [];
+    for (const idx of selected) {
+      const node = nodes[idx];
+      if (node?.domPath) highlights.push({ path: node.domPath, color: depthColor(node.depth) });
+    }
+    if (hovered !== null && !selected.has(hovered)) {
+      const node = nodes[hovered];
+      if (node?.domPath) highlights.push({ path: node.domPath, color: depthColor(node.depth) });
+    }
+    onHighlight?.(highlights);
+  }
+
+  if (nodes?.length === 0) {
     return (
       <div style={{ padding: "32px 20px", textAlign: "center", color: "#4b4b60", fontSize: 13 }}>
-        No React components detected
+        Play the test or interact with it to see the component trace
       </div>
     );
   }
 
   return (
-    <div style={{ padding: "12px 20px", display: "flex", flexDirection: "column", gap: 2 }}>
-      {nodes.map((node, i) => (
-        <div
-          key={i}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            paddingLeft: 8 + node.depth * 16,
-            paddingTop: 4,
-            paddingBottom: 4,
-            borderRadius: 5,
-            fontSize: 12,
-          }}
-        >
-          {/* Tree connector */}
-          <span style={{ color: "#3a3a4e", marginRight: 6, fontSize: 10, flexShrink: 0 }}>
-            {node.depth > 0 ? "└" : "○"}
-          </span>
-
-          {/* Component name */}
-          <span style={{ color: "#a5b4fc", fontFamily: "monospace", fontWeight: 600 }}>
-            {"<"}
-            {node.name}
-            {">"}
-          </span>
-
-          {/* Badges */}
-          {node.isMemo && <TypeBadge label="memo" color="#f59e0b" />}
-          {node.isForwardRef && <TypeBadge label="ref" color="#06b6d4" />}
-          {node.key && (
+    <div
+      style={{ padding: "12px 20px", display: "flex", flexDirection: "column", gap: 2 }}
+      onMouseLeave={() => {
+        setHoveredIndex(null);
+        emit(selectedIndices, null);
+      }}
+    >
+      {nodes.map((node: ComponentNode, i: number) => {
+        const isHovered = hoveredIndex === i;
+        const isSelected = selectedIndices.has(i);
+        const color = depthColor(node.depth);
+        const propEntries = node.props ? Object.entries(node.props) : [];
+        return (
+          <div
+            key={i}
+            onMouseEnter={() => {
+              setHoveredIndex(i);
+              emit(selectedIndices, i);
+            }}
+            onClick={() => {
+              const next = new Set(selectedIndices);
+              if (next.has(i)) next.delete(i);
+              else next.add(i);
+              setSelectedIndices(next);
+              emit(next, hoveredIndex);
+            }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: 8 + node.depth * 16,
+              paddingTop: 4,
+              paddingBottom: 4,
+              borderRadius: 5,
+              fontSize: 12,
+              cursor: node.domPath ? "pointer" : "default",
+              background: isSelected ? `${color}12` : isHovered ? "#ffffff08" : "transparent",
+              outline: isSelected ? `1px solid ${color}40` : "none",
+              minWidth: 0,
+            }}
+          >
+            {/* Depth color swatch */}
             <span
-              style={{ marginLeft: 8, fontSize: 11, color: "#4b4b60", fontFamily: "monospace" }}
-            >
-              key="{node.key}"
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: color,
+                flexShrink: 0,
+                marginRight: 6,
+                opacity: isHovered || isSelected ? 1 : 0.45,
+              }}
+            />
+            <span style={{ color: "#3a3a4e", marginRight: 4, fontSize: 10, flexShrink: 0 }}>
+              {node.depth > 0 ? "└" : "○"}
             </span>
-          )}
-        </div>
-      ))}
+            <span style={{ color, fontFamily: "monospace", fontWeight: 600, flexShrink: 0 }}>
+              {"<"}
+              {node.name}
+              {">"}
+            </span>
+            {node.isMemo && <TypeBadge label="memo" color="#f59e0b" />}
+            {node.isForwardRef && <TypeBadge label="ref" color="#06b6d4" />}
+            {node.key && (
+              <span
+                style={{
+                  marginLeft: 8,
+                  fontSize: 11,
+                  color: "#4b4b60",
+                  fontFamily: "monospace",
+                  flexShrink: 0,
+                }}
+              >
+                key="{node.key}"
+              </span>
+            )}
+            {propEntries.length > 0 && <PropList props={node.props!} />}
+          </div>
+        );
+      })}
     </div>
   );
 }

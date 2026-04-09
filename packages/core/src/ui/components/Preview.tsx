@@ -9,10 +9,11 @@ import { OutlineToggle } from "./toolbar/OutlineToggle";
 import { MeasureToggle, MeasureOverlay, useMeasure } from "./toolbar/MeasureToggle";
 import { AxePanel } from "./AxePanel";
 import { AssertionsTab } from "./tabs/AssertionsTab";
-import { TraceTab } from "./tabs/TraceTab";
+import { TraceTab, type ComponentNode } from "./tabs/TraceTab";
 import { CodeTab } from "./tabs/CodeTab";
 import { ConsoleTab } from "./tabs/ConsoleTab";
 import { MocksPanel } from "./tabs/MocksPanel";
+import { DepsTab } from "./tabs/DepsTab";
 import { getRegisteredTabs } from "../plugins";
 import type { TabPlugin } from "../plugins";
 import type { IstanbulCoverage, TestSuite } from "../../framework/types";
@@ -833,6 +834,8 @@ interface DisplayApi {
   playTest: (suiteName: string, testName: string, speed?: number) => Promise<boolean>;
   displayRoot: HTMLElement;
   runAxe?: () => Promise<import("axe-core").AxeResults>;
+  highlight?: (highlights: { path: number[]; color: string }[]) => void;
+  getComponentTree?: () => ComponentNode[];
 }
 
 function ToolbarTip({ label, children }: { label: string; children: React.ReactNode }) {
@@ -895,9 +898,11 @@ export function Preview({
   const [displayHasContent, setDisplayHasContent] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [liveComponentTree, setLiveComponentTree] = useState<ComponentNode[] | null>(null);
   // When a snapshot mismatch exists, show the diff by default.
   // Pressing play hides it so the live iframe can take over.
   const [showComparison, setShowComparison] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -948,6 +953,7 @@ export function Preview({
     displayApiRef.current.playTest(test.suiteName, test.name).then(() => {
       setIsPlaying(false);
       setHasPlayed(true);
+      setLiveComponentTree(displayApiRef.current?.getComponentTree?.() ?? null);
     });
   }, [test, isPlaying]);
 
@@ -985,6 +991,7 @@ export function Preview({
     if (!displayReady || !test || !displayApiRef.current) return;
     if (test.status === "running") return; // wait for run to complete before refreshing
     setDisplayHasContent(false);
+    setLiveComponentTree(null);
     canvasRef.current = null;
     const snapHtml = test.snapshots[test.snapshots.length - 1]?.html;
     displayApiRef.current.showTest(test.suiteName, test.name, snapHtml).then((rendered) => {
@@ -1056,6 +1063,29 @@ export function Preview({
         : "";
 
     const update = () => {
+      if (expanded) {
+        const expW = window.innerWidth * 0.8;
+        const expH = window.innerHeight * 0.8;
+        const parts: string[] = [
+          "position:fixed",
+          `top:${window.innerHeight * 0.1}px`,
+          `left:${window.innerWidth * 0.1}px`,
+          `width:${expW}px`,
+          `height:${expH}px`,
+          "border:none",
+          "pointer-events:auto",
+          "overflow:auto",
+          "background:#0f0f13",
+          "z-index:100",
+          "opacity:1",
+          "border-radius:8px",
+          "outline:1px solid rgba(99,102,241,0.4)",
+          "box-shadow:0 0 0 4px rgba(99,102,241,0.06),0 24px 64px rgba(0,0,0,0.6)",
+        ];
+        if (visionCss) parts.push(visionCss);
+        iframe.style.cssText = parts.join(";");
+        return;
+      }
       const rect = canvas.getBoundingClientRect();
       const frameW = vw !== null ? Math.min(vw, rect.width) : rect.width;
       const frameLeft = rect.left + (rect.width - frameW) / 2;
@@ -1090,7 +1120,7 @@ export function Preview({
       ro.disconnect();
       window.removeEventListener("resize", update);
     };
-  }, [showLive, canvasPaneHeight, viewport, vision, isPlaying, hasPlayed]);
+  }, [showLive, canvasPaneHeight, viewport, vision, isPlaying, hasPlayed, expanded]);
 
   const prevTestId = useRef<string | null>(null);
   if ((test?.id ?? null) !== prevTestId.current) {
@@ -1158,6 +1188,7 @@ export function Preview({
     ...(test.mockEntries.length > 0
       ? [{ id: "mocks" as Tab, label: "Mocks", count: mockCallCount || test.mockEntries.length }]
       : [{ id: "mocks" as Tab, label: "Mocks" }]),
+    { id: "dependencies", label: "Dependencies" },
     ...getRegisteredTabs().map((p) => ({
       id: p.id,
       label: p.label,
@@ -1186,6 +1217,19 @@ export function Preview({
         title="FieldTest Display"
         style={{ position: "fixed", width: 0, height: 0, border: "none", pointerEvents: "none" }}
       />
+
+      {/* Backdrop for expanded mode */}
+      {expanded && (
+        <div
+          onClick={() => setExpanded(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.7)",
+            zIndex: 99,
+          }}
+        />
+      )}
 
       <div
         style={{
@@ -1409,6 +1453,52 @@ export function Preview({
               <ToolbarTip label="Vision simulation">
                 <VisionFilter value={vision} onChange={setVision} />
               </ToolbarTip>
+              <div style={{ flexShrink: 0, width: 1, height: 16, background: "#2a2a36" }} />
+              <ToolbarTip label={expanded ? "Collapse preview" : "Expand preview"}>
+                <button
+                  onClick={() => setExpanded((v) => !v)}
+                  style={{
+                    flexShrink: 0,
+                    width: 26,
+                    height: 26,
+                    borderRadius: 5,
+                    border: "1px solid",
+                    borderColor: expanded ? "rgba(99,102,241,0.6)" : "#2a2a36",
+                    background: expanded ? "rgba(99,102,241,0.2)" : "transparent",
+                    color: expanded ? "#a5b4fc" : "#4b4b60",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {expanded ? (
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    >
+                      <path d="M4.5 1.5H1.5v3M7.5 1.5h3v3M4.5 10.5H1.5v-3M7.5 10.5h3v-3" />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    >
+                      <path d="M1.5 4.5V1.5h3M10.5 4.5V1.5h-3M1.5 7.5v3h3M10.5 7.5v3h-3" />
+                    </svg>
+                  )}
+                </button>
+              </ToolbarTip>
             </div>
           </div>
 
@@ -1583,7 +1673,10 @@ export function Preview({
               />
             )}
             {activeTab === "trace" && (
-              <TraceTab containerRef={canvasRef as React.RefObject<HTMLElement | null>} />
+              <TraceTab
+                nodes={liveComponentTree ?? activeSnap?.componentTree ?? []}
+                onHighlight={(highlights) => displayApiRef.current?.highlight?.(highlights)}
+              />
             )}
             {activeTab === "code" && (
               <CodeTab
@@ -1596,6 +1689,9 @@ export function Preview({
             )}
             {activeTab === "console" && <ConsoleTab consoleLogs={test.consoleLogs} />}
             {activeTab === "mocks" && <MocksPanel test={test} />}
+            {activeTab === "dependencies" && (
+              <DepsTab sourceFile={suites.find((s) => s.id === test.suiteId)?.sourceFile} />
+            )}
             {getRegisteredTabs().map((plugin) => {
               if (activeTab !== plugin.id) return null;
               const Component = getPluginComponent(plugin);

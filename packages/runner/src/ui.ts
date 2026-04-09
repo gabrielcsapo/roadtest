@@ -10,8 +10,10 @@ import type { IncomingMessage } from "node:http";
 
 const SOURCE_EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx"]);
 const IGNORE_PATTERNS = [".test.", ".spec.", "/node_modules/", "/__", ".d.ts"];
+const IGNORE_PATTERNS_NO_TESTS = ["/node_modules/", "/__", ".d.ts"];
 
-async function collectSourceFiles(dir: string): Promise<string[]> {
+async function collectSourceFiles(dir: string, includeTests = false): Promise<string[]> {
+  const ignore = includeTests ? IGNORE_PATTERNS_NO_TESTS : IGNORE_PATTERNS;
   const results: string[] = [];
   let entries: Awaited<ReturnType<typeof readdir>>;
   try {
@@ -23,11 +25,11 @@ async function collectSourceFiles(dir: string): Promise<string[]> {
     const fullPath = join(dir, entry.name);
     if (entry.isDirectory()) {
       if (entry.name === "node_modules" || entry.name.startsWith(".")) continue;
-      results.push(...(await collectSourceFiles(fullPath)));
+      results.push(...(await collectSourceFiles(fullPath, includeTests)));
     } else if (entry.isFile()) {
       const ext = entry.name.slice(entry.name.lastIndexOf("."));
       if (!SOURCE_EXTENSIONS.has(ext)) continue;
-      if (IGNORE_PATTERNS.some((p) => fullPath.includes(p))) continue;
+      if (ignore.some((p) => fullPath.includes(p))) continue;
       results.push(fullPath);
     }
   }
@@ -36,10 +38,11 @@ async function collectSourceFiles(dir: string): Promise<string[]> {
 
 async function buildGraphData(
   root: string,
+  includeTests = false,
 ): Promise<{ nodes: { id: string; shortPath: string }[]; edges: { from: string; to: string }[] }> {
   const srcDir = resolve(root, "src");
   await stat(srcDir);
-  const allFiles = await collectSourceFiles(srcDir);
+  const allFiles = await collectSourceFiles(srcDir, includeTests);
   const fileSet = new Set(allFiles);
 
   const nodes = allFiles.map((f) => ({ id: f, shortPath: f.replace(root + "/", "") }));
@@ -130,6 +133,91 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
         } catch {
           res.writeHead(404);
           res.end("Not Found");
+        }
+      });
+
+      // Dependency graph endpoint — returns dep tree rooted at a specific test file
+      server.middlewares.use("/__fieldtest_deps__", async (req, res) => {
+        try {
+          const url = new URL(req.url ?? "/", "http://localhost");
+          const file = url.searchParams.get("file");
+          if (!file) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: "Missing file param" }));
+            return;
+          }
+          // file may be a Vite URL (/src/App.test.tsx) or absolute path
+          const absRoot = resolve(root, file.startsWith("/") ? file.slice(1) : file);
+          const srcDir = resolve(root, "src");
+          const allFiles = await collectSourceFiles(srcDir);
+          const fileSet = new Set(allFiles);
+
+          // Build imports map: file → [files it imports]
+          const importRe =
+            /(?:^|\n)\s*(?:import|export)(?:\s+type)?\s+(?:[^'"]*?\s+from\s+)?['"](\.\.?\/[^'"]+)['"]/g;
+
+          async function parseImports(f: string): Promise<string[]> {
+            const deps: string[] = [];
+            try {
+              const content = await readFile(f, "utf8");
+              const fileDir = dirname(f);
+              importRe.lastIndex = 0;
+              let m: RegExpExecArray | null;
+              while ((m = importRe.exec(content)) !== null) {
+                const base = resolve(fileDir, m[1]);
+                let resolved: string | null = null;
+                for (const ext of ["", ".ts", ".tsx", ".js", ".jsx"]) {
+                  if (fileSet.has(base + ext)) {
+                    resolved = base + ext;
+                    break;
+                  }
+                }
+                if (!resolved) {
+                  for (const idx of ["/index.ts", "/index.tsx", "/index.js", "/index.jsx"]) {
+                    if (fileSet.has(base + idx)) {
+                      resolved = base + idx;
+                      break;
+                    }
+                  }
+                }
+                if (resolved) deps.push(resolved);
+              }
+            } catch {
+              /* skip unreadable */
+            }
+            return deps;
+          }
+
+          const importsOf = new Map<string, string[]>();
+          // collectSourceFiles skips test/spec files — parse all source files including
+          // the test file itself (added to fileSet so its deps can be resolved)
+          fileSet.add(absRoot);
+          const filesToParse = [...allFiles, absRoot];
+          for (const f of filesToParse) {
+            importsOf.set(f, await parseImports(f));
+          }
+
+          // BFS from the test file to collect its transitive dependency tree
+          const graph: Record<string, string[]> = {};
+          const queue: string[] = [absRoot];
+          const visited = new Set<string>([absRoot]);
+          while (queue.length > 0) {
+            const current = queue.shift()!;
+            const deps = importsOf.get(current) ?? [];
+            graph[current] = deps;
+            for (const dep of deps) {
+              if (!visited.has(dep)) {
+                visited.add(dep);
+                queue.push(dep);
+              }
+            }
+          }
+
+          res.setHeader("Content-Type", "application/json");
+          res.end(JSON.stringify({ root: absRoot, graph }));
+        } catch {
+          res.setHeader("Content-Type", "application/json");
+          res.end(JSON.stringify({ root: "", graph: {} }));
         }
       });
 
@@ -364,9 +452,9 @@ export async function buildUi() {
   }
 
   // Write graph data as a static JSON file so the UI can load it without a dev server.
-  // GraphView fetches this from ./fieldtest-graph.json relative to the page.
+  // includeTests=true so the DepsTab can trace dep trees rooted at test files.
   const absOutDir = resolve(root, outDir);
-  const graphData = await buildGraphData(root).catch(() => ({ nodes: [], edges: [] }));
+  const graphData = await buildGraphData(root, true).catch(() => ({ nodes: [], edges: [] }));
   await writeFile(join(absOutDir, "fieldtest-graph.json"), JSON.stringify(graphData));
 
   // Write source file contents so CoverageExplorer can display source in static deployments.
