@@ -1,0 +1,59 @@
+## registerTab
+
+Add custom tabs to the browser UI's detail view. Tabs receive the full test case data and can render anything.
+
+Use `load` (preferred) when registering from `.fieldtest/setup.ts`, which runs in all frames. This avoids React instance conflicts by letting the UI frame import the component itself:
+
+```tsx
+// .fieldtest/setup.ts
+import { registerTab } from "@fieldtest/core";
+
+registerTab({
+  id: "network",
+  label: "Network",
+  load: () => import("./NetworkTab").then((m) => m.NetworkTab),
+});
+```
+
+```tsx
+// .fieldtest/NetworkTab.tsx
+import type { TestCase } from "@fieldtest/core";
+
+export function NetworkTab({ test }: { test: TestCase }) {
+  return (
+    <div>
+      {test.networkEntries?.map((entry) => (
+        <div key={entry.id}>
+          <span>{entry.method}</span>
+          <span>{entry.url}</span>
+          <span>{entry.status}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+Alternatively, pass a `component` directly if you are registering from `.fieldtest/preview.tsx` (UI frame only):
+
+```tsx
+import { registerTab } from "@fieldtest/core";
+import { NetworkTab } from "./NetworkTab";
+
+registerTab({
+  id: "network",
+  label: "Network",
+  component: NetworkTab,
+});
+```
+
+You can also add a `getCount` function to show a badge on the tab:
+
+```ts
+registerTab({
+  id: "network",
+  label: "Network",
+  getCount: (test) => test.networkEntries?.length,
+  load: () => import("./NetworkTab").then((m) => m.NetworkTab),
+});
+```

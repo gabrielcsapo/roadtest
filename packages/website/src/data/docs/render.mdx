@@ -1,0 +1,152 @@
+## render
+
+Mounts a React component into an isolated sandbox DOM node and returns React Testing Library queries bound to that node. Every call is fully isolated — the DOM is reset between tests automatically.
+
+### Type signature
+
+```ts
+function render(ui: React.ReactElement): Promise<RenderResult>;
+```
+
+### RenderResult
+
+```ts
+interface RenderResult {
+  // Query by visible text content
+  getByText(text: string | RegExp): HTMLElement;
+  queryByText(text: string | RegExp): HTMLElement | null;
+  findByText(text: string | RegExp): Promise<HTMLElement>;
+  getAllByText(text: string | RegExp): HTMLElement[];
+  queryAllByText(text: string | RegExp): HTMLElement[];
+  findAllByText(text: string | RegExp): Promise<HTMLElement[]>;
+
+  // Query by ARIA role
+  getByRole(role: string, options?: ByRoleOptions): HTMLElement;
+  getAllByRole(role: string, options?: ByRoleOptions): HTMLElement[];
+  queryByRole(role: string, options?: ByRoleOptions): HTMLElement | null;
+  queryAllByRole(role: string, options?: ByRoleOptions): HTMLElement[];
+  findByRole(role: string, options?: ByRoleOptions): Promise<HTMLElement>;
+  findAllByRole(role: string, options?: ByRoleOptions): Promise<HTMLElement[]>;
+
+  // Query by data-testid attribute
+  getByTestId(testId: string): HTMLElement;
+  getAllByTestId(testId: string): HTMLElement[];
+  queryByTestId(testId: string): HTMLElement | null;
+  queryAllByTestId(testId: string): HTMLElement[];
+  findByTestId(testId: string): Promise<HTMLElement>;
+  findAllByTestId(testId: string): Promise<HTMLElement[]>;
+
+  // Query by label text
+  getByLabelText(text: string | RegExp): HTMLElement;
+  getAllByLabelText(text: string | RegExp): HTMLElement[];
+  queryByLabelText(text: string | RegExp): HTMLElement | null;
+  queryAllByLabelText(text: string | RegExp): HTMLElement[];
+  findByLabelText(text: string | RegExp): Promise<HTMLElement>;
+  findAllByLabelText(text: string | RegExp): Promise<HTMLElement[]>;
+
+  // Query by placeholder
+  getByPlaceholderText(text: string | RegExp): HTMLElement;
+  getAllByPlaceholderText(text: string | RegExp): HTMLElement[];
+  queryByPlaceholderText(text: string | RegExp): HTMLElement | null;
+  queryAllByPlaceholderText(text: string | RegExp): HTMLElement[];
+  findByPlaceholderText(text: string | RegExp): Promise<HTMLElement>;
+  findAllByPlaceholderText(text: string | RegExp): Promise<HTMLElement[]>;
+
+  // Query by current input value
+  getByDisplayValue(value: string | RegExp): HTMLElement;
+  getAllByDisplayValue(value: string | RegExp): HTMLElement[];
+  queryByDisplayValue(value: string | RegExp): HTMLElement | null;
+  queryAllByDisplayValue(value: string | RegExp): HTMLElement[];
+  findByDisplayValue(value: string | RegExp): Promise<HTMLElement>;
+  findAllByDisplayValue(value: string | RegExp): Promise<HTMLElement[]>;
+
+  // The raw DOM node the component mounted into
+  container: HTMLElement;
+}
+```
+
+---
+
+## Query variants
+
+Each query comes in six families — singular (`getBy`, `queryBy`, `findBy`) and plural (`getAllBy`, `queryAllBy`, `findAllBy`):
+
+| Prefix        | Not found      | Multiple matches | Async |
+| ------------- | -------------- | ---------------- | ----- |
+| `getBy…`      | throws         | throws           | no    |
+| `getAllBy…`   | throws         | returns array    | no    |
+| `queryBy…`    | returns `null` | throws           | no    |
+| `queryAllBy…` | returns `[]`   | returns array    | no    |
+| `findBy…`     | rejects        | rejects          | yes   |
+| `findAllBy…`  | rejects        | resolves array   | yes   |
+
+Use `getBy` when the element must exist. Use `queryBy` to assert absence. Use `findBy` when the element appears asynchronously (after a state update, fetch, animation, etc.).
+
+```ts
+// Assert element exists
+const btn = getByRole("button", { name: "Submit" });
+
+// Assert element is absent
+expect(queryByText("Loading…")).toBeNull();
+
+// Wait for async element
+const toast = await findByText("Saved!");
+```
+
+---
+
+## Querying by role
+
+`getByRole` is the preferred query for interactive elements. It matches ARIA roles and is the most resilient to markup changes.
+
+```ts
+getByRole("button"); // any button
+getByRole("button", { name: "Submit" }); // button with accessible name "Submit"
+getByRole("textbox", { name: "Email" }); // input labelled "Email"
+getByRole("checkbox", { checked: true }); // checked checkbox
+getByRole("heading", { level: 2 }); // <h2>
+```
+
+Common roles: `button`, `link`, `textbox`, `checkbox`, `radio`, `combobox`, `listbox`, `option`, `menuitem`, `dialog`, `heading`, `img`, `list`, `listitem`.
+
+---
+
+## container
+
+The raw `HTMLElement` the component mounted into. Use it to query with native DOM APIs when RTL queries aren't sufficient.
+
+```ts
+const { container } = await render(<Badge text="new" />)
+expect(container.querySelector('.badge')?.textContent).toBe('new')
+```
+
+---
+
+## With a provider wrapper
+
+If you've set up `.fieldtest/preview.tsx`, any providers (themes, router, context) defined there wrap every `render()` call automatically — no extra setup needed per test.
+
+```tsx
+// .fieldtest/preview.tsx
+export default function Preview({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider theme="dark">
+      <RouterContext>{children}</RouterContext>
+    </ThemeProvider>
+  );
+}
+```
+
+---
+
+## act
+
+For cases where you need to manually flush React's update queue outside of `fireEvent`:
+
+```ts
+import { act } from "@fieldtest/core";
+
+await act(async () => {
+  store.dispatch({ type: "LOAD" });
+});
+```

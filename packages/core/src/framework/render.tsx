@@ -1,5 +1,5 @@
 import { type ReactElement, type ComponentType, createElement } from "react";
-import { currentTest } from "./store";
+import { currentTest, store } from "./store";
 import { registerAfterTestHook } from "./hooks";
 import type { Snapshot } from "./types";
 
@@ -92,6 +92,7 @@ export async function render(element: ReactElement) {
       element: wrapped,
       html: result.container.innerHTML,
       timestamp: Date.now(),
+      comparison: false, // preview-only; not compared against baselines
     };
     currentTest.snapshots.push(snap);
     _lastRenderSnapshot = snap;
@@ -109,16 +110,53 @@ export async function render(element: ReactElement) {
   return result;
 }
 
+/**
+ * Capture the current DOM state as a named filmstrip frame.
+ * These are shown in the snapshot timeline but are NOT compared against
+ * baselines — use expect(el).toMatchSnapshot() for baseline assertions.
+ */
 export async function snapshot(label?: string) {
   if (!currentTest || !_currentContainer) return;
-  const frameLabel = label ?? `step ${currentTest.snapshots.length}`;
-  const lastElement = currentTest.snapshots.at(-1)?.element;
+  const snapLabel = label ?? `step ${currentTest.snapshots.length}`;
+  const lastElement = currentTest.snapshots[currentTest.snapshots.length - 1]?.element;
   if (!lastElement) return;
   currentTest.snapshots.push({
-    label: frameLabel,
+    label: snapLabel,
     element: lastElement,
     html: _currentContainer.innerHTML,
     timestamp: Date.now(),
+    comparison: false, // filmstrip only
+  });
+}
+
+/**
+ * Capture a snapshot assertion for the given element (or the current container
+ * if no element is provided) and record it as a baseline-compared assertion.
+ * Called internally by expect(el).toMatchSnapshot().
+ */
+export function captureSnapshotAssertion(label: string, html: string) {
+  if (!currentTest) return;
+  const lastElement = currentTest.snapshots[currentTest.snapshots.length - 1]?.element;
+  if (lastElement) {
+    currentTest.snapshots.push({
+      label,
+      element: lastElement,
+      html,
+      timestamp: Date.now(),
+      comparison: true,
+    });
+  }
+  const suite = store.getState().suites.find((s) => s.id === currentTest!.suiteId);
+  currentTest.assertions.push({
+    label: `toMatchSnapshot("${label}")`,
+    status: "pass",
+    snapshot: {
+      label,
+      html,
+      sourceFile: suite?.sourceFile,
+      suiteName: suite?.name,
+      testName: currentTest.name,
+    },
   });
 }
 

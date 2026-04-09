@@ -1,0 +1,26 @@
+import { FilmstripDemo } from "../../components/UiDemos";
+
+## Filmstrip
+
+The filmstrip captures a frame for every `render()` call and every explicit `snapshot()` call in a test. Each frame is a live snapshot of the DOM at that exact moment.
+
+Each frame displays:
+
+- A thumbnail of the component at that point in the test
+- The label — either the one you passed to `snapshot()`, or auto-generated for `render()` calls
+- A timestamp relative to test start
+
+Clicking a frame jumps the preview pane to that exact DOM state. This makes it easy to scrub through exactly how your component changed during the test — render by render.
+
+### Grid / measure overlays
+
+The toolbar above the preview has toggles for:
+
+- **Grid** — overlay an 8px grid for alignment checks
+- **Measure** — highlight element dimensions on hover
+- **Outline** — draw outlines around every DOM element
+- **Vision** — simulate color blindness or blur
+
+These overlays apply to the live preview only and don't affect your test results.
+
+<FilmstripDemo />

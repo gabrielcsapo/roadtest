@@ -1,0 +1,21 @@
+## snapshot
+
+`snapshot(label)` captures the current rendered DOM state and adds a frame to the filmstrip in the browser UI.
+
+```ts
+import { render, snapshot, fireEvent } from '@fieldtest/core'
+
+it('shows loading then content', async () => {
+  const { getByText } = await render(<AsyncCard />)
+
+  await snapshot('initial — loading state')
+
+  // wait for async content
+  await findByText('Loaded!')
+  await snapshot('after load')
+})
+```
+
+Snapshots are **visual only** — they don't assert anything. They're checkpoints for you to scrub through in the UI.
+
+> In Node mode, `snapshot()` is a no-op and adds no overhead.

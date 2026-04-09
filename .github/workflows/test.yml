@@ -31,6 +31,9 @@ jobs:
       - name: Build core
         run: pnpm --filter @fieldtest/core build
 
+      - name: Build runner
+        run: pnpm --filter @fieldtest/runner build
+
       - name: Test — example app
         run: pnpm --filter example test:node
 
@@ -39,3 +42,6 @@ jobs:
 
       - name: Test — runner package
         run: pnpm --filter @fieldtest/runner test:node
+
+      - name: Test — scale app
+        run: pnpm --filter scale test

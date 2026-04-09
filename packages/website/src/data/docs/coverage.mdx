@@ -1,0 +1,19 @@
+## Coverage
+
+```bash
+fieldtest --coverage
+```
+
+Coverage uses Node's built-in V8 instrumentation via `NODE_V8_COVERAGE`, which captures everything — including code loaded through tsx's ESM loader hook. The output is converted to Istanbul format.
+
+### Output
+
+```
+Coverage: 94.2% statements  88.6% branches  91.0% functions
+```
+
+A full Istanbul-format JSON report is written to `coverage/` for consumption by tools like codecov or your CI coverage reporter.
+
+### Per-test coverage
+
+In the browser UI, coverage is tracked per individual test — not just in aggregate. This means you can see exactly which lines test X exercises versus test Y.

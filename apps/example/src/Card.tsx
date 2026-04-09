@@ -29,7 +29,6 @@ export function Card({
         maxWidth: 320,
       }}
     >
-      hu
       <h3
         data-testid="card-title"
         style={{ color: "#e2e2e8", fontSize: 16, fontWeight: 700, margin: 0 }}

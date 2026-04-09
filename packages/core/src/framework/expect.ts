@@ -1,4 +1,5 @@
 import { currentTest } from "./store";
+import { captureSnapshotAssertion } from "./render";
 
 class AssertionError extends Error {
   constructor(msg: string) {
@@ -30,7 +31,50 @@ interface Matchers {
   toThrow(msg?: string): void;
   toBeGreaterThan(n: number): void;
   toBeLessThan(n: number): void;
+  toBeGreaterThanOrEqual(n: number): void;
+  toBeLessThanOrEqual(n: number): void;
+  toMatch(pattern: string | RegExp): void;
+  toMatchObject(expected: object): void;
+  toBeInstanceOf(cls: new (...args: unknown[]) => unknown): void;
+  toHaveProperty(keyPath: string, value?: unknown): void;
+  toHaveBeenCalled(): void;
+  toHaveBeenCalledTimes(n: number): void;
+  toHaveBeenCalledWith(...args: unknown[]): void;
+  toMatchSnapshot(label?: string): Promise<void>;
   not: Matchers;
+}
+
+function isSubset(obj: unknown, subset: unknown): boolean {
+  if (typeof subset !== "object" || subset === null) return Object.is(obj, subset);
+  if (typeof obj !== "object" || obj === null) return false;
+  for (const key of Object.keys(subset as object)) {
+    if (!isSubset((obj as Record<string, unknown>)[key], (subset as Record<string, unknown>)[key]))
+      return false;
+  }
+  return true;
+}
+
+function getNestedValue(obj: unknown, keyPath: string): { found: boolean; value: unknown } {
+  const keys = keyPath.split(".");
+  let current: unknown = obj;
+  for (const key of keys) {
+    if (current === null || current === undefined || typeof current !== "object") {
+      return { found: false, value: undefined };
+    }
+    if (!(key in (current as object))) return { found: false, value: undefined };
+    current = (current as Record<string, unknown>)[key];
+  }
+  return { found: true, value: current };
+}
+
+/** Type for spy functions decorated by wrapWithSpies() */
+interface SpyFn {
+  _isSpy: true;
+  _spyCalls: Array<{ args: unknown[]; result: unknown; threw: boolean }>;
+}
+
+function isSpy(v: unknown): v is SpyFn {
+  return typeof v === "function" && (v as unknown as SpyFn)._isSpy === true;
 }
 
 function createMatchers(received: unknown, negated = false): Matchers {
@@ -127,6 +171,102 @@ function createMatchers(received: unknown, negated = false): Matchers {
     },
     toBeLessThan(n) {
       assert((received as number) < n, `Expected ${received} < ${n}`, `toBeLessThan(${n})`);
+    },
+    toBeGreaterThanOrEqual(n) {
+      assert(
+        (received as number) >= n,
+        `Expected ${received} >= ${n}`,
+        `toBeGreaterThanOrEqual(${n})`,
+      );
+    },
+    toBeLessThanOrEqual(n) {
+      assert(
+        (received as number) <= n,
+        `Expected ${received} <= ${n}`,
+        `toBeLessThanOrEqual(${n})`,
+      );
+    },
+    toMatch(pattern) {
+      const ok =
+        pattern instanceof RegExp
+          ? pattern.test(String(received))
+          : String(received).includes(pattern);
+      assert(
+        ok,
+        `Expected ${stringify(received)} to match ${stringify(pattern)}`,
+        `toMatch(${stringify(pattern)})`,
+      );
+    },
+    toMatchObject(expected) {
+      assert(
+        isSubset(received, expected),
+        `Expected ${stringify(received)} to match object ${stringify(expected)}`,
+        `toMatchObject(${stringify(expected)})`,
+      );
+    },
+    toBeInstanceOf(cls) {
+      assert(
+        received instanceof cls,
+        `Expected value to be an instance of ${cls.name}`,
+        `toBeInstanceOf(${cls.name})`,
+      );
+    },
+    toHaveProperty(keyPath, value) {
+      const { found, value: actual } = getNestedValue(received, keyPath);
+      if (value !== undefined) {
+        assert(
+          found && Object.is(actual, value),
+          `Expected property "${keyPath}" to equal ${stringify(value)}, got ${stringify(actual)}`,
+          `toHaveProperty(${stringify(keyPath)}, ${stringify(value)})`,
+        );
+      } else {
+        assert(
+          found,
+          `Expected object to have property "${keyPath}"`,
+          `toHaveProperty(${stringify(keyPath)})`,
+        );
+      }
+    },
+    toHaveBeenCalled() {
+      if (!isSpy(received)) throw new AssertionError("Expected a spy function");
+      assert(
+        received._spyCalls.length > 0,
+        `Expected spy to have been called`,
+        "toHaveBeenCalled()",
+      );
+    },
+    toHaveBeenCalledTimes(n) {
+      if (!isSpy(received)) throw new AssertionError("Expected a spy function");
+      assert(
+        received._spyCalls.length === n,
+        `Expected spy to have been called ${n} time(s) but was called ${received._spyCalls.length} time(s)`,
+        `toHaveBeenCalledTimes(${n})`,
+      );
+    },
+    toHaveBeenCalledWith(...args) {
+      if (!isSpy(received)) throw new AssertionError("Expected a spy function");
+      const match = received._spyCalls.some(
+        (call) => JSON.stringify(call.args) === JSON.stringify(args),
+      );
+      assert(
+        match,
+        `Expected spy to have been called with ${stringify(args)}`,
+        `toHaveBeenCalledWith(${args.map(stringify).join(", ")})`,
+      );
+    },
+
+    async toMatchSnapshot(label?: string) {
+      const html =
+        received instanceof HTMLElement
+          ? received.innerHTML
+          : typeof received === "string"
+            ? received
+            : undefined;
+      const snapCount = currentTest
+        ? currentTest.assertions.filter((a) => a.snapshot).length + 1
+        : 1;
+      const snapLabel = label ?? `snapshot ${snapCount}`;
+      captureSnapshotAssertion(snapLabel, html ?? "");
     },
   };
 

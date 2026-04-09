@@ -1,0 +1,31 @@
+import { TabsDemo } from "../../components/UiDemos";
+
+## Tabs
+
+Each selected test shows multiple inspection tabs:
+
+### Assertions
+
+A list of every `expect()` call in the test, showing the matcher, actual value, and pass/fail status. Failed assertions show a diff.
+
+### Trace
+
+A timeline of all render calls, effect runs, and state updates during the test.
+
+### Coverage
+
+Line-by-line source coverage for just this test. Lines hit are highlighted green; missed lines are dim. Click any file in the coverage explorer to see its annotated source.
+
+### Console
+
+All `console.log`, `console.warn`, and `console.error` calls captured during the test, with the originating line.
+
+### Network
+
+Every outgoing fetch/XHR intercepted by MSW, showing method, URL, request body, response status, and response body.
+
+### Axe
+
+Accessibility audit results from axe-core. Failing rules show the impacted DOM nodes highlighted in the preview. Passing rules are listed in green.
+
+<TabsDemo />

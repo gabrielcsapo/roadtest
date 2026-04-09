@@ -1,0 +1,133 @@
+## fireEvent
+
+Async wrappers around standard DOM events. Always `await` them — each call wraps the event dispatch in React's `act()` so state updates are flushed before execution continues.
+
+### Type signature
+
+```ts
+const fireEvent: {
+  (element: Element | Node | Document | Window, event: Event): Promise<void>;
+
+  // Mouse
+  click(element: Element, props?: MouseEventInit): Promise<void>;
+  dblClick(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseDown(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseUp(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseEnter(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseLeave(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseOver(element: Element, props?: MouseEventInit): Promise<void>;
+  mouseOut(element: Element, props?: MouseEventInit): Promise<void>;
+  contextMenu(element: Element, props?: MouseEventInit): Promise<void>;
+
+  // Input
+  change(element: Element, props?: EventInit): Promise<void>;
+  input(element: Element, props?: EventInit): Promise<void>;
+  submit(element: Element, props?: EventInit): Promise<void>;
+
+  // Keyboard
+  keyDown(element: Element, props?: KeyboardEventInit): Promise<void>;
+  keyUp(element: Element, props?: KeyboardEventInit): Promise<void>;
+  keyPress(element: Element, props?: KeyboardEventInit): Promise<void>;
+
+  // Focus
+  focus(element: Element, props?: FocusEventInit): Promise<void>;
+  blur(element: Element, props?: FocusEventInit): Promise<void>;
+
+  // Scroll
+  scroll(element: Element, props?: EventInit): Promise<void>;
+};
+```
+
+---
+
+## Mouse events
+
+```ts
+import { fireEvent } from "@fieldtest/core";
+
+await fireEvent.click(button);
+await fireEvent.dblClick(button);
+await fireEvent.mouseDown(element);
+await fireEvent.mouseUp(element);
+await fireEvent.mouseEnter(element);
+await fireEvent.mouseLeave(element);
+await fireEvent.mouseOver(element);
+await fireEvent.mouseOut(element);
+await fireEvent.contextMenu(element);
+```
+
+---
+
+## Input events
+
+Use the `target` property to simulate value changes on inputs:
+
+```ts
+await fireEvent.input(inputEl, { target: { value: "hello" } });
+await fireEvent.change(selectEl, { target: { value: "option-2" } });
+await fireEvent.submit(formEl);
+```
+
+`input` fires the `input` DOM event (fires on every keystroke in a real browser). `change` fires the `change` event (fires on blur/commit). For React controlled inputs, either usually works.
+
+---
+
+## Keyboard events
+
+Pass a `KeyboardEventInit` object to specify the key:
+
+```ts
+await fireEvent.keyDown(element, { key: "Enter" });
+await fireEvent.keyDown(element, { key: "Escape" });
+await fireEvent.keyDown(element, { key: "ArrowDown" });
+await fireEvent.keyUp(element, { key: "Enter" });
+await fireEvent.keyPress(element, { key: "a", charCode: 97 });
+```
+
+Common `key` values: `'Enter'`, `'Escape'`, `'Tab'`, `'Backspace'`, `'Delete'`, `'ArrowUp'`, `'ArrowDown'`, `'ArrowLeft'`, `'ArrowRight'`, `'Space'`.
+
+---
+
+## Focus events
+
+```ts
+await fireEvent.focus(inputEl);
+await fireEvent.blur(inputEl);
+```
+
+---
+
+## Scroll
+
+```ts
+await fireEvent.scroll(scrollableEl);
+```
+
+---
+
+## Example
+
+```tsx
+it("filters results as the user types", async () => {
+  const { getByRole, getAllByRole, queryByText } = await render(<SearchBox />);
+  const input = getByRole("textbox");
+
+  await fireEvent.input(input, { target: { value: "react" } });
+
+  const results = getAllByRole("listitem");
+  expect(results.length).toBeGreaterThan(0);
+  expect(queryByText("No results")).toBeNull();
+});
+```
+
+```tsx
+it("submits on Enter key", async () => {
+  const { getByRole } = await render(<SearchBox />);
+  const input = getByRole("textbox");
+
+  await fireEvent.input(input, { target: { value: "query" } });
+  await fireEvent.keyDown(input, { key: "Enter" });
+
+  expect(onSearch).toHaveBeenCalledWith("query");
+});
+```

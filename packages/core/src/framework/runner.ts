@@ -60,15 +60,11 @@ function interceptConsole(entries: ConsoleEntry[]): () => void {
   };
 }
 
-/** Lazily resolved cleanup() from @testing-library/react (browser only) */
-let _cleanup: (() => void) | null = null;
-async function getCleanup() {
-  if (_cleanup) return _cleanup;
-  if (typeof document !== "undefined") {
-    const mod = await import("@testing-library/react");
-    _cleanup = mod.cleanup;
-  }
-  return _cleanup;
+/** Resolves cleanup() from @testing-library/react (browser only). */
+async function getCleanup(): Promise<(() => void) | null> {
+  if (typeof document === "undefined") return null;
+  const { cleanup } = await import("@testing-library/react");
+  return cleanup;
 }
 
 /**
@@ -96,51 +92,77 @@ async function computeTestCoverage(beforeSnap: unknown): Promise<IstanbulCoverag
   return beforeSnap && afterCov ? diffCoverage(beforeSnap as IstanbulCoverage, afterCov) : null;
 }
 
+const DEFAULT_TIMEOUT_MS = 5000;
+let _timeoutMs = DEFAULT_TIMEOUT_MS;
+
+export function setTestTimeout(ms: number): void {
+  _timeoutMs = ms;
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number, testName: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`Test timed out after ${ms}ms: "${testName}"`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
 async function execTest(test: TestCase, cleanup: (() => void) | null) {
-  cleanup?.();
   store.updateTest(test.suiteId, test.id, { status: "running" });
   setCurrentTest(test);
   clearCallLog(); // fresh spy log for this test
   const sourceFile = store.getState().suites.find((s) => s.id === test.suiteId)?.sourceFile;
   const consoleLogs: ConsoleEntry[] = [];
   const restoreConsole = interceptConsole(consoleLogs);
-  await runBeforeTestHooks();
-  const beforeSnap = await takeCoverageSnap();
-  const t0 = Date.now();
+  // Outer try/finally guarantees restoreConsole, setCurrentTest, and afterEach hooks
+  // always run — even if beforeEach hooks or coverage snapshotting throws.
   try {
-    await test.fn();
-    const duration = Date.now() - t0;
-    const testCoverage = await computeTestCoverage(beforeSnap);
-    store.updateTest(test.suiteId, test.id, {
-      status: "pass",
-      snapshots: test.snapshots,
-      assertions: test.assertions,
-      consoleLogs,
-      networkEntries: test.networkEntries,
-      mockEntries: getMockEntriesWithCalls(sourceFile),
-      testCoverage,
-      duration,
-    });
-    return true;
-  } catch (e) {
-    const duration = Date.now() - t0;
-    const testCoverage = await computeTestCoverage(beforeSnap);
-    store.updateTest(test.suiteId, test.id, {
-      status: "fail",
-      error: e instanceof Error ? e.message : String(e),
-      snapshots: test.snapshots,
-      assertions: test.assertions,
-      consoleLogs,
-      networkEntries: test.networkEntries,
-      mockEntries: getMockEntriesWithCalls(sourceFile),
-      testCoverage,
-      duration,
-    });
-    return false;
+    await runBeforeTestHooks();
+    const beforeSnap = await takeCoverageSnap();
+    const t0 = Date.now();
+    try {
+      await withTimeout(Promise.resolve(test.fn!()), _timeoutMs, test.name);
+      const duration = Date.now() - t0;
+      const testCoverage = await computeTestCoverage(beforeSnap);
+      store.updateTest(test.suiteId, test.id, {
+        status: "pass",
+        snapshots: test.snapshots,
+        assertions: test.assertions,
+        consoleLogs,
+        networkEntries: test.networkEntries,
+        mockEntries: getMockEntriesWithCalls(sourceFile),
+        testCoverage,
+        duration,
+      });
+      return true;
+    } catch (e) {
+      const duration = Date.now() - t0;
+      const testCoverage = await computeTestCoverage(beforeSnap);
+      store.updateTest(test.suiteId, test.id, {
+        status: "fail",
+        error: e instanceof Error ? e.message : String(e),
+        snapshots: test.snapshots,
+        assertions: test.assertions,
+        consoleLogs,
+        networkEntries: test.networkEntries,
+        mockEntries: getMockEntriesWithCalls(sourceFile),
+        testCoverage,
+        duration,
+      });
+      return false;
+    }
   } finally {
     restoreConsole();
     setCurrentTest(null);
-    await runAfterTestHooks();
+    // Run afterEach hooks before cleanup so hooks can still read DOM state
+    // (e.g. the snapshot after-hook reads _currentContainer.innerHTML).
+    // A failing hook cannot mask the test result that was already recorded above.
+    try {
+      await runAfterTestHooks();
+    } catch (e) {
+      console.error("[fieldtest] afterEach hook threw:", e);
+    }
+    cleanup?.();
   }
 }
 
@@ -149,6 +171,7 @@ async function execSuite(
   cleanup: (() => void) | null,
   onTestDone?: (done: number) => void,
   doneOffset = 0,
+  options: { grepPattern?: RegExp; onlyMode?: boolean } = {},
 ) {
   store.updateSuite(suite.id, { status: "running" });
   let allPass = true;
@@ -162,6 +185,16 @@ async function execSuite(
     if (test.status === "skipped") continue;
     // Node tests have no fn — run server-side, results pushed via WS
     if (!test.fn) continue;
+    // Skip non-only tests when any test is marked .only
+    if (options.onlyMode && !test.only) {
+      store.updateTest(test.suiteId, test.id, { status: "skipped" });
+      continue;
+    }
+    // Skip tests whose name doesn't match --grep pattern
+    if (options.grepPattern && !options.grepPattern.test(test.name)) {
+      store.updateTest(test.suiteId, test.id, { status: "skipped" });
+      continue;
+    }
     const passed = await execTest(test, cleanup);
     if (!passed) allPass = false;
     localDone++;
@@ -239,14 +272,26 @@ async function collectCoverage() {
   }
 }
 
-export async function runAll() {
+export async function runAll(options: { grep?: string; timeout?: number } = {}) {
   const cleanup = await getCleanup();
   store.reset();
   store.setRunning(true);
+
+  if (options.timeout !== undefined) setTestTimeout(options.timeout);
+
+  const grepPattern = options.grep ? new RegExp(options.grep) : undefined;
+  const onlyMode = store.getState().suites.some((s) => s.tests.some((t) => t.only));
+  const suiteOptions = { grepPattern, onlyMode };
+
   const allTests = store
     .getState()
     .suites.flatMap((s) => s.tests)
-    .filter((t) => t.status !== "skipped");
+    .filter((t) => {
+      if (t.status === "skipped") return false;
+      if (onlyMode && !t.only) return false;
+      if (grepPattern && !grepPattern.test(t.name)) return false;
+      return true;
+    });
   const total = allTests.length;
   const startedAt = Date.now();
   store.setRunProgress({ done: 0, total, startedAt });
@@ -262,11 +307,11 @@ export async function runAll() {
         store.setRunProgress({ done, total, startedAt });
       },
       offset,
+      suiteOptions,
     );
     offset += count;
   }
 
-  cleanup?.();
   store.setRunProgress(null);
   store.setRunning(false);
   await collectCoverage();

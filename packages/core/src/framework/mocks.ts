@@ -38,6 +38,12 @@ function recordCall(
   _callLog.push({ moduleId, fnName, args, result, threw, timestamp: Date.now() });
 }
 
+/** Shape of the spy metadata attached to each wrapped function */
+export interface SpyMetadata {
+  _isSpy: true;
+  _spyCalls: Array<{ args: unknown[]; result: unknown; threw: boolean }>;
+}
+
 /** Wrap every function property in a mock result with a spy */
 function wrapWithSpies(
   moduleId: string,
@@ -51,30 +57,39 @@ function wrapWithSpies(
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fn = value as (...args: any[]) => any;
-    wrapped[key] = (...args: unknown[]) => {
-      let result: unknown;
-      try {
-        result = fn(...args);
-        // Handle async functions: record when the promise settles
-        if (result instanceof Promise) {
-          return result.then(
-            (resolved) => {
-              recordCall(moduleId, key, args, resolved, false);
-              return resolved;
-            },
-            (err) => {
-              recordCall(moduleId, key, args, err, true);
-              throw err;
-            },
-          );
+    const spyCalls: SpyMetadata["_spyCalls"] = [];
+    const spy = Object.assign(
+      (...args: unknown[]) => {
+        let result: unknown;
+        try {
+          result = fn(...args);
+          // Handle async functions: record when the promise settles
+          if (result instanceof Promise) {
+            return result.then(
+              (resolved) => {
+                recordCall(moduleId, key, args, resolved, false);
+                spyCalls.push({ args, result: resolved, threw: false });
+                return resolved;
+              },
+              (err) => {
+                recordCall(moduleId, key, args, err, true);
+                spyCalls.push({ args, result: err, threw: true });
+                throw err;
+              },
+            );
+          }
+        } catch (err) {
+          recordCall(moduleId, key, args, err, true);
+          spyCalls.push({ args, result: err, threw: true });
+          throw err;
         }
-      } catch (err) {
-        recordCall(moduleId, key, args, err, true);
-        throw err;
-      }
-      recordCall(moduleId, key, args, result, false);
-      return result;
-    };
+        recordCall(moduleId, key, args, result, false);
+        spyCalls.push({ args, result, threw: false });
+        return result;
+      },
+      { _isSpy: true as const, _spyCalls: spyCalls },
+    );
+    wrapped[key] = spy;
   }
   return wrapped;
 }

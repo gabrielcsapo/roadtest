@@ -125,7 +125,9 @@ function resetSuite(s: TestSuite): TestSuite {
 function resetTest(t: TestCase): TestCase {
   return {
     ...t,
-    status: "pending",
+    // Preserve "skipped" — it's registered intent, not a run result.
+    // Everything else resets to a clean pending state.
+    status: t.status === "skipped" ? "skipped" : "pending",
     error: undefined,
     snapshots: [],
     assertions: [],

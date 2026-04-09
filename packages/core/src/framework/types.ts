@@ -6,6 +6,20 @@ export interface Assertion {
   label: string;
   status: "pass" | "fail";
   error?: string;
+  /**
+   * Present on snapshot assertions created by snapshot() / toMatchSnapshot().
+   * Holds the captured HTML and — after comparison — the baseline HTML when
+   * there is a mismatch, so the diff can be displayed in the assertions tab.
+   */
+  snapshot?: {
+    label: string;
+    html: string;
+    baselineHtml?: string;
+    /** Context needed to write the baseline back to the server */
+    sourceFile?: string;
+    suiteName?: string;
+    testName?: string;
+  };
 }
 
 export interface Snapshot {
@@ -16,6 +30,15 @@ export interface Snapshot {
   element: ReactElement;
   /** DOM innerHTML captured at this point — used for filmstrip thumbnails */
   html: string;
+  /** Stored baseline HTML — set when a mismatch is detected, used for side-by-side comparison */
+  baselineHtml?: string;
+  /**
+   * When true this snapshot was taken by an explicit snapshot() / toMatchSnapshot() call
+   * and is compared against stored baselines.
+   * When false (default for render() auto-captures) it is preview-only — shown in the
+   * filmstrip but never written to disk or compared against baselines.
+   */
+  comparison?: boolean;
 }
 
 export type ConsoleLevel = "log" | "warn" | "error" | "info" | "debug";
@@ -80,6 +103,8 @@ export interface TestCase {
   duration?: number;
   /** Undefined for node tests — results arrive from the server, not executed in-browser */
   fn?: () => void | Promise<void>;
+  /** Marked with it.only or inside a describe.only — only these run when any .only exists */
+  only?: boolean;
 }
 
 export interface TestSuite {

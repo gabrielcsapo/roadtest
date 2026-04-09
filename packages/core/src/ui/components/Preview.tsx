@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback, useLayoutEffect } from "react";
 import type { TestCase, Snapshot } from "../../framework/types";
+import { onSandboxMessage } from "../../framework/messages";
 import { StatusIcon } from "./StatusIcon";
 import { GridToggle, gridStyle } from "./toolbar/GridToggle";
 import { VisionFilter, visionFilterStyle } from "./toolbar/VisionFilter";
@@ -15,6 +16,8 @@ import { MocksPanel } from "./tabs/MocksPanel";
 import { getRegisteredTabs } from "../plugins";
 import type { TabPlugin } from "../plugins";
 import type { IstanbulCoverage, TestSuite } from "../../framework/types";
+import { SnapshotFrame } from "./SnapshotFrame";
+import { normalizeHtmlStyles, stripMismatchedWrapper } from "../css-normalize";
 
 type Tab = string;
 
@@ -51,6 +54,443 @@ function formatElapsed(ms: number): string {
   if (ms === 0) return "0ms";
   if (ms < 1000) return `+${ms}ms`;
   return `+${(ms / 1000).toFixed(2)}s`;
+}
+
+// ─── Snapshot HTML diff ───────────────────────────────────────────────────────
+
+function markNode(el: Element, type: "add" | "remove") {
+  const h = el as HTMLElement;
+  h.style.outline =
+    type === "add" ? "2px solid rgba(34,197,94,0.7)" : "2px solid rgba(239,68,68,0.7)";
+  h.style.outlineOffset = "1px";
+}
+
+function wrapTextNode(textNode: Text, type: "add" | "remove") {
+  const doc = textNode.ownerDocument!;
+  const span = doc.createElement("span");
+  span.style.cssText =
+    type === "add"
+      ? "background:rgba(34,197,94,0.45);border-radius:2px;padding:0 1px"
+      : "background:rgba(239,68,68,0.45);border-radius:2px;padding:0 1px;text-decoration:line-through";
+  span.appendChild(doc.createTextNode(textNode.textContent ?? ""));
+  textNode.parentNode?.replaceChild(span, textNode);
+}
+
+function diffDomNodes(baseNode: Node | null, currNode: Node | null) {
+  if (!baseNode && !currNode) return;
+
+  // One side missing — mark the whole node
+  if (!baseNode && currNode) {
+    if (currNode.nodeType === Node.ELEMENT_NODE) markNode(currNode as Element, "add");
+    return;
+  }
+  if (baseNode && !currNode) {
+    if (baseNode.nodeType === Node.ELEMENT_NODE) markNode(baseNode as Element, "remove");
+    return;
+  }
+
+  // Text node: compare content, wrap differences
+  if (baseNode!.nodeType === Node.TEXT_NODE && currNode!.nodeType === Node.TEXT_NODE) {
+    if (baseNode!.textContent !== currNode!.textContent) {
+      wrapTextNode(baseNode as Text, "remove");
+      wrapTextNode(currNode as Text, "add");
+    }
+    return;
+  }
+
+  // Different element types
+  if (baseNode!.nodeName !== currNode!.nodeName) {
+    if (baseNode!.nodeType === Node.ELEMENT_NODE) markNode(baseNode as Element, "remove");
+    if (currNode!.nodeType === Node.ELEMENT_NODE) markNode(currNode as Element, "add");
+    return;
+  }
+
+  // Same element type — recurse into children.
+  // Style comparison is intentionally skipped: happy-dom serializes colors as
+  // hex (#1a1a24) while browsers use rgb(26,26,36), producing false positives
+  // on every colored element. Content-level diffs (text nodes) are sufficient.
+
+  const baseKids = Array.from(baseNode!.childNodes);
+  const currKids = Array.from(currNode!.childNodes);
+  const len = Math.max(baseKids.length, currKids.length);
+  for (let i = 0; i < len; i++) diffDomNodes(baseKids[i] ?? null, currKids[i] ?? null);
+}
+
+/**
+ * Returns two HTML strings identical to the inputs but with diff highlights
+ * injected as inline styles / wrapper spans.
+ */
+function diffHtml(
+  baseline: string,
+  current: string,
+): { baselineHtml: string; currentHtml: string } {
+  const parser = new DOMParser();
+  const wrap = (h: string) => `<div>${h}</div>`;
+  // Normalize both sides through the live browser CSS parser before diffing,
+  // then strip any mismatched outer wrapper div (e.g. from preview.tsx).
+  const normBase = normalizeHtmlStyles(baseline);
+  const normCurr = normalizeHtmlStyles(current);
+  const { base: strippedBase, curr: strippedCurr } = stripMismatchedWrapper(normBase, normCurr);
+  const baseDoc = parser.parseFromString(wrap(strippedBase), "text/html");
+  const currDoc = parser.parseFromString(wrap(strippedCurr), "text/html");
+  const baseRoot = baseDoc.body.firstChild as Element;
+  const currRoot = currDoc.body.firstChild as Element;
+  diffDomNodes(baseRoot, currRoot);
+  return { baselineHtml: baseRoot.innerHTML, currentHtml: currRoot.innerHTML };
+}
+
+// ─── Text (unified) diff ──────────────────────────────────────────────────────
+
+type DiffLine =
+  | { kind: "context"; text: string; lineA: number; lineB: number }
+  | { kind: "remove"; text: string; lineA: number }
+  | { kind: "add"; text: string; lineB: number };
+
+/** LCS-based unified diff of two arrays of strings. */
+function computeLineDiff(aLines: string[], bLines: string[]): DiffLine[] {
+  const m = aLines.length;
+  const n = bLines.length;
+  // Build LCS table
+  const dp: number[][] = Array.from({ length: m + 1 }, () =>
+    Array.from({ length: n + 1 }, () => 0),
+  );
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      dp[i][j] =
+        aLines[i - 1] === bLines[j - 1]
+          ? dp[i - 1][j - 1] + 1
+          : Math.max(dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+  // Traceback
+  const result: DiffLine[] = [];
+  let i = m,
+    j = n;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && aLines[i - 1] === bLines[j - 1]) {
+      result.push({ kind: "context", text: aLines[i - 1], lineA: i, lineB: j });
+      i--;
+      j--;
+    } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+      result.push({ kind: "add", text: bLines[j - 1], lineB: j });
+      j--;
+    } else {
+      result.push({ kind: "remove", text: aLines[i - 1], lineA: i });
+      i--;
+    }
+  }
+  result.reverse();
+  return result;
+}
+
+// ─── CSS normalization via browser engine ─────────────────────────────────────
+
+/**
+ * Render HTML into a detached div, let the browser parse every inline style
+ * attribute, then read back el.style.cssText. This normalizes:
+ *   - hex colors → rgb()           (#6b7280 → rgb(107, 114, 128))
+ *   - shorthands → longhands       (border: 1px solid #x → border-top: …, etc.)
+ *   - property order               (sorted by the browser's internal order)
+ *
+ * Both baseline (from happy-dom/node) and current (from browser) go through
+ * the same pass so the diff sees semantically equivalent strings as identical.
+ */
+
+/** Pretty-print HTML for diffing: one tag per line, attributes expanded. */
+function prettifyHtml(html: string): string {
+  return html
+    .replace(/></g, ">\n<")
+    .replace(/(<\w[^>]*?>)/g, (tag) =>
+      tag.replace(/\s+(\w[\w-]*=(?:"[^"]*"|'[^']*'|\S+))/g, "\n  $1"),
+    )
+    .split("\n")
+    .map((l) => l.trimEnd())
+    .filter((l) => l.length > 0)
+    .join("\n");
+}
+
+// ─── Text diff renderer ───────────────────────────────────────────────────────
+
+const CONTEXT_LINES = 3;
+
+/** Build a plain-text unified diff string (for copy/export). */
+function buildPlainTextDiff(diff: DiffLine[]): string {
+  const lines: string[] = [];
+  diff.forEach((d) => {
+    if (d.kind === "add") lines.push(`+ ${d.text}`);
+    else if (d.kind === "remove") lines.push(`- ${d.text}`);
+    else lines.push(`  ${d.text}`);
+  });
+  return lines.join("\n");
+}
+
+function TextDiff({ baseline, current }: { baseline: string; current: string }) {
+  const [copied, setCopied] = useState(false);
+
+  // Normalize both sides through the live browser CSS parser so hex vs rgb
+  // and shorthand vs longhand differences don't produce false positives.
+  // Then strip any mismatched outer wrapper div (e.g. from preview.tsx).
+  const normBase = normalizeHtmlStyles(baseline);
+  const normCurr = normalizeHtmlStyles(current);
+  const { base: strippedBase, curr: strippedCurr } = stripMismatchedWrapper(normBase, normCurr);
+  const aLines = prettifyHtml(strippedBase).split("\n");
+  const bLines = prettifyHtml(strippedCurr).split("\n");
+  const diff = computeLineDiff(aLines, bLines);
+
+  const handleCopy = () => {
+    const text = buildPlainTextDiff(diff);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  // Collect indices of changed lines and expand ±CONTEXT_LINES around them
+  const changedIdx = new Set<number>();
+  diff.forEach((d, i) => {
+    if (d.kind !== "context") changedIdx.add(i);
+  });
+  const visible = new Set<number>();
+  changedIdx.forEach((ci) => {
+    for (
+      let k = Math.max(0, ci - CONTEXT_LINES);
+      k <= Math.min(diff.length - 1, ci + CONTEXT_LINES);
+      k++
+    ) {
+      visible.add(k);
+    }
+  });
+
+  const rows: React.ReactNode[] = [];
+  let prevVisible = false;
+  diff.forEach((d, i) => {
+    if (!visible.has(i)) {
+      prevVisible = false;
+      return;
+    }
+    if (!prevVisible && i > 0) {
+      rows.push(
+        <div
+          key={`sep-${i}`}
+          style={{
+            color: "#4b5563",
+            fontStyle: "italic",
+            padding: "2px 8px",
+            background: "#16161d",
+          }}
+        >
+          ···
+        </div>,
+      );
+    }
+    prevVisible = true;
+    const isAdd = d.kind === "add";
+    const isRemove = d.kind === "remove";
+    const lineNumA = d.kind !== "add" ? String(d.lineA).padStart(4) : "    ";
+    const lineNumB = d.kind !== "remove" ? String(d.lineB).padStart(4) : "    ";
+    rows.push(
+      <div
+        key={i}
+        style={{
+          display: "flex",
+          background: isAdd
+            ? "rgba(34,197,94,0.12)"
+            : isRemove
+              ? "rgba(239,68,68,0.12)"
+              : "transparent",
+          borderLeft: isAdd
+            ? "3px solid rgba(34,197,94,0.7)"
+            : isRemove
+              ? "3px solid rgba(239,68,68,0.7)"
+              : "3px solid transparent",
+        }}
+      >
+        <span
+          style={{
+            color: "#4b5563",
+            userSelect: "none",
+            minWidth: 36,
+            textAlign: "right",
+            padding: "0 6px",
+            fontFamily: "monospace",
+            fontSize: 11,
+          }}
+        >
+          {lineNumA}
+        </span>
+        <span
+          style={{
+            color: "#4b5563",
+            userSelect: "none",
+            minWidth: 36,
+            textAlign: "right",
+            padding: "0 6px",
+            fontFamily: "monospace",
+            fontSize: 11,
+          }}
+        >
+          {lineNumB}
+        </span>
+        <span
+          style={{
+            color: isAdd ? "rgba(34,197,94,0.9)" : isRemove ? "rgba(239,68,68,0.9)" : "#6b7280",
+            userSelect: "none",
+            padding: "0 4px",
+            fontFamily: "monospace",
+            fontSize: 11,
+          }}
+        >
+          {isAdd ? "+" : isRemove ? "−" : " "}
+        </span>
+        <span
+          style={{
+            fontFamily: "monospace",
+            fontSize: 11,
+            color: isAdd ? "#bbf7d0" : isRemove ? "#fecaca" : "#c4c4d4",
+            whiteSpace: "pre",
+            overflowX: "auto",
+            flex: 1,
+          }}
+        >
+          {d.text}
+        </span>
+      </div>,
+    );
+  });
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <button
+          onClick={handleCopy}
+          style={{
+            padding: "3px 10px",
+            fontSize: 11,
+            fontWeight: 600,
+            borderRadius: 4,
+            border: "1px solid #3a3a4e",
+            cursor: "pointer",
+            background: copied ? "rgba(34,197,94,0.15)" : "transparent",
+            color: copied ? "#86efac" : "#6b7280",
+            transition: "all 0.15s",
+          }}
+        >
+          {copied ? "Copied!" : "Copy diff"}
+        </button>
+      </div>
+      {rows.length === 0 ? (
+        <div style={{ color: "#6b7280", fontFamily: "monospace", fontSize: 12, padding: 16 }}>
+          No textual differences found after CSS normalization.
+        </div>
+      ) : (
+        <div
+          style={{
+            fontFamily: "monospace",
+            fontSize: 11,
+            overflowX: "auto",
+            overflowY: "auto",
+            maxHeight: 520,
+            background: "#0d0d11",
+            borderRadius: 6,
+            border: "1px solid #2a2a36",
+          }}
+        >
+          {rows}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── SnapshotDiff container with mode toggle ──────────────────────────────────
+
+export function SnapshotDiff({
+  baseline,
+  current,
+  vision,
+}: {
+  baseline: string;
+  current: string;
+  vision: VisionFilterType;
+}) {
+  const [diffMode, setDiffMode] = useState<"visual" | "text">("visual");
+
+  const toggleStyle = (active: boolean): React.CSSProperties => ({
+    padding: "3px 10px",
+    fontSize: 11,
+    fontWeight: 600,
+    borderRadius: 4,
+    border: "1px solid",
+    cursor: "pointer",
+    background: active ? "#1e1e2e" : "transparent",
+    borderColor: active ? "#6366f1" : "#3a3a4e",
+    color: active ? "#a5b4fc" : "#6b7280",
+    transition: "all 0.15s",
+  });
+
+  const labelStyle: React.CSSProperties = {
+    fontSize: 11,
+    fontWeight: 600,
+    color: "#6b7280",
+    marginBottom: 8,
+    textAlign: "center",
+    letterSpacing: "0.05em",
+    textTransform: "uppercase",
+  };
+
+  const paneStyle: React.CSSProperties = {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "center",
+    border: "1px solid rgba(239,68,68,0.3)",
+    borderRadius: 8,
+    padding: 16,
+    background: "#0f0f13",
+    overflow: "auto",
+    maxHeight: 600,
+    ...visionFilterStyle(vision),
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12, width: "100%" }}>
+      {/* Mode toggle */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, justifyContent: "flex-end" }}>
+        <span style={{ fontSize: 11, color: "#4b5563" }}>Diff view:</span>
+        <button style={toggleStyle(diffMode === "visual")} onClick={() => setDiffMode("visual")}>
+          Visual
+        </button>
+        <button style={toggleStyle(diffMode === "text")} onClick={() => setDiffMode("text")}>
+          Text
+        </button>
+      </div>
+
+      {diffMode === "visual" ? (
+        (() => {
+          const { baselineHtml, currentHtml } = diffHtml(baseline, current);
+          return (
+            <div style={{ display: "flex", gap: 24, alignItems: "flex-start", width: "100%" }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={labelStyle}>Expected (baseline)</div>
+                <div style={paneStyle}>
+                  <SnapshotFrame html={baselineHtml} displayWidth={480} displayHeight={400} />
+                </div>
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={labelStyle}>Received (current)</div>
+                <div style={paneStyle}>
+                  <SnapshotFrame html={currentHtml} displayWidth={480} displayHeight={400} />
+                </div>
+              </div>
+            </div>
+          );
+        })()
+      ) : (
+        <div style={{ width: "100%" }}>
+          <TextDiff baseline={baseline} current={current} />
+        </div>
+      )}
+    </div>
+  );
 }
 
 function Timeline({
@@ -116,27 +556,24 @@ function Timeline({
                     height: 56,
                     borderRadius: 8,
                     overflow: "hidden",
-                    border: `2px solid ${isActive ? "#6366f1" : "#2a2a36"}`,
+                    border: `2px solid ${snap.baselineHtml ? (isActive ? "#ef4444" : "rgba(239,68,68,0.5)") : isActive ? "#6366f1" : "#2a2a36"}`,
                     background: "#0f0f13",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "border-color 0.15s",
-                    boxShadow: isActive ? "0 0 0 3px rgba(99,102,241,0.2)" : "none",
+                    boxShadow: isActive
+                      ? snap.baselineHtml
+                        ? "0 0 0 3px rgba(239,68,68,0.2)"
+                        : "0 0 0 3px rgba(99,102,241,0.2)"
+                      : "none",
                   }}
                 >
-                  <div
-                    style={{
-                      transform: "scale(0.35)",
-                      transformOrigin: "center",
-                      pointerEvents: "none",
-                      width: "200%",
-                      height: "200%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                    dangerouslySetInnerHTML={{ __html: snap.html }}
+                  <SnapshotFrame
+                    html={snap.html}
+                    displayWidth={76}
+                    displayHeight={52}
+                    virtualWidth={800}
                   />
                 </div>
                 <div
@@ -458,6 +895,9 @@ export function Preview({
   const [displayHasContent, setDisplayHasContent] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
+  // When a snapshot mismatch exists, show the diff by default.
+  // Pressing play hides it so the live iframe can take over.
+  const [showComparison, setShowComparison] = useState(true);
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -503,6 +943,7 @@ export function Preview({
 
   const handlePlay = useCallback(() => {
     if (!test || !displayApiRef.current?.playTest || isPlaying) return;
+    setShowComparison(false); // hide diff so the live iframe can take over
     setIsPlaying(true);
     displayApiRef.current.playTest(test.suiteName, test.name).then(() => {
       setIsPlaying(false);
@@ -520,12 +961,13 @@ export function Preview({
   const snapshotsEarly = test?.snapshots ?? [];
   const safeFrameEarly = Math.min(activeFrame, Math.max(0, snapshotsEarly.length - 1));
   const showingSnapshotEarly = !!snapshotsEarly[safeFrameEarly] && activeFrame > 0;
-  const showLive = !!test && displayHasContent && !showingSnapshotEarly;
+  const hasMismatch = !!test?.snapshots.some((s) => s.baselineHtml);
+  const showLive =
+    !!test && displayHasContent && !showingSnapshotEarly && (!hasMismatch || !showComparison);
 
   // Subscribe to display iframe ready signal
   useEffect(() => {
-    const onMessage = (e: MessageEvent) => {
-      if (e.data?.type !== "__vt_display_ready") return;
+    return onSandboxMessage("__vt_display_ready", () => {
       const win = displayIframeRef.current?.contentWindow as
         | Record<string, unknown>
         | null
@@ -534,9 +976,7 @@ export function Preview({
       if (!api) return;
       displayApiRef.current = api;
       setDisplayReady(true);
-    };
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
+    });
   }, []);
 
   // Re-render in display iframe whenever the selected test changes or completes a run
@@ -653,12 +1093,13 @@ export function Preview({
   }, [showLive, canvasPaneHeight, viewport, vision, isPlaying, hasPlayed]);
 
   const prevTestId = useRef<string | null>(null);
-  if (test?.id !== prevTestId.current) {
+  if ((test?.id ?? null) !== prevTestId.current) {
     prevTestId.current = test?.id ?? null;
     if (activeFrame !== initialFrame) setActiveFrame(initialFrame);
     if (activeTab === "timeline") setActiveTab("assertions");
     if (isPlaying) setIsPlaying(false);
     if (hasPlayed) setHasPlayed(false);
+    setShowComparison(true); // re-show diff when switching to a new test
   }
 
   if (!test) {
@@ -746,7 +1187,15 @@ export function Preview({
         style={{ position: "fixed", width: 0, height: 0, border: "none", pointerEvents: "none" }}
       />
 
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+          minHeight: 0,
+        }}
+      >
         {/* Header */}
         <div
           style={{
@@ -965,7 +1414,7 @@ export function Preview({
 
           {/* Content area — scrollable */}
           <div ref={contentAreaRef} style={{ flex: 1, overflow: "auto" }}>
-            {displayHasContent || showingSnapshot ? (
+            {displayHasContent || showingSnapshot || activeSnap?.baselineHtml ? (
               <div
                 style={{
                   position: "relative",
@@ -978,16 +1427,23 @@ export function Preview({
                 }}
               >
                 {/* Timeline snapshot view (static HTML) */}
-                {showingSnapshot && (
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      ...constraintStyle,
-                      ...visionFilterStyle(vision),
-                    }}
-                    dangerouslySetInnerHTML={{ __html: activeSnap.html }}
+                {showingSnapshot && !activeSnap.baselineHtml && (
+                  <div style={{ ...constraintStyle, ...visionFilterStyle(vision) }}>
+                    <SnapshotFrame
+                      html={activeSnap.html}
+                      displayWidth={800}
+                      displayHeight={600}
+                      virtualWidth={1024}
+                    />
+                  </div>
+                )}
+
+                {/* Side-by-side snapshot comparison — shown when a mismatch exists and the user hasn't pressed play */}
+                {activeSnap?.baselineHtml && showComparison && (
+                  <SnapshotDiff
+                    baseline={activeSnap.baselineHtml}
+                    current={activeSnap.html}
+                    vision={vision}
                   />
                 )}
 
@@ -1112,7 +1568,9 @@ export function Preview({
             <TabBar tabs={tabs} active={activeTab} onChange={setActiveTab} />
           </div>
           <div style={{ flex: 1, overflow: "auto" }}>
-            {activeTab === "assertions" && <AssertionsTab assertions={test.assertions} />}
+            {activeTab === "assertions" && (
+              <AssertionsTab assertions={test.assertions} suiteId={test.suiteId} />
+            )}
             {activeTab === "timeline" && (
               <Timeline snapshots={snapshots} active={safeFrame} onSelect={setActiveFrame} />
             )}

@@ -4,8 +4,9 @@ import react from "@vitejs/plugin-react";
 import { fieldtest } from "@fieldtest/core/plugin";
 import istanbul from "vite-plugin-istanbul";
 import { readFile, readdir, stat, writeFile, unlink } from "node:fs/promises";
-import { existsSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { dirname, join, relative, resolve } from "node:path";
+import type { IncomingMessage } from "node:http";
 
 const SOURCE_EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx"]);
 const IGNORE_PATTERNS = [".test.", ".spec.", "/node_modules/", "/__", ".d.ts"];
@@ -80,8 +81,22 @@ async function buildGraphData(
   return { nodes, edges };
 }
 
+interface SnapshotWriteEntry {
+  sourceFile: string;
+  suiteName: string;
+  testName: string;
+  label: string;
+  html: string;
+}
+
+async function readBody(req: IncomingMessage): Promise<string> {
+  const chunks: Buffer[] = [];
+  for await (const chunk of req) chunks.push(chunk as Buffer);
+  return Buffer.concat(chunks).toString("utf8");
+}
+
 /** Serves raw source files and project file listings — configureServer runs before Vite's HTML fallback */
-function fieldtestDevPlugin(): Plugin {
+function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin {
   let root = process.cwd();
   return {
     name: "fieldtest-dev",
@@ -143,19 +158,89 @@ function fieldtestDevPlugin(): Plugin {
           res.end("[]");
         }
       });
+
+      // Returns all stored snapshot baselines as a JSON map (absolute path → HTML)
+      server.middlewares.use("/__fieldtest_snapshots__", async (_req, res) => {
+        try {
+          const { glob } = await import("glob");
+          const snapshotFiles = await glob("src/__snapshots__/**/*.html", {
+            cwd: root,
+            absolute: true,
+          });
+          const map: Record<string, string> = {};
+          for (const f of snapshotFiles) {
+            try {
+              // Key as "/<root-relative-path>" so it matches the Vite module paths
+              // the browser sees in suite.sourceFile (e.g. "/src/Card.test.tsx" → "/src/__snapshots__/...")
+              map["/" + relative(root, f)] = await readFile(f, "utf8");
+            } catch {
+              /* skip */
+            }
+          }
+          res.setHeader("Content-Type", "application/json");
+          res.end(JSON.stringify(map));
+        } catch {
+          res.setHeader("Content-Type", "application/json");
+          res.end("{}");
+        }
+      });
+
+      // Tells the sandbox whether --update-snapshots was passed at startup
+      server.middlewares.use("/__fieldtest_update_snapshots__", (_req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        res.end(JSON.stringify({ enabled: options.updateSnapshots ?? false }));
+      });
+
+      // Accepts POST of snapshot HTML from the sandbox or the UI button
+      server.middlewares.use("/__fieldtest_snapshot_write__", async (req, res) => {
+        if (req.method !== "POST") {
+          res.writeHead(405);
+          res.end();
+          return;
+        }
+        try {
+          const body = await readBody(req);
+          const entries = JSON.parse(body) as SnapshotWriteEntry[];
+          const root = server.config.root;
+          const sanitize = (n: string) =>
+            n
+              .replace(/[^a-zA-Z0-9._-]/g, "_")
+              .replace(/_+/g, "_")
+              .slice(0, 80);
+          for (const e of entries) {
+            // sourceFile from the browser is Vite-relative (e.g. "/src/App.test.tsx").
+            // Resolve it to an absolute path so snapshot files land in the right place.
+            const absSourceFile = e.sourceFile.startsWith("/")
+              ? join(root, e.sourceFile)
+              : e.sourceFile;
+            const dir = join(dirname(absSourceFile), "__snapshots__", sanitize(e.suiteName));
+            const filePath = join(dir, `${sanitize(e.testName)}__${sanitize(e.label)}.html`);
+            mkdirSync(dir, { recursive: true });
+            writeFileSync(filePath, e.html, "utf8");
+            console.log("[fieldtest] snapshot written:", filePath);
+          }
+          res.writeHead(200);
+          res.end("ok");
+        } catch (err) {
+          console.error("[fieldtest] /__fieldtest_snapshot_write__ error:", err);
+          res.writeHead(500);
+          res.end(String(err));
+        }
+      });
     },
   };
 }
 
 export async function startUi() {
+  const args = process.argv.slice(2);
   const include =
-    process.argv.find(
-      (a, i) => i > 1 && !a.startsWith("--") && !process.argv[i - 1]?.includes("--"),
-    ) ?? "src/**/*.test.{ts,tsx}";
+    args.find((a, i) => !a.startsWith("--") && !args[i - 1]?.startsWith("--")) ??
+    "src/**/*.test.{ts,tsx}";
+  const updateSnapshots = args.includes("--update-snapshots");
 
   const server = await createServer({
     plugins: [
-      fieldtestDevPlugin(),
+      fieldtestDevPlugin({ updateSnapshots }),
       fieldtest({ include }),
       istanbul({
         include: "src/**/*",
@@ -297,4 +382,19 @@ export async function buildUi() {
     }
   }
   await writeFile(join(absOutDir, "fieldtest-sources.json"), JSON.stringify(sourcesMap));
+
+  // Bundle snapshot baselines so the static site can load them without a dev server.
+  // Keys are paths relative to the project root (e.g. "src/__snapshots__/Card/test__initial.html").
+  const { glob } = await import("glob");
+  const snapshotFiles = await glob("src/__snapshots__/**/*.html", { cwd: root, absolute: true });
+  const snapshotsMap: Record<string, string> = {};
+  for (const f of snapshotFiles) {
+    const key = relative(root, f);
+    try {
+      snapshotsMap[key] = await readFile(f, "utf8");
+    } catch {
+      /* skip unreadable */
+    }
+  }
+  await writeFile(join(absOutDir, "fieldtest-snapshots.json"), JSON.stringify(snapshotsMap));
 }
