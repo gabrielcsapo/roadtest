@@ -7,8 +7,10 @@ on:
   pull_request:
 
 jobs:
-  # Four node-test packages run in parallel — no build output needed since
-  # bin/roadtest.js uses tsx to load TypeScript source directly.
+  # Four node-test packages run in parallel. bin/roadtest.js uses tsx to load
+  # runner source directly, but that source does `import from "roadtest"`, which
+  # Node's resolver maps to `roadtest/dist/*` via the exports field — so we need
+  # `roadtest` built before the CLI can run.
   node-tests:
     runs-on: ubuntu-latest
     strategy:
@@ -42,6 +44,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build packages
+        run: pnpm -r --workspace-concurrency=1 --filter='!@roadtest/website' build
+
       - name: Test — ${{ matrix.filter }}
         run: pnpm --filter "${{ matrix.filter }}" ${{ matrix.script }}
 
@@ -73,8 +78,7 @@ jobs:
       - name: Build runner
         run: pnpm --filter @roadtest/runner build
 
-  # E2E runs in parallel with node-tests and build. The roadtest CLI uses tsx
-  # to load TypeScript source directly, so no pre-built dist is required.
+  # E2E runs in parallel with node-tests and build.
   e2e:
     runs-on: ubuntu-latest
     steps:
@@ -95,6 +99,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm -r --workspace-concurrency=1 --filter='!@roadtest/website' build
 
       - name: Install Playwright browsers
         run: pnpm --filter e2e exec playwright install --with-deps chromium
