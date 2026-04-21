@@ -1,7 +1,7 @@
 /**
  * Build-mode e2e tests.
  *
- * These run against the static output produced by `fieldtest --build`.
+ * These run against the static output produced by `roadtest --build`.
  * The static site is served by apps/e2e/serve-build.mjs which builds the
  * example app first and then starts a plain HTTP server on port 4173.
  *
@@ -15,9 +15,9 @@ import { waitForTestsComplete } from "./helpers";
 // ── Layout ─────────────────────────────────────────────────────────────────────
 
 test.describe("Build mode — app layout", () => {
-  test("shows the Fieldtest header", async ({ page }) => {
+  test("shows the Roadtest header", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("text=Fieldtest").first()).toBeVisible();
+    await expect(page.locator("text=Roadtest").first()).toBeVisible();
   });
 
   test("shows all four view-toggle buttons", async ({ page }) => {

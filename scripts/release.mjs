@@ -196,7 +196,7 @@ async function buildAndPublish(ask, version) {
 
   console.log("Building packages...");
   // --workspace-concurrency=1 forces topological ordering so runner's tsc
-  // can find fieldtest's built types before it compiles.
+  // can find roadtest's built types before it compiles.
   if (dryRun) {
     console.log("[dry-run] Would run: pnpm -r --workspace-concurrency=1 build");
     console.log("[dry-run] Would run: pnpm -r publish --access public");

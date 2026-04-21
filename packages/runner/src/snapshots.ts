@@ -200,7 +200,7 @@ function normalizeSnapshotHtml(html: string): string {
 
 /**
  * If exactly one side has a passthrough wrapper div whose only attribute is
- * `style="...: inherit; ..."`, strip it.  This handles the `.fieldtest/preview.tsx`
+ * `style="...: inherit; ..."`, strip it.  This handles the `.roadtest/preview.tsx`
  * wrapper present in browser renders but absent in node/happy-dom captures.
  */
 function stripMismatchedWrapper(

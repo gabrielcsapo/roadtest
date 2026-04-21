@@ -5,9 +5,9 @@
  * These are the only tests that exercise multiple components working together.
  */
 import React from "react";
-import { describe, it, expect, render, fireEvent, mock } from "fieldtest";
+import { describe, it, expect, render, fireEvent, mock } from "roadtest";
 import { http, HttpResponse } from "msw";
-import { worker } from "../.fieldtest/setup";
+import { worker } from "../.roadtest/setup";
 
 import { App } from "./App";
 import type { User } from "./UserProfile";

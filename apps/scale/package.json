@@ -6,16 +6,16 @@
   "scripts": {
     "dev": "vite --port 3334",
     "build": "vite build",
-    "test:ui": "fieldtest --ui",
-    "test": "fieldtest"
+    "test:ui": "roadtest --ui",
+    "test": "roadtest"
   },
   "dependencies": {
-    "fieldtest": "workspace:*",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "roadtest": "workspace:*"
   },
   "devDependencies": {
-    "@fieldtest/runner": "workspace:*",
+    "@roadtest/runner": "workspace:*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",

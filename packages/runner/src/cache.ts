@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
-import type { IstanbulCoverage } from "fieldtest";
+import type { IstanbulCoverage } from "roadtest";
 import type { SerializableTestSuite } from "./serialize.js";
 
 // ─── Dep graph (shared with node.ts) ─────────────────────────────────────────
@@ -121,7 +121,7 @@ function writeCacheIndex(cacheDir: string, index: Record<string, string>): void 
 // ─── Cache I/O ────────────────────────────────────────────────────────────────
 
 export function getCacheDir(cwd: string): string {
-  return join(cwd, ".fieldtest", "cache");
+  return join(cwd, ".roadtest", "cache");
 }
 
 export function readCache(cacheDir: string, key: string): CacheEntry | null {

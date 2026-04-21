@@ -27,7 +27,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: process.env.GITHUB_ACTIONS ? "/fieldtest/" : "/",
+  base: process.env.GITHUB_ACTIONS ? "/roadtest/" : "/",
   root: __dirname,
   server: {
     port: 4000,

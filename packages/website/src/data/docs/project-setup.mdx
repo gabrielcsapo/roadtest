@@ -1,10 +1,10 @@
 ## Project Setup
 
-fieldtest looks for a `.fieldtest/` directory in your project root for optional configuration files.
+roadtest looks for a `.roadtest/` directory in your project root for optional configuration files.
 
 ```
 your-app/
-├── .fieldtest/
+├── .roadtest/
 │   ├── setup.ts       # global setup (MSW, providers, etc.)
 │   └── preview.tsx    # wrap every test render in a provider
 ├── src/
@@ -17,7 +17,7 @@ your-app/
 Runs once before any tests. Use it to start MSW, set global mocks, or configure libraries:
 
 ```ts
-// .fieldtest/setup.ts
+// .roadtest/setup.ts
 import { setupServer } from "msw/browser";
 import { handlers } from "../src/mocks/handlers";
 
@@ -30,7 +30,7 @@ await worker.start({ onUnhandledRequest: "bypass" });
 Wraps every `render()` call in your providers automatically:
 
 ```tsx
-// .fieldtest/preview.tsx
+// .roadtest/preview.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function Preview({ children }: { children: React.ReactNode }) {

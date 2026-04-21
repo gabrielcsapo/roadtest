@@ -1,5 +1,5 @@
 /**
- * Doc demos — fieldtest UI running as a separate Vite server, embedded via iframe.
+ * Doc demos — roadtest UI running as a separate Vite server, embedded via iframe.
  */
 import { useState } from "react";
 
@@ -37,7 +37,7 @@ function CollapseIcon() {
   );
 }
 
-function FieldtestIframe({ height = 480 }: { height?: number }) {
+function RoadtestIframe({ height = 480 }: { height?: number }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -45,7 +45,7 @@ function FieldtestIframe({ height = 480 }: { height?: number }) {
       <div style={{ position: "relative" }}>
         <iframe
           src={DEMO_SRC}
-          title="fieldtest live demo"
+          title="roadtest live demo"
           style={{ width: "100%", height, border: "none", display: "block" }}
         />
         <button
@@ -101,7 +101,7 @@ function FieldtestIframe({ height = 480 }: { height?: number }) {
           >
             <iframe
               src={DEMO_SRC}
-              title="fieldtest live demo expanded"
+              title="roadtest live demo expanded"
               style={{ width: "100%", height: "100%", border: "none", display: "block" }}
             />
             <button
@@ -134,15 +134,15 @@ function FieldtestIframe({ height = 480 }: { height?: number }) {
 }
 
 export function UiOverviewDemo() {
-  return <FieldtestIframe height={480} />;
+  return <RoadtestIframe height={480} />;
 }
 
 export function FilmstripDemo() {
-  return <FieldtestIframe height={420} />;
+  return <RoadtestIframe height={420} />;
 }
 
 export function TabsDemo() {
-  return <FieldtestIframe height={420} />;
+  return <RoadtestIframe height={420} />;
 }
 
 const DEMOS: Record<string, React.ComponentType> = {

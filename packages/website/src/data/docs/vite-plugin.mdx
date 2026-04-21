@@ -1,14 +1,14 @@
 ## Vite Plugin
 
-The fieldtest Vite plugin enables the browser UI and handles test file transforms.
+The roadtest Vite plugin enables the browser UI and handles test file transforms.
 
 ```ts
-import { fieldtest } from "fieldtest/plugin";
+import { roadtest } from "roadtest/plugin";
 
 export default defineConfig({
   plugins: [
     react(),
-    fieldtest({
+    roadtest({
       include: "src/**/*.test.{ts,tsx}",
     }),
   ],

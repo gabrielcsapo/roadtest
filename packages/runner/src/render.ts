@@ -1,5 +1,5 @@
 /**
- * Pure rendering module for the FieldTest node runner output.
+ * Pure rendering module for the RoadTest node runner output.
  *
  * All functions return ANSI-escaped strings — no console.log calls.
  * This makes the output reusable for:
@@ -9,7 +9,7 @@
  *   - Tests: assert on the returned string without capturing stdout
  */
 
-import type { IstanbulCoverage } from "fieldtest";
+import type { IstanbulCoverage } from "roadtest";
 import type { DepGraph } from "./cache.js";
 import type { SerializableTestSuite } from "./serialize.js";
 

@@ -124,10 +124,10 @@ expect(container.querySelector('.badge')?.textContent).toBe('new')
 
 ## With a provider wrapper
 
-If you've set up `.fieldtest/preview.tsx`, any providers (themes, router, context) defined there wrap every `render()` call automatically — no extra setup needed per test.
+If you've set up `.roadtest/preview.tsx`, any providers (themes, router, context) defined there wrap every `render()` call automatically — no extra setup needed per test.
 
 ```tsx
-// .fieldtest/preview.tsx
+// .roadtest/preview.tsx
 export default function Preview({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme="dark">
@@ -144,7 +144,7 @@ export default function Preview({ children }: { children: React.ReactNode }) {
 For cases where you need to manually flush React's update queue outside of `fireEvent`:
 
 ```ts
-import { act } from "fieldtest";
+import { act } from "roadtest";
 
 await act(async () => {
   store.dispatch({ type: "LOAD" });

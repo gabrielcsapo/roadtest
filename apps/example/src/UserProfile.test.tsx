@@ -1,6 +1,6 @@
-import { act, describe, it, render } from "fieldtest";
+import { act, describe, it, render } from "roadtest";
 import { http, HttpResponse } from "msw";
-import { worker } from "../.fieldtest/setup";
+import { worker } from "../.roadtest/setup";
 import { UserProfile } from "./UserProfile";
 import type { User } from "./UserProfile";
 

@@ -3,7 +3,7 @@
  * The existing discounts.test.ts mocks the discount strategies — this file
  * exercises the real implementations and covers edge cases in the cart itself.
  */
-import { describe, it, expect } from "fieldtest";
+import { describe, it, expect } from "roadtest";
 import { calculateTotal } from "./cart";
 import { noDiscount, bulkDiscount, memberDiscount } from "./discounts";
 import type { CartItem } from "./discounts";

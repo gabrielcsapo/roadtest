@@ -8,7 +8,7 @@ on:
 
 jobs:
   # Four node-test packages run in parallel — no build output needed since
-  # bin/fieldtest.js uses tsx to load TypeScript source directly.
+  # bin/roadtest.js uses tsx to load TypeScript source directly.
   node-tests:
     runs-on: ubuntu-latest
     strategy:
@@ -17,9 +17,9 @@ jobs:
         include:
           - filter: example
             script: test:node
-          - filter: "fieldtest"
+          - filter: "roadtest"
             script: test:node
-          - filter: "@fieldtest/runner"
+          - filter: "@roadtest/runner"
             script: test:node
           - filter: scale
             script: test
@@ -68,12 +68,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build core
-        run: pnpm --filter fieldtest build
+        run: pnpm --filter roadtest build
 
       - name: Build runner
-        run: pnpm --filter @fieldtest/runner build
+        run: pnpm --filter @roadtest/runner build
 
-  # E2E runs in parallel with node-tests and build. The fieldtest CLI uses tsx
+  # E2E runs in parallel with node-tests and build. The roadtest CLI uses tsx
   # to load TypeScript source directly, so no pre-built dist is required.
   e2e:
     runs-on: ubuntu-latest

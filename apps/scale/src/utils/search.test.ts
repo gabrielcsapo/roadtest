@@ -1,4 +1,4 @@
-import { describe, it, expect } from "fieldtest";
+import { describe, it, expect } from "roadtest";
 import { matchesSearch, highlightMatch, scoreMatch, searchItems, tokenize } from "./search";
 
 describe("search", () => {

@@ -1,5 +1,5 @@
 {
-  "name": "@fieldtest/website",
+  "name": "@roadtest/website",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fieldtest/runner": "workspace:*",
-    "fieldtest": "workspace:*",
+    "@roadtest/runner": "workspace:*",
     "fuse.js": "^7.3.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.14.1",
+    "roadtest": "workspace:*",
     "shiki": "^4.0.2"
   },
   "devDependencies": {

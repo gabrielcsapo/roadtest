@@ -1,7 +1,7 @@
 import type { Page } from "@playwright/test";
 
 /**
- * Waits until the fieldtest UI has finished loading and all tests have run.
+ * Waits until the roadtest UI has finished loading and all tests have run.
  *
  * Flow inside the app:
  *  1. "Loading test sandbox…" spinner shown while the sandbox iframe initialises.

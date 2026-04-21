@@ -37,19 +37,19 @@ export default defineConfig({
   ],
   webServer: [
     {
-      // fieldtest --ui starts a Vite dev server with the test runner on port 3333.
+      // roadtest --ui starts a Vite dev server with the test runner on port 3333.
       // BROWSER=none prevents Vite from opening the system browser automatically.
-      name: "fieldtest-dev",
-      command: "BROWSER=none pnpm exec fieldtest --ui",
+      name: "roadtest-dev",
+      command: "BROWSER=none pnpm exec roadtest --ui",
       cwd: EXAMPLE_DIR,
       port: 3333,
       reuseExistingServer: !process.env.CI,
       timeout: 60_000,
     },
     {
-      // serve-build.mjs runs `fieldtest --build` then serves the static output.
+      // serve-build.mjs runs `roadtest --build` then serves the static output.
       // The build step takes longer, so use a higher timeout.
-      name: "fieldtest-build",
+      name: "roadtest-build",
       command: "node serve-build.mjs",
       cwd: E2E_DIR,
       port: 4173,

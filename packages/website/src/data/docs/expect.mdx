@@ -3,7 +3,7 @@
 Wraps a value and returns a set of matchers to assert its state. Every assertion is recorded in the test result and appears in the Assertions tab of the browser UI.
 
 ```ts
-import { expect } from "fieldtest";
+import { expect } from "roadtest";
 
 expect(value).toBe(expected);
 ```
@@ -44,7 +44,7 @@ expect({ a: 1 }).toEqual({ a: 1 });
 expect([1, 2, 3]).toEqual([1, 2, 3]);
 ```
 
-On failure, fieldtest reports only the paths that differ rather than printing both full objects:
+On failure, roadtest reports only the paths that differ rather than printing both full objects:
 
 ```
 toEqual failed:
@@ -178,7 +178,7 @@ Checks that the string contains a substring, or matches a regular expression.
 
 ```ts
 expect(message).toMatch("Welcome");
-expect(email).toMatch(/@fieldtest\.dev$/);
+expect(email).toMatch(/@roadtest\.dev$/);
 ```
 
 ---
@@ -340,7 +340,7 @@ await expect(getByRole('button')).toMatchSnapshot('save button')
 
 #### HTML-aware comparison
 
-Unlike plain string snapshot tools, fieldtest normalizes HTML before comparing so cosmetic serialization differences never cause false failures:
+Unlike plain string snapshot tools, roadtest normalizes HTML before comparing so cosmetic serialization differences never cause false failures:
 
 - **Attribute order** — attributes are sorted alphabetically, so `<div class="x" id="y">` and `<div id="y" class="x">` are treated as equal.
 - **CSS normalization** — inline style declarations are sorted and shorthand properties (`flex`, `border`, `border-top`, etc.) are expanded to their longhand equivalents. `flex: 1 0 auto` and `flex-grow: 1; flex-shrink: 0; flex-basis: auto` are the same snapshot.
@@ -348,11 +348,11 @@ Unlike plain string snapshot tools, fieldtest normalizes HTML before comparing s
 
 #### Cross-environment consistency
 
-When running in the browser, fieldtest wraps your component in a passthrough container div (for layout). Node/happy-dom renders do not include this wrapper. fieldtest detects and strips the mismatched wrapper automatically, so the same snapshot passes in both environments without any special handling on your part.
+When running in the browser, roadtest wraps your component in a passthrough container div (for layout). Node/happy-dom renders do not include this wrapper. roadtest detects and strips the mismatched wrapper automatically, so the same snapshot passes in both environments without any special handling on your part.
 
 #### Readable diffs
 
-On mismatch, fieldtest pretty-prints the stored and current HTML tag-per-line before diffing, so you see which specific elements changed rather than one enormous string diff:
+On mismatch, roadtest pretty-prints the stored and current HTML tag-per-line before diffing, so you see which specific elements changed rather than one enormous string diff:
 
 ```
 -  <button style="background-color: rgb(0, 123, 255); color: rgb(255, 255, 255);">

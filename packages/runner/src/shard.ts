@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { IstanbulCoverage } from "fieldtest";
+import type { IstanbulCoverage } from "roadtest";
 import type { SerializableTestSuite } from "./serialize.js";
 
 // ─── Shard config ─────────────────────────────────────────────────────────────
@@ -39,7 +39,7 @@ export interface ShardResult {
 }
 
 export function getResultsDir(cwd: string): string {
-  return join(cwd, ".fieldtest", "results");
+  return join(cwd, ".roadtest", "results");
 }
 
 export function shardResultPath(resultsDir: string, shard: ShardConfig): string {

@@ -6,17 +6,17 @@
   "scripts": {
     "dev": "vite --port 3333",
     "build": "vite build",
-    "build:demo": "fieldtest --build --outDir ../../packages/website/public/demo-ui --base ./",
-    "test:node": "fieldtest",
-    "test:ui": "fieldtest --ui",
-    "test:node:watch": "fieldtest --watch"
+    "build:demo": "roadtest --build --outDir ../../packages/website/public/demo-ui --base ./",
+    "test:node": "roadtest",
+    "test:ui": "roadtest --ui",
+    "test:node:watch": "roadtest --watch"
   },
   "dependencies": {
-    "@fieldtest/addon-network": "workspace:*",
-    "fieldtest": "workspace:*",
+    "@roadtest/addon-network": "workspace:*",
     "msw": "^2.13.3",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "roadtest": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",

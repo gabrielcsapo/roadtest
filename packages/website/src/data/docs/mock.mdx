@@ -1,6 +1,6 @@
 ## mock / unmock
 
-Replace module imports with controlled fakes. `mock()` calls are automatically hoisted before imports by the fieldtest Vite plugin — the same pattern as Vitest's `vi.mock()`.
+Replace module imports with controlled fakes. `mock()` calls are automatically hoisted before imports by the roadtest Vite plugin — the same pattern as Vitest's `vi.mock()`.
 
 ### Type signatures
 
@@ -23,7 +23,7 @@ Registers a module mock. The call is hoisted to the top of the file before any i
 `mock()` returns `void`. Your `import` statements are what give you access to the mocked exports — they are redirected to the factory after hoisting.
 
 ```ts
-import { describe, it, expect, render, mock } from 'fieldtest'
+import { describe, it, expect, render, mock } from 'roadtest'
 import { useFeatureFlag } from '../hooks/useFeatureFlag'
 
 mock('../hooks/useFeatureFlag', () => ({
@@ -88,7 +88,7 @@ unmock(moduleId: string): void
 Removes a specific module mock. The next import of that module will use the real implementation.
 
 ```ts
-import { unmock } from "fieldtest";
+import { unmock } from "roadtest";
 
 unmock("../api/user");
 ```
@@ -104,7 +104,7 @@ clearAllMocks(): void
 Removes all registered mocks and resets the call log. Useful in an `afterEach` / `afterAll` hook to ensure clean state between test files.
 
 ```ts
-import { clearAllMocks, registerAfterTestHook } from "fieldtest";
+import { clearAllMocks, registerAfterTestHook } from "roadtest";
 
 registerAfterTestHook(() => {
   clearAllMocks();
@@ -115,7 +115,7 @@ registerAfterTestHook(() => {
 
 ## How hoisting works
 
-The fieldtest Vite plugin statically rewrites your test file so that `mock()` calls execute before any module imports are resolved. This means:
+The roadtest Vite plugin statically rewrites your test file so that `mock()` calls execute before any module imports are resolved. This means:
 
 - You **cannot** reference variables defined outside the factory inside the factory — the factory runs before the rest of the module is evaluated.
 - The `import` statements at the top of the file will receive the mocked versions automatically.

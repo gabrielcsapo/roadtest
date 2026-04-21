@@ -2,11 +2,11 @@
 
 Add custom tabs to the browser UI's detail view. Tabs receive the full test case data and can render anything.
 
-Use `load` (preferred) when registering from `.fieldtest/setup.ts`, which runs in all frames. This avoids React instance conflicts by letting the UI frame import the component itself:
+Use `load` (preferred) when registering from `.roadtest/setup.ts`, which runs in all frames. This avoids React instance conflicts by letting the UI frame import the component itself:
 
 ```tsx
-// .fieldtest/setup.ts
-import { registerTab } from "fieldtest";
+// .roadtest/setup.ts
+import { registerTab } from "roadtest";
 
 registerTab({
   id: "network",
@@ -16,8 +16,8 @@ registerTab({
 ```
 
 ```tsx
-// .fieldtest/NetworkTab.tsx
-import type { TestCase } from "fieldtest";
+// .roadtest/NetworkTab.tsx
+import type { TestCase } from "roadtest";
 
 export function NetworkTab({ test }: { test: TestCase }) {
   return (
@@ -34,10 +34,10 @@ export function NetworkTab({ test }: { test: TestCase }) {
 }
 ```
 
-Alternatively, pass a `component` directly if you are registering from `.fieldtest/preview.tsx` (UI frame only):
+Alternatively, pass a `component` directly if you are registering from `.roadtest/preview.tsx` (UI frame only):
 
 ```tsx
-import { registerTab } from "fieldtest";
+import { registerTab } from "roadtest";
 import { NetworkTab } from "./NetworkTab";
 
 registerTab({

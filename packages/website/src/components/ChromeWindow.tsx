@@ -44,7 +44,7 @@ interface BrowserWindowProps {
 }
 
 export function BrowserWindow({
-  url = "localhost:3333 — fieldtest",
+  url = "localhost:3333 — roadtest",
   height,
   onExpand,
   onCollapse,

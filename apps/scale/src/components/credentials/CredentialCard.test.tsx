@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
+import { describe, it, expect, render, fireEvent, snapshot } from "roadtest";
 import { CredentialCard } from "./CredentialCard";
 import { Credential, User } from "../../types";
 

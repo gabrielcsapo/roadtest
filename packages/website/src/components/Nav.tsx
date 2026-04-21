@@ -12,7 +12,7 @@ export default function Nav() {
           className="flex items-center gap-2.5 font-bold text-ft-text no-underline hover:text-white transition-colors"
         >
           <Logo size={28} id="nav" />
-          <span className="text-[17px] tracking-tight">fieldtest</span>
+          <span className="text-[17px] tracking-tight">roadtest</span>
         </Link>
 
         <div className="flex items-center gap-1">

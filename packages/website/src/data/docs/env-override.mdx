@@ -1,10 +1,10 @@
 ## Environment Override
 
-By default, test files run in whatever environment fieldtest was invoked in (browser or Node). You can force a specific file to always run in Node with a comment at the top:
+By default, test files run in whatever environment roadtest was invoked in (browser or Node). You can force a specific file to always run in Node with a comment at the top:
 
 ```ts
-// @fieldtest-env node
-import { describe, it, expect } from "fieldtest";
+// @roadtest-env node
+import { describe, it, expect } from "roadtest";
 
 describe("pure logic", () => {
   it("sorts correctly", () => {

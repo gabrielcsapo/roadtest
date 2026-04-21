@@ -1,5 +1,5 @@
 dist
 node_modules
-apps/example/.fieldtest/cache/
-apps/scale/.fieldtest/cache/
+apps/example/.roadtest/cache/
+apps/scale/.roadtest/cache/
 packages/website/public/demo-ui

@@ -26,12 +26,9 @@ importers:
 
   apps/example:
     dependencies:
-      '@fieldtest/addon-network':
+      '@roadtest/addon-network':
         specifier: workspace:*
         version: link:../../packages/network
-      fieldtest:
-        specifier: workspace:*
-        version: link:../../packages/fieldtest
       msw:
         specifier: ^2.13.3
         version: 2.13.3(@types/node@25.6.0)(typescript@6.0.2)
@@ -41,6 +38,9 @@ importers:
       react-dom:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
+      roadtest:
+        specifier: workspace:*
+        version: link:../../packages/roadtest
     devDependencies:
       '@types/react':
         specifier: ^19.2.14
@@ -60,17 +60,17 @@ importers:
 
   apps/scale:
     dependencies:
-      fieldtest:
-        specifier: workspace:*
-        version: link:../../packages/fieldtest
       react:
         specifier: ^19.2.5
         version: 19.2.5
       react-dom:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
+      roadtest:
+        specifier: workspace:*
+        version: link:../../packages/roadtest
     devDependencies:
-      '@fieldtest/runner':
+      '@roadtest/runner':
         specifier: workspace:*
         version: link:../../packages/runner
       '@types/react':
@@ -89,17 +89,39 @@ importers:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
 
-  packages/fieldtest:
+  packages/network:
     dependencies:
-      '@fieldtest/runner':
+      msw:
+        specifier: ^2.13.3
+        version: 2.13.3(@types/node@25.6.0)(typescript@6.0.2)
+      react:
+        specifier: ^19.2.5
+        version: 19.2.5
+      roadtest:
         specifier: workspace:*
-        version: link:../runner
+        version: link:../roadtest
+    devDependencies:
+      '@types/node':
+        specifier: ^25.6.0
+        version: 25.6.0
+      '@types/react':
+        specifier: ^19.2.14
+        version: 19.2.14
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  packages/roadtest:
+    dependencies:
       '@react-three/drei':
         specifier: ^10.7.7
         version: 10.7.7(@react-three/fiber@9.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(three@0.183.2))(@types/react@19.2.14)(@types/three@0.183.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(three@0.183.2)
       '@react-three/fiber':
         specifier: ^9.6.0
         version: 9.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(three@0.183.2)
+      '@roadtest/runner':
+        specifier: workspace:*
+        version: link:../runner
       '@tanstack/react-virtual':
         specifier: ^3.13.23
         version: 3.13.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -150,39 +172,17 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.2)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
 
-  packages/network:
-    dependencies:
-      fieldtest:
-        specifier: workspace:*
-        version: link:../fieldtest
-      msw:
-        specifier: ^2.13.3
-        version: 2.13.3(@types/node@25.6.0)(typescript@6.0.2)
-      react:
-        specifier: ^19.2.5
-        version: 19.2.5
-    devDependencies:
-      '@types/node':
-        specifier: ^25.6.0
-        version: 25.6.0
-      '@types/react':
-        specifier: ^19.2.14
-        version: 19.2.14
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
   packages/runner:
     dependencies:
-      fieldtest:
-        specifier: workspace:*
-        version: link:../fieldtest
       glob:
         specifier: ^13.0.6
         version: 13.0.6
       happy-dom:
         specifier: ^20.9.0
         version: 20.9.0
+      roadtest:
+        specifier: workspace:*
+        version: link:../roadtest
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
@@ -202,12 +202,9 @@ importers:
 
   packages/website:
     dependencies:
-      '@fieldtest/runner':
+      '@roadtest/runner':
         specifier: workspace:*
         version: link:../runner
-      fieldtest:
-        specifier: workspace:*
-        version: link:../fieldtest
       fuse.js:
         specifier: ^7.3.0
         version: 7.3.0
@@ -220,6 +217,9 @@ importers:
       react-router-dom:
         specifier: ^7.14.1
         version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      roadtest:
+        specifier: workspace:*
+        version: link:../roadtest
       shiki:
         specifier: ^4.0.2
         version: 4.0.2

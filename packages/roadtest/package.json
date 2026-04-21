@@ -1,0 +1,51 @@
+{
+  "name": "roadtest",
+  "version": "0.0.0",
+  "bin": {
+    "roadtest": "./bin/roadtest.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./plugin": {
+      "development": "./src/plugin.ts",
+      "types": "./dist/src/plugin.d.ts",
+      "import": "./dist/plugin.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
+    "@roadtest/runner": "workspace:*",
+    "@tanstack/react-virtual": "^3.13.23",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "axe-core": "^4.11.3",
+    "istanbul-lib-instrument": "^6.0.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
+    "three": "^0.183.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.183.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

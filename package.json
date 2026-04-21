@@ -1,9 +1,9 @@
 {
-  "name": "fieldtest",
+  "name": "roadtest",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter fieldtest build",
-    "dev": "pnpm --filter fieldtest dev & pnpm --filter example dev",
+    "build": "pnpm --filter roadtest build",
+    "dev": "pnpm --filter roadtest dev & pnpm --filter example dev",
     "test:node": "pnpm --filter example test:node",
     "test:node:watch": "pnpm --filter example test:node:watch",
     "test:e2e": "pnpm --filter e2e test",

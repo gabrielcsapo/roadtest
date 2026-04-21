@@ -4,7 +4,7 @@ Write a test file next to your component:
 
 ```tsx
 // Button.test.tsx
-import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
+import { describe, it, expect, render, fireEvent, snapshot } from "roadtest";
 import { Button } from "./Button";
 
 describe("Button", () => {
@@ -33,11 +33,11 @@ describe("Button", () => {
 Run in the browser:
 
 ```bash
-fieldtest --ui
+roadtest --ui
 ```
 
 Or headlessly in Node:
 
 ```bash
-fieldtest
+roadtest
 ```

@@ -14,10 +14,10 @@
     "strict": true,
     "types": ["vite/client"],
     "paths": {
-      "@demo/preview": ["./demo-app/.fieldtest/preview.tsx"],
-      "@demo/setup": ["./demo-app/.fieldtest/setup.ts"],
+      "@demo/preview": ["./demo-app/.roadtest/preview.tsx"],
+      "@demo/setup": ["./demo-app/.roadtest/setup.ts"],
       "@demo/globals": ["./demo-app/src/globals.css"],
-      "@fieldtest/runner/render": ["../../packages/runner/src/render.ts"]
+      "@roadtest/runner/render": ["../../packages/runner/src/render.ts"]
     }
   },
   "include": ["src"]

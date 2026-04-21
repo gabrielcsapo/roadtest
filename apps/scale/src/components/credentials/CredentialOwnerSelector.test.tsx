@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
+import { describe, it, expect, render, fireEvent, snapshot } from "roadtest";
 import { CredentialOwnerSelector } from "./CredentialOwnerSelector";
 import { User } from "../../types";
 

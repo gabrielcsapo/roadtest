@@ -1,11 +1,11 @@
 /**
- * Demonstrates FieldTest's module mocking via mock().
+ * Demonstrates RoadTest's module mocking via mock().
  *
  * The Vite plugin transforms the static `import { getGreeting }` below into
  * an `await __ftImport(...)` call, so the mock factory registered above it
  * takes effect before the import is resolved.
  */
-import { describe, it, expect, mock } from "fieldtest";
+import { describe, it, expect, mock } from "roadtest";
 import { getGreeting } from "./greeting";
 
 // ── Mock './greeting' so the time-of-day logic is predictable ────────────────

@@ -33,7 +33,7 @@ import {
 import { serializeTestSuite } from "./serialize.js";
 import type { SerializableTestSuite } from "./serialize.js";
 import { processSnapshots, snapshotPath } from "./snapshots.js";
-import type { IstanbulCoverage } from "fieldtest";
+import type { IstanbulCoverage } from "roadtest";
 import {
   RESET,
   BOLD,
@@ -366,7 +366,7 @@ export async function runNode() {
     const otherArgs = args.filter((a) => a !== "--clear-cache");
     // If no other args, just confirm and exit. Otherwise the main header will note it.
     if (otherArgs.length === 0) {
-      console.log(`${CYAN}${BOLD}FieldTest${RESET} ${DIM}cache cleared${RESET}`);
+      console.log(`${CYAN}${BOLD}RoadTest${RESET} ${DIM}cache cleared${RESET}`);
       return;
     }
   }
@@ -382,7 +382,7 @@ export async function runNode() {
 
     const { suites, shards } = mergeShardResults(shardResults);
     console.log(
-      `\n${CYAN}${BOLD}FieldTest${RESET} ${DIM}merged ${plural(shards.length, "shard")}${RESET}\n`,
+      `\n${CYAN}${BOLD}RoadTest${RESET} ${DIM}merged ${plural(shards.length, "shard")}${RESET}\n`,
     );
 
     const mergeStart = Date.now();
@@ -426,7 +426,7 @@ export async function runNode() {
     }
 
     const initial = (await glob(globPattern, { cwd })).map((f) => resolve(cwd, f));
-    console.log(`\n${CYAN}${BOLD}FieldTest${RESET} ${DIM}watch${RESET}\n`);
+    console.log(`\n${CYAN}${BOLD}RoadTest${RESET} ${DIM}watch${RESET}\n`);
     console.log(
       `${DIM}watching src/  •  ${plural(initial.length, "test file")} found  •  ctrl+c to stop${RESET}\n`,
     );
@@ -574,7 +574,7 @@ export async function runNode() {
 
   // Run each cache-miss file and stream its result immediately
   if (cacheMisses.length > 0) {
-    const { setCurrentSourceFile, runSuites, store, clearAllMocks } = await import("fieldtest");
+    const { setCurrentSourceFile, runSuites, store, clearAllMocks } = await import("roadtest");
     const missTotal = cacheMisses.length;
 
     for (let i = 0; i < cacheMisses.length; i++) {
@@ -730,7 +730,7 @@ export async function runNode() {
       coverage: null, // full coverage merge happens at --merge-shards time
     });
     console.log(
-      `${DIM}shard result written → .fieldtest/results/shard-${shard.index}-of-${shard.total}.json${RESET}\n`,
+      `${DIM}shard result written → .roadtest/results/shard-${shard.index}-of-${shard.total}.json${RESET}\n`,
     );
   }
 

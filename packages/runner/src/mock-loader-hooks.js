@@ -21,7 +21,7 @@ import { join, dirname, resolve } from "node:path";
 
 const TEST_FILE_RE = /\.(test|spec)\.[jt]sx?($|\?)/;
 
-// Detect which package name the consuming project uses for the fieldtest runtime.
+// Detect which package name the consuming project uses for the roadtest runtime.
 // Checked once at hook load time (process.cwd() is the project root).
 let _runtimePkg = null;
 function getRuntimePkg() {
@@ -30,9 +30,9 @@ function getRuntimePkg() {
     const raw = readFileSync(join(process.cwd(), "package.json"), "utf-8");
     const pkg = JSON.parse(raw);
     const all = Object.assign({}, pkg.dependencies, pkg.devDependencies);
-    _runtimePkg = "fieldtest" in all ? "fieldtest" : "fieldtest";
+    _runtimePkg = "roadtest" in all ? "roadtest" : "roadtest";
   } catch {
-    _runtimePkg = "fieldtest";
+    _runtimePkg = "roadtest";
   }
   return _runtimePkg;
 }
@@ -125,7 +125,7 @@ function transformNonTestFile(code, allImports, mockedImports) {
   });
 
   const headerParts = [];
-  // Use the globalThis reference set by mocks.ts when fieldtest is first loaded.
+  // Use the globalThis reference set by mocks.ts when roadtest is first loaded.
   // This avoids adding a new `import` to the source file, which would pull in
   // the full test framework and risk duplicate React instances breaking hooks.
   headerParts.push("const __ftImport = globalThis.__ftImport;");
@@ -244,11 +244,11 @@ export async function load(url, context, nextLoad) {
  * Rewrite a test file's TypeScript/JavaScript source so that mock() calls are
  * registered before module imports resolve. Returns null if no rewrite needed.
  */
-// All package names that serve as the fieldtest runtime entry point.
+// All package names that serve as the roadtest runtime entry point.
 // Checked statically so that projects using either name work regardless of
 // which package.json getRuntimePkg() happens to read (e.g. monorepo roots
 // that don't list the example app's deps).
-const CORE_PKGS = new Set(["fieldtest", "fieldtest"]);
+const CORE_PKGS = new Set(["roadtest", "roadtest"]);
 
 function mockHoist(code) {
   const imports = collectImports(code);
@@ -431,7 +431,7 @@ function collectTopLevelMockCalls(code) {
 
 // ---- Code generation ---------------------------------------------------------
 
-/** Inject __ftImport into an existing fieldtest named-import list */
+/** Inject __ftImport into an existing roadtest named-import list */
 function injectVtImport(importText) {
   if (importText.includes("__ftImport")) return importText;
   const braceMatch = importText.match(/\{([^}]*)\}/);

@@ -5,7 +5,7 @@ import Logo from "../components/Logo";
 import { getHighlighter, highlight as shikiHighlight } from "../lib/highlighter";
 import type { Highlighter } from "shiki";
 import { BrowserWindow, CodeWindow, TerminalWindow } from "../components/ChromeWindow";
-import { renderResults, renderSummary, renderCoverage } from "@fieldtest/runner/render";
+import { renderResults, renderSummary, renderCoverage } from "@roadtest/runner/render";
 
 const DEMO_SRC = `${import.meta.env.BASE_URL}demo-ui/index.html`;
 
@@ -268,7 +268,7 @@ const _summaryLines = renderSummary(
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const _coverageLines = renderCoverage(_mockCoverage as any, "/project");
 const TERMINAL_OUTPUT = [
-  "$ fieldtest --coverage --shard=1/4",
+  "$ roadtest --coverage --shard=1/4",
   "",
   ..._resultLines,
   ..._summaryLines,
@@ -285,7 +285,7 @@ const BUTTON_TEST_CODE = `import {
   expect, 
   render, 
   fireEvent, 
-  snapshot } from 'fieldtest'
+  snapshot } from 'roadtest'
 import { Button } from './Button'
 
 describe('Button', () => {
@@ -592,7 +592,7 @@ export default function Home() {
   }, []);
 
   function copyInstall() {
-    navigator.clipboard.writeText("npm install -D fieldtest").catch(() => {});
+    navigator.clipboard.writeText("npm install -D roadtest").catch(() => {});
   }
 
   return (
@@ -601,7 +601,7 @@ export default function Home() {
       <iframe
         ref={iframeRef}
         src={DEMO_SRC}
-        title="fieldtest live demo"
+        title="roadtest live demo"
         style={{
           position: "fixed",
           width: 0,
@@ -720,7 +720,7 @@ export default function Home() {
                 </h1>
 
                 <p className="mb-8 text-[clamp(15px,2vw,17px)] leading-[1.7] text-ft-mid">
-                  fieldtest is a visual test runner for React. Watch your components render
+                  roadtest is a visual test runner for React. Watch your components render
                   step-by-step, inspect coverage per test, audit accessibility, and catch network
                   requests — all in the browser.
                 </p>
@@ -755,7 +755,7 @@ export default function Home() {
                 {/* Install snippet */}
                 <div className="flex items-center gap-2.5 rounded-lg border border-white/7 bg-ft-surface px-4 py-2.5 font-mono text-sm text-ft-text w-fit">
                   <span className="text-ft-green">$</span>
-                  <span>npm install -D fieldtest</span>
+                  <span>npm install -D roadtest</span>
                   <button
                     onClick={copyInstall}
                     className="cursor-pointer border-none bg-transparent p-0 text-ft-dim transition-colors hover:text-ft-text"
@@ -838,7 +838,7 @@ export default function Home() {
               <h2 className="mb-4 text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.15] tracking-tight text-ft-text">
                 If you know Jest,
                 <br />
-                you know fieldtest.
+                you know roadtest.
               </h2>
               <p className="mb-9 max-w-[480px] text-[17px] leading-[1.65] text-ft-mid">
                 Same{" "}
@@ -855,7 +855,7 @@ export default function Home() {
                 {[
                   {
                     n: 1,
-                    title: "Import from fieldtest",
+                    title: "Import from roadtest",
                     desc: "Drop-in for your existing test utilities. render() returns React Testing Library queries.",
                   },
                   {
@@ -865,7 +865,7 @@ export default function Home() {
                   },
                   {
                     n: 3,
-                    title: "Run fieldtest --ui",
+                    title: "Run roadtest --ui",
                     desc: "Browser UI opens at localhost:3333. Click any test. Inspect everything.",
                   },
                 ].map((p) => (
@@ -924,14 +924,14 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[15px] font-bold text-ft-text">Browser UI</div>
-                    <div className="font-mono text-xs text-ft-dim">fieldtest --ui</div>
+                    <div className="font-mono text-xs text-ft-dim">roadtest --ui</div>
                   </div>
                 </div>
                 {/* Fixed iframe — repositioned by useLayoutEffect */}
                 <iframe
                   ref={dualIframeRef}
                   src={DEMO_SRC}
-                  title="fieldtest browser UI"
+                  title="roadtest browser UI"
                   style={{
                     position: "fixed",
                     width: 0,
@@ -1016,7 +1016,7 @@ export default function Home() {
                   <div>
                     <div className="text-[15px] font-bold text-ft-text">Node / CI</div>
                     <div className="font-mono text-xs text-ft-dim">
-                      fieldtest --coverage --shard=1/4
+                      roadtest --coverage --shard=1/4
                     </div>
                   </div>
                 </div>
@@ -1054,7 +1054,7 @@ export default function Home() {
               Start seeing.
             </h2>
             <p className="mx-auto mb-9 max-w-[460px] text-[17px] leading-relaxed text-ft-mid">
-              fieldtest is open source and free. Drop it into any Vite + React project in minutes.
+              roadtest is open source and free. Drop it into any Vite + React project in minutes.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -1093,7 +1093,7 @@ export default function Home() {
           <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-3 px-6">
             <div className="flex items-center gap-2 text-sm font-bold text-ft-dim">
               <Logo size={22} id="footer" />
-              fieldtest
+              roadtest
             </div>
             <div className="text-sm text-ft-dim">Open source. MIT license.</div>
           </div>

@@ -1,5 +1,5 @@
 /**
- * Demonstrates FieldTest module mocking with function-as-parameter.
+ * Demonstrates RoadTest module mocking with function-as-parameter.
  *
  * `calculateTotal` (from ./cart) accepts a discount strategy as a callback.
  * We mock `./discounts` so the spied versions of `bulkDiscount` and
@@ -9,7 +9,7 @@
  * The key: `calculateTotal` lives in a *separate* file (./cart) so it is NOT
  * part of the mock and runs with the real implementation.
  */
-import { describe, it, expect, mock } from "fieldtest";
+import { describe, it, expect, mock } from "roadtest";
 import { calculateTotal } from "./cart";
 import { bulkDiscount, memberDiscount } from "./discounts";
 import type { CartItem } from "./discounts";

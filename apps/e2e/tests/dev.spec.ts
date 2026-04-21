@@ -4,9 +4,9 @@ import { waitForTestsComplete } from "./helpers";
 // ── Layout ─────────────────────────────────────────────────────────────────────
 
 test.describe("Dev mode — app layout", () => {
-  test("shows the Fieldtest header", async ({ page }) => {
+  test("shows the Roadtest header", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("text=Fieldtest").first()).toBeVisible();
+    await expect(page.locator("text=Roadtest").first()).toBeVisible();
   });
 
   test("shows all four view-toggle buttons", async ({ page }) => {
@@ -155,6 +155,6 @@ test.describe("Dev mode — view navigation", () => {
   test("navigating to a test URL directly loads the detail view", async ({ page }) => {
     await page.goto("/#/suite/Button/test/renders%20the%20label");
     await expect(page).toHaveURL(/#\/suite\/Button\/test\//);
-    await expect(page.locator("text=Fieldtest").first()).toBeVisible();
+    await expect(page.locator("text=Roadtest").first()).toBeVisible();
   });
 });

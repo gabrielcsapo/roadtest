@@ -1,6 +1,6 @@
 import { createServer, build } from "vite";
 import type { Plugin } from "vite";
-import { fieldtest, fieldtestCoverage } from "fieldtest/plugin";
+import { roadtest, roadtestCoverage } from "roadtest/plugin";
 import { readFile, readdir, stat, writeFile, unlink } from "node:fs/promises";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -103,14 +103,14 @@ async function readBody(req: IncomingMessage): Promise<string> {
 }
 
 /** Serves raw source files and project file listings — configureServer runs before Vite's HTML fallback */
-function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin {
+function roadtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin {
   let root = process.cwd();
   return {
-    name: "fieldtest-dev",
+    name: "roadtest-dev",
     configResolved(config) {
       root = config.root;
     },
-    // Strip app entry scripts so only the fieldtest entry runs in --ui mode.
+    // Strip app entry scripts so only the roadtest entry runs in --ui mode.
     // Without this, index.html's <script src="/src/main.tsx"> would pull the full
     // app (and MSW worker) into the same Vite pipeline as the test runner, causing
     // the Istanbul + React Fast Refresh double-transform conflict.
@@ -125,7 +125,7 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       // Accepts either:
       //   ?path=/absolute/path/to/file.ts   (existing — used by CoverageExplorer / CodeTab)
       //   ?url=/src/App.tsx                 (new — Vite-relative path, resolved via server root)
-      server.middlewares.use("/__fieldtest_source__", async (req, res) => {
+      server.middlewares.use("/__roadtest_source__", async (req, res) => {
         try {
           const reqUrl = new URL(req.url ?? "/", "http://localhost");
           const filePath = reqUrl.searchParams.get("path");
@@ -152,7 +152,7 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       });
 
       // Dependency graph endpoint — returns dep tree rooted at a specific test file
-      server.middlewares.use("/__fieldtest_deps__", async (req, res) => {
+      server.middlewares.use("/__roadtest_deps__", async (req, res) => {
         try {
           const url = new URL(req.url ?? "/", "http://localhost");
           const file = url.searchParams.get("file");
@@ -237,7 +237,7 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       });
 
       // Module graph endpoint — returns source files + static import relationships
-      server.middlewares.use("/__fieldtest_graph__", async (_req, res) => {
+      server.middlewares.use("/__roadtest_graph__", async (_req, res) => {
         try {
           const data = await buildGraphData(root);
           res.setHeader("Content-Type", "application/json");
@@ -249,7 +249,7 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       });
 
       // File listing endpoint — returns all source files under src/
-      server.middlewares.use("/__fieldtest_files__", async (_req, res) => {
+      server.middlewares.use("/__roadtest_files__", async (_req, res) => {
         try {
           const srcDir = resolve(root, "src");
           await stat(srcDir); // throws if doesn't exist
@@ -263,7 +263,7 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       });
 
       // Returns all stored snapshot baselines as a JSON map (absolute path → HTML)
-      server.middlewares.use("/__fieldtest_snapshots__", async (_req, res) => {
+      server.middlewares.use("/__roadtest_snapshots__", async (_req, res) => {
         try {
           const { glob } = await import("glob");
           const snapshotFiles = await glob("src/__snapshots__/**/*.html", {
@@ -289,13 +289,13 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
       });
 
       // Tells the sandbox whether --update-snapshots was passed at startup
-      server.middlewares.use("/__fieldtest_update_snapshots__", (_req, res) => {
+      server.middlewares.use("/__roadtest_update_snapshots__", (_req, res) => {
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({ enabled: options.updateSnapshots ?? false }));
       });
 
       // Accepts POST of snapshot HTML from the sandbox or the UI button
-      server.middlewares.use("/__fieldtest_snapshot_write__", async (req, res) => {
+      server.middlewares.use("/__roadtest_snapshot_write__", async (req, res) => {
         if (req.method !== "POST") {
           res.writeHead(405);
           res.end();
@@ -320,12 +320,12 @@ function fieldtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin
             const filePath = join(dir, `${sanitize(e.testName)}__${sanitize(e.label)}.html`);
             mkdirSync(dir, { recursive: true });
             writeFileSync(filePath, e.html, "utf8");
-            console.log("[fieldtest] snapshot written:", filePath);
+            console.log("[roadtest] snapshot written:", filePath);
           }
           res.writeHead(200);
           res.end("ok");
         } catch (err) {
-          console.error("[fieldtest] /__fieldtest_snapshot_write__ error:", err);
+          console.error("[roadtest] /__roadtest_snapshot_write__ error:", err);
           res.writeHead(500);
           res.end(String(err));
         }
@@ -342,7 +342,7 @@ export async function startUi() {
   const updateSnapshots = args.includes("--update-snapshots");
 
   const server = await createServer({
-    plugins: [fieldtestDevPlugin({ updateSnapshots }), fieldtest({ include }), fieldtestCoverage()],
+    plugins: [roadtestDevPlugin({ updateSnapshots }), roadtest({ include }), roadtestCoverage()],
     server: { port: 3333, open: true },
   });
 
@@ -364,16 +364,16 @@ function getArgValue(flag: string): string | undefined {
 }
 
 const PREVIEW_CANDIDATES = [
-  ".fieldtest/preview.tsx",
-  ".fieldtest/preview.ts",
-  ".fieldtest/preview.jsx",
-  ".fieldtest/preview.js",
+  ".roadtest/preview.tsx",
+  ".roadtest/preview.ts",
+  ".roadtest/preview.jsx",
+  ".roadtest/preview.js",
 ];
 const SETUP_CANDIDATES = [
-  ".fieldtest/setup.ts",
-  ".fieldtest/setup.tsx",
-  ".fieldtest/setup.js",
-  ".fieldtest/setup.jsx",
+  ".roadtest/setup.ts",
+  ".roadtest/setup.tsx",
+  ".roadtest/setup.js",
+  ".roadtest/setup.jsx",
 ];
 
 export async function buildUi() {
@@ -405,23 +405,23 @@ export async function buildUi() {
   // with relative patterns when the entry file sits inside the project root.
   const relPattern = "./" + (include.startsWith("/") ? include.slice(1) : include);
 
-  // Detect whether the consuming project depends on "fieldtest" or "fieldtest"
+  // Detect whether the consuming project depends on "roadtest" or "roadtest"
   // so the generated entry imports from the same package name the project uses.
-  let runtimePkg = "fieldtest";
+  let runtimePkg = "roadtest";
   try {
     const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8")) as {
       dependencies?: Record<string, string>;
       devDependencies?: Record<string, string>;
     };
     const all = { ...pkg.dependencies, ...pkg.devDependencies };
-    if ("fieldtest" in all) runtimePkg = "fieldtest";
+    if ("roadtest" in all) runtimePkg = "roadtest";
   } catch {
-    /* ignore — fall back to fieldtest */
+    /* ignore — fall back to roadtest */
   }
 
   // Write a real entry file so Rollup can discover it through the HTML pipeline.
   // (Virtual modules work in dev but the /@id/ URL is not followed during builds.)
-  const tempEntry = join(root, "__fieldtest_entry__.ts");
+  const tempEntry = join(root, "__roadtest_entry__.ts");
   const entryLines = [
     `import { startApp } from '${runtimePkg}'`,
     setupFile ? `import '/${setupFile}'` : null,
@@ -437,21 +437,21 @@ export async function buildUi() {
   const originalHtml = await readFile(indexPath, "utf8");
   const patchedHtml = originalHtml
     // Strip app entry scripts (same as the dev-mode transformIndexHtml plugin) so
-    // bootstrap() / main.tsx doesn't mount the full app inside fieldtest frames.
+    // bootstrap() / main.tsx doesn't mount the full app inside roadtest frames.
     .replace(/<script\s[^>]*\bsrc=["'][^"']*\/src\/[^"']+["'][^>]*><\/script>\s*/gi, "")
     .replace(
       "</body>",
-      `  <script type="module" src="/__fieldtest_entry__.ts"></script>\n  </body>`,
+      `  <script type="module" src="/__roadtest_entry__.ts"></script>\n  </body>`,
     );
   await writeFile(indexPath, patchedHtml);
 
   try {
     await build({
       root,
-      plugins: [fieldtest({ include, injectHtml: false }), fieldtestCoverage()],
+      plugins: [roadtest({ include, injectHtml: false }), roadtestCoverage()],
       base,
       // Define NODE_ENV as 'test' so React includes act() and testing utilities.
-      // The fieldtest UI is a test runner — it needs React's test-mode APIs.
+      // The roadtest UI is a test runner — it needs React's test-mode APIs.
       define: { "process.env.NODE_ENV": '"test"' },
       build: { outDir, emptyOutDir: true },
     });
@@ -467,10 +467,10 @@ export async function buildUi() {
     nodes: [],
     edges: [],
   }));
-  await writeFile(join(absOutDir, "fieldtest-graph.json"), JSON.stringify(graphData));
+  await writeFile(join(absOutDir, "roadtest-graph.json"), JSON.stringify(graphData));
 
   // Write source file contents so CoverageExplorer can display source in static deployments.
-  // Without this, /__fieldtest_source__ requests 404 when served from a CDN/static host.
+  // Without this, /__roadtest_source__ requests 404 when served from a CDN/static host.
   const srcDir = resolve(root, "src");
   const allSourceFiles = await collectSourceFiles(srcDir).catch(() => [] as string[]);
   const sourcesMap: Record<string, string> = {};
@@ -481,7 +481,7 @@ export async function buildUi() {
       /* skip unreadable */
     }
   }
-  await writeFile(join(absOutDir, "fieldtest-sources.json"), JSON.stringify(sourcesMap));
+  await writeFile(join(absOutDir, "roadtest-sources.json"), JSON.stringify(sourcesMap));
 
   // Bundle snapshot baselines so the static site can load them without a dev server.
   // Keys are paths relative to the project root (e.g. "src/__snapshots__/Card/test__initial.html").
@@ -499,5 +499,5 @@ export async function buildUi() {
       /* skip unreadable */
     }
   }
-  await writeFile(join(absOutDir, "fieldtest-snapshots.json"), JSON.stringify(snapshotsMap));
+  await writeFile(join(absOutDir, "roadtest-snapshots.json"), JSON.stringify(snapshotsMap));
 }

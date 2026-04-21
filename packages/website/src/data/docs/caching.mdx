@@ -1,26 +1,26 @@
 ## Caching
 
-fieldtest caches test results keyed by a hash of each test file and its full dependency graph. On subsequent runs, unchanged tests are skipped instantly.
+roadtest caches test results keyed by a hash of each test file and its full dependency graph. On subsequent runs, unchanged tests are skipped instantly.
 
-The cache lives in `.fieldtest/cache/`. Add it to `.gitignore`:
+The cache lives in `.roadtest/cache/`. Add it to `.gitignore`:
 
 ```
-.fieldtest/cache/
+.roadtest/cache/
 ```
 
 ### Clearing the cache
 
 ```bash
-fieldtest --clear-cache
+roadtest --clear-cache
 ```
 
 ### In CI
 
-Cache the `.fieldtest/cache/` directory between runs for maximum speed:
+Cache the `.roadtest/cache/` directory between runs for maximum speed:
 
 ```yaml
 - uses: actions/cache@v3
   with:
-    path: .fieldtest/cache
-    key: fieldtest-${{ hashFiles('src/**') }}
+    path: .roadtest/cache
+    key: roadtest-${{ hashFiles('src/**') }}
 ```

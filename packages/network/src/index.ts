@@ -1,20 +1,20 @@
 /**
- * @fieldtest/mocks — Network mocking addon for FieldTest.
+ * @roadtest/mocks — Network mocking addon for RoadTest.
  *
- * Import this file from your .fieldtest/setup.ts to enable MSW-based network
- * interception and the Network tab in the FieldTest UI.
+ * Import this file from your .roadtest/setup.ts to enable MSW-based network
+ * interception and the Network tab in the RoadTest UI.
  *
- * Usage in .fieldtest/setup.ts:
- *   export { worker } from "@fieldtest/mocks";
+ * Usage in .roadtest/setup.ts:
+ *   export { worker } from "@roadtest/mocks";
  *
  * Usage in test files:
- *   import { worker } from "./.fieldtest/setup";
+ *   import { worker } from "./.roadtest/setup";
  *   import { http, HttpResponse } from "msw";
  *   worker.use(http.get("/api/users", () => HttpResponse.json([])));
  */
 
-import { registerAfterTestHook, registerBeforeDisplayHook, currentTest } from "fieldtest";
-import type { NetworkEntry, TestCase } from "fieldtest";
+import { registerAfterTestHook, registerBeforeDisplayHook, currentTest } from "roadtest";
+import type { NetworkEntry, TestCase } from "roadtest";
 
 // ─── Environment detection ────────────────────────────────────────────────────
 // The Node runner sets globalThis.window via happy-dom, so we can't rely on
@@ -76,14 +76,14 @@ if (isBrowser && isSandboxFrame) {
   const { setupWorker } = await import("msw/browser");
   const { http, HttpResponse } = await import("msw");
 
-  // Fieldtest's own UI fetches these dev-server endpoints from within the same
+  // Roadtest's own UI fetches these dev-server endpoints from within the same
   // service-worker scope. In a static build there is no dev server, so register
   // permanent no-op handlers (passed to setupWorker so resetHandlers() never
   // removes them) to prevent passthrough failures.
   const w = setupWorker(
-    http.get("/__fieldtest_source__", () => new HttpResponse(null, { status: 404 })),
-    http.get("/__fieldtest_files__", () => HttpResponse.json([])),
-    http.get("/__fieldtest_graph__", () => HttpResponse.json({ nodes: [], edges: [] })),
+    http.get("/__roadtest_source__", () => new HttpResponse(null, { status: 404 })),
+    http.get("/__roadtest_files__", () => HttpResponse.json([])),
+    http.get("/__roadtest_graph__", () => HttpResponse.json({ nodes: [], edges: [] })),
   );
 
   try {
@@ -199,7 +199,7 @@ registerAfterTestHook(() => _mswInstance?.resetHandlers());
 // Each browser frame imports the component itself (correct React instance).
 
 if (isBrowser) {
-  const { registerTab } = await import("fieldtest");
+  const { registerTab } = await import("roadtest");
   registerTab({
     id: "network",
     label: "Network",
@@ -227,6 +227,6 @@ export const worker: { use(...h: any[]): void; resetHandlers(): void } = _mswIns
  *   expect(requests.some(r => r.url.includes("/api/users"))).toBe(true);
  * });
  */
-export function getNetworkRequests(): import("fieldtest").NetworkEntry[] {
+export function getNetworkRequests(): import("roadtest").NetworkEntry[] {
   return currentTest?.networkEntries ?? [];
 }

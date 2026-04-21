@@ -1,5 +1,5 @@
 /**
- * Builds the fieldtest static UI from the example app, then serves it on port 4173.
+ * Builds the roadtest static UI from the example app, then serves it on port 4173.
  * Used by Playwright's webServer config for the "build" project.
  */
 import { execSync } from "child_process";
@@ -26,8 +26,8 @@ const MIME = {
 };
 
 // Step 1: Build the static site
-console.log("[serve-build] Running fieldtest --build…");
-execSync("pnpm exec fieldtest --build", {
+console.log("[serve-build] Running roadtest --build…");
+execSync("pnpm exec roadtest --build", {
   cwd: EXAMPLE_DIR,
   stdio: "inherit",
 });

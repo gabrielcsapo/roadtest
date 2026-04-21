@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { NetworkEntry, TestCase } from "fieldtest";
+import type { NetworkEntry, TestCase } from "roadtest";
 
 function statusColor(status: number): string {
   if (status >= 500) return "#ef4444";

@@ -1,9 +1,9 @@
 ## describe / it / test
 
-fieldtest uses a familiar Jest-compatible DSL for structuring tests. Import everything from `fieldtest`.
+roadtest uses a familiar Jest-compatible DSL for structuring tests. Import everything from `roadtest`.
 
 ```ts
-import { describe, it, test, expect } from "fieldtest";
+import { describe, it, test, expect } from "roadtest";
 
 describe("MyComponent", () => {
   it("does something", async () => {
@@ -206,10 +206,10 @@ it.each([
 
 ## Lifecycle hooks
 
-Suite-scoped setup and teardown functions. Import from `fieldtest` and call them **inside** a `describe` block.
+Suite-scoped setup and teardown functions. Import from `roadtest` and call them **inside** a `describe` block.
 
 ```ts
-import { describe, it, beforeAll, afterAll, beforeEach, afterEach } from "fieldtest";
+import { describe, it, beforeAll, afterAll, beforeEach, afterEach } from "roadtest";
 ```
 
 ### beforeAll
@@ -279,4 +279,4 @@ describe("UserService", () => {
 });
 ```
 
-These hooks are scoped to their `describe` block. For file-level or global setup (e.g. starting MSW), use `registerBeforeTestHook` / `registerAfterTestHook` in `.fieldtest/setup.ts` instead — see [registerAfterTestHook](/docs/after-test-hook).
+These hooks are scoped to their `describe` block. For file-level or global setup (e.g. starting MSW), use `registerBeforeTestHook` / `registerAfterTestHook` in `.roadtest/setup.ts` instead — see [registerAfterTestHook](/docs/after-test-hook).

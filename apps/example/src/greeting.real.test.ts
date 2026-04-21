@@ -3,7 +3,7 @@
  * The existing greeting.test.ts only tests a mocked version — this file
  * verifies the actual time-of-day logic and output format.
  */
-import { describe, it, expect } from "fieldtest";
+import { describe, it, expect } from "roadtest";
 import { getGreeting } from "./greeting";
 
 describe("getGreeting() — real implementation", () => {

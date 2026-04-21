@@ -1,16 +1,16 @@
 ## Installation
 
-Install fieldtest into any Vite + React project:
+Install roadtest into any Vite + React project:
 
 ```bash
-npm install --save-dev fieldtest @fieldtest/runner
+npm install --save-dev roadtest @roadtest/runner
 ```
 
 Or with pnpm / yarn:
 
 ```bash
-pnpm add -D fieldtest @fieldtest/runner
-yarn add -D fieldtest @fieldtest/runner
+pnpm add -D roadtest @roadtest/runner
+yarn add -D roadtest @roadtest/runner
 ```
 
 Add the Vite plugin to your `vite.config.ts`:
@@ -18,9 +18,9 @@ Add the Vite plugin to your `vite.config.ts`:
 ```ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { fieldtest } from "fieldtest/plugin";
+import { roadtest } from "roadtest/plugin";
 
 export default defineConfig({
-  plugins: [react(), fieldtest({ include: "src/**/*.test.{ts,tsx}" })],
+  plugins: [react(), roadtest({ include: "src/**/*.test.{ts,tsx}" })],
 });
 ```
