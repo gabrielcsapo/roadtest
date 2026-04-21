@@ -6,7 +6,7 @@ Use `load` (preferred) when registering from `.fieldtest/setup.ts`, which runs i
 
 ```tsx
 // .fieldtest/setup.ts
-import { registerTab } from "@fieldtest/core";
+import { registerTab } from "fieldtest";
 
 registerTab({
   id: "network",
@@ -17,7 +17,7 @@ registerTab({
 
 ```tsx
 // .fieldtest/NetworkTab.tsx
-import type { TestCase } from "@fieldtest/core";
+import type { TestCase } from "fieldtest";
 
 export function NetworkTab({ test }: { test: TestCase }) {
   return (
@@ -37,7 +37,7 @@ export function NetworkTab({ test }: { test: TestCase }) {
 Alternatively, pass a `component` directly if you are registering from `.fieldtest/preview.tsx` (UI frame only):
 
 ```tsx
-import { registerTab } from "@fieldtest/core";
+import { registerTab } from "fieldtest";
 import { NetworkTab } from "./NetworkTab";
 
 registerTab({

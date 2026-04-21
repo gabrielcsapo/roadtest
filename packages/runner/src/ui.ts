@@ -1,6 +1,6 @@
 import { createServer, build } from "vite";
 import type { Plugin } from "vite";
-import { fieldtest, fieldtestCoverage } from "@fieldtest/core/plugin";
+import { fieldtest, fieldtestCoverage } from "fieldtest/plugin";
 import { readFile, readdir, stat, writeFile, unlink } from "node:fs/promises";
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -405,9 +405,9 @@ export async function buildUi() {
   // with relative patterns when the entry file sits inside the project root.
   const relPattern = "./" + (include.startsWith("/") ? include.slice(1) : include);
 
-  // Detect whether the consuming project depends on "fieldtest" or "@fieldtest/core"
+  // Detect whether the consuming project depends on "fieldtest" or "fieldtest"
   // so the generated entry imports from the same package name the project uses.
-  let runtimePkg = "@fieldtest/core";
+  let runtimePkg = "fieldtest";
   try {
     const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8")) as {
       dependencies?: Record<string, string>;
@@ -416,7 +416,7 @@ export async function buildUi() {
     const all = { ...pkg.dependencies, ...pkg.devDependencies };
     if ("fieldtest" in all) runtimePkg = "fieldtest";
   } catch {
-    /* ignore — fall back to @fieldtest/core */
+    /* ignore — fall back to fieldtest */
   }
 
   // Write a real entry file so Rollup can discover it through the HTML pipeline.

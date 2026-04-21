@@ -17,7 +17,7 @@ jobs:
         include:
           - filter: example
             script: test:node
-          - filter: "@fieldtest/core"
+          - filter: "fieldtest"
             script: test:node
           - filter: "@fieldtest/runner"
             script: test:node
@@ -68,7 +68,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build core
-        run: pnpm --filter @fieldtest/core build
+        run: pnpm --filter fieldtest build
 
       - name: Build runner
         run: pnpm --filter @fieldtest/runner build

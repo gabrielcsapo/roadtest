@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { VendorComplianceStatus } from "./VendorComplianceStatus";
 import { Vendor, ComplianceStatus } from "../../types";
 

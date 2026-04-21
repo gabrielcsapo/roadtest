@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { ControlCard } from "./ControlCard";
 import { Control, User, ComplianceStatus, Framework } from "../../types";
 

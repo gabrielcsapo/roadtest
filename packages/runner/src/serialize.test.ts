@@ -1,6 +1,6 @@
-import { describe, it, expect } from "@fieldtest/core";
+import { describe, it, expect } from "fieldtest";
 import { serializeSnapshot, serializeTestCase, serializeTestSuite } from "./serialize.js";
-import type { TestCase, TestSuite, Snapshot } from "@fieldtest/core";
+import type { TestCase, TestSuite, Snapshot } from "fieldtest";
 
 function makeSnapshot(overrides: Partial<Snapshot> = {}): Snapshot {
   return {

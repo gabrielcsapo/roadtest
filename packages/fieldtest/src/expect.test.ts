@@ -1,4 +1,4 @@
-import { describe, it, expect } from "@fieldtest/core";
+import { describe, it, expect } from "fieldtest";
 
 describe("expect — toBe", () => {
   it("passes for identical primitives", () => {

@@ -1,4 +1,4 @@
-import { describe, it, expect } from "@fieldtest/core";
+import { describe, it, expect } from "fieldtest";
 import { Store } from "./framework/store.js";
 import type { TestSuite, TestCase } from "./framework/types.js";
 

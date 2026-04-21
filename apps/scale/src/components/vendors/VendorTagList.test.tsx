@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { VendorTagList } from "./VendorTagList";
 
 const sampleTags = ["cloud", "saas", "security", "compliance", "hipaa", "iso27001", "soc2", "gdpr"];

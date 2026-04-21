@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { VendorDeleteConfirm } from "./VendorDeleteConfirm";
 import { Vendor, Risk, Status } from "../../types";
 

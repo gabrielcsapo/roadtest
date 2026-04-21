@@ -8,9 +8,17 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const GITHUB_REPO = "https://github.com/gabrielcsapo/fieldtest";
 
 const run = (cmd) => execSync(cmd, { cwd: root, stdio: "inherit" });
 const capture = (cmd) => execSync(cmd, { cwd: root, encoding: "utf8" }).trim();
+const tryCapture = (cmd) => {
+  try {
+    return capture(cmd);
+  } catch {
+    return "";
+  }
+};
 
 const BUMP_TYPES = ["major", "minor", "patch"];
 const TYPE_MAP = {
@@ -32,6 +40,13 @@ const CATEGORY_ORDER = [
   "Other",
 ];
 
+// ─── CLI flags ──────────────────────────────────────────────────────────────
+const argv = process.argv.slice(2);
+const dryRun = argv.includes("--dry-run");
+const noPush = argv.includes("--no-push");
+const argBump = argv.find((a) => BUMP_TYPES.includes(a.toLowerCase()))?.toLowerCase();
+
+// ─── Core functions ─────────────────────────────────────────────────────────
 async function findPackageJsons() {
   const dirs = ["packages", "apps"];
   const files = [];
@@ -66,7 +81,7 @@ function parseCommits(range) {
   if (!raw) return [];
   return raw.split("\n").map((line) => {
     const [hash, ...rest] = line.split("\t");
-    return { hash: hash.slice(0, 7), subject: rest.join("\t") };
+    return { hash, short: hash.slice(0, 7), subject: rest.join("\t") };
   });
 }
 
@@ -84,8 +99,11 @@ function categorize(commits) {
   return groups;
 }
 
-function renderEntry(version, date, groups) {
-  const lines = [`## ${version} - ${date}`, ""];
+function renderEntry(version, date, groups, prevTag) {
+  const compareUrl = prevTag
+    ? `${GITHUB_REPO}/compare/${prevTag}...${version}`
+    : `${GITHUB_REPO}/releases/tag/${version}`;
+  const lines = [`## [${version}](${compareUrl}) (${date})`, ""];
   let hasContent = false;
   for (const cat of CATEGORY_ORDER) {
     const items = groups[cat];
@@ -93,7 +111,7 @@ function renderEntry(version, date, groups) {
     hasContent = true;
     lines.push(`### ${cat}`, "");
     for (const item of items) {
-      lines.push(`- ${item.message} (${item.hash})`);
+      lines.push(`- ${item.message} ([${item.short}](${GITHUB_REPO}/commit/${item.hash}))`);
     }
     lines.push("");
   }
@@ -103,22 +121,117 @@ function renderEntry(version, date, groups) {
 
 async function updateChangelog(entry) {
   const path = join(root, "CHANGELOG.md");
+  const header = "# Changelog\n\n";
   let existing = "";
   if (existsSync(path)) {
     existing = await readFile(path, "utf8");
     existing = existing.replace(/^#\s*Changelog\s*\n+/i, "");
   }
-  await writeFile(path, `# Changelog\n\n${entry}\n${existing}`);
+  await writeFile(path, `${header}${entry}\n${existing}`);
 }
 
+function tagExists(version) {
+  return Boolean(tryCapture(`git rev-parse -q --verify refs/tags/${version}`));
+}
+
+function headIsReleaseCommit(version) {
+  const subject = tryCapture("git log -1 --pretty=format:%s");
+  return subject === `chore(release): ${version}`;
+}
+
+// ─── Pre-flight ─────────────────────────────────────────────────────────────
+function preflight() {
+  const branch = capture("git rev-parse --abbrev-ref HEAD");
+  if (branch !== "main") {
+    throw new Error(`Must be on 'main' branch (currently '${branch}').`);
+  }
+
+  try {
+    run("git fetch origin main");
+  } catch {
+    console.warn("Warning: could not fetch origin/main — continuing without sync check.");
+    return;
+  }
+  const local = capture("git rev-parse HEAD");
+  const remote = tryCapture("git rev-parse origin/main");
+  if (remote && local !== remote) {
+    const ahead = Number(tryCapture("git rev-list --count origin/main..HEAD")) || 0;
+    const behind = Number(tryCapture("git rev-list --count HEAD..origin/main")) || 0;
+    if (behind > 0) {
+      throw new Error(`Local main is behind origin/main by ${behind} commit(s). Pull first.`);
+    }
+    // Ahead-only is fine: that's the release commit we're about to push.
+    if (ahead > 0) {
+      console.log(`Note: local main is ahead of origin/main by ${ahead} commit(s).`);
+    }
+  }
+}
+
+function checkNpmAuth() {
+  try {
+    const who = capture("npm whoami");
+    console.log(`npm: logged in as ${who}`);
+  } catch {
+    throw new Error("Not authenticated with npm. Run `npm login` first.");
+  }
+}
+
+// ─── Build + publish ────────────────────────────────────────────────────────
+async function buildAndPublish(ask, version) {
+  const publishAns = (await ask("Publish public packages to npm now? (y/N): "))
+    .trim()
+    .toLowerCase();
+  if (publishAns !== "y" && publishAns !== "yes") {
+    console.log(
+      "Skipped publish. When ready, run:\n" +
+        "  pnpm -r --workspace-concurrency=1 build\n" +
+        "  pnpm -r publish --access public\n" +
+        `  git tag -a ${version} -m "${version}"\n` +
+        "  git push origin main --follow-tags",
+    );
+    return false;
+  }
+
+  checkNpmAuth();
+
+  console.log("Building packages...");
+  // --workspace-concurrency=1 forces topological ordering so runner's tsc
+  // can find fieldtest's built types before it compiles.
+  if (dryRun) {
+    console.log("[dry-run] Would run: pnpm -r --workspace-concurrency=1 build");
+    console.log("[dry-run] Would run: pnpm -r publish --access public");
+    console.log(`[dry-run] Would tag: ${version}`);
+    return true;
+  }
+
+  run("pnpm -r --workspace-concurrency=1 build");
+  run("pnpm -r publish --access public");
+  console.log("Publish complete.");
+
+  run(`git tag -a ${version} -m "${version}"`);
+  console.log(`Tagged ${version}.`);
+
+  if (!noPush) {
+    const pushAns = (await ask("Push commit + tag to origin? (y/N): ")).trim().toLowerCase();
+    if (pushAns === "y" || pushAns === "yes") {
+      run("git push origin main --follow-tags");
+      console.log("Pushed to origin/main with tags.");
+    } else {
+      console.log("Skipped push. Run:  git push origin main --follow-tags");
+    }
+  } else {
+    console.log("Skipped push (--no-push). Run:  git push origin main --follow-tags");
+  }
+  return true;
+}
+
+// ─── Main ───────────────────────────────────────────────────────────────────
 async function main() {
   const rl = createInterface({ input, output });
   const ask = (q) => rl.question(q);
 
   try {
-    if (capture("git status --porcelain")) {
-      throw new Error("Working tree is not clean. Commit or stash first.");
-    }
+    preflight();
 
     const pkgFiles = await findPackageJsons();
     const pkgs = await Promise.all(
@@ -136,17 +249,33 @@ async function main() {
       for (const p of pkgs) console.error(`  ${p.data.name}: ${p.data.version}`);
       throw new Error("Fix version drift before releasing.");
     }
+
+    // Resume path: HEAD is already a release commit for `current` but no tag yet.
+    if (!dryRun && headIsReleaseCommit(current) && !tagExists(current)) {
+      console.log(
+        `Detected pending release: HEAD is chore(release): ${current} but no tag exists.`,
+      );
+      const resumeAns = (await ask(`Resume (skip bump, go straight to publish + tag)? (y/N): `))
+        .trim()
+        .toLowerCase();
+      if (resumeAns === "y" || resumeAns === "yes") {
+        if (capture("git status --porcelain")) {
+          throw new Error("Working tree must be clean to resume.");
+        }
+        const published = await buildAndPublish(ask, current);
+        console.log(`\nRelease ${current} ${published ? "done" : "paused"}.`);
+        return;
+      }
+    }
+
+    if (!dryRun && capture("git status --porcelain")) {
+      throw new Error("Working tree is not clean. Commit or stash first.");
+    }
+
     console.log(`Current version: ${current}`);
 
-    let bumpType;
-    const argBump = process.argv[2]?.toLowerCase();
-    if (argBump) {
-      if (!BUMP_TYPES.includes(argBump)) {
-        throw new Error(`Invalid release type "${argBump}". Use one of: major, minor, patch.`);
-      }
-      bumpType = argBump;
-      console.log(`Release type:    ${bumpType} (from argv)`);
-    }
+    let bumpType = argBump;
+    if (bumpType) console.log(`Release type:    ${bumpType} (from argv)`);
     while (!bumpType) {
       const ans = (await ask("Release type (major/minor/patch): ")).trim().toLowerCase();
       if (BUMP_TYPES.includes(ans)) bumpType = ans;
@@ -155,24 +284,34 @@ async function main() {
     const newVersion = bumpVersion(current, bumpType);
     console.log(`New version:     ${newVersion}`);
 
-    let range = "";
-    try {
-      const lastTag = capture("git describe --tags --abbrev=0");
-      range = `${lastTag}..HEAD`;
-      console.log(`\nCommits since ${lastTag}:`);
-    } catch {
-      console.log("\nNo prior tag found; using full commit history.");
+    if (tagExists(newVersion)) {
+      throw new Error(
+        `Tag ${newVersion} already exists. Delete it (git tag -d ${newVersion}) or bump to a different version.`,
+      );
     }
+
+    const lastTag = tryCapture("git describe --tags --abbrev=0");
+    const range = lastTag ? `${lastTag}..HEAD` : "";
+    if (lastTag) console.log(`\nCommits since ${lastTag}:`);
+    else console.log("\nNo prior tag found; using full commit history.");
+
     const commits = parseCommits(range);
-    if (!commits.length) console.log("(none)");
+    if (!commits.length) {
+      throw new Error("No commits since last release — nothing to release.");
+    }
 
     const groups = categorize(commits);
     const today = new Date().toISOString().slice(0, 10);
-    const entry = renderEntry(newVersion, today, groups);
+    const entry = renderEntry(newVersion, today, groups, lastTag);
 
     console.log("\n--- Changelog preview ---");
     console.log(entry);
     console.log("--- End preview ---\n");
+
+    if (dryRun) {
+      console.log("[dry-run] No files changed, no commit, no publish, no tag.");
+      return;
+    }
 
     const confirm = (await ask(`Proceed with release ${newVersion}? (y/N): `)).trim().toLowerCase();
     if (confirm !== "y" && confirm !== "yes") {
@@ -189,33 +328,20 @@ async function main() {
     await updateChangelog(entry);
     console.log("Updated CHANGELOG.md.");
 
-    // Format the generated CHANGELOG so the repo's oxfmt pre-commit hook doesn't reject it.
     try {
-      run("pnpm oxfmt CHANGELOG.md");
+      run("pnpm run format");
     } catch {
-      // oxfmt unavailable — continue; commit may still fail pre-commit, but we tried.
+      console.warn("Warning: `pnpm run format` failed — commit may trip the pre-commit hook.");
     }
 
     run("git add -A");
     run(`git commit -m "chore(release): ${newVersion}"`);
-    run(`git tag ${newVersion}`);
-    console.log(`Committed and tagged ${newVersion}.`);
+    console.log(`Committed chore(release): ${newVersion}.`);
 
-    const publishAns = (await ask("Publish public packages to npm now? (y/N): "))
-      .trim()
-      .toLowerCase();
-    if (publishAns === "y" || publishAns === "yes") {
-      console.log("Building packages...");
-      run('pnpm -r --filter "./packages/*" build');
-      run("pnpm -r publish --access public");
-      console.log("Publish complete.");
-    } else {
-      console.log(
-        'Skipped publish. Run `pnpm -r --filter "./packages/*" build && pnpm -r publish --access public` when ready.',
-      );
-    }
-
-    console.log(`\nRelease ${newVersion} done. Push with:  git push && git push --tags`);
+    const published = await buildAndPublish(ask, newVersion);
+    console.log(
+      `\nRelease ${newVersion} ${published ? "done" : "paused (commit made, not tagged)"}.`,
+    );
   } finally {
     rl.close();
   }

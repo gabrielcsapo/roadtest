@@ -60,9 +60,9 @@ importers:
 
   apps/scale:
     dependencies:
-      '@fieldtest/core':
+      fieldtest:
         specifier: workspace:*
-        version: link:../../packages/core
+        version: link:../../packages/fieldtest
       react:
         specifier: ^19.2.5
         version: 19.2.5
@@ -89,8 +89,11 @@ importers:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
 
-  packages/core:
+  packages/fieldtest:
     dependencies:
+      '@fieldtest/runner':
+        specifier: workspace:*
+        version: link:../runner
       '@react-three/drei':
         specifier: ^10.7.7
         version: 10.7.7(@react-three/fiber@9.6.0(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(three@0.183.2))(@types/react@19.2.14)(@types/three@0.183.1)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(three@0.183.2)
@@ -147,24 +150,11 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.2)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
 
-  packages/fieldtest:
-    dependencies:
-      '@fieldtest/core':
-        specifier: workspace:*
-        version: link:../core
-      '@fieldtest/runner':
-        specifier: workspace:*
-        version: link:../runner
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
   packages/network:
     dependencies:
-      '@fieldtest/core':
+      fieldtest:
         specifier: workspace:*
-        version: link:../core
+        version: link:../fieldtest
       msw:
         specifier: ^2.13.3
         version: 2.13.3(@types/node@25.6.0)(typescript@6.0.2)
@@ -184,9 +174,9 @@ importers:
 
   packages/runner:
     dependencies:
-      '@fieldtest/core':
+      fieldtest:
         specifier: workspace:*
-        version: link:../core
+        version: link:../fieldtest
       glob:
         specifier: ^13.0.6
         version: 13.0.6
@@ -212,12 +202,12 @@ importers:
 
   packages/website:
     dependencies:
-      '@fieldtest/core':
-        specifier: workspace:*
-        version: link:../core
       '@fieldtest/runner':
         specifier: workspace:*
         version: link:../runner
+      fieldtest:
+        specifier: workspace:*
+        version: link:../fieldtest
       fuse.js:
         specifier: ^7.3.0
         version: 7.3.0

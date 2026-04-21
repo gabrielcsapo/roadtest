@@ -33,7 +33,7 @@ import {
 import { serializeTestSuite } from "./serialize.js";
 import type { SerializableTestSuite } from "./serialize.js";
 import { processSnapshots, snapshotPath } from "./snapshots.js";
-import type { IstanbulCoverage } from "@fieldtest/core";
+import type { IstanbulCoverage } from "fieldtest";
 import {
   RESET,
   BOLD,
@@ -574,8 +574,7 @@ export async function runNode() {
 
   // Run each cache-miss file and stream its result immediately
   if (cacheMisses.length > 0) {
-    const { setCurrentSourceFile, runSuites, store, clearAllMocks } =
-      await import("@fieldtest/core");
+    const { setCurrentSourceFile, runSuites, store, clearAllMocks } = await import("fieldtest");
     const missTotal = cacheMisses.length;
 
     for (let i = 0; i < cacheMisses.length; i++) {

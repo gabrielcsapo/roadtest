@@ -13,8 +13,8 @@
  *   worker.use(http.get("/api/users", () => HttpResponse.json([])));
  */
 
-import { registerAfterTestHook, registerBeforeDisplayHook, currentTest } from "@fieldtest/core";
-import type { NetworkEntry, TestCase } from "@fieldtest/core";
+import { registerAfterTestHook, registerBeforeDisplayHook, currentTest } from "fieldtest";
+import type { NetworkEntry, TestCase } from "fieldtest";
 
 // ─── Environment detection ────────────────────────────────────────────────────
 // The Node runner sets globalThis.window via happy-dom, so we can't rely on
@@ -199,7 +199,7 @@ registerAfterTestHook(() => _mswInstance?.resetHandlers());
 // Each browser frame imports the component itself (correct React instance).
 
 if (isBrowser) {
-  const { registerTab } = await import("@fieldtest/core");
+  const { registerTab } = await import("fieldtest");
   registerTab({
     id: "network",
     label: "Network",
@@ -227,6 +227,6 @@ export const worker: { use(...h: any[]): void; resetHandlers(): void } = _mswIns
  *   expect(requests.some(r => r.url.includes("/api/users"))).toBe(true);
  * });
  */
-export function getNetworkRequests(): import("@fieldtest/core").NetworkEntry[] {
+export function getNetworkRequests(): import("fieldtest").NetworkEntry[] {
   return currentTest?.networkEntries ?? [];
 }

@@ -1,4 +1,4 @@
-import { describe, it, expect } from "@fieldtest/core";
+import { describe, it, expect } from "fieldtest";
 import { normalizeHtmlStyles, snapshotsAreEquivalent } from "./css-normalize.js";
 
 // ─── normalizeHtmlStyles ──────────────────────────────────────────────────────

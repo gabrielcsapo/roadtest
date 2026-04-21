@@ -30,9 +30,9 @@ function getRuntimePkg() {
     const raw = readFileSync(join(process.cwd(), "package.json"), "utf-8");
     const pkg = JSON.parse(raw);
     const all = Object.assign({}, pkg.dependencies, pkg.devDependencies);
-    _runtimePkg = "fieldtest" in all ? "fieldtest" : "@fieldtest/core";
+    _runtimePkg = "fieldtest" in all ? "fieldtest" : "fieldtest";
   } catch {
-    _runtimePkg = "@fieldtest/core";
+    _runtimePkg = "fieldtest";
   }
   return _runtimePkg;
 }
@@ -248,7 +248,7 @@ export async function load(url, context, nextLoad) {
 // Checked statically so that projects using either name work regardless of
 // which package.json getRuntimePkg() happens to read (e.g. monorepo roots
 // that don't list the example app's deps).
-const CORE_PKGS = new Set(["fieldtest", "@fieldtest/core"]);
+const CORE_PKGS = new Set(["fieldtest", "fieldtest"]);
 
 function mockHoist(code) {
   const imports = collectImports(code);
@@ -431,7 +431,7 @@ function collectTopLevelMockCalls(code) {
 
 // ---- Code generation ---------------------------------------------------------
 
-/** Inject __ftImport into an existing @fieldtest/core named-import list */
+/** Inject __ftImport into an existing fieldtest named-import list */
 function injectVtImport(importText) {
   if (importText.includes("__ftImport")) return importText;
   const braceMatch = importText.match(/\{([^}]*)\}/);

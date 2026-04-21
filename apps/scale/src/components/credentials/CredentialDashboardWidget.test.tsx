@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { CredentialDashboardWidget } from "./CredentialDashboardWidget";
 import { Credential, User } from "../../types";
 

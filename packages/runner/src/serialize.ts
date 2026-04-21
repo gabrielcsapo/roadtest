@@ -6,7 +6,7 @@ import type {
   TestStatus,
   IstanbulCoverage,
   ConsoleEntry,
-} from "@fieldtest/core";
+} from "fieldtest";
 
 export interface SerializableSnapshot {
   label: string;

@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent, snapshot } from "fieldtest";
 import { AuditLogTable } from "./AuditLogTable";
 import { AuditLog, User } from "../../types";
 

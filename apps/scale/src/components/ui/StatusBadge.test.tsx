@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, snapshot } from "fieldtest";
 import React from "react";
 import { StatusBadge } from "./StatusBadge";
 import type { Status } from "../../types";

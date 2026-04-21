@@ -1,6 +1,6 @@
-import { describe, it, expect } from "@fieldtest/core";
+import { describe, it, expect } from "fieldtest";
 import { parseShardArg, applySharding, mergeCoverage, mergeShardResults } from "./shard.js";
-import type { IstanbulCoverage } from "@fieldtest/core";
+import type { IstanbulCoverage } from "fieldtest";
 import type { ShardResult } from "./shard.js";
 
 describe("parseShardArg", () => {

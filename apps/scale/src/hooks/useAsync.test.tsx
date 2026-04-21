@@ -1,4 +1,4 @@
-import { describe, it, expect, render, fireEvent } from "@fieldtest/core";
+import { describe, it, expect, render, fireEvent } from "fieldtest";
 import React, { useCallback } from "react";
 import { useAsync } from "./useAsync";
 

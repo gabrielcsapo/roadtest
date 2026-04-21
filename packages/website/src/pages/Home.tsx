@@ -285,7 +285,7 @@ const BUTTON_TEST_CODE = `import {
   expect, 
   render, 
   fireEvent, 
-  snapshot } from '@fieldtest/core'
+  snapshot } from 'fieldtest'
 import { Button } from './Button'
 
 describe('Button', () => {
@@ -855,7 +855,7 @@ export default function Home() {
                 {[
                   {
                     n: 1,
-                    title: "Import from @fieldtest/core",
+                    title: "Import from fieldtest",
                     desc: "Drop-in for your existing test utilities. render() returns React Testing Library queries.",
                   },
                   {

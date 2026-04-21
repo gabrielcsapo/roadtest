@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { IstanbulCoverage } from "@fieldtest/core";
+import type { IstanbulCoverage } from "fieldtest";
 import type { SerializableTestSuite } from "./serialize.js";
 
 // ─── Shard config ─────────────────────────────────────────────────────────────

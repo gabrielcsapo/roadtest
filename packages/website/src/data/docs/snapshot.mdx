@@ -3,7 +3,7 @@
 `snapshot(label)` captures the current rendered DOM state and adds a frame to the filmstrip in the browser UI.
 
 ```ts
-import { render, snapshot, fireEvent } from '@fieldtest/core'
+import { render, snapshot, fireEvent } from 'fieldtest'
 
 it('shows loading then content', async () => {
   const { getByText } = await render(<AsyncCard />)

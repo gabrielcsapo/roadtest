@@ -168,14 +168,14 @@ async function hasNodeBuiltinDep(
 // ─── Node test runner (server-side) ──────────────────────────────────────────
 
 /**
- * ID for the virtual module that replaces `@fieldtest/core` when a test file is
+ * ID for the virtual module that replaces `fieldtest` when a test file is
  * loaded via ssrLoadModule. Provides a DOM-free describe/it/expect that routes
  * calls through globalThis.__vtNodeCtx, which is set fresh for every test run.
  */
 const SSR_CORE_ID = "\0viewtest-ssr-core";
 
 /**
- * The code served as `@fieldtest/core` in SSR (Node) context.
+ * The code served as `fieldtest` in SSR (Node) context.
  * All DSL calls proxy through globalThis.__vtNodeCtx so each run gets
  * an isolated context without needing to invalidate the module cache.
  */
@@ -551,7 +551,7 @@ function buildDynamicImport(specifiers: ImportSpecifier[], source: string): stri
 async function transformTestFile(
   code: string,
   id: string,
-  runtimePkg = "@fieldtest/core",
+  runtimePkg = "fieldtest",
 ): Promise<{ code: string } | null> {
   // Quick bail-out: only transform files that actually call mock()
   if (!code.includes("mock(")) return null;
@@ -592,7 +592,7 @@ async function transformTestFile(
   for (const node of allImports) {
     // After esbuild strips types, there are no `import type` declarations left
     // Accept both the public package name and the internal one
-    if (node.source.value === runtimePkg || node.source.value === "@fieldtest/core")
+    if (node.source.value === runtimePkg || node.source.value === "fieldtest")
       coreImports.push(node);
     else otherImports.push(node);
   }
@@ -868,13 +868,13 @@ function detectRuntimePkg(root: string): string {
   } catch {
     /* ignore — fall back to internal name */
   }
-  return "@fieldtest/core";
+  return "fieldtest";
 }
 
 export function fieldtest(options: FieldtestOptions = {}): Plugin {
   const { include = "src/**/*.test.{ts,tsx}", injectHtml = true } = options;
   let config: ResolvedConfig;
-  let runtimePkg = "@fieldtest/core";
+  let runtimePkg = "fieldtest";
 
   // Map from resolved absolute path base (no extension) → specifier string passed to mock().
   // Populated during server startup (pre-scan) and when browser test files are transformed.
@@ -1019,7 +1019,7 @@ export function fieldtest(options: FieldtestOptions = {}): Plugin {
     resolveId(id, _importer, options) {
       if (id === VIRTUAL_ID) return RESOLVED_ID;
       // In SSR (Node) context, replace the runtime package with a DOM-free stub
-      if ((id === "@fieldtest/core" || id === runtimePkg) && options?.ssr) return SSR_CORE_ID;
+      if ((id === "fieldtest" || id === runtimePkg) && options?.ssr) return SSR_CORE_ID;
     },
 
     load(id, options) {

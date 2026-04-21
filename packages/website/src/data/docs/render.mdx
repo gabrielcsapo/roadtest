@@ -144,7 +144,7 @@ export default function Preview({ children }: { children: React.ReactNode }) {
 For cases where you need to manually flush React's update queue outside of `fireEvent`:
 
 ```ts
-import { act } from "@fieldtest/core";
+import { act } from "fieldtest";
 
 await act(async () => {
   store.dispatch({ type: "LOAD" });

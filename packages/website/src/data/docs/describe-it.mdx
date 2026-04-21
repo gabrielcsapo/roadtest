@@ -1,9 +1,9 @@
 ## describe / it / test
 
-fieldtest uses a familiar Jest-compatible DSL for structuring tests. Import everything from `@fieldtest/core`.
+fieldtest uses a familiar Jest-compatible DSL for structuring tests. Import everything from `fieldtest`.
 
 ```ts
-import { describe, it, test, expect } from "@fieldtest/core";
+import { describe, it, test, expect } from "fieldtest";
 
 describe("MyComponent", () => {
   it("does something", async () => {
@@ -206,10 +206,10 @@ it.each([
 
 ## Lifecycle hooks
 
-Suite-scoped setup and teardown functions. Import from `@fieldtest/core` and call them **inside** a `describe` block.
+Suite-scoped setup and teardown functions. Import from `fieldtest` and call them **inside** a `describe` block.
 
 ```ts
-import { describe, it, beforeAll, afterAll, beforeEach, afterEach } from "@fieldtest/core";
+import { describe, it, beforeAll, afterAll, beforeEach, afterEach } from "fieldtest";
 ```
 
 ### beforeAll

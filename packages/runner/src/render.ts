@@ -9,7 +9,7 @@
  *   - Tests: assert on the returned string without capturing stdout
  */
 
-import type { IstanbulCoverage } from "@fieldtest/core";
+import type { IstanbulCoverage } from "fieldtest";
 import type { DepGraph } from "./cache.js";
 import type { SerializableTestSuite } from "./serialize.js";
 

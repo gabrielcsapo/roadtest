@@ -3,7 +3,7 @@
 Run custom logic after **every** test in the project completes. Designed for use in `.fieldtest/setup.ts` — these hooks are global and apply across all test files.
 
 ```ts
-import { registerAfterTestHook, currentTest } from "@fieldtest/core";
+import { registerAfterTestHook, currentTest } from "fieldtest";
 
 registerAfterTestHook(async () => {
   if (!currentTest) return;
@@ -25,7 +25,7 @@ import {
   registerAfterTestHook,
   registerBeforeDisplayHook,
   registerAfterDisplayHook,
-} from '@fieldtest/core'
+} from 'fieldtest'
 
 // Runs before each test (all files)
 registerBeforeTestHook(async () => { ... })
@@ -42,4 +42,4 @@ registerAfterDisplayHook(async () => { ... })
 
 ### Suite-scoped hooks
 
-For setup and teardown that should only apply within a specific `describe` block, use the DSL hooks instead — `beforeAll`, `afterAll`, `beforeEach`, and `afterEach`. These are imported from `@fieldtest/core` and called directly inside a `describe`. See [describe / it / test](/docs/describe-it) for full documentation and examples.
+For setup and teardown that should only apply within a specific `describe` block, use the DSL hooks instead — `beforeAll`, `afterAll`, `beforeEach`, and `afterEach`. These are imported from `fieldtest` and called directly inside a `describe`. See [describe / it / test](/docs/describe-it) for full documentation and examples.

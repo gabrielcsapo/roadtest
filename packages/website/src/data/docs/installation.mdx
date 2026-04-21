@@ -3,14 +3,14 @@
 Install fieldtest into any Vite + React project:
 
 ```bash
-npm install --save-dev @fieldtest/core @fieldtest/runner
+npm install --save-dev fieldtest @fieldtest/runner
 ```
 
 Or with pnpm / yarn:
 
 ```bash
-pnpm add -D @fieldtest/core @fieldtest/runner
-yarn add -D @fieldtest/core @fieldtest/runner
+pnpm add -D fieldtest @fieldtest/runner
+yarn add -D fieldtest @fieldtest/runner
 ```
 
 Add the Vite plugin to your `vite.config.ts`:
@@ -18,7 +18,7 @@ Add the Vite plugin to your `vite.config.ts`:
 ```ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { fieldtest } from "@fieldtest/core/plugin";
+import { fieldtest } from "fieldtest/plugin";
 
 export default defineConfig({
   plugins: [react(), fieldtest({ include: "src/**/*.test.{ts,tsx}" })],

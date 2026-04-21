@@ -1,4 +1,4 @@
-import { describe, it, expect, render, snapshot } from "@fieldtest/core";
+import { describe, it, expect, render, snapshot } from "fieldtest";
 import { PolicyFrameworkBadge } from "./PolicyFrameworkBadge";
 import { Framework } from "../../types";
 
