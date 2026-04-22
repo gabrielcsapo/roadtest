@@ -14,7 +14,7 @@ import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from "
 import { postParentMessage, onHmrMessage } from "../framework/messages";
 import { checkDevServer, writeSnapshotsToServer, compareSnapshotsWithServer } from "./snapshots";
 import type { TestSuite } from "../framework/types";
-import { captureProps } from "../framework/traceUtils";
+import { captureProps, type SerializedProp } from "../framework/traceUtils";
 
 /** Whether the RoadTest dev server is reachable — false in static --build deployments. */
 export let devServerAvailable = false;
@@ -265,6 +265,7 @@ export async function startApp(
       isForwardRef: boolean;
       isMemo: boolean;
       domPath?: number[];
+      props?: Record<string, SerializedProp>;
     }[];
 
     function findReactRoot(el: HTMLElement): { container: HTMLElement; key: string } | null {

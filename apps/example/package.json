@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@roadtest/addon-network": "workspace:*",
-    "msw": "^2.13.3",
+    "msw": "^2.13.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "roadtest": "workspace:*"
@@ -22,8 +22,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.8"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.9"
   },
   "msw": {
     "workerDirectory": [

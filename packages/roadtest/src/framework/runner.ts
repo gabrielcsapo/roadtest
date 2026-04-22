@@ -88,7 +88,9 @@ async function getCleanup(): Promise<(() => void) | null> {
  */
 function yieldToEventLoop(): Promise<void> {
   if (typeof (globalThis as Record<string, unknown>)["scheduler"] === "object") {
-    const scheduler = (globalThis as Record<string, { yield?: () => Promise<void> }>)["scheduler"];
+    const scheduler = (globalThis as unknown as Record<string, { yield?: () => Promise<void> }>)[
+      "scheduler"
+    ];
     if (typeof scheduler?.yield === "function") {
       return scheduler.yield();
     }

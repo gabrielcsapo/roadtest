@@ -447,8 +447,6 @@ export function DepsTab({ sourceFile }: Props) {
   }, [sourceFile]);
 
   if (!sourceFile) return <Empty icon="◌" message="No source file associated with this test" />;
-  if (state.phase === "idle" || state.phase === "loading")
-    return <Empty icon="·" message="Loading dependency graph…" />;
   if (state.phase === "error") {
     return (
       <div
@@ -464,6 +462,7 @@ export function DepsTab({ sourceFile }: Props) {
       </div>
     );
   }
+  if (state.phase !== "done") return <Empty icon="·" message="Loading dependency graph…" />;
 
   const { root, graph } = state;
   if (Object.keys(graph).length === 0) {
