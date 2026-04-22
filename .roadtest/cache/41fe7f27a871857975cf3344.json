@@ -1,0 +1,1024 @@
+{
+  "hash": "41fe7f27a871857975cf3344",
+  "cachedAt": 1776870474630,
+  "suites": [
+    {
+      "id": "moa6swvx-k",
+      "name": "expect — toBe",
+      "tests": [
+        {
+          "id": "moa6swvx-l",
+          "name": "passes for identical primitives",
+          "suiteId": "moa6swvx-k",
+          "suiteName": "expect — toBe",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(\"hello\")", "status": "pass" },
+            { "label": "expect(…).toBe(true)", "status": "pass" },
+            { "label": "expect(…).toBe(null)", "status": "pass" },
+            { "label": "expect(…).toBe(undefined)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-m",
+          "name": "uses Object.is semantics (NaN equals NaN)",
+          "suiteId": "moa6swvx-k",
+          "suiteName": "expect — toBe",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(null)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-n",
+          "name": "throws on value mismatch",
+          "suiteId": "moa6swvx-k",
+          "suiteName": "expect — toBe",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(2)",
+              "status": "fail",
+              "error": "Expected 2 but received 1"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-o",
+      "name": "expect — toEqual",
+      "tests": [
+        {
+          "id": "moa6swvx-p",
+          "name": "passes for equal plain objects",
+          "suiteId": "moa6swvx-o",
+          "suiteName": "expect — toEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toEqual({\"a\":1,\"b\":2})", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-q",
+          "name": "passes for equal arrays",
+          "suiteId": "moa6swvx-o",
+          "suiteName": "expect — toEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toEqual([1,2,3])", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-r",
+          "name": "passes for nested structures",
+          "suiteId": "moa6swvx-o",
+          "suiteName": "expect — toEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toEqual({\"a\":[1,2]})", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-s",
+          "name": "throws when objects differ",
+          "suiteId": "moa6swvx-o",
+          "suiteName": "expect — toEqual",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toEqual({\"a\":2})",
+              "status": "fail",
+              "error": "toEqual failed:\n  - received a: 1\n  + expected a: 2"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-t",
+      "name": "expect — toBeTruthy / toBeFalsy",
+      "tests": [
+        {
+          "id": "moa6swvx-u",
+          "name": "toBeTruthy passes for non-empty string",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-v",
+          "name": "toBeTruthy passes for non-zero number",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeTruthy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-w",
+          "name": "toBeTruthy passes for objects",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeTruthy()", "status": "pass" },
+            { "label": "expect(…).toBeTruthy()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-x",
+          "name": "toBeFalsy passes for 0",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-y",
+          "name": "toBeFalsy passes for empty string",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-z",
+          "name": "toBeFalsy passes for null",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-10",
+          "name": "toBeFalsy passes for undefined",
+          "suiteId": "moa6swvx-t",
+          "suiteName": "expect — toBeTruthy / toBeFalsy",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeFalsy()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-11",
+      "name": "expect — toBeNull / toBeUndefined / toBeDefined",
+      "tests": [
+        {
+          "id": "moa6swvx-12",
+          "name": "toBeNull passes for null",
+          "suiteId": "moa6swvx-11",
+          "suiteName": "expect — toBeNull / toBeUndefined / toBeDefined",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-13",
+          "name": "toBeNull throws for non-null",
+          "suiteId": "moa6swvx-11",
+          "suiteName": "expect — toBeNull / toBeUndefined / toBeDefined",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBeNull()",
+              "status": "fail",
+              "error": "Expected null but received 0"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-14",
+          "name": "toBeUndefined passes for undefined",
+          "suiteId": "moa6swvx-11",
+          "suiteName": "expect — toBeNull / toBeUndefined / toBeDefined",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeUndefined()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-15",
+          "name": "toBeDefined passes for non-undefined values",
+          "suiteId": "moa6swvx-11",
+          "suiteName": "expect — toBeNull / toBeUndefined / toBeDefined",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-16",
+          "name": "toBeDefined throws for undefined",
+          "suiteId": "moa6swvx-11",
+          "suiteName": "expect — toBeNull / toBeUndefined / toBeDefined",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBeDefined()",
+              "status": "fail",
+              "error": "Expected a defined value"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-17",
+      "name": "expect — toContain",
+      "tests": [
+        {
+          "id": "moa6swvx-18",
+          "name": "passes when array contains item",
+          "suiteId": "moa6swvx-17",
+          "suiteName": "expect — toContain",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toContain(2)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-19",
+          "name": "passes when string contains substring",
+          "suiteId": "moa6swvx-17",
+          "suiteName": "expect — toContain",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toContain(\"world\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1a",
+          "name": "throws when array does not contain item",
+          "suiteId": "moa6swvx-17",
+          "suiteName": "expect — toContain",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toContain(3)",
+              "status": "fail",
+              "error": "Expected [1,2] to contain 3"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1b",
+          "name": "throws when string does not contain substring",
+          "suiteId": "moa6swvx-17",
+          "suiteName": "expect — toContain",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toContain(\"xyz\")",
+              "status": "fail",
+              "error": "Expected \"hello\" to contain \"xyz\""
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-1c",
+      "name": "expect — toHaveLength",
+      "tests": [
+        {
+          "id": "moa6swvx-1d",
+          "name": "passes for array with exact length",
+          "suiteId": "moa6swvx-1c",
+          "suiteName": "expect — toHaveLength",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(3)", "status": "pass" },
+            { "label": "expect(…).toHaveLength(0)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1e",
+          "name": "passes for string with exact length",
+          "suiteId": "moa6swvx-1c",
+          "suiteName": "expect — toHaveLength",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(5)", "status": "pass" },
+            { "label": "expect(…).toHaveLength(0)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1f",
+          "name": "throws for wrong length",
+          "suiteId": "moa6swvx-1c",
+          "suiteName": "expect — toHaveLength",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toHaveLength(5)",
+              "status": "fail",
+              "error": "Expected length 5 but got 2"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-1g",
+      "name": "expect — toThrow",
+      "tests": [
+        {
+          "id": "moa6swvx-1h",
+          "name": "passes when function throws",
+          "suiteId": "moa6swvx-1g",
+          "suiteName": "expect — toThrow",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toThrow()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1i",
+          "name": "passes when thrown message matches",
+          "suiteId": "moa6swvx-1g",
+          "suiteName": "expect — toThrow",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toThrow()", "status": "pass" },
+            { "label": "expect(…).toThrow(\"specific error\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1j",
+          "name": "throws when function does not throw",
+          "suiteId": "moa6swvx-1g",
+          "suiteName": "expect — toThrow",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toThrow()",
+              "status": "fail",
+              "error": "Expected function to throw"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 1
+    },
+    {
+      "id": "moa6swvx-1k",
+      "name": "expect — toBeGreaterThan / toBeLessThan",
+      "tests": [
+        {
+          "id": "moa6swvx-1l",
+          "name": "toBeGreaterThan passes when value is greater",
+          "suiteId": "moa6swvx-1k",
+          "suiteName": "expect — toBeGreaterThan / toBeLessThan",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeGreaterThan(3)", "status": "pass" },
+            { "label": "expect(…).toBeGreaterThan(-1)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1m",
+          "name": "toBeGreaterThan throws when not greater",
+          "suiteId": "moa6swvx-1k",
+          "suiteName": "expect — toBeGreaterThan / toBeLessThan",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBeGreaterThan(5)",
+              "status": "fail",
+              "error": "Expected 3 > 5"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1n",
+          "name": "toBeLessThan passes when value is less",
+          "suiteId": "moa6swvx-1k",
+          "suiteName": "expect — toBeGreaterThan / toBeLessThan",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeLessThan(5)", "status": "pass" },
+            { "label": "expect(…).toBeLessThan(0)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1o",
+          "name": "toBeLessThan throws when not less",
+          "suiteId": "moa6swvx-1k",
+          "suiteName": "expect — toBeGreaterThan / toBeLessThan",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeLessThan(3)", "status": "fail", "error": "Expected 5 < 3" },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-1p",
+      "name": "expect — .not",
+      "tests": [
+        {
+          "id": "moa6swvx-1q",
+          "name": "negates toBe",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).not.toBe(2)", "status": "pass" },
+            { "label": "expect(…).not.toBe(\"world\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1r",
+          "name": "negates toBeTruthy",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).not.toBeTruthy()", "status": "pass" },
+            { "label": "expect(…).not.toBeTruthy()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1s",
+          "name": "negates toBeNull",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).not.toBeNull()", "status": "pass" },
+            { "label": "expect(…).not.toBeNull()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1t",
+          "name": "negates toContain",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).not.toContain(3)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1u",
+          "name": "negates toBeGreaterThan",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).not.toBeGreaterThan(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1v",
+          "name": ".not throws when the underlying assertion passes",
+          "suiteId": "moa6swvx-1p",
+          "suiteName": "expect — .not",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).not.toBe(1)",
+              "status": "fail",
+              "error": "Expected NOT: Expected 1 but received 1"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-1w",
+      "name": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+      "tests": [
+        {
+          "id": "moa6swvx-1x",
+          "name": "toBeGreaterThanOrEqual passes when equal",
+          "suiteId": "moa6swvx-1w",
+          "suiteName": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThanOrEqual(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1y",
+          "name": "toBeGreaterThanOrEqual passes when greater",
+          "suiteId": "moa6swvx-1w",
+          "suiteName": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeGreaterThanOrEqual(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-1z",
+          "name": "toBeGreaterThanOrEqual throws when less",
+          "suiteId": "moa6swvx-1w",
+          "suiteName": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBeGreaterThanOrEqual(5)",
+              "status": "fail",
+              "error": "Expected 4 >= 5"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-20",
+          "name": "toBeLessThanOrEqual passes when equal",
+          "suiteId": "moa6swvx-1w",
+          "suiteName": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeLessThanOrEqual(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-21",
+          "name": "toBeLessThanOrEqual passes when less",
+          "suiteId": "moa6swvx-1w",
+          "suiteName": "expect — toBeGreaterThanOrEqual / toBeLessThanOrEqual",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeLessThanOrEqual(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-22",
+      "name": "expect — toMatch",
+      "tests": [
+        {
+          "id": "moa6swvx-23",
+          "name": "passes with a regex",
+          "suiteId": "moa6swvx-22",
+          "suiteName": "expect — toMatch",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toMatch({})", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-24",
+          "name": "passes with a substring string",
+          "suiteId": "moa6swvx-22",
+          "suiteName": "expect — toMatch",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toMatch(\"hello\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-25",
+          "name": "throws when no match",
+          "suiteId": "moa6swvx-22",
+          "suiteName": "expect — toMatch",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toMatch({})",
+              "status": "fail",
+              "error": "Expected \"hello\" to match {}"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-26",
+      "name": "expect — toMatchObject",
+      "tests": [
+        {
+          "id": "moa6swvx-27",
+          "name": "passes when object is a superset of expected",
+          "suiteId": "moa6swvx-26",
+          "suiteName": "expect — toMatchObject",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toMatchObject({\"a\":1,\"b\":2})", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-28",
+          "name": "passes with nested objects",
+          "suiteId": "moa6swvx-26",
+          "suiteName": "expect — toMatchObject",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toMatchObject({\"user\":{\"name\":\"Alice\"}})",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-29",
+          "name": "throws when a key differs",
+          "suiteId": "moa6swvx-26",
+          "suiteName": "expect — toMatchObject",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toMatchObject({\"a\":2})",
+              "status": "fail",
+              "error": "Expected {\"a\":1} to match object {\"a\":2}"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2a",
+          "name": "throws when a key is missing",
+          "suiteId": "moa6swvx-26",
+          "suiteName": "expect — toMatchObject",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toMatchObject({\"b\":1})",
+              "status": "fail",
+              "error": "Expected {\"a\":1} to match object {\"b\":1}"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-2b",
+      "name": "expect — toBeInstanceOf",
+      "tests": [
+        {
+          "id": "moa6swvx-2c",
+          "name": "passes for correct class",
+          "suiteId": "moa6swvx-2b",
+          "suiteName": "expect — toBeInstanceOf",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBeInstanceOf(Error)", "status": "pass" },
+            { "label": "expect(…).toBeInstanceOf(Array)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2d",
+          "name": "throws for wrong class",
+          "suiteId": "moa6swvx-2b",
+          "suiteName": "expect — toBeInstanceOf",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBeInstanceOf(Error)",
+              "status": "fail",
+              "error": "Expected value to be an instance of Error"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-2e",
+      "name": "expect — toHaveProperty",
+      "tests": [
+        {
+          "id": "moa6swvx-2f",
+          "name": "passes when property exists",
+          "suiteId": "moa6swvx-2e",
+          "suiteName": "expect — toHaveProperty",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveProperty(\"a\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2g",
+          "name": "passes for nested key path",
+          "suiteId": "moa6swvx-2e",
+          "suiteName": "expect — toHaveProperty",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveProperty(\"a.b\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2h",
+          "name": "passes when property equals expected value",
+          "suiteId": "moa6swvx-2e",
+          "suiteName": "expect — toHaveProperty",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveProperty(\"a\", 42)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2i",
+          "name": "throws when property is missing",
+          "suiteId": "moa6swvx-2e",
+          "suiteName": "expect — toHaveProperty",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toHaveProperty(\"b\")",
+              "status": "fail",
+              "error": "Expected object to have property \"b\""
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2j",
+          "name": "throws when value does not match",
+          "suiteId": "moa6swvx-2e",
+          "suiteName": "expect — toHaveProperty",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toHaveProperty(\"a\", 2)",
+              "status": "fail",
+              "error": "Expected property \"a\" to equal 2, got 1"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6swvx-2k",
+      "name": "expect — mock spy assertions",
+      "tests": [
+        {
+          "id": "moa6swvx-2l",
+          "name": "toHaveBeenCalled passes after spy is called",
+          "suiteId": "moa6swvx-2k",
+          "suiteName": "expect — mock spy assertions",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveBeenCalled()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2m",
+          "name": "toHaveBeenCalled throws when spy was not called",
+          "suiteId": "moa6swvx-2k",
+          "suiteName": "expect — mock spy assertions",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toHaveBeenCalled()",
+              "status": "fail",
+              "error": "Expected spy to have been called"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2n",
+          "name": "toHaveBeenCalledTimes passes for exact count",
+          "suiteId": "moa6swvx-2k",
+          "suiteName": "expect — mock spy assertions",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveBeenCalledTimes(2)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2o",
+          "name": "toHaveBeenCalledWith passes when args match",
+          "suiteId": "moa6swvx-2k",
+          "suiteName": "expect — mock spy assertions",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveBeenCalledWith(\"hello\", 42)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swvx-2p",
+          "name": "toHaveBeenCalledWith throws when args differ",
+          "suiteId": "moa6swvx-2k",
+          "suiteName": "expect — mock spy assertions",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toHaveBeenCalledWith(\"world\")",
+              "status": "fail",
+              "error": "Expected spy to have been called with [\"world\"]"
+            },
+            { "label": "expect(…).toBe(true)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts",
+      "duration": 0
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts": "0daf570f22a7e75fc6934b76d29f0f51dd3359300f440cdf0e0dfe58e1d1c7f0"
+  }
+}

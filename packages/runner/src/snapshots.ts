@@ -1,238 +1,12 @@
 import { existsSync, mkdirSync, readdirSync, rmSync, readFileSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
+import { serializeDom, stripPassthroughWrapper } from "roadtest/serialize-dom";
 import type { SerializableTestSuite } from "./serialize.js";
 
-// ─── CSS normalization (pure text-based, no DOM dependency) ──────────────────
-
-/** Convert a hex color token to rgb() / rgba(). */
-function hexToRgb(hex: string): string {
-  const h = hex.slice(1);
-  let r: number, g: number, b: number;
-  if (h.length === 3) {
-    r = parseInt(h[0] + h[0], 16);
-    g = parseInt(h[1] + h[1], 16);
-    b = parseInt(h[2] + h[2], 16);
-    return `rgb(${r}, ${g}, ${b})`;
-  }
-  r = parseInt(h.slice(0, 2), 16);
-  g = parseInt(h.slice(2, 4), 16);
-  b = parseInt(h.slice(4, 6), 16);
-  if (h.length === 8) {
-    const a = Math.round((parseInt(h.slice(6, 8), 16) / 255) * 1000) / 1000;
-    return `rgba(${r}, ${g}, ${b}, ${a})`;
-  }
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-/** Replace all hex color tokens in a CSS value string with rgb()/rgba(). */
-function normalizeColors(value: string): string {
-  return value.replace(
-    /#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?=[^0-9a-fA-F]|$)/g,
-    hexToRgb,
-  );
-}
-
-/**
- * Split a CSS declaration block into [property, value] pairs.
- * Handles commas/semicolons inside function calls like rgb(), linear-gradient().
- */
-function parseDeclarations(css: string): Array<[string, string]> {
-  const decls: Array<[string, string]> = [];
-  let buf = "";
-  let depth = 0;
-  for (const ch of css) {
-    if (ch === "(") {
-      depth++;
-      buf += ch;
-    } else if (ch === ")") {
-      depth--;
-      buf += ch;
-    } else if (ch === ";" && depth === 0) {
-      const colon = buf.indexOf(":");
-      if (colon > 0) decls.push([buf.slice(0, colon).trim(), buf.slice(colon + 1).trim()]);
-      buf = "";
-    } else {
-      buf += ch;
-    }
-  }
-  const colon = buf.indexOf(":");
-  if (colon > 0) decls.push([buf.slice(0, colon).trim(), buf.slice(colon + 1).trim()]);
-  return decls;
-}
-
-// ─── Shorthand expanders ──────────────────────────────────────────────────────
-
-/** `flex: g s b` → individual flex-* longhands, sorted. */
-function expandFlex(value: string): Array<[string, string]> {
-  const parts = value.trim().split(/\s+/);
-  if (parts.length === 3)
-    return [
-      ["flex-basis", parts[2]],
-      ["flex-grow", parts[0]],
-      ["flex-shrink", parts[1]],
-    ];
-  if (parts.length === 2)
-    return [
-      ["flex-basis", "0%"],
-      ["flex-grow", parts[0]],
-      ["flex-shrink", parts[1]],
-    ];
-  if (parts.length === 1 && /^[\d.]/.test(parts[0]))
-    return [
-      ["flex-basis", "0%"],
-      ["flex-grow", parts[0]],
-      ["flex-shrink", "1"],
-    ];
-  return [["flex", value]];
-}
-
-/**
- * `border[-side]: width style color` → individual longhands.
- * Collapses `none none` → `none` before expanding.
- */
-function expandBorderSide(prefix: string, value: string): Array<[string, string]> {
-  const v = value.trim().replace(/^(none)(\s+none)+$/, "none");
-  if (v === "none") return [[`${prefix}-style`, "none"]];
-  const m = v.match(/^(\S+)\s+(\S+)\s+(.+)$/);
-  if (m) {
-    return [
-      [`${prefix}-color`, normalizeColors(m[3].trim())],
-      [`${prefix}-style`, m[2]],
-      [`${prefix}-width`, m[1]],
-    ];
-  }
-  return [[prefix, normalizeColors(v)]];
-}
-
-/** Expand a single declaration, returning one or more longhands. */
-function expandDeclaration(prop: string, value: string): Array<[string, string]> {
-  const v = normalizeColors(value);
-  switch (prop) {
-    case "flex":
-      return expandFlex(v);
-    case "border":
-      return expandBorderSide("border", v);
-    case "border-top":
-      return expandBorderSide("border-top", v);
-    case "border-right":
-      return expandBorderSide("border-right", v);
-    case "border-bottom":
-      return expandBorderSide("border-bottom", v);
-    case "border-left":
-      return expandBorderSide("border-left", v);
-    default:
-      return [[prop, v]];
-  }
-}
-
-/** Normalize a raw style attribute value to a canonical sorted form. */
-function normalizeStyleAttr(raw: string): string {
-  const expanded = new Map<string, string>();
-  for (const [prop, value] of parseDeclarations(raw)) {
-    for (const [p, v] of expandDeclaration(prop, value)) {
-      expanded.set(p, v);
-    }
-  }
-  return [...expanded.keys()]
-    .sort()
-    .map((p) => `${p}: ${expanded.get(p)}`)
-    .join("; ");
-}
-
-// ─── HTML tag normalization (text-based) ──────────────────────────────────────
-
-/**
- * Parse, sort, and normalize the attributes of a single opening tag.
- * The style attribute gets its declarations expanded and sorted.
- * All attributes are sorted alphabetically to eliminate serialization-order diffs.
- */
-function normalizeTag(tag: string): string {
-  const nameMatch = tag.match(/^<([^\s>/]+)/);
-  if (!nameMatch) return tag;
-  const tagName = nameMatch[1];
-
-  // Extract attributes — values are quoted; handles &quot; inside values.
-  const attrRe = /\s+([\w:-]+)(?:="([^"]*)")?/g;
-  const attrs: Array<[string, string | null]> = [];
-  let m: RegExpExecArray | null;
-  while ((m = attrRe.exec(tag)) !== null) {
-    attrs.push([m[1], m[2] !== undefined ? m[2] : null]);
-  }
-
-  attrs.sort(([a], [b]) => a.localeCompare(b));
-
-  const attrStr = attrs
-    .map(([name, value]) => {
-      if (value === null) return ` ${name}`;
-      const normalized = name === "style" ? normalizeStyleAttr(value) : value;
-      return ` ${name}="${normalized}"`;
-    })
-    .join("");
-
-  const selfClose = tag.endsWith("/>") ? "/" : "";
-  return `<${tagName}${attrStr}${selfClose}>`;
-}
-
-/** Normalize every opening tag in an HTML string. */
-function normalizeSnapshotHtml(html: string): string {
-  // 1. Normalize opening tags: sort attributes, canonicalize style declarations.
-  //    Handles multi-line pretty-printed tags (e.g. `<div\n  style="…"\n>`).
-  let result = html.replace(/<[a-zA-Z][^>]*>/g, (match) => {
-    if (match.startsWith("</") || match.startsWith("<!--")) return match;
-    try {
-      return normalizeTag(match);
-    } catch {
-      return match;
-    }
-  });
-  // 2. Normalize multi-line closing tags produced by formatters (e.g. `</span\n>`).
-  result = result.replace(/<\/([^>]*?)>/g, (_, name) => `</${name.trim()}>`);
-  // 3. Trim leading/trailing whitespace from text content between tags so that
-  //    pretty-printed indented text ("  Alice Chen  ") matches compact text.
-  result = result.replace(/>([^<]*)</g, (_, text) => {
-    const trimmed = text.trim();
-    return trimmed ? `>${trimmed}<` : "><";
-  });
-  return result;
-}
-
-// ─── Wrapper stripping ────────────────────────────────────────────────────────
-
-/**
- * If exactly one side has a passthrough wrapper div whose only attribute is
- * `style="...: inherit; ..."`, strip it.  This handles the `.roadtest/preview.tsx`
- * wrapper present in browser renders but absent in node/happy-dom captures.
- */
-function stripMismatchedWrapper(
-  baseHtml: string,
-  currHtml: string,
-): { base: string; curr: string } {
-  function unwrap(h: string): string | null {
-    const trimmed = h.trim();
-    // Must start with <div or <div style="...inherit..."> and end with </div>
-    const m = trimmed.match(/^(<div(?:\s+style="[^"]*")??>)([\s\S]*)<\/div>$/);
-    if (!m) return null;
-    const openTag = m[1];
-    // Only allow a style attribute whose values are all "inherit"
-    if (
-      openTag !== "<div>" &&
-      !/^<div style="(?:[\w-]+:\s*inherit;\s*)*[\w-]+:\s*inherit">$/.test(openTag)
-    )
-      return null;
-    return m[2];
-  }
-
-  const uBase = unwrap(baseHtml);
-  const uCurr = unwrap(currHtml);
-  if (uCurr !== null && uBase === null) return { base: baseHtml, curr: uCurr };
-  if (uBase !== null && uCurr === null) return { base: uBase, curr: currHtml };
-  return { base: baseHtml, curr: currHtml };
-}
-
 function snapshotsAreEquivalent(stored: string, current: string): boolean {
-  const normStored = normalizeSnapshotHtml(stored);
-  const normCurrent = normalizeSnapshotHtml(current);
-  const { base, curr } = stripMismatchedWrapper(normStored, normCurrent);
+  const a = serializeDom(stored);
+  const b = serializeDom(current);
+  const { base, curr } = stripPassthroughWrapper(a, b);
   return base === curr;
 }
 
@@ -270,7 +44,10 @@ function loadSnapshot(path: string): string | null {
 
 function saveSnapshot(path: string, html: string): void {
   mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, html, "utf8");
+  // Persist the canonical serialization so the stored file is stable across
+  // runs and environments, and is immune to external formatters reformatting
+  // the file between runs.
+  writeFileSync(path, serializeDom(html), "utf8");
 }
 
 // ─── Diff (line-by-line) ──────────────────────────────────────────────────────
@@ -379,7 +156,7 @@ export function processSnapshots(
               suiteName: suite.name,
               testName: test.name,
               label,
-              diff: diffLines(stored, html),
+              diff: diffLines(serializeDom(stored), serializeDom(html)),
             });
             assertion.status = "fail";
             assertion.error = "Snapshot mismatch";

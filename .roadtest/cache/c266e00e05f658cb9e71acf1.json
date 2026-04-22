@@ -1,0 +1,148 @@
+{
+  "hash": "c266e00e05f658cb9e71acf1",
+  "cachedAt": 1776870474630,
+  "suites": [
+    {
+      "id": "moa6sww4-2q",
+      "name": "it.skip",
+      "tests": [
+        {
+          "id": "moa6sww4-2r",
+          "name": "skipped tests are registered with status 'skipped'",
+          "suiteId": "moa6sww4-2q",
+          "suiteName": "it.skip",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"skipped\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"skipped test\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts",
+      "duration": 1
+    },
+    {
+      "id": "moa6sww4-2s",
+      "name": "it.only — only flag on TestCase",
+      "tests": [
+        {
+          "id": "moa6sww4-2t",
+          "name": "a test registered with only=true carries the only flag",
+          "suiteId": "moa6sww4-2s",
+          "suiteName": "it.only — only flag on TestCase",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sww4-2u",
+          "name": "a normal test does not carry the only flag",
+          "suiteId": "moa6sww4-2s",
+          "suiteName": "it.only — only flag on TestCase",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeUndefined()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6sww4-2v",
+      "name": "it.each",
+      "tests": [
+        {
+          "id": "moa6sww4-2w",
+          "name": "adds 1 + 2 to equal 3",
+          "suiteId": "moa6sww4-2v",
+          "suiteName": "it.each",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(3)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sww4-2x",
+          "name": "adds 10 + 20 to equal 30",
+          "suiteId": "moa6sww4-2v",
+          "suiteName": "it.each",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(30)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sww4-2y",
+          "name": "adds 0 + 0 to equal 0",
+          "suiteId": "moa6sww4-2v",
+          "suiteName": "it.each",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(0)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sww4-2z",
+          "name": "generates a test for each case",
+          "suiteId": "moa6sww4-2v",
+          "suiteName": "it.each",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6sww4-30",
+      "name": "Store — only mode detection via suite tests",
+      "tests": [
+        {
+          "id": "moa6sww4-31",
+          "name": "detects only mode when any test has only=true",
+          "suiteId": "moa6sww4-30",
+          "suiteName": "Store — only mode detection via suite tests",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sww4-32",
+          "name": "reports no only mode when no test has only=true",
+          "suiteId": "moa6sww4-30",
+          "suiteName": "Store — only mode detection via suite tests",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts",
+      "duration": 0
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts": "c7b03a04042ed37f25aa1775751daf9c76a77a096645db780bf453c7bd9b4651"
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "hash": "645a3f14f66f2cd4e6d456ce",
+  "cachedAt": 1776870467569,
+  "suites": [
+    {
+      "id": "moa6sre0-1",
+      "name": "parseShardArg",
+      "tests": [
+        {
+          "id": "moa6sre0-2",
+          "name": "parses valid \"1/4\" format",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(4)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-3",
+          "name": "parses single shard \"1/1\"",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(1)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-4",
+          "name": "parses last shard \"4/4\"",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(4)", "status": "pass" },
+            { "label": "expect(…).toBe(4)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-5",
+          "name": "throws for invalid format",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toThrow()", "status": "pass" },
+            { "label": "expect(…).toThrow()", "status": "pass" },
+            { "label": "expect(…).toThrow()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-6",
+          "name": "throws when index is 0",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toThrow()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-7",
+          "name": "throws when index exceeds total",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toThrow()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-8",
+          "name": "throws when total is 0",
+          "suiteId": "moa6sre0-1",
+          "suiteName": "parseShardArg",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toThrow()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts",
+      "duration": 1
+    },
+    {
+      "id": "moa6sre0-9",
+      "name": "applySharding",
+      "tests": [
+        {
+          "id": "moa6sre0-a",
+          "name": "distributes files across shards alphabetically",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(2)", "status": "pass" },
+            { "label": "expect(…).toBe(2)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-b",
+          "name": "every file appears in exactly one shard",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(4)", "status": "pass" },
+            { "label": "expect(…).toBe(\"a.ts\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"d.ts\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-c",
+          "name": "single shard returns all files sorted",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(4)", "status": "pass" },
+            { "label": "expect(…).toBe(\"a.ts\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-d",
+          "name": "does not mutate the input array",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"b.ts\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-e",
+          "name": "returns empty array when shard has no files",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveLength(0)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-f",
+          "name": "is deterministic across calls",
+          "suiteId": "moa6sre0-9",
+          "suiteName": "applySharding",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toEqual([\"a.ts\",\"d.ts\"])", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6sre0-g",
+      "name": "mergeCoverage",
+      "tests": [
+        {
+          "id": "moa6sre0-h",
+          "name": "returns null for empty input",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-i",
+          "name": "returns null when all inputs are null",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-j",
+          "name": "returns single coverage unchanged",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(1)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-k",
+          "name": "sums statement counts across coverage maps",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(3)", "status": "pass" },
+            { "label": "expect(…).toBe(3)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-l",
+          "name": "sums function counts across coverage maps",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(3)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-m",
+          "name": "sums branch counts across coverage maps",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(2)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-n",
+          "name": "skips null entries in the array",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(5)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-o",
+          "name": "merges coverage from different files",
+          "suiteId": "moa6sre0-g",
+          "suiteName": "mergeCoverage",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(2)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6sre0-p",
+      "name": "mergeShardResults",
+      "tests": [
+        {
+          "id": "moa6sre0-q",
+          "name": "combines suites from all shards",
+          "suiteId": "moa6sre0-p",
+          "suiteName": "mergeShardResults",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveLength(2)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-r",
+          "name": "collects shard configs",
+          "suiteId": "moa6sre0-p",
+          "suiteName": "mergeShardResults",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(2)", "status": "pass" },
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(2)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-s",
+          "name": "returns null coverage when all shards have null coverage",
+          "suiteId": "moa6sre0-p",
+          "suiteName": "mergeShardResults",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6sre0-t",
+          "name": "returns empty suites and shards for empty input",
+          "suiteId": "moa6sre0-p",
+          "suiteName": "mergeShardResults",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(0)", "status": "pass" },
+            { "label": "expect(…).toHaveLength(0)", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts",
+      "duration": 0
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/dist/index.js": "ce7b1e3e9b27f9c46cab903ebfbfe71469608587d810ee26b9b2b04d9ba37eab",
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts": "7ed7c3417807a0ced4613a3058bbb87ea76207b2296c1a2f48355c146d4db3a8"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "hash": "47e62f811fff86a5d65eb1dc",
+  "cachedAt": 1776870383615,
+  "suites": [
+    {
+      "id": "moa6qym3-1",
+      "name": "normalizeHtmlStyles — whitespace text node normalization",
+      "tests": [
+        {
+          "id": "moa6qym3-2",
+          "name": "removes whitespace-only text nodes between elements",
+          "suiteId": "moa6qym3-1",
+          "suiteName": "normalizeHtmlStyles — whitespace text node normalization",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"<div><span>hello</span></div>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-3",
+          "name": "trims leading/trailing whitespace from content text nodes",
+          "suiteId": "moa6qym3-1",
+          "suiteName": "normalizeHtmlStyles — whitespace text node normalization",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"<h2>Team</h2>\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-4",
+          "name": "preserves inner whitespace within a text node",
+          "suiteId": "moa6qym3-1",
+          "suiteName": "normalizeHtmlStyles — whitespace text node normalization",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-5",
+          "name": "handles deeply nested pretty-printed HTML",
+          "suiteId": "moa6qym3-1",
+          "suiteName": "normalizeHtmlStyles — whitespace text node normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div><section><h2>Sprint Tasks</h2></section></div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-6",
+          "name": "handles mixed: whitespace-only nodes alongside content nodes",
+          "suiteId": "moa6qym3-1",
+          "suiteName": "normalizeHtmlStyles — whitespace text node normalization",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"<div><span>A</span></div>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/ui/css-normalize.test.ts",
+      "duration": 1
+    },
+    {
+      "id": "moa6qym3-7",
+      "name": "snapshotsAreEquivalent — node vs browser formatting",
+      "tests": [
+        {
+          "id": "moa6qym3-8",
+          "name": "treats pretty-printed and flat HTML as equivalent",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-9",
+          "name": "treats identical flat HTML as equivalent",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-a",
+          "name": "detects genuinely different text content",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-b",
+          "name": "detects genuinely different structure",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-c",
+          "name": "detects added elements",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6qym3-d",
+          "name": "ignores indentation differences in non-style attributes",
+          "suiteId": "moa6qym3-7",
+          "suiteName": "snapshotsAreEquivalent — node vs browser formatting",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/ui/css-normalize.test.ts",
+      "duration": 1
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/ui/css-normalize.test.ts": "de8e05bb3cf5dd0cf1566546bfff759cb8eccb4ccaceca09b65edd6652a5f6e5"
+  }
+}

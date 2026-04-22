@@ -1,0 +1,260 @@
+{
+  "hash": "bdcb72cfd7e506768bb4d91d",
+  "cachedAt": 1776870474629,
+  "suites": [
+    {
+      "id": "moa6swub-1",
+      "name": "Store",
+      "tests": [
+        {
+          "id": "moa6swub-2",
+          "name": "starts with empty state",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(0)", "status": "pass" },
+            { "label": "expect(…).toBe(false)", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-3",
+          "name": "addSuite appends a suite",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(1)", "status": "pass" },
+            { "label": "expect(…).toBe(\"test suite\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-4",
+          "name": "addSuite does not mutate previous state reference",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-5",
+          "name": "subscribe notifies listener on state change",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(2)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-6",
+          "name": "subscribe returns unsubscribe function",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(1)", "status": "pass" },
+            { "label": "expect(…).toBe(1)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-7",
+          "name": "updateTest patches the correct test",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"pass\")", "status": "pass" },
+            { "label": "expect(…).toBe(42)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-8",
+          "name": "updateTest leaves other tests unchanged",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"pending\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-9",
+          "name": "updateSuite patches the correct suite",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"pass\")", "status": "pass" },
+            { "label": "expect(…).toBe(100)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-a",
+          "name": "setRunning sets running to true",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(true)", "status": "pass" },
+            { "label": "expect(…).toBeNull()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-b",
+          "name": "setRunning(false) sets lastRunAt",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(false)", "status": "pass" },
+            { "label": "expect(…).toBeDefined()", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-c",
+          "name": "reset returns all suites and tests to pending",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"pending\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"pending\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-d",
+          "name": "reset clears duration from tests",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeUndefined()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-e",
+          "name": "resetSuite resets only the targeted suite",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"pending\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"fail\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-f",
+          "name": "resetTest resets only the targeted test",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"pending\")", "status": "pass" },
+            { "label": "expect(…).toBeUndefined()", "status": "pass" },
+            { "label": "expect(…).toBe(\"fail\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-g",
+          "name": "removeSuitesForFile removes suites matching the source file",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(1)", "status": "pass" },
+            { "label": "expect(…).toBe(\"b.test.ts\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-h",
+          "name": "removeSuitesForFile is a no-op when file not found",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveLength(1)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-i",
+          "name": "setRunProgress stores progress and notifies",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(3)", "status": "pass" },
+            { "label": "expect(…).toBe(10)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6swub-j",
+          "name": "setRunProgress(null) clears progress",
+          "suiteId": "moa6swub-1",
+          "suiteName": "Store",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeNull()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/store.test.ts",
+      "duration": 1
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/store.test.ts": "95d0838b460f4ddca5cf5bd3a07f6feb7263522afac60c79515844892afd5efa"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "hash": "d24b75cbd4a58f756e334e4e",
+  "cachedAt": 1776870467569,
+  "suites": [
+    {
+      "id": "moa6srg0-u",
+      "name": "serializeSnapshot",
+      "tests": [
+        {
+          "id": "moa6srg0-v",
+          "name": "copies label, timestamp, and html",
+          "suiteId": "moa6srg0-u",
+          "suiteName": "serializeSnapshot",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"my snapshot\")", "status": "pass" },
+            { "label": "expect(…).toBe(1000)", "status": "pass" },
+            { "label": "expect(…).toBe(\"<div>hello</div>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-w",
+          "name": "does not include element field",
+          "suiteId": "moa6srg0-u",
+          "suiteName": "serializeSnapshot",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/serialize.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6srg0-x",
+      "name": "serializeTestCase",
+      "tests": [
+        {
+          "id": "moa6srg0-y",
+          "name": "copies id, name, suiteId, suiteName, status",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"test-1\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"my test\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"suite-1\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"test suite\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"pass\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-z",
+          "name": "does not include fn field",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-10",
+          "name": "copies assertions array",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(2)", "status": "pass" },
+            { "label": "expect(…).toBe(\"mismatch\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-11",
+          "name": "serializes snapshots (drops element)",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(1)", "status": "pass" },
+            { "label": "expect(…).toBe(\"step 1\")", "status": "pass" },
+            { "label": "expect(…).toBe(false)", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-12",
+          "name": "copies consoleLogs",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(1)", "status": "pass" },
+            { "label": "expect(…).toBe(\"hello\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-13",
+          "name": "copies error when present",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"Something went wrong\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-14",
+          "name": "copies testCoverage",
+          "suiteId": "moa6srg0-x",
+          "suiteName": "serializeTestCase",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(1)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/serialize.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6srg0-15",
+      "name": "serializeTestSuite",
+      "tests": [
+        {
+          "id": "moa6srg0-16",
+          "name": "copies id, name, status, sourceFile",
+          "suiteId": "moa6srg0-15",
+          "suiteName": "serializeTestSuite",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"suite-1\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"test suite\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"pass\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"/src/foo.test.ts\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-17",
+          "name": "serializes all tests",
+          "suiteId": "moa6srg0-15",
+          "suiteName": "serializeTestSuite",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toHaveLength(2)", "status": "pass" },
+            { "label": "expect(…).toBe(\"first\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"second\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-18",
+          "name": "omits fn from each serialized test",
+          "suiteId": "moa6srg0-15",
+          "suiteName": "serializeTestSuite",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-19",
+          "name": "handles suite with no tests",
+          "suiteId": "moa6srg0-15",
+          "suiteName": "serializeTestSuite",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toHaveLength(0)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6srg0-1a",
+          "name": "sourceFile is undefined when not set",
+          "suiteId": "moa6srg0-15",
+          "suiteName": "serializeTestSuite",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBeUndefined()", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/serialize.test.ts",
+      "duration": 1
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/dist/index.js": "ce7b1e3e9b27f9c46cab903ebfbfe71469608587d810ee26b9b2b04d9ba37eab",
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/serialize.test.ts": "6cb7058bbe7950abb52e94abad01ef12cec2ed2072b2f5128d9ea0f4863821d5"
+  }
+}

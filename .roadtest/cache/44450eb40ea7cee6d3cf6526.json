@@ -1,0 +1,431 @@
+{
+  "hash": "44450eb40ea7cee6d3cf6526",
+  "cachedAt": 1776870423841,
+  "suites": [
+    {
+      "id": "moa6rto2-1",
+      "name": "serializeDom — attribute ordering",
+      "tests": [
+        {
+          "id": "moa6rto2-2",
+          "name": "sorts attributes alphabetically",
+          "suiteId": "moa6rto2-1",
+          "suiteName": "serializeDom — attribute ordering",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<input checked name=\\\"x\\\" type=\\\"radio\\\" value=\\\"none\\\"/>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 1
+    },
+    {
+      "id": "moa6rto2-3",
+      "name": "serializeDom — style normalization",
+      "tests": [
+        {
+          "id": "moa6rto2-4",
+          "name": "sorts style declarations alphabetically",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"background: blue; color: red\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-5",
+          "name": "normalizes hex colors to rgb()",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"color: rgb(255, 0, 0)\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-6",
+          "name": "normalizes 3-digit hex to rgb()",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"color: rgb(255, 0, 0)\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-7",
+          "name": "does NOT split on `;` inside &quot; HTML entities",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"color: red; font-family: -apple-system, &quot;Segoe UI&quot;, sans-serif\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-8",
+          "name": "collapses multi-line pretty-printed style values",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"transition: border-color 0.15s, color 0.15s\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-9",
+          "name": "expands border shorthand to per-side longhands",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-bottom-width: 1px; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-left-width: 1px; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-right-width: 1px; border-top-color: rgb(204, 204, 204); border-top-style: solid; border-top-width: 1px\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-a",
+          "name": "expands border-bottom shorthand to longhands",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"border-bottom-color: rgb(30, 30, 42); border-bottom-style: solid; border-bottom-width: 1px\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-b",
+          "name": "collapses happy-dom `border: none none` quirk",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<button style=\\\"border-bottom-color: currentcolor; border-bottom-style: none; border-bottom-width: 0; border-left-color: currentcolor; border-left-style: none; border-left-width: 0; border-right-color: currentcolor; border-right-style: none; border-right-width: 0; border-top-color: currentcolor; border-top-style: none; border-top-width: 0\\\">x</button>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-c",
+          "name": "expands margin shorthand",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"margin-bottom: 10px; margin-left: 20px; margin-right: 20px; margin-top: 10px\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-d",
+          "name": "expands padding shorthand",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"padding-bottom: 8px; padding-left: 20px; padding-right: 20px; padding-top: 8px\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-e",
+          "name": "expands flex shorthand",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"flex-basis: 0; flex-grow: 1; flex-shrink: 1\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-f",
+          "name": "normalizes 0px to 0",
+          "suiteId": "moa6rto2-3",
+          "suiteName": "serializeDom — style normalization",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"margin-top: 0\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 2
+    },
+    {
+      "id": "moa6rto2-g",
+      "name": "serializeDom — structure",
+      "tests": [
+        {
+          "id": "moa6rto2-h",
+          "name": "normalizes tag-name casing",
+          "suiteId": "moa6rto2-g",
+          "suiteName": "serializeDom — structure",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"<div><span>hi</span></div>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-i",
+          "name": "self-closes void elements consistently",
+          "suiteId": "moa6rto2-g",
+          "suiteName": "serializeDom — structure",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"<br/>\")", "status": "pass" },
+            { "label": "expect(…).toBe(\"<br/>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-j",
+          "name": "preserves boolean (valueless) attributes",
+          "suiteId": "moa6rto2-g",
+          "suiteName": "serializeDom — structure",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toMatch({})", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-k",
+          "name": "drops whitespace-only text nodes between tags",
+          "suiteId": "moa6rto2-g",
+          "suiteName": "serializeDom — structure",
+          "status": "pass",
+          "assertions": [
+            { "label": "expect(…).toBe(\"<ul><li>a</li><li>b</li></ul>\")", "status": "pass" }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-l",
+          "name": "handles deep nesting with pretty-printed indentation",
+          "suiteId": "moa6rto2-g",
+          "suiteName": "serializeDom — structure",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div><section><h2>Title</h2></section></div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6rto2-m",
+      "name": "serializeDom — entity handling",
+      "tests": [
+        {
+          "id": "moa6rto2-n",
+          "name": "treats &quot; and \" equivalently in attribute values",
+          "suiteId": "moa6rto2-m",
+          "suiteName": "serializeDom — entity handling",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div title=\\\"&quot;hello&quot;\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-o",
+          "name": "decodes numeric character references",
+          "suiteId": "moa6rto2-m",
+          "suiteName": "serializeDom — entity handling",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(\"<span>A</span>\")", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6rto2-p",
+      "name": "serializeDom — cross-environment parity",
+      "tests": [
+        {
+          "id": "moa6rto2-q",
+          "name": "happy-dom longhand output matches browser shorthand output",
+          "suiteId": "moa6rto2-p",
+          "suiteName": "serializeDom — cross-environment parity",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"border-bottom-color: rgb(30, 30, 42); border-bottom-style: solid; border-bottom-width: 1px\\\">x</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto2-r",
+          "name": "treats pretty-printed (oxfmt) and compact HTML as equivalent",
+          "suiteId": "moa6rto2-p",
+          "suiteName": "serializeDom — cross-environment parity",
+          "status": "pass",
+          "assertions": [
+            {
+              "label": "expect(…).toBe(\"<div style=\\\"background: blue; color: red\\\">hi</div>\")",
+              "status": "pass"
+            }
+          ],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 0
+    },
+    {
+      "id": "moa6rto2-s",
+      "name": "snapshotsAreEquivalent",
+      "tests": [
+        {
+          "id": "moa6rto3-t",
+          "name": "treats semantically equivalent HTML as equal",
+          "suiteId": "moa6rto2-s",
+          "suiteName": "snapshotsAreEquivalent",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto3-u",
+          "name": "detects genuinely different content",
+          "suiteId": "moa6rto2-s",
+          "suiteName": "snapshotsAreEquivalent",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(false)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        },
+        {
+          "id": "moa6rto3-v",
+          "name": "strips passthrough wrapper from browser side only",
+          "suiteId": "moa6rto2-s",
+          "suiteName": "snapshotsAreEquivalent",
+          "status": "pass",
+          "assertions": [{ "label": "expect(…).toBe(true)", "status": "pass" }],
+          "snapshots": [],
+          "consoleLogs": [],
+          "testCoverage": null
+        }
+      ],
+      "status": "pass",
+      "sourceFile": "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts",
+      "duration": 0
+    }
+  ],
+  "coverage": null,
+  "fileHashes": {
+    "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts": "d31301752e6c734a58411b56c85009f8987f5369dccdb240edf2ef64e230a820"
+  }
+}

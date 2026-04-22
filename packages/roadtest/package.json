@@ -19,6 +19,11 @@
       "development": "./src/plugin.ts",
       "types": "./dist/src/plugin.d.ts",
       "import": "./dist/plugin.js"
+    },
+    "./serialize-dom": {
+      "development": "./src/shared/serializeDom.ts",
+      "types": "./dist/src/shared/serializeDom.d.ts",
+      "import": "./dist/serialize-dom.js"
     }
   },
   "scripts": {

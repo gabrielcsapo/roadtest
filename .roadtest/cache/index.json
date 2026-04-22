@@ -1,0 +1,9 @@
+{
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/ui/css-normalize.test.ts": "47e62f811fff86a5d65eb1dc",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/shared/serializeDom.test.ts": "cd9a7515c4333a74e977ce05",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/shard.test.ts": "645a3f14f66f2cd4e6d456ce",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/runner/src/serialize.test.ts": "d24b75cbd4a58f756e334e4e",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/store.test.ts": "bdcb72cfd7e506768bb4d91d",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/expect.test.ts": "41fe7f27a871857975cf3344",
+  "/Users/gabrielcsapo/Documents/coding/roadtest/packages/roadtest/src/dsl.test.ts": "c266e00e05f658cb9e71acf1"
+}
