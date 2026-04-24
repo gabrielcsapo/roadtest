@@ -7,6 +7,8 @@ import { getGreeting } from "./greeting";
 import { calculateTotal } from "./cart";
 import { noDiscount, bulkDiscount, memberDiscount, CartItem } from "./discounts";
 
+import "./App.css";
+
 const TEAM_IDS = [1, 2, 3];
 
 const INITIAL_TASKS: Task[] = [
@@ -84,7 +86,10 @@ export function App() {
           justifyContent: "space-between",
         }}
       >
-        <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.01em", color: "#e2e2e8" }}>
+        <span
+          className="test"
+          style={{ fontWeight: 800, fontSize: 17, letterSpacing: "-0.01em", color: "#e2e2e8" }}
+        >
           Team Dashboard
         </span>
         <span style={{ fontSize: 13, color: "#6b7280" }}>{getGreeting("Team")}</span>

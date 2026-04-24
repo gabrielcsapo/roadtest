@@ -1,5 +1,6 @@
 import { currentTest } from "./store";
 import { captureSnapshotAssertion } from "./render";
+import { inlineCSSClassStyles } from "./inlineStyles";
 
 class AssertionError extends Error {
   constructor(msg: string) {
@@ -312,7 +313,7 @@ function createMatchers(received: unknown, negated = false): Matchers {
     async toMatchSnapshot(label?: string) {
       const html =
         received instanceof HTMLElement
-          ? received.innerHTML
+          ? inlineCSSClassStyles(received)
           : typeof received === "string"
             ? received
             : undefined;

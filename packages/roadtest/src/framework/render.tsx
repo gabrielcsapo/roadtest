@@ -3,6 +3,7 @@ import { currentTest, store } from "./store";
 import { registerAfterTestHook } from "./hooks";
 import type { ComponentNode, Snapshot } from "./types";
 import { captureProps } from "./traceUtils";
+import { inlineCSSClassStyles } from "./inlineStyles";
 
 /** Returns the first HostComponent (tag 5) DOM node in a fiber subtree */
 function getFirstHostNode(fiber: any): HTMLElement | null {
@@ -111,7 +112,7 @@ let _lastRenderSnapshot: Snapshot | null = null;
 
 registerAfterTestHook(() => {
   if (_currentContainer && _lastRenderSnapshot) {
-    _lastRenderSnapshot.html = _currentContainer.innerHTML;
+    _lastRenderSnapshot.html = inlineCSSClassStyles(_currentContainer);
     _lastRenderSnapshot.componentTree = captureComponentTree(_currentContainer);
   }
   _lastRenderSnapshot = null;
@@ -173,7 +174,7 @@ export async function render(
     const snap: Snapshot = {
       label,
       element: wrapped,
-      html: result.container.innerHTML,
+      html: inlineCSSClassStyles(result.container),
       componentTree: captureComponentTree(result.container),
       timestamp: Date.now(),
       comparison: false, // preview-only; not compared against baselines
@@ -207,7 +208,7 @@ export async function snapshot(label?: string) {
   currentTest.snapshots.push({
     label: snapLabel,
     element: lastElement,
-    html: _currentContainer.innerHTML,
+    html: inlineCSSClassStyles(_currentContainer),
     timestamp: Date.now(),
     comparison: false, // filmstrip only
   });

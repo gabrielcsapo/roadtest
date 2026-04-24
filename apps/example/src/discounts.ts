@@ -6,6 +6,7 @@ export interface CartItem {
 
 /** No discount — pay full price */
 export function noDiscount(price: number, qty: number): number {
+  console.log("hi", price, qty);
   return price * qty;
 }
 
