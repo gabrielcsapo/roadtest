@@ -37,7 +37,7 @@ expect(user.name).toBe("Alice");
 toEqual(expected: unknown): void
 ```
 
-Deep equality via `JSON.stringify` comparison. Use this for objects and arrays.
+Deep equality via recursive comparison. Use this for objects and arrays.
 
 ```ts
 expect({ a: 1 }).toEqual({ a: 1 });
@@ -52,6 +52,19 @@ toEqual failed:
   + expected user.role: "admin"
   - received scores[2]: 4
   + expected scores[2]: 3
+```
+
+### toStrictEqual
+
+```ts
+toStrictEqual(expected: unknown): void
+```
+
+Like `toEqual` but also checks that objects have the same type and that `undefined` properties are not ignored. Use this when the constructor or sparse array holes matter.
+
+```ts
+expect(new Date("2024-01-01")).toStrictEqual(new Date("2024-01-01"));
+expect([1, , 3]).not.toStrictEqual([1, undefined, 3]);
 ```
 
 ---
@@ -164,6 +177,45 @@ toBeLessThanOrEqual(n: number): void
 expect(discount).toBeLessThanOrEqual(100);
 ```
 
+### toBeNaN
+
+```ts
+toBeNaN(): void
+```
+
+Passes when the value is `NaN`.
+
+```ts
+expect(Number("not a number")).toBeNaN();
+```
+
+### toBeCloseTo
+
+```ts
+toBeCloseTo(number: number, numDigits?: number): void
+```
+
+Checks that a floating-point number is close to the expected value. `numDigits` (default `2`) controls how many decimal places to round to before comparing.
+
+```ts
+expect(0.1 + 0.2).toBeCloseTo(0.3);
+expect(Math.PI).toBeCloseTo(3.14159, 5);
+```
+
+### toBeTypeOf
+
+```ts
+toBeTypeOf(type: string): void
+```
+
+Checks the result of `typeof received`.
+
+```ts
+expect(42).toBeTypeOf("number");
+expect("hello").toBeTypeOf("string");
+expect(fetchUser).toBeTypeOf("function");
+```
+
 ---
 
 ## Strings & Patterns
@@ -196,6 +248,18 @@ Checks that an array includes an item (strict equality), or that a string contai
 ```ts
 expect(["a", "b", "c"]).toContain("b");
 expect("hello world").toContain("world");
+```
+
+### toContainEqual
+
+```ts
+toContainEqual(item: unknown): void
+```
+
+Checks that an array contains an element that deep-equals `item`. Unlike `toContain`, this uses deep equality rather than strict reference equality.
+
+```ts
+expect([{ id: 1 }, { id: 2 }]).toContainEqual({ id: 1 });
 ```
 
 ### toHaveLength
@@ -243,14 +307,15 @@ expect(date).toBeInstanceOf(Date);
 ### toHaveProperty
 
 ```ts
-toHaveProperty(keyPath: string, value?: unknown): void
+toHaveProperty(keyPath: string | string[], value?: unknown): void
 ```
 
-Checks that the object has a property at the given dot-separated key path. Optionally asserts the value at that path.
+Checks that the object has a property at the given dot-separated key path (or array of keys). Optionally asserts the value at that path.
 
 ```ts
 expect(user).toHaveProperty("address.city");
 expect(user).toHaveProperty("address.city", "Auckland");
+expect(user).toHaveProperty(["address", "city"], "Auckland");
 ```
 
 ---
@@ -260,21 +325,44 @@ expect(user).toHaveProperty("address.city", "Auckland");
 ### toThrow
 
 ```ts
-toThrow(message?: string): void
+toThrow(message?: string | RegExp | Error): void
 ```
 
-Checks that a function throws when called. Pass a string to also assert the error message contains that substring.
+Checks that a function throws when called. The optional argument asserts the thrown error:
+
+- `string` — error message must contain the string
+- `RegExp` — error message must match the pattern
+- `Error` instance — must be same constructor and same message
 
 ```ts
 expect(() => JSON.parse("{")).toThrow();
 expect(() => validateAge(-1)).toThrow("must be positive");
+expect(() => validateAge(-1)).toThrow(/positive/);
+```
+
+---
+
+## Async matchers
+
+Chain `.resolves` or `.rejects` before a matcher to unwrap a promise first. All sync matchers are available on the async chain.
+
+```ts
+await expect(fetchUser("123")).resolves.toEqual({ id: "123", name: "Alice" });
+await expect(fetchUser("bad")).rejects.toThrow("not found");
+await expect(Promise.resolve(42)).resolves.toBeGreaterThan(0);
+```
+
+Negate with `.not` after `.resolves` / `.rejects`:
+
+```ts
+await expect(fetchUser("123")).resolves.not.toBeNull();
 ```
 
 ---
 
 ## Spy matchers
 
-These matchers work on spy functions — functions exported from a mocked module. See [mock / unmock](/docs/mock) for how to create spies.
+These matchers work on spy functions created via `vi.fn()`, `vi.spyOn()`, or returned from a mock factory. See [mock / unmock](/docs/mock) for how to create spies.
 
 ### toHaveBeenCalled
 
@@ -312,53 +400,218 @@ Passes if the spy was called at least once with the given arguments (deep equali
 expect(fetchUser).toHaveBeenCalledWith("user-123");
 ```
 
+### toHaveBeenLastCalledWith
+
+```ts
+toHaveBeenLastCalledWith(...args: unknown[]): void
+```
+
+Passes if the spy's most recent call used the given arguments.
+
+```ts
+expect(log).toHaveBeenLastCalledWith("done");
+```
+
+### toHaveBeenNthCalledWith
+
+```ts
+toHaveBeenNthCalledWith(n: number, ...args: unknown[]): void
+```
+
+Passes if the nth call (1-indexed) used the given arguments.
+
+```ts
+expect(log).toHaveBeenNthCalledWith(2, "step 2");
+```
+
+### toHaveReturnedWith
+
+```ts
+toHaveReturnedWith(value: unknown): void
+```
+
+Passes if the spy returned the given value in at least one call (deep equality, throws excluded).
+
+```ts
+expect(double).toHaveReturnedWith(10);
+```
+
+### toHaveReturnedTimes
+
+```ts
+toHaveReturnedTimes(n: number): void
+```
+
+Passes if the spy returned successfully (without throwing) exactly `n` times.
+
+```ts
+expect(double).toHaveReturnedTimes(3);
+```
+
+### toHaveLastReturnedWith
+
+```ts
+toHaveLastReturnedWith(value: unknown): void
+```
+
+Passes if the spy's most recent successful return value equals `value`.
+
+```ts
+expect(double).toHaveLastReturnedWith(6);
+```
+
+### toHaveNthReturnedWith
+
+```ts
+toHaveNthReturnedWith(n: number, value: unknown): void
+```
+
+Passes if the nth successful return value (1-indexed, throws excluded) equals `value`.
+
+```ts
+expect(double).toHaveNthReturnedWith(2, 4);
+```
+
 ---
 
-## Snapshots
+## Asymmetric matchers
 
-### toMatchSnapshot
+Use inside `toEqual`, `toMatchObject`, or `toHaveBeenCalledWith` to match against a pattern rather than an exact value. All matchers support `.not.toEqual(expect.anything())` etc.
 
-```ts
-toMatchSnapshot(label?: string): Promise<void>
-```
-
-Captures the rendered HTML of the received element as a snapshot assertion. Works on `HTMLElement` instances or strings.
-
-- If `received` is an `HTMLElement`, its `innerHTML` is captured.
-- If `received` is a string, it is captured directly.
-- The snapshot appears in the Assertions tab of the browser UI with a diff view on changes.
-- Snapshots are stored as plain `.html` files in a `__snapshots__/` directory next to your test file — diffable and reviewable in any editor or code review tool.
-- Run with `--update-snapshots` to regenerate stored baselines.
+### expect.any
 
 ```ts
-const { getByRole } = await render(<Button label="Save" />)
-await expect(getByRole('button')).toMatchSnapshot()
-
-// With a custom label
-await expect(getByRole('button')).toMatchSnapshot('save button')
+expect.any(constructor: unknown)
 ```
 
-#### HTML-aware comparison
+Matches any value that is an instance of the given constructor (or the same primitive type for `Number`, `String`, etc.).
 
-Unlike plain string snapshot tools, roadtest normalizes HTML before comparing so cosmetic serialization differences never cause false failures:
-
-- **Attribute order** — attributes are sorted alphabetically, so `<div class="x" id="y">` and `<div id="y" class="x">` are treated as equal.
-- **CSS normalization** — inline style declarations are sorted and shorthand properties (`flex`, `border`, `border-top`, etc.) are expanded to their longhand equivalents. `flex: 1 0 auto` and `flex-grow: 1; flex-shrink: 0; flex-basis: auto` are the same snapshot.
-- **Color normalization** — hex colors are converted to `rgb()`/`rgba()` so `#ff0000` and `rgb(255, 0, 0)` are identical.
-
-#### Cross-environment consistency
-
-When running in the browser, roadtest wraps your component in a passthrough container div (for layout). Node/happy-dom renders do not include this wrapper. roadtest detects and strips the mismatched wrapper automatically, so the same snapshot passes in both environments without any special handling on your part.
-
-#### Readable diffs
-
-On mismatch, roadtest pretty-prints the stored and current HTML tag-per-line before diffing, so you see which specific elements changed rather than one enormous string diff:
-
+```ts
+expect(user).toEqual({ id: expect.any(Number), name: expect.any(String) });
 ```
--  <button style="background-color: rgb(0, 123, 255); color: rgb(255, 255, 255);">
-+  <button style="background-color: rgb(108, 117, 125); color: rgb(255, 255, 255);">
-     Save
-   </button>
+
+### expect.anything
+
+```ts
+expect.anything();
+```
+
+Matches any value except `null` and `undefined`.
+
+```ts
+expect(result).toEqual(expect.anything());
+```
+
+### expect.arrayContaining
+
+```ts
+expect.arrayContaining(arr: unknown[])
+```
+
+Matches any array that contains all items in `arr` (extra items are allowed).
+
+```ts
+expect(roles).toEqual(expect.arrayContaining(["admin", "editor"]));
+```
+
+### expect.objectContaining
+
+```ts
+expect.objectContaining(obj: Record<string, unknown>)
+```
+
+Matches any object that contains all key-value pairs in `obj` (extra keys are allowed).
+
+```ts
+expect(fetchUser).toHaveBeenCalledWith(expect.objectContaining({ id: "123" }));
+```
+
+### expect.stringContaining
+
+```ts
+expect.stringContaining(str: string)
+```
+
+Matches any string that contains `str` as a substring.
+
+```ts
+expect(message).toEqual(expect.stringContaining("Welcome"));
+```
+
+### expect.stringMatching
+
+```ts
+expect.stringMatching(pattern: string | RegExp)
+```
+
+Matches any string that contains a substring or matches a regular expression.
+
+```ts
+expect(email).toEqual(expect.stringMatching(/@example\.com$/));
+```
+
+---
+
+## Assertion counting
+
+### expect.assertions
+
+```ts
+expect.assertions(n: number): void
+```
+
+Declares that exactly `n` assertions will run in the test. Fails the test if the count doesn't match — useful for ensuring async code paths are actually reached.
+
+```ts
+it("calls the callback once", async () => {
+  expect.assertions(1);
+  await doWork((result) => {
+    expect(result).toBe("ok");
+  });
+});
+```
+
+### expect.hasAssertions
+
+```ts
+expect.hasAssertions(): void
+```
+
+Declares that at least one assertion will run. Fails the test if no assertions were recorded.
+
+```ts
+it("processes each item", async () => {
+  expect.hasAssertions();
+  for (const item of await loadItems()) {
+    expect(item.valid).toBe(true);
+  }
+});
+```
+
+---
+
+## Custom matchers
+
+### expect.extend
+
+```ts
+expect.extend(matchers: Record<string, CustomMatcherFn>): void
+```
+
+Adds custom matchers. Each matcher receives the `received` value as its first argument and returns `{ pass: boolean; message: () => string }`.
+
+```ts
+expect.extend({
+  toBeWithinRange(received: number, min: number, max: number) {
+    const pass = received >= min && received <= max;
+    return {
+      pass,
+      message: () => `Expected ${received} to be within [${min}, ${max}]`,
+    };
+  },
+});
+
+expect(50).toBeWithinRange(1, 100);
 ```
 
 ---

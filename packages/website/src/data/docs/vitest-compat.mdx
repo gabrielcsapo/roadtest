@@ -1,0 +1,191 @@
+## Vitest Compatibility
+
+roadtest ships a compatibility shim that lets you run existing Vitest test files unchanged. Your `import { describe, it, expect, vi } from 'vitest'` lines work as-is — no edits needed.
+
+---
+
+## Setup
+
+### Node runner
+
+Pass `--vitest-compat` to the CLI:
+
+```bash
+roadtest --vitest-compat
+```
+
+That's it. roadtest intercepts `vitest` imports at the loader level and redirects them to its built-in shim.
+
+### Vite plugin (browser mode)
+
+Enable `vitestCompat` in your `vite.config.ts`:
+
+```ts
+import { defineConfig } from "vite";
+import roadtest from "roadtest/plugin";
+
+export default defineConfig({
+  plugins: [roadtest({ vitestCompat: true })],
+});
+```
+
+This adds a `resolve.alias` so that `vitest` resolves to `roadtest/vitest` during Vite builds and SSR test runs.
+
+---
+
+## What's supported
+
+### Test structure
+
+All of roadtest's DSL is re-exported, so the standard `vitest` test structure works unchanged:
+
+```ts
+import { describe, it, test, expect, beforeAll, afterAll, beforeEach, afterEach } from "vitest";
+```
+
+### Mock functions — `vi.fn()`
+
+```ts
+import { vi } from "vitest";
+
+const spy = vi.fn().mockReturnValue(42);
+expect(spy()).toBe(42);
+expect(spy).toHaveBeenCalledTimes(1);
+
+// Chaining
+vi.fn().mockReturnValueOnce("first").mockReturnValueOnce("second").mockReturnValue("default");
+
+// Async
+vi.fn().mockResolvedValue({ id: 1 });
+vi.fn().mockRejectedValue(new Error("oops"));
+vi.fn().mockResolvedValueOnce("once").mockResolvedValue("rest");
+```
+
+### Spying on methods — `vi.spyOn()`
+
+```ts
+import { vi } from "vitest";
+
+const spy = vi.spyOn(obj, "method");
+spy.mockReturnValue("mocked");
+
+expect(spy).toHaveBeenCalled();
+spy.mockRestore(); // restores original
+```
+
+### Module mocking — `vi.mock()`
+
+`vi.mock()` is hoisted before imports, exactly as in Vitest:
+
+```ts
+import { describe, it, expect, vi } from "vitest";
+import { fetchUser } from "./api";
+
+vi.mock("./api", () => ({
+  fetchUser: vi.fn().mockResolvedValue({ id: 1, name: "Alice" }),
+}));
+
+describe("user API", () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it("returns mocked data", async () => {
+    const user = await fetchUser(1);
+    expect(user).toEqual({ id: 1, name: "Alice" });
+    expect(fetchUser).toHaveBeenCalledWith(1);
+  });
+});
+```
+
+### Spy lifecycle
+
+```ts
+vi.clearAllMocks(); // clear call records, keep implementations
+vi.resetAllMocks(); // clear call records + reset implementations
+vi.restoreAllMocks(); // restore all vi.spyOn() originals
+```
+
+### Global stubs
+
+```ts
+vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: async () => ({}) }));
+// ... test code ...
+vi.unstubAllGlobals();
+
+vi.stubEnv("API_URL", "http://localhost:3000");
+vi.unstubAllEnvs();
+```
+
+### Async matchers
+
+```ts
+await expect(promise).resolves.toEqual({ id: 1 });
+await expect(promise).rejects.toThrow("network error");
+await expect(promise).resolves.not.toBe(null);
+```
+
+### Asymmetric matchers
+
+```ts
+expect(result).toEqual(expect.objectContaining({ id: expect.any(Number) }));
+expect(items).toEqual(expect.arrayContaining(["admin"]));
+expect(name).toEqual(expect.stringContaining("Ali"));
+expect(name).toEqual(expect.stringMatching(/^Ali/));
+expect(value).toEqual(expect.anything());
+```
+
+### Fake timers
+
+```ts
+vi.useFakeTimers();
+vi.advanceTimersByTime(1000);
+vi.runAllTimers();
+vi.setSystemTime(new Date("2024-01-01"));
+vi.useRealTimers();
+```
+
+---
+
+## @testing-library/react — automatic visual output
+
+In compat mode, roadtest automatically intercepts `@testing-library/react` imports in your test files and replaces `render` with a snapshot-capturing version. Your existing tests get filmstrip thumbnails and visual diffs with **no code changes**:
+
+```tsx
+import { describe, it, expect, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react"; // ← unchanged
+import { Counter } from "./Counter";
+
+describe("Counter", () => {
+  it("increments on click", () => {
+    render(<Counter />); // ← captures initial visual snapshot
+    fireEvent.click(screen.getByLabelText("increment"));
+    expect(screen.getByTestId("count").textContent).toBe("1");
+  });
+
+  it("calls onChange spy", () => {
+    const onChange = vi.fn();
+    render(<Counter onCountChange={onChange} />);
+    fireEvent.click(screen.getByLabelText("increment"));
+    expect(onChange).toHaveBeenCalledWith(1);
+  });
+});
+```
+
+The intercepted `render` is synchronous (same as RTL's), so existing test code works without `await`. All other RTL exports — `screen`, `fireEvent`, `act`, `cleanup`, `waitFor`, `within` — come from the real `@testing-library/react` unchanged.
+
+How the redirect works:
+
+- **Node runner** (`--vitest-compat`): the loader hook intercepts `@testing-library/react` in test files and redirects to `roadtest/rtl`
+- **Vite plugin** (`vitestCompat: true`): `resolveId` redirects `@testing-library/react` to `roadtest/rtl` for test files only
+
+---
+
+## Migrating gradually
+
+The compat mode is designed for teams that want roadtest's visual test runner without a big-bang migration. You can:
+
+1. Add `roadtest` alongside `vitest` in `devDependencies`
+2. Run `roadtest --vitest-compat` (or `--ui --vitest-compat` for the browser runner) without changing any test files
+3. Get filmstrip and visual diffs for all `@testing-library/react` renders automatically
+4. Migrate files to the native roadtest API at your own pace — or never
+
+The `apps/vitest-example` directory in the roadtest repository is a live example of a project running fully on vitest syntax under roadtest.

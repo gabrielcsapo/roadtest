@@ -6,12 +6,20 @@ import { findSourceMap, register } from "node:module";
 import { takeCoverage } from "node:v8";
 import type { Profiler } from "node:inspector";
 
+// Check for --vitest-compat at top level so the env var is set before the hook
+// thread is spawned. The hook thread gets a snapshot of process.env at spawn
+// time, so mutations inside runNode() (which runs later) are not visible to it.
+const _vitestCompatEarly = process.argv.includes("--vitest-compat");
+if (_vitestCompatEarly) process.env.ROADTEST_VITEST_COMPAT = "1";
+
 // Register the mock-hoisting loader hook for test files.
 // Must happen before any test files are imported. The hook intercepts test
 // files after tsx has processed them (receives JS), then rewrites static imports
 // to __ftImport() calls and hoists mock() registrations before them —
 // the same transform the Vite plugin applies in the browser runner.
-register(new URL("./mock-loader-hooks.js", import.meta.url));
+register(new URL("./mock-loader-hooks.js", import.meta.url), import.meta.url, {
+  data: { vitestCompat: _vitestCompatEarly },
+});
 import type { DepGraph } from "./cache.js";
 import {
   getCacheDir,
@@ -170,6 +178,8 @@ for (const name of [
   "requestAnimationFrame",
   "cancelAnimationFrame",
   "matchMedia",
+  "localStorage",
+  "sessionStorage",
 ]) {
   const val = (win as Record<string, unknown>)[name];
   if (val !== undefined) setGlobal(name, val);
@@ -351,6 +361,9 @@ export async function runNode() {
   const clearCacheFlag = args.includes("--clear-cache");
   const coverageFlag = args.includes("--coverage");
   const verboseFlag = args.includes("--verbose");
+  const vitestCompat = args.includes("--vitest-compat");
+  // Signal to the loader hook that vitest imports should redirect to roadtest
+  if (vitestCompat) process.env.ROADTEST_VITEST_COMPAT = "1";
   const shardArg = args.find((a) => a.startsWith("--shard="))?.slice("--shard=".length);
   const outputJsonArg = args
     .find((a) => a.startsWith("--output-json="))
@@ -422,7 +435,10 @@ export async function runNode() {
 
     function spawnRun(files: string[]) {
       child?.kill();
-      child = spawn(tsxBin, [scriptPath, ...files], { stdio: "inherit" });
+      child = spawn(tsxBin, [scriptPath, ...files], {
+        stdio: "inherit",
+        env: { ...process.env, ...(vitestCompat ? { ROADTEST_VITEST_COMPAT: "1" } : {}) },
+      });
     }
 
     const initial = (await glob(globPattern, { cwd })).map((f) => resolve(cwd, f));

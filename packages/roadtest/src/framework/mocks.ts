@@ -1,4 +1,6 @@
 import type { MockCall, MockEntry } from "./types";
+import { isMockFn } from "./spies";
+import type { SpyCall } from "./spies";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Factory = () => Record<string, any>;
@@ -39,12 +41,6 @@ function recordCall(
   _callLog.push({ moduleId, fnName, args, result, threw, timestamp: Date.now(), stack });
 }
 
-/** Shape of the spy metadata attached to each wrapped function */
-export interface SpyMetadata {
-  _isSpy: true;
-  _spyCalls: Array<{ args: unknown[]; result: unknown; threw: boolean }>;
-}
-
 /** Wrap every function property in a mock result with a spy */
 function wrapWithSpies(
   moduleId: string,
@@ -56,9 +52,14 @@ function wrapWithSpies(
       wrapped[key] = value;
       continue;
     }
+    // Already a spy — skip to avoid double-wrapping.
+    if (isMockFn(value)) {
+      wrapped[key] = value;
+      continue;
+    }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fn = value as (...args: any[]) => any;
-    const spyCalls: SpyMetadata["_spyCalls"] = [];
+    const spyCalls: SpyCall[] = [];
     const spy = Object.assign(
       (...args: unknown[]) => {
         // Capture the stack synchronously at entry — before the actual function
@@ -136,8 +137,8 @@ export function clearCallLog(): void {
   // (e.g. spy._spyCalls.length) reflect only the current test's calls.
   for (const wrapped of _cache.values()) {
     for (const value of Object.values(wrapped)) {
-      if (value && typeof value === "object" && (value as { _isSpy?: true })._isSpy) {
-        ((value as unknown as SpyMetadata)._spyCalls as unknown[]).length = 0;
+      if (isMockFn(value)) {
+        (value._spyCalls as unknown[]).length = 0;
       }
     }
   }
@@ -196,7 +197,8 @@ export async function __ftImport(
   return importFn();
 }
 
-// Expose on globalThis so the mock-loader-hooks can redirect imports in
-// non-test source files without adding a new `import` to those files
-// (which would risk pulling in the full test framework and duplicate React).
+// Expose on globalThis so the Vite transform can emit bare identifier calls
+// without adding explicit imports to every test file. __ftImport handles
+// conditional routing; __vtMock lets vi.mock() calls be hoisted before imports.
 (globalThis as unknown as Record<string, unknown>).__ftImport = __ftImport;
+(globalThis as unknown as Record<string, unknown>).__vtMock = mock;

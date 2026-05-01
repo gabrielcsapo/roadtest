@@ -16,6 +16,13 @@ interface RoadtestOptions {
    * @default true
    */
   injectHtml?: boolean;
+  /**
+   * Redirect `import ... from 'vitest'` to roadtest's vitest compatibility
+   * shim so existing vitest test files run under roadtest without any syntax
+   * changes.  Adds a Vite `resolve.alias` for `vitest` automatically.
+   * @default false
+   */
+  vitestCompat?: boolean;
 }
 
 const VIRTUAL_ID = "virtual:roadtest-entry";
@@ -185,6 +192,7 @@ async function hasNodeBuiltinDep(
  * calls through globalThis.__vtNodeCtx, which is set fresh for every test run.
  */
 const SSR_CORE_ID = "\0viewtest-ssr-core";
+const SSR_VITEST_ID = "\0viewtest-ssr-vitest";
 
 /**
  * The code served as `roadtest` in SSR (Node) context.
@@ -219,6 +227,101 @@ export const __vtImport = async (_id, fn) => fn()
 export const __vtSetMockScope = () => {}
 export const setCurrentSourceFile = () => {}
 export const __vtRegisterNodeTest = () => {}
+`;
+
+/**
+ * Served as `vitest` (or `roadtest/vitest`) in SSR (Node) context when
+ * vitestCompat is enabled. DSL calls proxy through globalThis.__vtNodeCtx;
+ * spy utilities work normally since they are pure JS.
+ */
+const SSR_VITEST_CODE = `
+export function describe(name, fn) { globalThis.__vtNodeCtx?.describe(name, fn) }
+export function it(name, fn, opts) { globalThis.__vtNodeCtx?.it(name, fn, opts) }
+export const test = it
+it.skip = (name, fn) => globalThis.__vtNodeCtx?.it(name, fn)
+it.only = (name, fn) => globalThis.__vtNodeCtx?.it(name, fn)
+it.each = (cases) => (name, fn) => cases.forEach((args, i) => it(name.replace(/%[sdio%]/g, () => String(Array.isArray(args) ? args[i] : args)), () => fn(...(Array.isArray(args) ? args : [args]))))
+test.skip = it.skip
+test.only = it.only
+test.each = it.each
+export function expect(val) { return globalThis.__vtNodeCtx?.expect(val) }
+export function beforeAll(fn) { globalThis.__vtNodeCtx?.beforeAll(fn) }
+export function afterAll(fn) { globalThis.__vtNodeCtx?.afterAll(fn) }
+export function beforeEach(fn) { globalThis.__vtNodeCtx?.beforeEach(fn) }
+export function afterEach(fn) { globalThis.__vtNodeCtx?.afterEach(fn) }
+export function mock(id, factory) { globalThis.__vtNodeCtx?.mock(id, factory) }
+export function unmock(id) { globalThis.__vtNodeCtx?.unmock?.(id) }
+export function clearAllMocks() {}
+
+// vi object — spy utilities work in Node; DSL delegates routed through context
+function _createMockFn(impl) {
+  const calls = []; const results = []; const _spyCalls = [];
+  let _impl = impl; let _defaultReturn; const _once = [];
+  const spy = function(...args) {
+    calls.push(args);
+    const once = _once.shift();
+    let result; let threw = false;
+    try {
+      if (once) {
+        if (once.type === 'return') result = once.value;
+        else if (once.type === 'resolved') result = Promise.resolve(once.value);
+        else if (once.type === 'rejected') result = Promise.reject(once.value);
+        else if (once.type === 'impl') result = once.value.apply(this, args);
+      } else if (_defaultReturn !== undefined) { result = _defaultReturn.value; }
+      else if (_impl) { result = _impl.apply(this, args); }
+      _spyCalls.push({ args, result, threw: false });
+      results.push({ type: 'return', value: result });
+    } catch(err) {
+      threw = true; _spyCalls.push({ args, result: err, threw: true });
+      results.push({ type: 'throw', value: err }); throw err;
+    }
+    return result;
+  };
+  spy._isSpy = true; spy._spyCalls = _spyCalls; spy.mock = { calls, results, instances: [] };
+  spy.mockReturnValue = (v) => { _defaultReturn = { value: v }; _impl = undefined; return spy; };
+  spy.mockReturnValueOnce = (v) => { _once.push({ type: 'return', value: v }); return spy; };
+  spy.mockImplementation = (fn) => { _impl = fn; _defaultReturn = undefined; return spy; };
+  spy.mockImplementationOnce = (fn) => { _once.push({ type: 'impl', value: fn }); return spy; };
+  spy.mockResolvedValue = (v) => { _impl = () => Promise.resolve(v); _defaultReturn = undefined; return spy; };
+  spy.mockRejectedValue = (v) => { _impl = () => Promise.reject(v); _defaultReturn = undefined; return spy; };
+  spy.mockResolvedValueOnce = (v) => { _once.push({ type: 'resolved', value: v }); return spy; };
+  spy.mockRejectedValueOnce = (v) => { _once.push({ type: 'rejected', value: v }); return spy; };
+  spy.mockClear = () => { calls.length = 0; results.length = 0; _spyCalls.length = 0; return spy; };
+  spy.mockReset = () => { spy.mockClear(); _impl = undefined; _defaultReturn = undefined; _once.length = 0; return spy; };
+  spy.mockRestore = () => { if (spy._spyOnObject && spy._spyOnMethod != null) spy._spyOnObject[spy._spyOnMethod] = spy._spyOnOriginal; return spy; };
+  spy.mockName = (n) => { Object.defineProperty(spy, 'name', { value: n, configurable: true }); return spy; };
+  spy.getMockName = () => spy.name;
+  return spy;
+}
+const _allSpies = new Set();
+export const vi = {
+  fn: (impl) => { const s = _createMockFn(impl); _allSpies.add(s); return s; },
+  spyOn: (obj, method) => {
+    const original = obj[method];
+    const spy = _createMockFn(typeof original === 'function' ? original : undefined);
+    spy._isSpyOnFn = true; spy._spyOnObject = obj; spy._spyOnMethod = String(method); spy._spyOnOriginal = original;
+    obj[String(method)] = spy; _allSpies.add(spy); return spy;
+  },
+  mock: (id, factory) => globalThis.__vtNodeCtx?.mock(id, factory),
+  unmock: (id) => globalThis.__vtNodeCtx?.unmock?.(id),
+  clearAllMocks: () => { for (const s of _allSpies) s.mockClear(); },
+  resetAllMocks: () => { for (const s of _allSpies) s.mockReset(); },
+  restoreAllMocks: () => { for (const s of _allSpies) { if (s._isSpyOnFn) s.mockRestore(); } },
+  mocked: (fn) => fn,
+  useFakeTimers: () => vi,
+  useRealTimers: () => vi,
+  runAllTimers: () => vi,
+  advanceTimersByTime: (_ms) => vi,
+  setSystemTime: (_t) => vi,
+  getRealSystemTime: () => Date.now(),
+  clearAllTimers: () => vi,
+  stubGlobal: (name, val) => { globalThis[name] = val; return vi; },
+  unstubAllGlobals: () => vi,
+  stubEnv: (name, val) => { process.env[name] = val; return vi; },
+  unstubAllEnvs: () => vi,
+  hoisted: (fn) => fn(),
+  importActual: (id) => import(id),
+};
 `;
 
 interface NodeAssertion {
@@ -565,8 +668,9 @@ async function transformTestFile(
   id: string,
   runtimePkg = "roadtest",
 ): Promise<{ code: string } | null> {
-  // Quick bail-out: only transform files that actually call mock()
-  if (!code.includes("mock(")) return null;
+  // Quick bail-out: only transform files that actually call mock() or __vtMock()
+  // Note: __vtMock uses capital M so "mock(" is not a substring of "__vtMock("
+  if (!code.includes("mock(") && !code.includes("__vtMock(")) return null;
 
   // parseAstAsync only handles JavaScript — strip TypeScript types with OXC first
   let jsCode: string;
@@ -611,16 +715,17 @@ async function transformTestFile(
 
   if (otherImports.length === 0) return null; // nothing to transform
 
-  // Find top-level mock() calls that need to be hoisted before dynamic imports.
-  // Only hoist direct `mock(...)` ExpressionStatements at the module's top level
+  // Find top-level mock() / __vtMock() calls that need to be hoisted before dynamic imports.
+  // Only hoist direct ExpressionStatements at the module's top level
   // (not mock() calls inside describe/it blocks).
+  // __vtMock is the hoistable alias emitted by the transform when it rewrites vi.mock().
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const topLevelMockCalls: any[] = ast.body.filter(
     (n: any) =>
       n.type === "ExpressionStatement" &&
       n.expression.type === "CallExpression" &&
       n.expression.callee.type === "Identifier" &&
-      n.expression.callee.name === "mock",
+      (n.expression.callee.name === "mock" || n.expression.callee.name === "__vtMock"),
   );
   const mockCallRanges = new Set(topLevelMockCalls.map((n: any) => n.start));
 
@@ -705,13 +810,13 @@ async function transformTestFile(
 }
 
 /**
- * Extract the specifier strings from top-level mock() calls in a test file.
+ * Extract the specifier strings from top-level mock() / __vtMock() calls in a test file.
  * Uses a simple regex rather than a full AST parse — called before OXC stripping
  * so it operates on the raw TypeScript source.
  */
 function extractMockSpecifiersFromSource(code: string): string[] {
   const specifiers: string[] = [];
-  const re = /(?:^|\n)mock\s*\(\s*(['"])(.*?)\1/g;
+  const re = /(?:^|\n)(?:__vtMock|mock)\s*\(\s*(['"])(.*?)\1/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(code)) !== null) {
     specifiers.push(m[2]);
@@ -884,7 +989,7 @@ function detectRuntimePkg(root: string): string {
 }
 
 export function roadtest(options: RoadtestOptions = {}): Plugin {
-  const { include = "src/**/*.test.{ts,tsx}", injectHtml = true } = options;
+  const { include = "src/**/*.test.{ts,tsx}", injectHtml = true, vitestCompat = false } = options;
   let config: ResolvedConfig;
   let runtimePkg = "roadtest";
 
@@ -899,6 +1004,18 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
 
   return {
     name: "roadtest",
+
+    config() {
+      if (!vitestCompat) return;
+      return {
+        resolve: {
+          alias: {
+            // Redirect `import ... from 'vitest'` to roadtest's shim
+            vitest: "roadtest/vitest",
+          },
+        },
+      };
+    },
 
     configResolved(resolved) {
       config = resolved;
@@ -923,11 +1040,31 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
         };
       }
 
+      // In vitestCompat mode, rewrite @testing-library/react imports at the source level
+      // so Vite sees "roadtest/rtl" before its dep optimizer can intercept the specifier
+      // with a pre-bundled path, bypassing our resolveId hook.
+      let workingCode = code;
+      if (vitestCompat && code.includes("@testing-library/react")) {
+        workingCode = code.replace(
+          /(['"])@testing-library\/react\1/g,
+          (_, q) => `${q}roadtest/rtl${q}`,
+        );
+      }
+
+      // In vitestCompat mode, rewrite vi.mock() to __vtMock() so the existing
+      // hoisting logic recognises it as a top-level mock call that must run before
+      // any imports. __vtMock is exposed on globalThis by mocks.ts (same pattern
+      // as __ftImport), so it is callable without an explicit import.
+      if (vitestCompat && workingCode.includes("vi.mock(")) {
+        workingCode = workingCode.replace(/\bvi\.mock\s*\(/g, "__vtMock(");
+      }
+
       // Browser test file: record which modules it mocks so we can intercept those
       // imports in non-test source files that load as dependencies.
-      if (code.includes("mock(")) {
+      // Check both "mock(" (bare calls) and "__vtMock(" (vi.mock rewrite, capital M)
+      if (workingCode.includes("mock(") || workingCode.includes("__vtMock(")) {
         const newlyMocked: string[] = [];
-        for (const spec of extractMockSpecifiersFromSource(code)) {
+        for (const spec of extractMockSpecifiersFromSource(workingCode)) {
           if (spec.startsWith(".")) {
             const absBase = resolvePath(dirname(id), spec).replace(/\.[jt]sx?$/, "");
             if (!_knownMocks.has(absBase)) newlyMocked.push(absBase);
@@ -954,7 +1091,12 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
         }
       }
 
-      return transformTestFile(code, id, runtimePkg);
+      const transformed = await transformTestFile(workingCode, id, runtimePkg);
+      // If transformTestFile bailed (e.g. no mock() calls) but we rewrote the specifier,
+      // still return the rewritten code so the dep-optimizer bypass takes effect.
+      if (transformed) return transformed;
+      if (workingCode !== code) return { code: workingCode };
+      return null;
     },
 
     configureServer(server) {
@@ -1028,14 +1170,29 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
       });
     },
 
-    resolveId(id, _importer, options) {
+    resolveId(id, importer, options) {
       if (id === VIRTUAL_ID) return RESOLVED_ID;
       // In SSR (Node) context, replace the runtime package with a DOM-free stub
       if ((id === "roadtest" || id === runtimePkg) && options?.ssr) return SSR_CORE_ID;
+      // In SSR context with vitestCompat, replace vitest (or roadtest/vitest) with a node stub
+      if (vitestCompat && options?.ssr && (id === "vitest" || id === "roadtest/vitest"))
+        return SSR_VITEST_ID;
+      // In vitestCompat mode, redirect @testing-library/react imports in test files to
+      // roadtest's RTL shim so existing tests get visual snapshot output automatically.
+      // Only redirect test files, not roadtest's own internals, to avoid circular imports.
+      if (
+        vitestCompat &&
+        id === "@testing-library/react" &&
+        importer &&
+        TEST_FILE_RE.test(importer)
+      ) {
+        return this.resolve("roadtest/rtl", importer, { skipSelf: true });
+      }
     },
 
     load(id, options) {
       if (id === SSR_CORE_ID && options?.ssr) return SSR_CORE_CODE;
+      if (id === SSR_VITEST_ID && options?.ssr) return SSR_VITEST_CODE;
       if (id !== RESOLVED_ID) return;
 
       const root = config?.root ?? process.cwd();

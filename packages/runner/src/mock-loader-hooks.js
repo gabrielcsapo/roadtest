@@ -17,7 +17,16 @@
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { join, dirname, resolve } from "node:path";
+import { join, dirname, resolve as resolvePath } from "node:path";
+
+// Whether vitest imports should be redirected to roadtest/vitest.
+// Set from process.env at module-load time (env is snapshotted when the hook
+// thread is spawned) and updated by initialize() via the data channel.
+let _vitestCompat = process.env.ROADTEST_VITEST_COMPAT === "1";
+
+export function initialize(data) {
+  if (data?.vitestCompat) _vitestCompat = true;
+}
 
 const TEST_FILE_RE = /\.(test|spec)\.[jt]sx?($|\?)/;
 
@@ -59,9 +68,9 @@ const CSS_FILE_RE = /\.css(\?.*)?$/;
 // Value: the specifier string as passed to mock() — used for __ftImport lookup at runtime.
 const _mockRegistry = new Map();
 
-/** Extract the first string argument from a mock() call text */
+/** Extract the first string argument from a mock() or vi.mock() call text */
 function extractMockSpecifier(callText) {
-  const m = callText.match(/^mock\s*\(\s*(['"])(.*?)\1/);
+  const m = callText.match(/^(?:vi\.)?mock\s*\(\s*(['"])(.*?)\1/);
   return m ? m[2] : null;
 }
 
@@ -78,7 +87,7 @@ function trackMocksFromTestFile(testFileUrl, mockCalls) {
     if (specifier.startsWith(".")) {
       // Strip any extension so we can match regardless of whether the source
       // file is .ts, .tsx, .js, etc.
-      const absBase = resolve(testDir, specifier).replace(/\.[jt]sx?$/, "");
+      const absBase = resolvePath(testDir, specifier).replace(/\.[jt]sx?$/, "");
       _mockRegistry.set(absBase, specifier);
     } else {
       // Bare specifier (node_modules) — key by the specifier string itself.
@@ -98,7 +107,7 @@ function findMockedImports(fileUrl, imports) {
   for (const imp of imports) {
     const spec = imp.source;
     if (spec.startsWith(".")) {
-      const absBase = resolve(fileDir, spec).replace(/\.[jt]sx?$/, "");
+      const absBase = resolvePath(fileDir, spec).replace(/\.[jt]sx?$/, "");
       if (_mockRegistry.has(absBase)) {
         matches.set(spec, _mockRegistry.get(absBase));
       }
@@ -144,6 +153,28 @@ function transformNonTestFile(code, allImports, mockedImports) {
   rest += code.slice(cursor);
 
   return headerParts.join("\n") + "\n" + rest;
+}
+
+/**
+ * Resolve hook: when ROADTEST_VITEST_COMPAT=1 is set, redirect any import of
+ * `vitest` to roadtest's built-in vitest compatibility shim so existing vitest
+ * test suites run under roadtest without changes.
+ */
+export async function resolve(specifier, context, nextResolve) {
+  if (_vitestCompat && specifier === "vitest") {
+    return nextResolve("roadtest/vitest", context);
+  }
+  // Redirect @testing-library/react imports in test files to roadtest's RTL shim
+  // so existing tests get snapshot-captured visual output without code changes.
+  // Only redirect test files — not roadtest's own internals — to avoid circular
+  // import loops when the shim itself imports @testing-library/react.
+  if (_vitestCompat && specifier === "@testing-library/react") {
+    const parentUrl = context.parentURL ?? "";
+    if (TEST_FILE_RE.test(parentUrl)) {
+      return nextResolve("roadtest/rtl", context);
+    }
+  }
+  return nextResolve(specifier, context);
 }
 
 export async function load(url, context, nextLoad) {
@@ -244,11 +275,11 @@ export async function load(url, context, nextLoad) {
  * Rewrite a test file's TypeScript/JavaScript source so that mock() calls are
  * registered before module imports resolve. Returns null if no rewrite needed.
  */
-// All package names that serve as the roadtest runtime entry point.
-// Checked statically so that projects using either name work regardless of
-// which package.json getRuntimePkg() happens to read (e.g. monorepo roots
-// that don't list the example app's deps).
-const CORE_PKGS = new Set(["roadtest", "roadtest"]);
+// All package names that serve as the roadtest runtime entry point, plus the
+// vitest compat shim (resolves to roadtest/vitest). These imports are kept as
+// static imports and have __ftImport injected — needed so that vi.mock() calls
+// can be hoisted before other imports in vitest-compat test files.
+const CORE_PKGS = new Set(["roadtest", "vitest"]);
 
 function mockHoist(code) {
   const imports = collectImports(code);
@@ -384,12 +415,12 @@ function collectImports(code) {
 // ---- Top-level mock() call collection ----------------------------------------
 
 /**
- * Find mock(...) calls that start at column 0 (unindented = top-level).
+ * Find mock(...) and vi.mock(...) calls that start at column 0 (unindented = top-level).
  * Extracts the complete statement including any trailing ';'.
  */
 function collectTopLevelMockCalls(code) {
   const results = [];
-  const re = /(?:^|\n)(mock\s*\()/g;
+  const re = /(?:^|\n)((?:vi\.)?mock\s*\()/g;
   let m;
   while ((m = re.exec(code)) !== null) {
     const start = m.index === 0 ? 0 : m.index + 1;

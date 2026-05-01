@@ -22,6 +22,7 @@ import VitePluginComponent from "./docs/vite-plugin.mdx";
 import EnvOverrideComponent from "./docs/env-override.mdx";
 import RegisterTabComponent from "./docs/register-tab.mdx";
 import AfterTestHookComponent from "./docs/after-test-hook.mdx";
+import VitestCompatComponent from "./docs/vitest-compat.mdx";
 
 export interface DocEntry {
   id: string;
@@ -72,6 +73,12 @@ export const docs: DocEntry[] = [
 
   // ── Node / CI ────────────────────────────────────────────────────────────
   { id: "node-mode", category: "Node / CI", title: "Running Tests", Component: NodeModeComponent },
+  {
+    id: "vitest-compat",
+    category: "Node / CI",
+    title: "Vitest Compatibility",
+    Component: VitestCompatComponent,
+  },
   { id: "watch-mode", category: "Node / CI", title: "Watch Mode", Component: WatchModeComponent },
   { id: "coverage", category: "Node / CI", title: "Coverage", Component: CoverageComponent },
   { id: "sharding", category: "Node / CI", title: "Sharding", Component: ShardingComponent },

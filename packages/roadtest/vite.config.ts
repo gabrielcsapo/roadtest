@@ -23,6 +23,8 @@ export default defineConfig({
         index: resolve(__dirname, "src/index.ts"),
         plugin: resolve(__dirname, "src/plugin.ts"),
         "serialize-dom": resolve(__dirname, "src/shared/serializeDom.ts"),
+        vitest: resolve(__dirname, "src/vitest-shim.ts"),
+        rtl: resolve(__dirname, "src/rtl-shim.ts"),
       },
       formats: ["es"],
     },

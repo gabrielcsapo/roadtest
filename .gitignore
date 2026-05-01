@@ -1,6 +1,7 @@
 dist
 node_modules
 apps/example/.roadtest/cache/
+apps/vitest-example/.roadtest/cache/
 apps/scale/.roadtest/cache/
 packages/website/public/demo-ui
 .DS_Store

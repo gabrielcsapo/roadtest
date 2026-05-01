@@ -44,15 +44,7 @@ If you omit the factory, the module is auto-mocked with an empty object (`{}`).
 
 ## Spy on calls
 
-Every function exported from a mock factory is automatically wrapped with a spy. The spy records every call in a `_spyCalls` array.
-
-```ts
-interface SpyCall {
-  args: unknown[];
-  result: unknown;
-  threw: boolean;
-}
-```
+Every function exported from a mock factory is automatically wrapped with a spy. The spy records every call — use the built-in spy matchers or read `_spyCalls` directly.
 
 ```ts
 import { fetchUser } from '../api/user'
@@ -64,17 +56,82 @@ mock('../api/user', () => ({
 it('calls fetchUser with the right id', async () => {
   await render(<UserProfile id="abc" />)
 
-  // Access raw call data
-  expect(fetchUser._spyCalls[0].args[0]).toBe('abc')
+  expect(fetchUser).toHaveBeenCalled();
+  expect(fetchUser).toHaveBeenCalledTimes(1);
+  expect(fetchUser).toHaveBeenCalledWith("abc");
+  expect(fetchUser).toHaveBeenLastCalledWith("abc");
 })
 ```
 
-Or use the built-in spy matchers from `expect`:
+You can also read the raw call log directly:
 
 ```ts
-expect(fetchUser).toHaveBeenCalled();
-expect(fetchUser).toHaveBeenCalledTimes(1);
-expect(fetchUser).toHaveBeenCalledWith("abc");
+interface SpyCall {
+  args: unknown[];
+  result: unknown;
+  threw: boolean;
+}
+
+expect(fetchUser._spyCalls[0].args[0]).toBe("abc");
+```
+
+---
+
+## Configurable mock functions
+
+Auto-wrapped spies record calls but don't let you change what they return. When you need to control the return value or implementation per-test, use `vi.fn()` (vitest-compat) or `createMockFn()` (native) in the factory:
+
+```ts
+import { vi } from 'vitest'
+import { fetchUser } from '../api/user'
+
+mock('../api/user', () => ({
+  fetchUser: vi.fn(),
+}))
+
+it('returns mocked user', async () => {
+  fetchUser.mockResolvedValue({ id: '1', name: 'Alice' })
+  await render(<UserProfile id="1" />)
+  expect(fetchUser).toHaveBeenCalledWith('1')
+})
+
+it('handles errors', async () => {
+  fetchUser.mockRejectedValue(new Error('not found'))
+  await render(<UserProfile id="bad" />)
+  // ...
+})
+```
+
+### Mock function methods
+
+| Method                       | Description                             |
+| ---------------------------- | --------------------------------------- |
+| `mockReturnValue(val)`       | Always return `val`                     |
+| `mockReturnValueOnce(val)`   | Return `val` for the next call only     |
+| `mockImplementation(fn)`     | Replace the implementation              |
+| `mockImplementationOnce(fn)` | Use `fn` for the next call only         |
+| `mockResolvedValue(val)`     | Return `Promise.resolve(val)`           |
+| `mockRejectedValue(val)`     | Return `Promise.reject(val)`            |
+| `mockResolvedValueOnce(val)` | Resolved promise for the next call only |
+| `mockRejectedValueOnce(val)` | Rejected promise for the next call only |
+| `mockReturnThis()`           | Return `this`                           |
+| `mockClear()`                | Reset call records, keep implementation |
+| `mockReset()`                | Reset call records and implementation   |
+| `mockRestore()`              | Restore original (for `spyOn` only)     |
+| `mockName(name)`             | Set a display name                      |
+
+### mock.calls / mock.results
+
+Mock functions also expose a `.mock` property compatible with the Vitest / Jest API:
+
+```ts
+const spy = vi.fn();
+spy("a");
+spy("b");
+
+spy.mock.calls; // [['a'], ['b']]
+spy.mock.results; // [{ type: 'return', value: undefined }, ...]
+spy.mock.instances; // [undefined, undefined]  (set when called with `new`)
 ```
 
 ---

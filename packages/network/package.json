@@ -16,7 +16,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "msw": "^2.13.6",
+    "msw": "^2.14.2",
     "react": "^19.2.5",
     "roadtest": "workspace:*"
   },

@@ -20,6 +20,16 @@
       "types": "./dist/src/plugin.d.ts",
       "import": "./dist/plugin.js"
     },
+    "./vitest": {
+      "development": "./src/vitest-shim.ts",
+      "types": "./dist/src/vitest-shim.d.ts",
+      "import": "./dist/vitest.js"
+    },
+    "./rtl": {
+      "development": "./src/rtl-shim.ts",
+      "types": "./dist/src/rtl-shim.d.ts",
+      "import": "./dist/rtl.js"
+    },
     "./serialize-dom": {
       "development": "./src/shared/serializeDom.ts",
       "types": "./dist/src/shared/serializeDom.d.ts",
@@ -32,12 +42,12 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.0",
+    "@react-three/fiber": "^9.6.1",
     "@roadtest/runner": "workspace:*",
     "@tanstack/react-virtual": "^3.13.24",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "axe-core": "^4.11.3",
+    "axe-core": "^4.11.4",
     "istanbul-lib-instrument": "^6.0.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
@@ -51,6 +61,6 @@
     "@vitejs/plugin-react": "^6.0.1",
     "typescript": "^6.0.3",
     "vite": "^8.0.10",
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^5.0.0"
   }
 }
