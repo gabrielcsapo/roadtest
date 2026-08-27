@@ -13,9 +13,75 @@
 
 // ─── Re-export the roadtest DSL ───────────────────────────────────────────────
 
-export { describe, it, test, beforeAll, afterAll, beforeEach, afterEach } from "./framework/dsl";
+import {
+  describe as roadtestDescribe,
+  it as roadtestIt,
+  beforeAll,
+  afterAll,
+  beforeEach,
+  afterEach,
+  type TestOptions,
+} from "./framework/dsl";
+import { expect } from "./framework/expect";
+import { setTestTimeout } from "./framework/runner";
 
-export { expect } from "./framework/expect";
+type TestFn = () => void | Promise<void>;
+type RegisterTest = (name: string, fn: TestFn, options?: TestOptions) => void;
+type SuiteFn = () => void;
+
+function registerCompatSuite(
+  register: (name: string, fn: SuiteFn) => void,
+  name: string,
+  optionsOrFn: TestOptions | SuiteFn,
+  maybeFn?: SuiteFn,
+): void {
+  if (typeof optionsOrFn === "function") {
+    register(name, optionsOrFn);
+    return;
+  }
+  if (maybeFn === undefined) throw new TypeError(`Missing suite function for "${name}"`);
+  if (optionsOrFn.timeout !== undefined) setTestTimeout(optionsOrFn.timeout);
+  register(name, maybeFn);
+}
+
+const describe = Object.assign(
+  (name: string, optionsOrFn: TestOptions | SuiteFn, maybeFn?: SuiteFn) =>
+    registerCompatSuite(roadtestDescribe, name, optionsOrFn, maybeFn),
+  {
+    only: (name: string, optionsOrFn: TestOptions | SuiteFn, maybeFn?: SuiteFn) =>
+      registerCompatSuite(roadtestDescribe.only, name, optionsOrFn, maybeFn),
+    each: roadtestDescribe.each,
+  },
+);
+
+function registerCompatTest(
+  register: RegisterTest,
+  name: string,
+  optionsOrFn: TestOptions | TestFn,
+  maybeFn?: TestFn,
+): void {
+  if (typeof optionsOrFn === "function") {
+    register(name, optionsOrFn);
+    return;
+  }
+  if (maybeFn === undefined) throw new TypeError(`Missing test function for "${name}"`);
+  register(name, maybeFn, optionsOrFn);
+}
+
+const it = Object.assign(
+  (name: string, optionsOrFn: TestOptions | TestFn, maybeFn?: TestFn) =>
+    registerCompatTest(roadtestIt, name, optionsOrFn, maybeFn),
+  {
+    skip: (name: string, optionsOrFn: TestOptions | TestFn, maybeFn?: TestFn) =>
+      registerCompatTest(roadtestIt.skip, name, optionsOrFn, maybeFn),
+    only: (name: string, optionsOrFn: TestOptions | TestFn, maybeFn?: TestFn) =>
+      registerCompatTest(roadtestIt.only, name, optionsOrFn, maybeFn),
+    each: roadtestIt.each,
+  },
+);
+const test = it;
+
+export { describe, it, test, beforeAll, afterAll, beforeEach, afterEach, expect };
 export { render, snapshot, fireEvent, act } from "./framework/render";
 
 export { mock, unmock, clearAllMocks, __ftImport } from "./framework/mocks";
@@ -124,6 +190,11 @@ export const vi = {
 
   getRealSystemTime: () => fakeClock.getRealSystemTime(),
 
+  setConfig: (config: { testTimeout?: number; hookTimeout?: number }) => {
+    if (config.testTimeout !== undefined) setTestTimeout(config.testTimeout);
+    return vi;
+  },
+
   // ── Global / env stubs ──────────────────────────────────────────────────────
 
   stubGlobal: (name: string, value: unknown) => {
@@ -181,3 +252,17 @@ export const vi = {
     return mocked as T;
   },
 } as const;
+
+export function installVitestGlobals(): void {
+  Object.assign(globalThis, {
+    describe,
+    it,
+    test,
+    beforeAll,
+    afterAll,
+    beforeEach,
+    afterEach,
+    expect,
+    vi,
+  });
+}

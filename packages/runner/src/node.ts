@@ -1,7 +1,7 @@
 import { Window } from "happy-dom";
 import { existsSync, readFileSync, readdirSync, realpathSync } from "node:fs";
 import { resolve, dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { findSourceMap, register } from "node:module";
 import { takeCoverage } from "node:v8";
 import type { Profiler } from "node:inspector";
@@ -356,14 +356,27 @@ function printCoverage(coverage: IstanbulCoverage, cwd: string) {
 
 export async function runNode() {
   const args = process.argv.slice(2);
+  const cwd = process.cwd();
   const watchMode = args.includes("--watch");
   const mergeShards = args.includes("--merge-shards");
   const clearCacheFlag = args.includes("--clear-cache");
   const coverageFlag = args.includes("--coverage");
   const verboseFlag = args.includes("--verbose");
   const vitestCompat = args.includes("--vitest-compat");
+  const setupFiles = args
+    .filter((arg) => arg.startsWith("--setup="))
+    .map((arg) => arg.slice("--setup=".length));
   // Signal to the loader hook that vitest imports should redirect to roadtest
   if (vitestCompat) process.env.ROADTEST_VITEST_COMPAT = "1";
+
+  if (vitestCompat) {
+    const { installVitestGlobals } = await import("roadtest");
+    installVitestGlobals();
+  }
+
+  for (const setupFile of setupFiles) {
+    await import(pathToFileURL(resolve(cwd, setupFile)).href);
+  }
   const shardArg = args.find((a) => a.startsWith("--shard="))?.slice("--shard=".length);
   const outputJsonArg = args
     .find((a) => a.startsWith("--output-json="))
@@ -371,7 +384,6 @@ export async function runNode() {
   const grepArg = args.find((a) => a.startsWith("--grep="))?.slice("--grep=".length);
   const timeoutArg = args.find((a) => a.startsWith("--timeout="))?.slice("--timeout=".length);
   const updateSnapshots = args.includes("--update-snapshots") || args.includes("--update-snapshot");
-  const cwd = process.cwd();
 
   // ── --clear-cache ──────────────────────────────────────────────────────────
   if (clearCacheFlag) {
@@ -491,7 +503,6 @@ export async function runNode() {
 
   // ── Non-watch (run) mode ───────────────────────────────────────────────────
   const { glob } = await import("glob");
-  const { pathToFileURL } = await import("node:url");
   const { isAbsolute } = await import("node:path");
 
   const positional = args.filter((a) => !a.startsWith("--"));

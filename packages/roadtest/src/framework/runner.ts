@@ -9,6 +9,7 @@ import type {
 } from "./types";
 import { runBeforeTestHooks, runAfterTestHooks } from "./hooks";
 import { clearCallLog, getMockEntriesWithCalls } from "./mocks";
+import { setExecutingSuite } from "./dsl";
 
 export interface CoverageProvider {
   snapshot(): Promise<unknown>;
@@ -133,8 +134,10 @@ async function runHooks(hooks: Hook[], label: string) {
   for (const fn of hooks) {
     try {
       await fn();
-    } catch (e) {
-      console.error(`[roadtest] ${label} hook threw:`, e);
+    } catch (error) {
+      const hookError = new Error(`${label} hook failed`);
+      Object.defineProperty(hookError, "cause", { value: error });
+      throw hookError;
     }
   }
 }
@@ -220,39 +223,44 @@ async function execSuite(
   const beforeEachFns = suite.beforeEachFns ?? [];
   const afterEachFns = suite.afterEachFns ?? [];
 
-  await runHooks(suite.beforeAllFns ?? [], `beforeAll (${suite.name})`);
+  setExecutingSuite(suite);
+  try {
+    await runHooks(suite.beforeAllFns ?? [], `beforeAll (${suite.name})`);
 
-  // Yield at ~60 fps — only pause once per frame regardless of test speed
-  let lastYield = Date.now();
+    // Yield at ~60 fps — only pause once per frame regardless of test speed
+    let lastYield = Date.now();
 
-  for (const test of suite.tests) {
-    if (test.status === "skipped") continue;
-    // Node tests have no fn — run server-side, results pushed via WS
-    if (!test.fn) continue;
-    // Skip non-only tests when any test is marked .only
-    if (options.onlyMode && !test.only) {
-      store.updateTest(test.suiteId, test.id, { status: "skipped" });
-      continue;
-    }
-    // Skip tests whose name doesn't match --grep pattern
-    if (options.grepPattern && !options.grepPattern.test(test.name)) {
-      store.updateTest(test.suiteId, test.id, { status: "skipped" });
-      continue;
-    }
-    const passed = await execTest(test, cleanup, beforeEachFns, afterEachFns);
-    if (!passed) allPass = false;
-    localDone++;
-    onTestDone?.(doneOffset + localDone);
+    for (const test of suite.tests) {
+      if (test.status === "skipped") continue;
+      // Node tests have no fn — run server-side, results pushed via WS
+      if (!test.fn) continue;
+      // Skip non-only tests when any test is marked .only
+      if (options.onlyMode && !test.only) {
+        store.updateTest(test.suiteId, test.id, { status: "skipped" });
+        continue;
+      }
+      // Skip tests whose name doesn't match --grep pattern
+      if (options.grepPattern && !options.grepPattern.test(test.name)) {
+        store.updateTest(test.suiteId, test.id, { status: "skipped" });
+        continue;
+      }
+      const passed = await execTest(test, cleanup, beforeEachFns, afterEachFns);
+      if (!passed) allPass = false;
+      localDone++;
+      onTestDone?.(doneOffset + localDone);
 
-    // Yield to the browser every ~16ms so the progress UI stays smooth
-    const now = Date.now();
-    if (now - lastYield >= 16) {
-      await yieldToEventLoop();
-      lastYield = Date.now();
+      // Yield to the browser every ~16ms so the progress UI stays smooth
+      const now = Date.now();
+      if (now - lastYield >= 16) {
+        await yieldToEventLoop();
+        lastYield = Date.now();
+      }
     }
+
+    await runHooks(suite.afterAllFns ?? [], `afterAll (${suite.name})`);
+  } finally {
+    setExecutingSuite(null);
   }
-
-  await runHooks(suite.afterAllFns ?? [], `afterAll (${suite.name})`);
 
   store.updateSuite(suite.id, {
     status: allPass ? "pass" : "fail",

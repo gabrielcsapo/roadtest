@@ -2,7 +2,6 @@ import { currentTest } from "./store";
 import { captureSnapshotAssertion } from "./render";
 import { inlineCSSClassStyles } from "./inlineStyles";
 import { isMockFn } from "./spies";
-import type { SpyProtocol } from "./spies";
 import {
   deepEqual,
   strictDeepEqual,

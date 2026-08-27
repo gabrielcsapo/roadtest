@@ -4,23 +4,66 @@ import { __vtSetMockScope } from "./mocks";
 import type { Hook, TestCase, TestSuite } from "./types";
 
 let currentSuite: TestSuite | null = null;
+let executingSuite: TestSuite | null = null;
 let _currentSourceFile: string | null = null;
+
+type HookBucket = "beforeAllFns" | "afterAllFns" | "beforeEachFns" | "afterEachFns";
+type HookBuckets = Record<HookBucket, Hook[]>;
+
+function createHookBuckets(): HookBuckets {
+  return {
+    beforeAllFns: [],
+    afterAllFns: [],
+    beforeEachFns: [],
+    afterEachFns: [],
+  };
+}
+
+const globalRootHooks = createHookBuckets();
+const fileRootHooks = new Map<string, HookBuckets>();
+
+function inheritedHooks(bucket: HookBucket, parentSuite: TestSuite | null): Hook[] {
+  if (parentSuite) return [...(parentSuite[bucket] ?? [])];
+  const fileHooks = _currentSourceFile
+    ? (fileRootHooks.get(_currentSourceFile)?.[bucket] ?? [])
+    : [];
+  return [...globalRootHooks[bucket], ...fileHooks];
+}
+
+function rootHooksForCurrentFile(): HookBuckets {
+  if (_currentSourceFile === null) return globalRootHooks;
+  let hooks = fileRootHooks.get(_currentSourceFile);
+  if (!hooks) {
+    hooks = createHookBuckets();
+    fileRootHooks.set(_currentSourceFile, hooks);
+  }
+  return hooks;
+}
 
 export function setCurrentSourceFile(file: string | null) {
   _currentSourceFile = file;
   __vtSetMockScope(file);
 }
 
+export function setExecutingSuite(suite: TestSuite | null) {
+  executingSuite = suite;
+}
+
 /** Whether to use a describe.only context for newly registered tests */
 let _describeOnly = false;
 
 export function describe(name: string, fn: () => void) {
+  const parentSuite = currentSuite;
   const suite: TestSuite = {
     id: nanoid(),
     name,
     tests: [],
     status: "pending",
     sourceFile: _currentSourceFile ?? undefined,
+    beforeAllFns: inheritedHooks("beforeAllFns", parentSuite),
+    afterAllFns: inheritedHooks("afterAllFns", parentSuite),
+    beforeEachFns: inheritedHooks("beforeEachFns", parentSuite),
+    afterEachFns: inheritedHooks("afterEachFns", parentSuite),
   };
 
   const prev = currentSuite;
@@ -28,7 +71,7 @@ export function describe(name: string, fn: () => void) {
   fn();
   currentSuite = prev;
 
-  store.addSuite(suite);
+  if (suite.tests.length > 0) store.addSuite(suite);
 }
 
 describe.only = function describeOnly(name: string, fn: () => void) {
@@ -149,12 +192,13 @@ function pushSuiteHook(
   bucket: "beforeAllFns" | "afterAllFns" | "beforeEachFns" | "afterEachFns",
   fn: Hook,
 ) {
-  if (!currentSuite) {
-    console.warn(`[roadtest] ${bucket.replace("Fns", "")}() called outside of a describe block.`);
+  const suite = currentSuite ?? executingSuite;
+  if (!suite) {
+    rootHooksForCurrentFile()[bucket].push(fn);
     return;
   }
-  currentSuite[bucket] = currentSuite[bucket] ?? [];
-  currentSuite[bucket]!.push(fn);
+  suite[bucket] = suite[bucket] ?? [];
+  suite[bucket]!.push(fn);
 }
 
 export const beforeAll = (fn: Hook) => pushSuiteHook("beforeAllFns", fn);

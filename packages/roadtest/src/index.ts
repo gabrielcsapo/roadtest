@@ -41,6 +41,7 @@ export type {
 // Module mocking — vi.mock() equivalent
 export { mock, unmock, clearAllMocks, __ftImport, __vtSetMockScope } from "./framework/mocks";
 export type { MockCall } from "./framework/types";
+export { vi, installVitestGlobals } from "./vitest-shim";
 
 // Node test bridge — called by stubs emitted for node-environment test files
 export { __vtRegisterNodeTest } from "./framework/node-bridge";
