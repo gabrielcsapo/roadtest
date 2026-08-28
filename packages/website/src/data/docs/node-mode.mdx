@@ -8,6 +8,35 @@ roadtest
 
 roadtest uses [happy-dom](https://github.com/capricorn86/happy-dom) as a lightweight DOM implementation and [tsx](https://github.com/privatenumber/tsx) to transpile TypeScript on the fly — no separate build step needed.
 
+Pass individual files, glob patterns, or a directory. Directories are searched recursively for test files:
+
+```bash
+roadtest src/auth
+roadtest src/cart.test.ts src/checkout.test.ts
+```
+
+### Import profiling
+
+Use `--profile-imports` to find cold-start cost across the selected test suite:
+
+```bash
+roadtest src/auth --profile-imports
+```
+
+For larger suites, provide an HTML destination to create a self-contained, portable report. The report keeps every test in one sortable, searchable timeline; select a test to expand its phase, async-wait, and transitive-module breakdown in place:
+
+```bash
+roadtest src --profile-imports=.roadtest/reports/imports.html
+```
+
+The HTML file includes all data, styles, and interactions and does not require a server or network connection.
+
+The report ranks test files by root import time, attributes sampled CPU evaluation to individual modules, and lists transitive modules by loader cost. The wall-time timeline is split into non-overlapping CPU, loader wait, active async-resource wait, and unknown buckets. Async waits are grouped into sources such as filesystem, DNS, network, timers, and workers. The report also shows module counts and how many selected tests share each dependency. Profiling bypasses cached test results so every selected test is imported in the current process.
+
+Import profiling currently runs in one process to preserve a complete suite-wide timeline. If `--max-workers` is greater than one, roadtest prints a warning and falls back to one worker for that run.
+
+CPU attribution is sampled, so very short imports may not receive a sample. Loader time covers resolution, reading, and transformation. Async attribution uses the lifetimes of concrete Node async resources and excludes generic promise and microtask bookkeeping. Unknown is the residual time that none of those signals explains; shared cold-start work is charged to the first test that loads it.
+
 ### Output
 
 ```

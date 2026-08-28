@@ -11,6 +11,7 @@
 
 import type { IstanbulCoverage } from "roadtest";
 import type { DepGraph } from "./cache.js";
+import type { ImportProfile } from "./import-profile.js";
 import type { SerializableTestSuite } from "./serialize.js";
 
 // ─── ANSI codes ────────────────────────────────────────────────────────────────
@@ -276,6 +277,104 @@ export function renderCoverage(coverage: IstanbulCoverage, cwd: string): string[
   lines.push(divider);
   lines.push(
     `  ${"Total".padEnd(maxPathLen)}  ${colorPct(totals.stmtsCov, totals.stmts)}  ${colorPct(totals.branchesCov, totals.branches)}  ${colorPct(totals.fnsCov, totals.fns)}\n`,
+  );
+
+  return lines;
+}
+
+// ─── Import profile ───────────────────────────────────────────────────────────
+
+function profileDuration(ms: number): string {
+  if (ms > 0 && ms < 1) return "<1ms";
+  return formatDuration(Math.max(0, Math.round(ms)));
+}
+
+function truncateMiddle(value: string, max: number): string {
+  if (value.length <= max) return value;
+  const left = Math.ceil((max - 1) / 2);
+  const right = Math.floor((max - 1) / 2);
+  return `${value.slice(0, left)}…${value.slice(value.length - right)}`;
+}
+
+/** Render the selected suite's import timeline and module-level hotspots. */
+export function renderImportProfile(profile: ImportProfile, cwd: string): string[] {
+  const lines: string[] = [];
+  const tests = [...profile.tests].sort((a, b) => b.durationMs - a.durationMs);
+  const cpuModules = profile.modules
+    .filter((module) => module.selfCpuMs > 0 || module.totalCpuMs > 0)
+    .sort((a, b) => b.selfCpuMs - a.selfCpuMs)
+    .slice(0, 10);
+  const loaderModules = profile.modules
+    .filter(
+      (module) =>
+        module.loadMs + module.resolveMs > 0 && !/\.(test|spec)\.[jt]sx?(?:$|\?)/.test(module.path),
+    )
+    .sort((a, b) => b.loadMs + b.resolveMs - (a.loadMs + a.resolveMs))
+    .slice(0, 10);
+  const totalCpuMs = tests.reduce((sum, test) => sum + test.cpuMs, 0);
+  const totalLoaderMs = tests.reduce((sum, test) => sum + test.loaderMs, 0);
+  const totalAsyncMs = tests.reduce((sum, test) => sum + test.asyncMs, 0);
+  const totalUnknownMs = tests.reduce((sum, test) => sum + test.unknownMs, 0);
+
+  lines.push(`\n${CYAN}${BOLD}Import profile${RESET}`);
+  lines.push(
+    `${DIM}${profileDuration(profile.totalImportMs)} wall  •  ${profileDuration(totalCpuMs)} CPU  •  ${profileDuration(totalLoaderMs)} loader wait  •  ${profileDuration(totalAsyncMs)} async wait  •  ${profileDuration(totalUnknownMs)} unknown${RESET}`,
+  );
+  lines.push(
+    `${DIM}${plural(profile.uniqueModuleCount, "module")}  •  ${profile.sharedModuleCount} shared${RESET}`,
+  );
+
+  if (tests.length > 0) {
+    lines.push(`\n${BOLD}Slowest test imports${RESET}`);
+    lines.push(
+      `${DIM}  Test file                                   Wall     CPU  Loader   Async Unknown${RESET}`,
+    );
+    for (const test of tests.slice(0, 10)) {
+      const path = truncateMiddle(rel(test.testFile, cwd), 43).padEnd(43);
+      lines.push(
+        `  ${DIM}${path}${RESET} ${YELLOW}${profileDuration(test.durationMs).padStart(7)}${RESET} ${profileDuration(test.cpuMs).padStart(7)} ${profileDuration(test.loaderMs).padStart(7)} ${profileDuration(test.asyncMs).padStart(7)} ${profileDuration(test.unknownMs).padStart(7)}`,
+      );
+    }
+  }
+
+  if (profile.asyncWaits.length > 0) {
+    lines.push(`\n${BOLD}Async wait sources${RESET}`);
+    for (const wait of profile.asyncWaits.slice(0, 10)) {
+      lines.push(
+        `  ${DIM}${wait.type.padEnd(24)}${RESET} ${YELLOW}${profileDuration(wait.durationMs).padStart(7)}${RESET}`,
+      );
+    }
+  }
+
+  if (cpuModules.length > 0) {
+    lines.push(`\n${BOLD}CPU / evaluation hotspots${RESET}`);
+    lines.push(
+      `${DIM}  Module                                                   Self   Total  Tests${RESET}`,
+    );
+    for (const module of cpuModules) {
+      const path = truncateMiddle(module.path, 56).padEnd(56);
+      lines.push(
+        `  ${DIM}${path}${RESET} ${YELLOW}${profileDuration(module.selfCpuMs).padStart(7)}${RESET} ${profileDuration(module.totalCpuMs).padStart(7)} ${String(module.testFiles.length).padStart(6)}`,
+      );
+    }
+  }
+
+  if (loaderModules.length > 0) {
+    lines.push(`\n${BOLD}Loader hotspots${RESET}`);
+    lines.push(
+      `${DIM}  Module                                                          Loader  Tests${RESET}`,
+    );
+    for (const module of loaderModules) {
+      const path = truncateMiddle(module.path, 61).padEnd(61);
+      const loaderMs = profileDuration(module.loadMs + module.resolveMs).padStart(7);
+      lines.push(
+        `  ${DIM}${path}${RESET} ${YELLOW}${loaderMs}${RESET} ${String(module.testFiles.length).padStart(6)}`,
+      );
+    }
+  }
+
+  lines.push(
+    `\n${DIM}Timeline buckets do not overlap: sampled CPU takes priority, then loader work, then active async resources. Unknown is the remaining unsampled time. Shared cold-start work is charged to the first test that loads it.${RESET}\n`,
   );
 
   return lines;

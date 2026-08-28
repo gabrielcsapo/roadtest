@@ -1,6 +1,7 @@
 import { Window } from "happy-dom";
 import {
   existsSync,
+  mkdirSync,
   readFileSync,
   readdirSync,
   realpathSync,
@@ -9,8 +10,9 @@ import {
 } from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { findSourceMap, register } from "node:module";
+import { findSourceMap, register, registerHooks } from "node:module";
 import { takeCoverage } from "node:v8";
+import { MessageChannel } from "node:worker_threads";
 import type { Profiler } from "node:inspector";
 
 // Check for --vitest-compat at top level so the env var is set before the hook
@@ -18,16 +20,89 @@ import type { Profiler } from "node:inspector";
 // time, so mutations inside runNode() (which runs later) are not visible to it.
 const _vitestCompatEarly = process.argv.includes("--vitest-compat");
 if (_vitestCompatEarly) process.env.ROADTEST_VITEST_COMPAT = "1";
+const _profileImportsEarly = process.argv.some(
+  (arg) => arg === "--profile-imports" || arg.startsWith("--profile-imports="),
+);
+
+type ProfilePortMessage =
+  | { type: "profile-event"; event: ImportProfileEvent }
+  | { type: "profile-active-ack"; id: number };
+
+const _profileEvents: ImportProfileEvent[] = [];
+const _profileChannel = _profileImportsEarly ? new MessageChannel() : null;
+const _profileAcks = new Map<number, () => void>();
+let _profileMessageId = 0;
+let _syncProfileActive = false;
+let _syncProfilePhaseId = "";
+
+if (_profileImportsEarly) {
+  registerHooks({
+    resolve(specifier, context, nextResolve) {
+      if (!_syncProfileActive || !context.conditions.includes("require")) {
+        return nextResolve(specifier, context);
+      }
+      const startNs = process.hrtime.bigint();
+      const result = nextResolve(specifier, context);
+      const endNs = process.hrtime.bigint();
+      if (context.parentURL) {
+        _profileEvents.push({
+          kind: "resolve",
+          phaseId: _syncProfilePhaseId,
+          parentURL: context.parentURL,
+          url: result.url,
+          durationMs: Number(endNs - startNs) / 1_000_000,
+          startNs,
+          endNs,
+        });
+      }
+      return result;
+    },
+  });
+}
+
+if (_profileChannel) {
+  _profileChannel.port1.on("message", (message: ProfilePortMessage) => {
+    if (message.type === "profile-event") {
+      _profileEvents.push(message.event);
+    } else {
+      _profileAcks.get(message.id)?.();
+      _profileAcks.delete(message.id);
+    }
+  });
+}
+
+async function setImportProfilingActive(active: boolean, phaseId = ""): Promise<void> {
+  if (!_profileChannel) return;
+  _syncProfileActive = active;
+  _syncProfilePhaseId = phaseId;
+  const id = ++_profileMessageId;
+  await new Promise<void>((resolveAck) => {
+    _profileAcks.set(id, resolveAck);
+    _profileChannel.port1.postMessage({ type: "profile-active", id, active, phaseId });
+  });
+}
 
 // Register the mock-hoisting loader hook for test files.
 // Must happen before any test files are imported. The hook intercepts test
 // files after tsx has processed them (receives JS), then rewrites static imports
 // to __ftImport() calls and hoists mock() registrations before them —
 // the same transform the Vite plugin applies in the browser runner.
-register(new URL("./mock-loader-hooks.js", import.meta.url), import.meta.url, {
-  data: { vitestCompat: _vitestCompatEarly },
-});
+register(
+  new URL("./mock-loader-hooks.js", import.meta.url),
+  import.meta.url,
+  _profileChannel
+    ? {
+        data: { vitestCompat: _vitestCompatEarly, profilePort: _profileChannel.port2 },
+        transferList: [_profileChannel.port2],
+      }
+    : { data: { vitestCompat: _vitestCompatEarly } },
+);
 import type { DepGraph } from "./cache.js";
+import type { ImportProfileEvent, ImportProfileSlice, TestImportTiming } from "./import-profile.js";
+import type { CpuImportProfiler } from "./cpu-profile.js";
+import type { AsyncWaitTracker } from "./async-wait.js";
+import { buildImportProfile } from "./import-profile.js";
+import { resolveTestFiles } from "./test-selection.js";
 import {
   getCacheDir,
   computeCacheKey,
@@ -54,6 +129,7 @@ import {
   RESET,
   BOLD,
   DIM,
+  GREEN,
   YELLOW,
   CYAN,
   rel,
@@ -64,6 +140,7 @@ import {
   renderSnapshotMismatches,
   renderDepTree,
   renderWatchSeparator,
+  renderImportProfile,
 } from "./render.js";
 
 // ─── V8 coverage via NODE_V8_COVERAGE ────────────────────────────────────────
@@ -446,6 +523,17 @@ export async function runNode() {
   const coverageFlag = args.includes("--coverage");
   const verboseFlag = args.includes("--verbose");
   const vitestCompat = args.includes("--vitest-compat");
+  const profileImportsArg = args.find(
+    (arg) => arg === "--profile-imports" || arg.startsWith("--profile-imports="),
+  );
+  const profileImports = profileImportsArg !== undefined;
+  const profileImportsOnly = args.includes("--profile-imports-only");
+  if (profileImportsOnly && !profileImports) {
+    throw new Error("--profile-imports-only requires --profile-imports");
+  }
+  const profileImportReportPath = profileImportsArg?.startsWith("--profile-imports=")
+    ? profileImportsArg.slice("--profile-imports=".length)
+    : undefined;
   const maxWorkersArg = args
     .find((arg) => arg.startsWith("--max-workers="))
     ?.slice("--max-workers=".length);
@@ -454,8 +542,13 @@ export async function runNode() {
     throw new Error(`Invalid --max-workers value "${maxWorkersArg}". Expected a positive integer`);
   }
   if (maxWorkers > 1 && !watchMode && !mergeShards && !args.some((a) => a.startsWith("--shard="))) {
-    if (coverageFlag) {
-      console.warn(`${YELLOW}--coverage currently requires --max-workers=1${RESET}`);
+    if (coverageFlag || profileImports) {
+      if (coverageFlag) {
+        console.warn(`${YELLOW}--coverage currently requires --max-workers=1${RESET}`);
+      }
+      if (profileImports) {
+        console.warn(`${YELLOW}--profile-imports currently requires --max-workers=1${RESET}`);
+      }
     } else {
       await runWorkerPool(args, cwd, maxWorkers);
       return;
@@ -533,25 +626,26 @@ export async function runNode() {
     const { watch } = await import("node:fs");
     const { spawn } = await import("node:child_process");
     const { fileURLToPath } = await import("node:url");
-    const { glob } = await import("glob");
-
     const tsxBin = resolve(cwd, "node_modules", ".bin", "tsx");
     const scriptPath = fileURLToPath(import.meta.url);
-    const globPattern =
-      args.find((a, i) => i > 0 && !a.startsWith("--")) ?? "src/**/*.test.{ts,tsx}";
+    const selectionArgs = args.filter((arg) => !arg.startsWith("--"));
 
     let child: ReturnType<typeof spawn> | null = null;
     let debounce: ReturnType<typeof setTimeout> | null = null;
 
     function spawnRun(files: string[]) {
       child?.kill();
-      child = spawn(tsxBin, [scriptPath, ...files], {
-        stdio: "inherit",
-        env: { ...process.env, ...(vitestCompat ? { ROADTEST_VITEST_COMPAT: "1" } : {}) },
-      });
+      child = spawn(
+        tsxBin,
+        [scriptPath, ...files, ...(profileImportsArg ? [profileImportsArg] : [])],
+        {
+          stdio: "inherit",
+          env: { ...process.env, ...(vitestCompat ? { ROADTEST_VITEST_COMPAT: "1" } : {}) },
+        },
+      );
     }
 
-    const initial = (await glob(globPattern, { cwd })).map((f) => resolve(cwd, f));
+    const initial = await resolveTestFiles(cwd, selectionArgs);
     console.log(`\n${CYAN}${BOLD}RoadTest${RESET} ${DIM}watch${RESET}\n`);
     console.log(
       `${DIM}watching src/  •  ${plural(initial.length, "test file")} found  •  ctrl+c to stop${RESET}\n`,
@@ -564,7 +658,7 @@ export async function runNode() {
 
       debounce = setTimeout(async () => {
         const changedAbs = resolve(cwd, "src", filename);
-        const freshTestFiles = (await glob(globPattern, { cwd })).map((f) => resolve(cwd, f));
+        const freshTestFiles = await resolveTestFiles(cwd, selectionArgs);
         const graph = buildDepGraph(freshTestFiles);
 
         const affected = graph.dependents.get(changedAbs);
@@ -600,24 +694,8 @@ export async function runNode() {
   }
 
   // ── Non-watch (run) mode ───────────────────────────────────────────────────
-  const { glob } = await import("glob");
-  const { isAbsolute } = await import("node:path");
-
   const positional = args.filter((a) => !a.startsWith("--"));
-
-  let files: string[];
-  if (positional.length === 0) {
-    files = (await glob("src/**/*.test.{ts,tsx}", { cwd })).map((f) => resolve(cwd, f));
-  } else if (
-    positional.length === 1 &&
-    (positional[0].includes("*") || positional[0].includes("{"))
-  ) {
-    files = (await glob(positional[0], { cwd })).map((f) => resolve(cwd, f));
-  } else {
-    files = positional
-      .map((f) => (isAbsolute(f) ? f : resolve(cwd, f)))
-      .filter((f) => existsSync(f));
-  }
+  let files = await resolveTestFiles(cwd, positional);
 
   if (files.length === 0) {
     console.log(`${YELLOW}No test files found${RESET}`);
@@ -658,7 +736,7 @@ export async function runNode() {
   for (const file of files) {
     const computed = computeCacheKey(file, graph);
     cacheKeys.set(file, computed);
-    const entry = readCache(cacheDir, computed.key);
+    const entry = profileImports ? null : readCache(cacheDir, computed.key);
     if (entry) {
       cacheHits.push(...entry.suites);
       cachedTestCount += entry.suites.reduce((sum, s) => sum + s.tests.length, 0);
@@ -696,6 +774,9 @@ export async function runNode() {
   const freshSuites: SerializableTestSuite[] = [];
   let freshCoverage: IstanbulCoverage | null = null;
   const serializedByFile = new Map<string, SerializableTestSuite[]>();
+  const importTimings: TestImportTiming[] = [];
+  let cpuProfiler: CpuImportProfiler | null = null;
+  let asyncWaitTracker: AsyncWaitTracker | null = null;
 
   // Print cached results immediately in original file order
   for (const file of files) {
@@ -705,7 +786,72 @@ export async function runNode() {
 
   // Run each cache-miss file and stream its result immediately
   if (cacheMisses.length > 0) {
-    const { setCurrentSourceFile, runSuites, store, clearAllMocks } = await import("roadtest");
+    if (profileImports) {
+      const { AsyncWaitTracker } = await import("./async-wait.js");
+      asyncWaitTracker = new AsyncWaitTracker();
+      try {
+        const { CpuImportProfiler } = await import("./cpu-profile.js");
+        cpuProfiler = await CpuImportProfiler.create();
+      } catch (error) {
+        console.warn(`${YELLOW}CPU profiling unavailable: ${String(error)}${RESET}`);
+      }
+    }
+
+    async function measureImport<T>(fn: () => Promise<T>): Promise<{
+      value: T;
+      slice: ImportProfileSlice;
+    }> {
+      let asyncIntervals: NonNullable<ImportProfileSlice["asyncIntervals"]> = [];
+      if (cpuProfiler) {
+        const measured = await cpuProfiler.measure(fn, {
+          onStart: (startNs) => asyncWaitTracker?.start(startNs),
+          onEnd: (endNs) => {
+            asyncIntervals = asyncWaitTracker?.stop(endNs) ?? [];
+          },
+        });
+        return {
+          value: measured.value,
+          slice: {
+            wallMs: measured.durationMs,
+            startNs: measured.startNs,
+            endNs: measured.endNs,
+            cpuProfile: measured.profile,
+            asyncIntervals,
+          },
+        };
+      }
+
+      const startNs = process.hrtime.bigint();
+      asyncWaitTracker?.start(startNs);
+      try {
+        const value = await fn();
+        const endNs = process.hrtime.bigint();
+        return {
+          value,
+          slice: {
+            wallMs: Number(endNs - startNs) / 1_000_000,
+            startNs,
+            endNs,
+            asyncIntervals: asyncWaitTracker?.stop(endNs) ?? [],
+          },
+        };
+      } catch (error) {
+        asyncWaitTracker?.stop();
+        throw error;
+      }
+    }
+
+    await setImportProfilingActive(profileImports, cacheMisses[0]);
+    let runtimeModule: typeof import("roadtest");
+    let runtimeSlice: ImportProfileSlice | undefined;
+    if (profileImports) {
+      const measured = await measureImport(() => import("roadtest"));
+      runtimeModule = measured.value;
+      runtimeSlice = measured.slice;
+    } else {
+      runtimeModule = await import("roadtest");
+    }
+    const { setCurrentSourceFile, runSuites, store, clearAllMocks } = runtimeModule;
     const missTotal = cacheMisses.length;
 
     for (let i = 0; i < cacheMisses.length; i++) {
@@ -717,13 +863,41 @@ export async function runNode() {
       const prevSuiteIds = new Set(store.getState().suites.map((s) => s.id));
 
       setCurrentSourceFile(file);
-      await import(pathToFileURL(file).href);
+      if (profileImports && i > 0) await setImportProfilingActive(true, file);
+      let importSlice: ImportProfileSlice | undefined;
+      try {
+        if (profileImports) {
+          const measured = await measureImport(() => import(pathToFileURL(file).href));
+          importSlice = measured.slice;
+        } else {
+          await import(pathToFileURL(file).href);
+        }
+      } finally {
+        if (profileImports) {
+          const slices = [
+            ...(i === 0 && runtimeSlice ? [runtimeSlice] : []),
+            ...(importSlice ? [importSlice] : []),
+          ];
+          importTimings.push({
+            testFile: file,
+            durationMs: slices.reduce((sum, slice) => sum + slice.wallMs, 0),
+            slices,
+          });
+          await setImportProfilingActive(false);
+        }
+      }
       setCurrentSourceFile(null);
 
       const newSuiteIds = store
         .getState()
         .suites.filter((s) => !prevSuiteIds.has(s.id))
         .map((s) => s.id);
+
+      if (profileImportsOnly) {
+        clearAllMocks();
+        process.stdout.write("\r\x1b[2K");
+        continue;
+      }
 
       await runSuites(newSuiteIds, {
         grep: grepArg,
@@ -818,6 +992,24 @@ export async function runNode() {
       cacheCleared: clearCacheFlag,
     },
   );
+
+  if (profileImports) {
+    const profile = buildImportProfile(_profileEvents, importTimings, cwd);
+    print(renderImportProfile(profile, cwd));
+    if (profileImportReportPath) {
+      const reportPath = resolve(cwd, profileImportReportPath);
+      const { renderImportProfileHtml } = await import("./import-profile-html.js");
+      const html = renderImportProfileHtml(profile, {
+        cwd,
+        command: `roadtest ${args.join(" ")}`,
+      });
+      mkdirSync(dirname(reportPath), { recursive: true });
+      writeFileSync(reportPath, html);
+      console.log(`${GREEN}Import report${RESET}  ${DIM}${rel(reportPath, cwd)}${RESET}\n`);
+    }
+  }
+  await cpuProfiler?.close();
+  asyncWaitTracker?.close();
 
   // ── Snapshot results (after summary) ──────────────────────────────────────
   if (snapshotRemoved.length > 0) {

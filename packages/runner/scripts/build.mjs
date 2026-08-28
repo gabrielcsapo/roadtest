@@ -32,6 +32,17 @@ await build({
   logLevel: "info",
 });
 
+await build({
+  entryPoints: [join(sourceRoot, "import-profile-app.jsx")],
+  outfile: join(root, "dist", "import-profile-app.js"),
+  platform: "browser",
+  format: "iife",
+  bundle: true,
+  minify: true,
+  target: "es2022",
+  logLevel: "info",
+});
+
 process.stdout.write(
   `Built ${collectRuntimeSources(sourceRoot).length} runner modules from ${relative(process.cwd(), sourceRoot)}\n`,
 );

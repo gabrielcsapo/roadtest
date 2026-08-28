@@ -27,12 +27,13 @@ function printHelp(): void {
 roadtest — React component + unit test runner
 
 Usage
-  roadtest [pattern] [flags]            run tests in Node (happy-dom)
+  roadtest [path...] [flags]            run tests in Node (happy-dom)
   roadtest --ui [pattern] [flags]       launch the browser UI
   roadtest --build [flags]              build the UI as a static bundle
 
-Pattern
-  A glob of test files. Defaults to src/**/*.test.{ts,tsx}.
+Paths
+  Test files, directories, or glob patterns. Directories are searched recursively.
+  Defaults to src/**/*.test.{ts,tsx}.
 
 Run modes
   --watch                 re-run tests when files change
@@ -54,6 +55,9 @@ Output
   --coverage              collect V8 coverage (also works with --ui)
   --no-coverage           disable default Istanbul coverage in --ui mode
   --test-coverage         attribute Istanbul coverage to individual browser tests (slower)
+  --profile-imports[=<html>]
+                          profile imports; optionally write a self-contained HTML report
+  --profile-imports-only  skip hooks and test execution while profiling imports
   --output-json=<path>    write JSON results to <path>
   --timeout=<ms>          per-test timeout (default varies)
 
@@ -68,6 +72,8 @@ Other
 Examples
   roadtest
   roadtest src/cart.test.ts
+  roadtest src/auth --profile-imports
+  roadtest src --profile-imports=.roadtest/reports/imports.html
   roadtest --ui 'src/**/*.test.tsx'
   roadtest --update-snapshots
   roadtest --shard=1/3 --output-json=shard.json

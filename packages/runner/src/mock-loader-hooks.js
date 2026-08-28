@@ -23,12 +23,36 @@ import { join, dirname, resolve as resolvePath } from "node:path";
 // Set from process.env at module-load time (env is snapshotted when the hook
 // thread is spawned) and updated by initialize() via the data channel.
 let _vitestCompat = process.env.ROADTEST_VITEST_COMPAT === "1";
+let _profilePort = null;
+let _profileActive = false;
+let _profilePhaseId = "";
 
 export function initialize(data) {
   if (data?.vitestCompat) _vitestCompat = true;
+  if (data?.profilePort) {
+    _profilePort = data.profilePort;
+    _profilePort.on("message", function (message) {
+      if (message?.type !== "profile-active") return;
+      _profileActive = message.active === true;
+      _profilePhaseId = message.phaseId ?? "";
+      _profilePort.postMessage({ type: "profile-active-ack", id: message.id });
+    });
+  }
+}
+
+function postProfileEvent(event) {
+  if (_profileActive && _profilePort) {
+    _profilePort.postMessage({
+      type: "profile-event",
+      event: { ...event, phaseId: _profilePhaseId },
+    });
+  }
 }
 
 const TEST_FILE_RE = /\.(test|spec)\.[jt]sx?($|\?)/;
+const ROADTEST_DIST_URL = new URL("../node_modules/roadtest/dist/", import.meta.url);
+const VITEST_SHIM_URL = new URL("vitest.js", ROADTEST_DIST_URL).href;
+const RTL_SHIM_URL = new URL("rtl.js", ROADTEST_DIST_URL).href;
 
 // Detect which package name the consuming project uses for the roadtest runtime.
 // Checked once at hook load time (process.cwd() is the project root).
@@ -161,8 +185,31 @@ function transformNonTestFile(code, allImports, mockedImports) {
  * test suites run under roadtest without changes.
  */
 export async function resolve(specifier, context, nextResolve) {
+  if (!_profileActive || !_profilePort) return resolveModule(specifier, context, nextResolve);
+
+  const startNs = process.hrtime.bigint();
+  let result;
+  try {
+    result = await resolveModule(specifier, context, nextResolve);
+    return result;
+  } finally {
+    if (result?.url) {
+      const endNs = process.hrtime.bigint();
+      postProfileEvent({
+        kind: "resolve",
+        parentURL: context.parentURL,
+        url: result.url,
+        durationMs: Number(endNs - startNs) / 1_000_000,
+        startNs,
+        endNs,
+      });
+    }
+  }
+}
+
+async function resolveModule(specifier, context, nextResolve) {
   if (_vitestCompat && specifier === "vitest") {
-    return nextResolve("roadtest/vitest", context);
+    return { url: VITEST_SHIM_URL, shortCircuit: true };
   }
   // Redirect @testing-library/react imports in test files to roadtest's RTL shim
   // so existing tests get snapshot-captured visual output without code changes.
@@ -171,13 +218,31 @@ export async function resolve(specifier, context, nextResolve) {
   if (_vitestCompat && specifier === "@testing-library/react") {
     const parentUrl = context.parentURL ?? "";
     if (TEST_FILE_RE.test(parentUrl)) {
-      return nextResolve("roadtest/rtl", context);
+      return { url: RTL_SHIM_URL, shortCircuit: true };
     }
   }
   return nextResolve(specifier, context);
 }
 
 export async function load(url, context, nextLoad) {
+  if (!_profileActive || !_profilePort) return loadModule(url, context, nextLoad);
+
+  const startNs = process.hrtime.bigint();
+  try {
+    return await loadModule(url, context, nextLoad);
+  } finally {
+    const endNs = process.hrtime.bigint();
+    postProfileEvent({
+      kind: "load",
+      url,
+      durationMs: Number(endNs - startNs) / 1_000_000,
+      startNs,
+      endNs,
+    });
+  }
+}
+
+async function loadModule(url, context, nextLoad) {
   if (CSS_FILE_RE.test(url)) {
     return { shortCircuit: true, source: "export default {}", format: "module" };
   }
@@ -233,18 +298,19 @@ export async function load(url, context, nextLoad) {
     return nextLoad(url, context);
   }
 
-  if (!rawSource.includes("mock(")) return nextLoad(url, context);
+  const hasMocks = rawSource.includes("mock(");
+  if (!hasMocks && !_profileActive) return nextLoad(url, context);
 
   // Each test file gets a fresh mock scope: clear any mocks registered by
   // previous test files so they don't contaminate this file's dependencies.
-  _mockRegistry.clear();
+  if (hasMocks) _mockRegistry.clear();
 
   // Statically record which modules this test file mocks so that non-test
   // dependencies loaded afterward can have their imports redirected too.
-  const mockCalls = collectTopLevelMockCalls(rawSource);
+  const mockCalls = hasMocks ? collectTopLevelMockCalls(rawSource) : [];
   trackMocksFromTestFile(url, mockCalls);
 
-  const hoisted = mockHoist(rawSource);
+  const hoisted = hasMocks ? mockHoist(rawSource) : rawSource;
   if (hoisted === null) return nextLoad(url, context);
 
   const eb = await getEsbuild();
