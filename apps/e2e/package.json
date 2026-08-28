@@ -7,6 +7,7 @@
     "test:dev": "playwright test --project=dev",
     "test:build": "playwright test --project=build",
     "test:ui": "playwright test --ui",
+    "benchmark:client": "node benchmark-client.mjs scale --cold",
     "install:browsers": "playwright install chromium"
   },
   "devDependencies": {

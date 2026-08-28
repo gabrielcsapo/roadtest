@@ -41,6 +41,7 @@ function getPluginComponent(plugin: TabPlugin) {
 
 interface Props {
   test: TestCase | null;
+  sourceFile?: string;
   coverage: IstanbulCoverage | null;
   suites: TestSuite[];
   onSelectTest: (suiteId: string, testId: string) => void;
@@ -834,8 +835,18 @@ const VIEWPORT_ICONS: Record<Viewport, () => React.ReactElement> = {
 };
 
 interface DisplayApi {
-  showTest: (suiteName: string, testName: string, fallbackHtml?: string) => Promise<boolean>;
-  playTest: (suiteName: string, testName: string, speed?: number) => Promise<boolean>;
+  showTest: (
+    sourceFile: string | undefined,
+    suiteName: string,
+    testName: string,
+    fallbackHtml?: string,
+  ) => Promise<boolean>;
+  playTest: (
+    sourceFile: string | undefined,
+    suiteName: string,
+    testName: string,
+    speed?: number,
+  ) => Promise<boolean>;
   displayRoot: HTMLElement;
   runAxe?: () => Promise<import("axe-core").AxeResults>;
   runVisionContrast?: () => Promise<import("../cvd-contrast").VisionContrastReport>;
@@ -882,6 +893,7 @@ function ToolbarTip({ label, children }: { label: string; children: React.ReactN
 
 export function Preview({
   test,
+  sourceFile,
   coverage,
   suites,
   onSelectTest,
@@ -955,12 +967,12 @@ export function Preview({
     if (!test || !displayApiRef.current?.playTest || isPlaying) return;
     setShowComparison(false); // hide diff so the live iframe can take over
     setIsPlaying(true);
-    displayApiRef.current.playTest(test.suiteName, test.name).then(() => {
+    displayApiRef.current.playTest(sourceFile, test.suiteName, test.name).then(() => {
       setIsPlaying(false);
       setHasPlayed(true);
       setLiveComponentTree(displayApiRef.current?.getComponentTree?.() ?? null);
     });
-  }, [test, isPlaying]);
+  }, [test, sourceFile, isPlaying]);
 
   const dragging = useRef(false);
   const dragStartY = useRef(0);
@@ -999,17 +1011,19 @@ export function Preview({
     setLiveComponentTree(null);
     canvasRef.current = null;
     const snapHtml = test.snapshots[test.snapshots.length - 1]?.html;
-    displayApiRef.current.showTest(test.suiteName, test.name, snapHtml).then((rendered) => {
-      setDisplayHasContent(rendered);
-      if (rendered) canvasRef.current = displayApiRef.current?.displayRoot ?? null;
-      // Populate liveComponentTree from the pre-captured snapshot taken inside showTest
-      // before any after-display hooks ran (hooks may call RTL cleanup and destroy the fiber).
-      const tree = displayApiRef.current?.getComponentTree?.();
-      if (tree && tree.length > 0) {
-        setLiveComponentTree(tree);
-      }
-    });
-  }, [test?.id, displayReady, lastSnapshotTimestamp]);
+    displayApiRef.current
+      .showTest(sourceFile, test.suiteName, test.name, snapHtml)
+      .then((rendered) => {
+        setDisplayHasContent(rendered);
+        if (rendered) canvasRef.current = displayApiRef.current?.displayRoot ?? null;
+        // Populate liveComponentTree from the pre-captured snapshot taken inside showTest
+        // before any after-display hooks ran (hooks may call RTL cleanup and destroy the fiber).
+        const tree = displayApiRef.current?.getComponentTree?.();
+        if (tree && tree.length > 0) {
+          setLiveComponentTree(tree);
+        }
+      });
+  }, [test?.id, sourceFile, displayReady, lastSnapshotTimestamp]);
 
   const onDragStart = useCallback(
     (e: React.MouseEvent) => {

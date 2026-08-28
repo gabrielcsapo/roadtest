@@ -334,15 +334,33 @@ function roadtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin 
   };
 }
 
+const ROADTEST_UI_DEPENDENCIES = [
+  "roadtest > @react-three/drei",
+  "roadtest > @react-three/fiber",
+  "roadtest > @tanstack/react-virtual",
+  "roadtest > @testing-library/react",
+  "roadtest > axe-core",
+  "roadtest > react-dom/client",
+  "roadtest > react-router-dom",
+  "roadtest > three",
+];
+
 export async function startUi() {
   const args = process.argv.slice(2);
   const include =
     args.find((a, i) => !a.startsWith("--") && !args[i - 1]?.startsWith("--")) ??
     "src/**/*.test.{ts,tsx}";
   const updateSnapshots = args.includes("--update-snapshots");
+  const testCoverage = args.includes("--test-coverage");
+  const coveragePlugins = args.includes("--no-coverage") ? [] : [roadtestCoverage()];
 
   const server = await createServer({
-    plugins: [roadtestDevPlugin({ updateSnapshots }), roadtest({ include }), roadtestCoverage()],
+    plugins: [
+      roadtestDevPlugin({ updateSnapshots }),
+      roadtest({ include, testCoverage }),
+      ...coveragePlugins,
+    ],
+    optimizeDeps: { include: ROADTEST_UI_DEPENDENCIES },
     server: { port: 3333, open: true },
   });
 
@@ -393,6 +411,7 @@ export async function buildUi() {
     }
   }
   const include = positional[0] ?? "src/**/*.test.{ts,tsx}";
+  const testCoverage = process.argv.includes("--test-coverage");
 
   const outDir = getArgValue("--outDir") ?? "dist";
   const base = getArgValue("--base") ?? "/";
@@ -427,7 +446,7 @@ export async function buildUi() {
     setupFile ? `import '/${setupFile}'` : null,
     previewFile ? `import _wrapper from '/${previewFile}'` : null,
     `const tests = import.meta.glob(${JSON.stringify(relPattern)})`,
-    `await startApp(tests${previewFile ? ", { wrapper: _wrapper }" : ""})`,
+    `await startApp(tests, {${previewFile ? " wrapper: _wrapper," : ""} testCoverage: ${testCoverage} })`,
   ].filter(Boolean) as string[];
   await writeFile(tempEntry, entryLines.join("\n"));
 
@@ -448,7 +467,7 @@ export async function buildUi() {
   try {
     await build({
       root,
-      plugins: [roadtest({ include, injectHtml: false }), roadtestCoverage()],
+      plugins: [roadtest({ include, injectHtml: false, testCoverage }), roadtestCoverage()],
       base,
       // Define NODE_ENV as 'test' so React includes act() and testing utilities.
       // The roadtest UI is a test runner — it needs React's test-mode APIs.

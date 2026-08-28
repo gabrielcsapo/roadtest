@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "files": [
     "bin",
+    "benchmarks",
     "dist",
     "src",
     "!src/**/*.test.ts"
@@ -17,7 +18,8 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && node scripts/build.mjs",
+    "benchmark:isolation": "node benchmarks/isolation-cost.mjs",
     "typecheck": "tsc",
     "test:node": "node ./bin/roadtest.js"
   },
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "esbuild": "^0.27.7",
     "typescript": "^6.0.3"
   }
 }

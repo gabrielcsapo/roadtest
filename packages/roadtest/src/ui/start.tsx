@@ -9,7 +9,7 @@ import {
 } from "../framework/render";
 import { setCurrentSourceFile } from "../framework/dsl";
 import { store } from "../framework/store";
-import { runAll, runSuite, runTest } from "../framework/runner";
+import { runAll, runSuite, runTest, setTestCoverageEnabled } from "../framework/runner";
 import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from "../framework/hooks";
 import { postParentMessage, onHmrMessage } from "../framework/messages";
 import { checkDevServer, writeSnapshotsToServer, compareSnapshotsWithServer } from "./snapshots";
@@ -21,6 +21,7 @@ export let devServerAvailable = false;
 
 interface StartOptions {
   wrapper?: ComponentType<{ children: React.ReactNode }>;
+  testCoverage?: boolean;
 }
 
 async function loadTestFiles(testFiles: Record<string, () => Promise<unknown>>) {
@@ -31,6 +32,16 @@ async function loadTestFiles(testFiles: Record<string, () => Promise<unknown>>) 
     } catch (e) {
       console.error(`[roadtest] Failed to load ${path}:`, e);
     }
+  }
+  setCurrentSourceFile(null);
+}
+
+async function loadTestFile(path: string, loader: () => Promise<unknown>) {
+  setCurrentSourceFile(path);
+  try {
+    await loader();
+  } catch (e) {
+    console.error(`[roadtest] Failed to load ${path}:`, e);
   }
   setCurrentSourceFile(null);
 }
@@ -56,6 +67,7 @@ export async function startApp(
   // ── Sandbox frame: runs all tests ──────────────────────────────────────────
   if (window.name === "__vt_sandbox") {
     if (options?.wrapper) setWrapper(options.wrapper);
+    if (options?.testCoverage !== undefined) setTestCoverageEnabled(options.testCoverage);
     await loadTestFiles(testFiles);
     // Receive results from node tests run server-side
     onHmrMessage("vt:node-results", ({ suites }: { suites: TestSuite[] }) => {
@@ -103,7 +115,15 @@ export async function startApp(
   // ── Display frame: renders selected test interactively ─────────────────────
   if (window.name === "__vt_display") {
     if (options?.wrapper) setWrapper(options.wrapper);
-    await loadTestFiles(testFiles);
+    const loadedTestFiles = new Set<string>();
+
+    async function ensureTestFile(path?: string) {
+      if (!path || loadedTestFiles.has(path)) return;
+      const loader = testFiles[path];
+      if (!loader) return;
+      await loadTestFile(path, loader);
+      loadedTestFiles.add(path);
+    }
 
     // Minimal reset so only the component shows, with transparent background and flex centering
     Object.assign(document.documentElement.style, {
@@ -130,6 +150,7 @@ export async function startApp(
     let _capturedTree: ComponentTreeResult = [];
 
     async function showTest(
+      sourceFile: string | undefined,
       suiteName: string,
       testName: string,
       fallbackHtml?: string,
@@ -144,11 +165,12 @@ export async function startApp(
       const container = document.createElement("div");
       displayRoot.appendChild(container);
 
+      await ensureTestFile(sourceFile);
       const test = store
         .getState()
         .suites.find((s) => s.name === suiteName)
         ?.tests.find((t) => t.name === testName);
-      if (!test) return false;
+      if (!test && !fallbackHtml) return false;
 
       // Run before-display hooks first — these block until complete so any setup
       // (fetch mocking, data seeding, context providers, etc.) is in place before
@@ -171,7 +193,7 @@ export async function startApp(
       setRenderTarget(container);
       setStopAfterFirstRender(true);
       try {
-        await test.fn?.();
+        await test?.fn?.();
       } catch (e: unknown) {
         // Swallow the display-stop sentinel and any assertion errors
         if (!(e instanceof Error) || !("__vtDisplayStop" in e)) {
@@ -190,13 +212,19 @@ export async function startApp(
       return container.innerHTML !== "";
     }
 
-    async function playTest(suiteName: string, testName: string, speed = 600): Promise<boolean> {
+    async function playTest(
+      sourceFile: string | undefined,
+      suiteName: string,
+      testName: string,
+      speed = 600,
+    ): Promise<boolean> {
       const { cleanup } = await import("@testing-library/react");
       cleanup();
       displayRoot.innerHTML = "";
       const container = document.createElement("div");
       displayRoot.appendChild(container);
 
+      await ensureTestFile(sourceFile);
       const test = store
         .getState()
         .suites.find((s) => s.name === suiteName)
