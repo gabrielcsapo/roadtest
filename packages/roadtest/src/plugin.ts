@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, dirname, resolve as resolvePath, relative } from "node:path";
 import { createHash } from "node:crypto";
 import type { Plugin, ResolvedConfig, ViteDevServer } from "vite";
-import { parseAstAsync, transformWithOxc } from "vite";
+import { createFilter, parseAstAsync, transformWithOxc } from "vite";
 
 interface RoadtestOptions {
   /**
@@ -1272,8 +1272,6 @@ interface CoverageOptions {
 }
 
 const COVERAGE_EXCLUDE_RE = /node_modules|\.test\.[jt]sx?$|\.spec\.[jt]sx?$|\.d\.ts$/;
-const COVERAGE_EXT = new Set([".ts", ".tsx", ".js", ".jsx"]);
-
 // Shared cache across plugin instances — keyed by `cleanId:contentHash` so HMR
 // invalidates naturally when file content changes.
 const _instrumentationCache = new Map<string, { code: string; map: unknown }>();
@@ -1300,8 +1298,9 @@ async function getCreateInstrumenter() {
  * instrumentation.
  */
 export function roadtestCoverage(options: CoverageOptions = {}): Plugin {
-  const { extension = [".ts", ".tsx", ".js", ".jsx"] } = options;
+  const { include = "src/**/*", exclude, extension = [".ts", ".tsx", ".js", ".jsx"] } = options;
   const extSet = new Set(extension);
+  let matchesCoverageScope: (id: string) => boolean = () => false;
   // Reuse a single instrumenter instance across all transform calls — construction
   // is expensive (Babel parser setup) and the instrumenter is stateless between files.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1311,15 +1310,20 @@ export function roadtestCoverage(options: CoverageOptions = {}): Plugin {
     name: "roadtest-coverage",
     apply: "serve",
 
+    configResolved(config) {
+      matchesCoverageScope = createFilter(include, exclude, { resolve: config.root });
+    },
+
     async transform(code, id) {
       // Strip query strings (e.g. ?t=123 from HMR)
       const cleanId = id.split("?")[0];
 
+      if (!matchesCoverageScope(cleanId)) return null;
       if (COVERAGE_EXCLUDE_RE.test(cleanId)) return null;
       if (cleanId.startsWith("\0")) return null; // virtual modules
 
       const ext = cleanId.slice(cleanId.lastIndexOf("."));
-      if (!extSet.has(ext) && !COVERAGE_EXT.has(ext)) return null;
+      if (!extSet.has(ext)) return null;
 
       const createInstrumenter = await getCreateInstrumenter();
       if (!createInstrumenter) return null;
