@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import type { IstanbulCoverage } from "roadtest";
 import type { SerializableTestSuite } from "./serialize.js";
@@ -18,6 +18,7 @@ export interface DepGraph {
 export interface CacheEntry {
   hash: string;
   cachedAt: number;
+  testFile?: string;
   suites: SerializableTestSuite[];
   coverage: IstanbulCoverage | null;
   /** per-file sha256 hashes at the time the entry was written */
@@ -158,10 +159,25 @@ export function writeCache(
   entry: Omit<CacheEntry, "hash" | "cachedAt">,
 ): void {
   mkdirSync(cacheDir, { recursive: true });
-  const full: CacheEntry = { hash: key, cachedAt: Date.now(), ...entry };
+  const full: CacheEntry = { hash: key, cachedAt: Date.now(), testFile, ...entry };
   writeFileSync(join(cacheDir, `${key}.json`), JSON.stringify(full));
   const index = readCacheIndex(cacheDir);
   index[testFile] = key;
+  writeCacheIndex(cacheDir, index);
+}
+
+export function rebuildCacheIndex(cacheDir: string): void {
+  if (!existsSync(cacheDir)) return;
+  const index: Record<string, string> = {};
+  for (const name of readdirSync(cacheDir)) {
+    if (name === "index.json" || !name.endsWith(".json")) continue;
+    try {
+      const entry = JSON.parse(readFileSync(join(cacheDir, name), "utf-8")) as CacheEntry;
+      if (entry.testFile) index[entry.testFile] = entry.hash;
+    } catch {
+      // Ignore incomplete entries from an interrupted worker.
+    }
+  }
   writeCacheIndex(cacheDir, index);
 }
 

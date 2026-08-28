@@ -36,6 +36,7 @@ Pattern
 
 Run modes
   --watch                 re-run tests when files change
+  --max-workers=<n>       run test-file shards in isolated processes
   --ui                    open the interactive browser UI
   --build                 build the UI as a static site
 

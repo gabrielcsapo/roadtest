@@ -1,5 +1,12 @@
 import { Window } from "happy-dom";
-import { existsSync, readFileSync, readdirSync, realpathSync } from "node:fs";
+import {
+  existsSync,
+  readFileSync,
+  readdirSync,
+  realpathSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { resolve, dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { findSourceMap, register } from "node:module";
@@ -29,6 +36,7 @@ import {
   writeCache,
   clearCache,
   hashFileContent,
+  rebuildCacheIndex,
 } from "./cache.js";
 import {
   parseShardArg,
@@ -352,6 +360,81 @@ function printCoverage(coverage: IstanbulCoverage, cwd: string) {
   print(renderCoverage(coverage, cwd));
 }
 
+async function runWorkerPool(args: string[], cwd: string, workerCount: number): Promise<void> {
+  const { spawn } = await import("node:child_process");
+  const startedAt = Date.now();
+  const startDate = new Date();
+  const resultsDir = getResultsDir(cwd);
+  const cacheDir = getCacheDir(cwd);
+  const clearCacheFlag = args.includes("--clear-cache");
+  const outputJsonArg = args
+    .find((arg) => arg.startsWith("--output-json="))
+    ?.slice("--output-json=".length);
+
+  rmSync(resultsDir, { recursive: true, force: true });
+  if (clearCacheFlag) clearCache(cacheDir);
+
+  const childArgs = args.filter(
+    (arg) =>
+      !arg.startsWith("--max-workers=") &&
+      !arg.startsWith("--output-json=") &&
+      arg !== "--clear-cache",
+  );
+  const entry = process.argv[1];
+
+  console.log(`\n${CYAN}${BOLD}RoadTest${RESET} ${DIM}${workerCount} isolated workers${RESET}\n`);
+
+  const exitCodes = await Promise.all(
+    Array.from(
+      { length: workerCount },
+      (_, index) =>
+        new Promise<number>((resolvePromise, rejectPromise) => {
+          const child = spawn(
+            process.execPath,
+            [...process.execArgv, entry, ...childArgs, `--shard=${index + 1}/${workerCount}`],
+            { cwd, env: process.env, stdio: "inherit" },
+          );
+          child.once("error", rejectPromise);
+          child.once("exit", (code) => resolvePromise(code ?? 1));
+        }),
+    ),
+  );
+
+  rebuildCacheIndex(cacheDir);
+  const shardResults = readAllShardResults(resultsDir);
+  if (shardResults.length !== workerCount) {
+    throw new Error(`Expected ${workerCount} shard results, but received ${shardResults.length}`);
+  }
+
+  const { suites } = mergeShardResults(shardResults);
+  const { totalPass, totalFail, totalSkip, totalFiles, failFiles } = _renderResults(
+    suites,
+    false,
+    cwd,
+  );
+  printSummary(
+    totalPass,
+    totalFail,
+    totalSkip,
+    totalFiles,
+    failFiles,
+    startDate,
+    Date.now() - startedAt,
+    undefined,
+    { cacheCleared: clearCacheFlag },
+  );
+
+  if (outputJsonArg) {
+    const outPath = resolve(cwd, outputJsonArg);
+    const { mkdirSync } = await import("node:fs");
+    mkdirSync(dirname(outPath), { recursive: true });
+    writeFileSync(outPath, JSON.stringify(suites, null, 2), "utf-8");
+    console.log(`${DIM}results written → ${outPath}${RESET}\n`);
+  }
+
+  process.exit(totalFail > 0 || exitCodes.some((code) => code > 1) ? 1 : 0);
+}
+
 // ─── Main export ──────────────────────────────────────────────────────────────
 
 export async function runNode() {
@@ -363,6 +446,21 @@ export async function runNode() {
   const coverageFlag = args.includes("--coverage");
   const verboseFlag = args.includes("--verbose");
   const vitestCompat = args.includes("--vitest-compat");
+  const maxWorkersArg = args
+    .find((arg) => arg.startsWith("--max-workers="))
+    ?.slice("--max-workers=".length);
+  const maxWorkers = maxWorkersArg ? Number.parseInt(maxWorkersArg, 10) : 1;
+  if (!Number.isInteger(maxWorkers) || maxWorkers < 1) {
+    throw new Error(`Invalid --max-workers value "${maxWorkersArg}". Expected a positive integer`);
+  }
+  if (maxWorkers > 1 && !watchMode && !mergeShards && !args.some((a) => a.startsWith("--shard="))) {
+    if (coverageFlag) {
+      console.warn(`${YELLOW}--coverage currently requires --max-workers=1${RESET}`);
+    } else {
+      await runWorkerPool(args, cwd, maxWorkers);
+      return;
+    }
+  }
   const setupFiles = args
     .filter((arg) => arg.startsWith("--setup="))
     .map((arg) => arg.slice("--setup=".length));
@@ -534,6 +632,12 @@ export async function runNode() {
     console.log(
       `${DIM}Shard ${shard!.index}/${shard!.total}: no files assigned to this shard${RESET}`,
     );
+    writeShardResult(getResultsDir(cwd), {
+      shard,
+      completedAt: Date.now(),
+      suites: [],
+      coverage: null,
+    });
     process.exit(0);
   }
 
