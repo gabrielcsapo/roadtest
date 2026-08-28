@@ -20,6 +20,7 @@ export {
   runSuites,
   runTest,
   setCoverageProvider,
+  setTestCoverageEnabled,
   setTestTimeout,
 } from "./framework/runner";
 export type { CoverageProvider } from "./framework/runner";

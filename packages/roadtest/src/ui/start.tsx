@@ -9,7 +9,7 @@ import {
 } from "../framework/render";
 import { setCurrentSourceFile } from "../framework/dsl";
 import { store } from "../framework/store";
-import { runAll, runSuite, runTest } from "../framework/runner";
+import { runAll, runSuite, runTest, setTestCoverageEnabled } from "../framework/runner";
 import { runAfterTestHooks, runBeforeDisplayHooks, runAfterDisplayHooks } from "../framework/hooks";
 import { postParentMessage, onHmrMessage } from "../framework/messages";
 import { checkDevServer, writeSnapshotsToServer, compareSnapshotsWithServer } from "./snapshots";
@@ -21,6 +21,7 @@ export let devServerAvailable = false;
 
 interface StartOptions {
   wrapper?: ComponentType<{ children: React.ReactNode }>;
+  testCoverage?: boolean;
 }
 
 async function loadTestFiles(testFiles: Record<string, () => Promise<unknown>>) {
@@ -66,6 +67,7 @@ export async function startApp(
   // ── Sandbox frame: runs all tests ──────────────────────────────────────────
   if (window.name === "__vt_sandbox") {
     if (options?.wrapper) setWrapper(options.wrapper);
+    if (options?.testCoverage !== undefined) setTestCoverageEnabled(options.testCoverage);
     await loadTestFiles(testFiles);
     // Receive results from node tests run server-side
     onHmrMessage("vt:node-results", ({ suites }: { suites: TestSuite[] }) => {

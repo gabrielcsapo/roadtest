@@ -53,6 +53,7 @@ Output
   --verbose               show full diffs, all assertions
   --coverage              collect V8 coverage (also works with --ui)
   --no-coverage           disable default Istanbul coverage in --ui mode
+  --test-coverage         attribute Istanbul coverage to individual browser tests (slower)
   --output-json=<path>    write JSON results to <path>
   --timeout=<ms>          per-test timeout (default varies)
 

@@ -18,9 +18,14 @@ export interface CoverageProvider {
 }
 
 let _coverageProvider: CoverageProvider | null = null;
+let _testCoverageEnabled = true;
 
 export function setCoverageProvider(p: CoverageProvider | null): void {
   _coverageProvider = p;
+}
+
+export function setTestCoverageEnabled(enabled: boolean): void {
+  _testCoverageEnabled = enabled;
 }
 
 // ─── Console interception ─────────────────────────────────────────────────────
@@ -100,12 +105,14 @@ function yieldToEventLoop(): Promise<void> {
 }
 
 async function takeCoverageSnap(): Promise<unknown> {
+  if (!_testCoverageEnabled) return null;
   if (_coverageProvider) return _coverageProvider.snapshot();
   const raw = getRawCoverage();
   return raw ? snapshotCoverage(raw) : null;
 }
 
 async function computeTestCoverage(beforeSnap: unknown): Promise<IstanbulCoverage | null> {
+  if (!_testCoverageEnabled) return null;
   if (_coverageProvider) {
     if (beforeSnap === null) return null;
     const afterSnap = await _coverageProvider.snapshot();

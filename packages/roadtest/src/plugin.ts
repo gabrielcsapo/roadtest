@@ -23,6 +23,8 @@ interface RoadtestOptions {
    * @default false
    */
   vitestCompat?: boolean;
+  /** Collect per-test Istanbul deltas in addition to overall coverage. @default true */
+  testCoverage?: boolean;
 }
 
 const VIRTUAL_ID = "virtual:roadtest-entry";
@@ -989,7 +991,12 @@ function detectRuntimePkg(root: string): string {
 }
 
 export function roadtest(options: RoadtestOptions = {}): Plugin {
-  const { include = "src/**/*.test.{ts,tsx}", injectHtml = true, vitestCompat = false } = options;
+  const {
+    include = "src/**/*.test.{ts,tsx}",
+    injectHtml = true,
+    vitestCompat = false,
+    testCoverage = true,
+  } = options;
   let config: ResolvedConfig;
   let runtimePkg = "roadtest";
 
@@ -1200,6 +1207,9 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
 
       const previewFile = PREVIEW_CANDIDATES.find((f) => existsSync(join(root, f)));
       const previewImport = previewFile ? `import _wrapper from '/${previewFile}'` : null;
+      const startOptions = previewImport
+        ? `{ wrapper: _wrapper, testCoverage: ${testCoverage} }`
+        : `{ testCoverage: ${testCoverage} }`;
 
       // setup.ts runs before startApp — supports top-level await for async init
       // (e.g. starting an MSW worker, registering tab plugins)
@@ -1212,7 +1222,7 @@ export function roadtest(options: RoadtestOptions = {}): Plugin {
         previewImport,
         // Lazy glob — modules are loaded one at a time so sourceFile can be tracked
         `const tests = import.meta.glob(${JSON.stringify(pattern)})`,
-        `await startApp(tests${previewImport ? ", { wrapper: _wrapper }" : ""})`,
+        `await startApp(tests, ${startOptions})`,
         // HMR: when a test file (or its dependency) changes, re-run only that file's suites
         `if (import.meta.hot) {`,
         `  import.meta.hot.accept()`,

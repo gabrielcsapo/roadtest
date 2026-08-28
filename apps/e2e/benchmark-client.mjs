@@ -7,13 +7,18 @@ import { join, resolve } from "node:path";
 const args = process.argv.slice(2);
 const app = args.find((arg) => !arg.startsWith("--")) ?? "scale";
 const selectedTest = args.find((arg) => arg.startsWith("--select-test="))?.slice(14);
+const runnerArgs = [
+  "--ui",
+  ...(args.includes("--no-coverage") ? ["--no-coverage"] : []),
+  ...(args.includes("--test-coverage") ? ["--test-coverage"] : []),
+];
 const root = resolve(import.meta.dirname, `../${app}`);
 const cli = resolve(import.meta.dirname, "../../packages/roadtest/bin/roadtest.js");
 if (args.includes("--cold")) {
   rmSync(join(root, "node_modules", ".vite"), { recursive: true, force: true });
 }
 const startedAt = performance.now();
-const server = spawn(process.execPath, [cli, "--ui"], {
+const server = spawn(process.execPath, [cli, ...runnerArgs], {
   cwd: root,
   env: { ...process.env, BROWSER: "none" },
   stdio: ["pipe", "pipe", "pipe"],
@@ -66,6 +71,17 @@ try {
       .waitFor({ state: "attached", timeout: 30_000 });
   }
   const finishedAt = performance.now();
+  const sandbox = page.frames().find((frame) => frame.name() === "__vt_sandbox");
+  const coverage = await sandbox?.evaluate(() => {
+    const state = globalThis.__roadtest.store.getState();
+    return {
+      files: Object.keys(state.coverage ?? {}).length,
+      tests: state.suites.reduce(
+        (count, suite) => count + suite.tests.filter((test) => test.testCoverage !== null).length,
+        0,
+      ),
+    };
+  });
   const resources = await page.evaluate(() =>
     performance.getEntriesByType("resource").map((entry) => ({
       duration: entry.duration,
@@ -77,6 +93,7 @@ try {
   process.stdout.write(
     `${JSON.stringify({
       app,
+      coverage,
       resourceCount: resources.length,
       serverReadyMs: Math.round(serverReadyAt - startedAt),
       sandboxReadyMs: Math.round(sandboxReadyAt - serverReadyAt),
