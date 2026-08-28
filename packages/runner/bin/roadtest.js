@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Thin bootstrap: resolves tsx from the runner package's own node_modules,
- * then spawns it to load the TypeScript entry point.
+ * Thin bootstrap: starts the compiled runner and loads tsx only when selected
+ * test files may require TypeScript transformation.
  */
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -13,9 +13,7 @@ import { tmpdir } from "node:os";
 const _require = createRequire(import.meta.url);
 const _dirname = dirname(fileURLToPath(import.meta.url));
 
-// Resolve tsx's ESM loader from the runner's own node_modules
-const tsxEsm = _require.resolve("tsx/esm");
-const src = resolve(_dirname, "..", "src", "index.ts");
+const entry = resolve(_dirname, "..", "dist", "index.js");
 
 // When --coverage is requested, set NODE_V8_COVERAGE so Node.js instruments
 // all scripts from process startup — including those loaded through tsx's
@@ -27,8 +25,14 @@ const env = { ...process.env };
 // back to the classic JSX transform (React.createElement). Fix: locate the
 // tsconfig.json nearest to the test files being run and pass it via the env
 // var that tsx checks in its initialize hook.
-if (!env.TSX_TSCONFIG_PATH) {
-  const userArgs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const userArgs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const usesVite = process.argv.includes("--ui") || process.argv.includes("--build");
+const onlyJavaScript =
+  userArgs.length > 0 &&
+  userArgs.every((arg) => /\.(?:c|m)?js(?:$|[,{*])/i.test(arg) && !/\.[jt]sx/i.test(arg));
+const needsTsx = !usesVite && !onlyJavaScript;
+
+if (needsTsx && !env.TSX_TSCONFIG_PATH) {
   if (userArgs.length > 0) {
     // Strip glob wildcards to get the closest concrete directory prefix.
     const prefix = userArgs[0].replace(/\*.*$/, "").replace(/\/$/, "") || ".";
@@ -50,17 +54,19 @@ if (!env.TSX_TSCONFIG_PATH) {
   }
 }
 
+const nodeArgs = [];
+if (needsTsx) {
+  nodeArgs.push("--import", _require.resolve("tsx/esm"));
+}
+nodeArgs.push(entry, ...process.argv.slice(2));
+
 let v8CovDir = null;
 if (process.argv.includes("--coverage") && !process.argv.includes("--ui")) {
   v8CovDir = mkdtempSync(join(tmpdir(), "roadtest-cov-"));
   env.NODE_V8_COVERAGE = v8CovDir;
 }
 
-const { status } = spawnSync(
-  process.execPath,
-  ["--import", tsxEsm, src, ...process.argv.slice(2)],
-  { stdio: "inherit", env },
-);
+const { status } = spawnSync(process.execPath, nodeArgs, { stdio: "inherit", env });
 
 // Clean up temp coverage dir now that the child process has finished
 if (v8CovDir) {

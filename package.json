@@ -10,6 +10,7 @@
     "test:e2e": "pnpm --filter e2e test",
     "test:e2e:dev": "pnpm --filter e2e test:dev",
     "test:e2e:build": "pnpm --filter e2e test:build",
+    "benchmark:client": "pnpm --filter e2e benchmark:client",
     "lint": "oxlint .",
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",

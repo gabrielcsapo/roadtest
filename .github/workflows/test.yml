@@ -7,10 +7,8 @@ on:
   pull_request:
 
 jobs:
-  # Four node-test packages run in parallel. bin/roadtest.js uses tsx to load
-  # runner source directly, but that source does `import from "roadtest"`, which
-  # Node's resolver maps to `roadtest/dist/*` via the exports field — so we need
-  # `roadtest` built before the CLI can run.
+  # Four node-test packages run in parallel. The compiled runner imports the
+  # built roadtest package, so both packages must be built before tests run.
   node-tests:
     runs-on: ubuntu-latest
     strategy:
