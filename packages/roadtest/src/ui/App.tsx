@@ -519,6 +519,7 @@ function DetailLayout() {
         ) : (
           <Preview
             test={selected}
+            sourceFile={suite?.sourceFile}
             coverage={state.coverage}
             suites={state.suites}
             onSelectTest={nav.handleNavigateToTest}

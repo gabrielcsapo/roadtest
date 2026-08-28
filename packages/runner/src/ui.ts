@@ -334,15 +334,28 @@ function roadtestDevPlugin(options: { updateSnapshots?: boolean } = {}): Plugin 
   };
 }
 
+const ROADTEST_UI_DEPENDENCIES = [
+  "roadtest > @react-three/drei",
+  "roadtest > @react-three/fiber",
+  "roadtest > @tanstack/react-virtual",
+  "roadtest > @testing-library/react",
+  "roadtest > axe-core",
+  "roadtest > react-dom/client",
+  "roadtest > react-router-dom",
+  "roadtest > three",
+];
+
 export async function startUi() {
   const args = process.argv.slice(2);
   const include =
     args.find((a, i) => !a.startsWith("--") && !args[i - 1]?.startsWith("--")) ??
     "src/**/*.test.{ts,tsx}";
   const updateSnapshots = args.includes("--update-snapshots");
+  const coveragePlugins = args.includes("--no-coverage") ? [] : [roadtestCoverage()];
 
   const server = await createServer({
-    plugins: [roadtestDevPlugin({ updateSnapshots }), roadtest({ include }), roadtestCoverage()],
+    plugins: [roadtestDevPlugin({ updateSnapshots }), roadtest({ include }), ...coveragePlugins],
+    optimizeDeps: { include: ROADTEST_UI_DEPENDENCIES },
     server: { port: 3333, open: true },
   });
 

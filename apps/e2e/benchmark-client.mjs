@@ -6,6 +6,7 @@ import { join, resolve } from "node:path";
 
 const args = process.argv.slice(2);
 const app = args.find((arg) => !arg.startsWith("--")) ?? "scale";
+const selectedTest = args.find((arg) => arg.startsWith("--select-test="))?.slice(14);
 const root = resolve(import.meta.dirname, `../${app}`);
 const cli = resolve(import.meta.dirname, "../../packages/roadtest/bin/roadtest.js");
 if (args.includes("--cold")) {
@@ -56,6 +57,14 @@ try {
   await runAll.click();
   await page.locator("text=Running tests").waitFor({ state: "visible", timeout: 30_000 });
   await page.locator("text=Running tests").waitFor({ state: "hidden", timeout: 120_000 });
+  if (selectedTest) {
+    await page.getByText(selectedTest, { exact: true }).first().click();
+    await page
+      .frameLocator('iframe[name="__vt_display"]')
+      .locator("#__vt_display_root__ > *")
+      .first()
+      .waitFor({ state: "attached", timeout: 30_000 });
+  }
   const finishedAt = performance.now();
   const resources = await page.evaluate(() =>
     performance.getEntriesByType("resource").map((entry) => ({
